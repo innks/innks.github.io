@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://innks.github.io/2016/03/21/Utilities-for-Windows/</loc>
-        <lastmod>2017-01-21T17:01:25.378Z</lastmod>
+        <lastmod>2017-01-21T17:20:54.903Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://innks.github.io/2017/01/12/Windows-Hexo-install/</loc>
+        <lastmod>2017-01-21T17:18:54.465Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,14 +49,6 @@
     <url>
         <loc>http://innks.github.io/2017/01/14/npm-tree-install/</loc>
         <lastmod>2017-01-21T11:20:57.943Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://innks.github.io/2017/01/12/Windows-Hexo-install/</loc>
-        <lastmod>2017-01-21T09:55:39.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

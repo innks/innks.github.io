@@ -12,18 +12,22 @@
 .widget h1,
 .article-entry h1 {
   font-size: 2em;
+  letter-spacing: -1px;
 }
 .widget h2,
 .article-entry h2 {
   font-size: 1.5em;
+  letter-spacing: -1px;
 }
 .widget h3,
 .article-entry h3 {
   font-size: 1.3em;
+  letter-spacing: -1px;
 }
 .widget h4,
 .article-entry h4 {
   font-size: 1.2em;
+  letter-spacing: -1px;
 }
 .widget h5,
 .article-entry h5 {
@@ -235,7 +239,7 @@ code {
   padding: 3px 5px;
   font-size: 0.8em;
   border-radius: 2px;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: NanumBarunGothic, NanumGothic, Malgun Gothic, dotum, AppleGothic, sans-serif;
   background-color: #f9f2f4;
 }
 .container {
@@ -1809,7 +1813,7 @@ i.icon:before {
   overflow-x: auto;
   padding: 7px 20px;
   font-size: 14px;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: NanumBarunGothic, NanumGothic, Malgun Gothic, dotum, AppleGothic, sans-serif;
   line-height: 18.2px;
 }
 .highlight table {
