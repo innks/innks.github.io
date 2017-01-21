@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Windows에서 Hexo 설치하기 | innks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="hexojs,windows" />
+    
+    <meta name="description" content="Github Pages 란?Github Pages는 git호스팅 서비스로 유명한 Github에서 제공하는 무료 웹사이트 서비스다.용량, 트레픽, 광고등의 제약도 없다. 커스텀 URL도 무료로 제공된다. 다만 서버쪽 처리나 데이터베이스등은 제공되지 않는다.
+{ :hexo } blogHexo는 Node.js 기반 정적 사이트 생성기(Static site">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows에서 Hexo 설치하기">
+<meta property="og:url" content="http://innks.github.io/2017/01/12/Windows-Hexo-install/index.html">
+<meta property="og:site_name" content="innks">
+<meta property="og:description" content="Github Pages 란?Github Pages는 git호스팅 서비스로 유명한 Github에서 제공하는 무료 웹사이트 서비스다.용량, 트레픽, 광고등의 제약도 없다. 커스텀 URL도 무료로 제공된다. 다만 서버쪽 처리나 데이터베이스등은 제공되지 않는다.
+{ :hexo } blogHexo는 Node.js 기반 정적 사이트 생성기(Static site">
+<meta property="og:image" content="https://img.shields.io/badge/hexo">
+<meta property="og:updated_time" content="2017-01-17T13:08:21.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows에서 Hexo 설치하기">
+<meta name="twitter:description" content="Github Pages 란?Github Pages는 git호스팅 서비스로 유명한 Github에서 제공하는 무료 웹사이트 서비스다.용량, 트레픽, 광고등의 제약도 없다. 커스텀 URL도 무료로 제공된다. 다만 서버쪽 처리나 데이터베이스등은 제공되지 않는다.
+{ :hexo } blogHexo는 Node.js 기반 정적 사이트 생성기(Static site">
+<meta name="twitter:image" content="https://img.shields.io/badge/hexo">
+<meta name="twitter:creator" content="@innks_io">
+    
+    <meta name="author" content="innks">
+    <meta name="hostname" content="innks">
+    <meta name="expected-hostname" content="innks">
+    <meta name="url" content="https://innks.github.io"/>
+    <meta name="keywords" content="innks, theK, 드라마, 게임, 블로그, 여행" />
+    <meta name="title" content="innks 블로그, innks blog"/>
+
+    <link rel="canonical" href="https://innks.github.io">
+
+    
+
+    
+        <link rel="icon" href="https://assets-cdn.github.com/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- 스크립트 DATA 영역 -->
+    <script src="/js/innks_data.js?v=20170113"></script>
+    <link rel="stylesheet" href="/css/etc.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2415402928090831",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+<body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60578141-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Sixth Challenge</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">index.innks v6</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Library/">Library</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Library/Etc/">Etc</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Memorable/">Memorable</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Memorable/Media/">Media</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/travel-trip/">travel/trip</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Library/">Library</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks.github.io -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2415402928090831"
+     data-ad-slot="5577977674"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-Windows-Hexo-install" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Windows에서 Hexo 설치하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/12/Windows-Hexo-install/" class="article-date">
+    <time datetime="2017-01-12T08:04:32.000Z" itemprop="datePublished">2017-01-12</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexojs/">hexojs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="img-reset"><img src="https://img.shields.io/badge/hexo package-3.2.2-blue.svg"> <img src="https://img.shields.io/badge/git-2.11.0-f14e32.svg"> <img src="https://img.shields.io/badge/nodejs-6.9.4-43853d.svg"></div>
+
+<h1 id="Github-Pages-란"><a href="#Github-Pages-란" class="headerlink" title="Github Pages 란?"></a>Github Pages 란?</h1><p>Github Pages는 git호스팅 서비스로 유명한 Github에서 제공하는 무료 웹사이트 서비스다.<br>용량, 트레픽, 광고등의 제약도 없다. 커스텀 URL도 무료로 제공된다. 다만 서버쪽 처리나 데이터베이스등은 제공되지 않는다.</p>
+<h1 id="hexo-blog"><a href="#hexo-blog" class="headerlink" title="{ :hexo } blog"></a>{ :hexo } <small>blog</small></h1><p><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>는 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 기반 정적 사이트 생성기(Static site generator)의 일종입니다.(다른 생성기가 많이 있더군요.) 이 블로그는 원래 <a href="http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>로 만들었는데, 제작에 어려움이 있어(배우면 되겠지만) 몇번을 실패 하다가 그나마 쉽게 보이는 Hexo로 옮겼습니다.(다른 이유도 있지만 반응형 테마등등…)</p>
+<blockquote>
+<p>Jekyll 설치 부분에서는 그리 어려움이 없는것 같았습니다. 몇번만 해보면 쉽게(?) 할수 있는것 같지만 그후 플러그인이나 테마 부분에서 쉽지 않더군요. 또한 Hexo는 Node.js로 만든 오픈 소스 프레임워크 이며 라이센스는 MIT License 입니다.</p>
+</blockquote>
+<p>예전의 블로그에서 아쉽다고 생각 했는 부분이 있어서 많은 외부 프로그램들을 넣어서 만들곤 했지만 그래도 아쉽다고 늘 생각을 했습니다. 그러던 중에 우연히 이것을 발견하고 이 프로그램에 매료되기 시작 했네요. 아직 배우기 시작한지 몇일 되지 않아 모든것이 새롭기만 하는 군요.</p>
+<hr>
+<h2 id="빠르고-간단하고-강력한-블로그-프레임워크-hexo"><a href="#빠르고-간단하고-강력한-블로그-프레임워크-hexo" class="headerlink" title="빠르고 간단하고 강력한 블로그 프레임워크 hexo"></a>빠르고 간단하고 강력한 블로그 프레임워크 <small>hexo</small></h2><p><img src="/images/20170112_192701.png" alt="hexo홈 이미지"></p>
+<p><code>홈페이지(Hexo.io)</code>가시면 자세히 나오지만 저 같은 경우에는 몇번인가 실패하고 적용 시키면서 얻은 경험을 적어 보려 하겠습니다. 물론 전 <strong>완전 초보</strong> 라서 이렇게 경험 몇번 했지만 이글 읽은 분들은 지식이 많은 분들이라 생각해서 그런지 부끄럽네요. 제가 잘못한 부분이 있으면 댓글 부탁 합니다.</p>
+<blockquote>
+<p>완전 초보용으로 써 봅니다. 제가 완전 초보라서…</p>
+</blockquote>
+<h2 id="설치-Installation"><a href="#설치-Installation" class="headerlink" title="설치 Installation"></a>설치 <small>Installation</small></h2><p>먼저 Hexo를 사용하기 위해서는 <code>Node.js</code>와 <code>Git</code>이 필요합니다. <code>windows</code> 사용자라면 또는 완전 처음이라면 해당 소프트웨어를 먼저 설치 해야 합니다.</p>
+<ul>
+<li><a href="https://nodejs.org/ko/" target="_blank" rel="external">Node.js 한국어사이트</a> <small>(한국어도 지원되는것 같습니다)</small></li>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git 다운로드사이트</a></li>
+</ul>
+<p><code>Node.js</code>가 설치되었다면 터미널을 열고,</p>
+<p><img src="/images/20170112_192702.png" alt="터미널열기"></p>
+<p>다음 명령어를 입력해서 Hexo를 설치합니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>기본 설치 버전들입니다<br><img src="/images/20170114_152551.png" alt="버전보기"></p>
+<p>Hexo를 설치했다면, 다음으로 초기화 및 디렉토리를 만들수 있습니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;디렉토리명&gt;</div><div class="line">  OR</div><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
+<p>이때 디렉토리는 저장 디렉토리명과 같지 않아도 됩니다. 또한 <code>&lt;디렉토리명&gt;</code>을 적지 않으면 현재 디렉토리에 설치 됩니다.</p>
+<blockquote>
+<p>초기화중에 <code>Node 모듈</code>이 있는것 같은데 전 한번 더 설치 했습니다.<br>참고로 설치 디렉토리에서 <code>Node 모듈</code>을 설치 하는 것이 좋네요.</p>
+</blockquote>
+<p><img src="/images/20170114_152952.png" alt="LS보기-hexo: 3.2.2가 추가 되었네요. &#39;Node 모듈&#39; 있는것 같아요."></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> &lt;디렉토리명&gt;</div><div class="line">$ npm install</div><div class="line">  OR</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<blockquote>
+<p>‘npm install’굳이 안하셔도 되지만 전 했습니다.</p>
+</blockquote>
+<p>두가지 중에 위의 것은 <code>디렉토리</code>를 만들었을 때  쓰는 것입니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<p>서버를 구동하시면 윈도우에서는 ‘보안경고창’이 뜨는데 ‘예’하시면 됩니다.</p>
+<p>브라우저를 열어 <code>http://127.0.0.1:4000/</code>으로 접속해서 블로그를 확인할 수 있스니다.</p>
+<ul>
+<li><small>서버를 실행하는 동안 source 디렉토리에 파일을 변경/추가/삭제하면 알아서 처리됩니다. 말하자면 watch 하고 있는것 같습니다.</small></li>
+</ul>
+<p><img src="/images/20170114_153323.png" alt="실행결과"><br>기본 테마가 적용된 창이 뜹니다.</p>
+<h2 id="참조-Refer"><a href="#참조-Refer" class="headerlink" title="참조 Refer"></a>참조 <small>Refer</small></h2><ul>
+<li><a href="https://hyunseob.github.io/2016/02/23/start-hexo/" target="_blank" rel="external">Hexo 시작하기</a></li>
+<li><a href="http://blog.iolo.kr/518" target="_blank" rel="external">Hexo - 또 다른 정적 사이트 생성도구</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks.github.io -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2415402928090831"
+     data-ad-slot="5577977674"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/innks_io" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/+algiddl11" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100008456914604" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/innks/innks.github.io" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="innks" data-width="100%" data-height="" data-theme="default"></div>
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/01/13/list-of-linux-error-codes/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            List of Linux Error Codes
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2010/05/30/thankyou-drama/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">드라마 &#39;고맙습니다&#39;</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/01/21/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2017-01-21T09:13:52.383Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Library/">Library</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Library/Etc/">Etc</a></p>
+                            <p class="item-title"><a href="/2017/01/17/innsk-t-p-01/" class="title">innsk-Tip 여행 영어로는 무엇이지?</a></p>
+                            <p class="item-date"><time datetime="2017-01-17T13:24:24.000Z" itemprop="datePublished">2017-01-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Library/">Library</a></p>
+                            <p class="item-title"><a href="/2017/01/14/npm-tree-install/" class="title">npm를 이용 tree 설치하기</a></p>
+                            <p class="item-date"><time datetime="2017-01-14T07:23:53.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Library/">Library</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Library/Etc/">Etc</a></p>
+                            <p class="item-title"><a href="/2017/01/13/list-of-linux-error-codes/" class="title">List of Linux Error Codes</a></p>
+                            <p class="item-date"><time datetime="2017-01-12T15:00:00.000Z" itemprop="datePublished">2017-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Library/">Library</a></p>
+                            <p class="item-title"><a href="/2017/01/12/Windows-Hexo-install/" class="title">Windows에서 Hexo 설치하기</a></p>
+                            <p class="item-date"><time datetime="2017-01-12T08:04:32.000Z" itemprop="datePublished">2017-01-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Library/">Library</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Library/Etc/">Etc</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Memorable/">Memorable</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Memorable/Media/">Media</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel-trip/">travel/trip</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">May 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">May 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Error/" style="font-size: 10px;">Error</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/hexojs/" style="font-size: 10px;">hexojs</a> <a href="/tags/journey/" style="font-size: 10px;">journey</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tour/" style="font-size: 10px;">tour</a> <a href="/tags/travel/" style="font-size: 10px;">travel</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/trip/" style="font-size: 10px;">trip</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/고맙습니다/" style="font-size: 10px;">고맙습니다</a> <a href="/tags/드라마/" style="font-size: 15px;">드라마</a> <a href="/tags/부산국제영화제/" style="font-size: 10px;">부산국제영화제</a> <a href="/tags/사진/" style="font-size: 15px;">사진</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/절/" style="font-size: 10px;">절</a> <a href="/tags/포도밭-그사나이/" style="font-size: 10px;">포도밭 그사나이</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+      <div class="widget-wrap">
+<a href="http://info.flagcounter.com/CmUL"><img src="http://s09.flagcounter.com/count2/CmUL/bg_f0f0f0/txt_000000/border_f0f0f0/columns_3/maxflags_9/viewers_innks+blog/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+  <div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks.github.io -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2415402928090831"
+     data-ad-slot="5577977674"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 innks</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'innks';
+    
+    
+    var disqus_url = 'http://innks.github.io/2017/01/12/Windows-Hexo-install/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

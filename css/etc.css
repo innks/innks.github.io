@@ -1,0 +1,96 @@
+/* 제목 색변경 */
+span.subTitleColor{
+  color: rgb(255, 82, 82);
+}
+
+hr.sm4 {
+  border-top: black 1px dotted; height: 1px;border-right: black 0px; border-bottom: black 0px; border-left: black 0px; display: block;margin-top: 10px;
+}
+
+/* 고마습니다 */
+.medical_title {font-size: 14px; height: 16px; line-height: 16px;  font-weight: normal}
+.medical_memo {font-size: 12px; line-height: 16px;  font-weight: normal}
+.medical_box{border:1px solid #e5e6ee;border-top:none;font-size:12px;overflow:hidden;padding:12px 10px}
+.medical_box dt{color:#000;line-height:21px}
+.medical_box dd{float:left;color:#000;line-height:21px}
+.medical_office {color: #000; font-size: 11px;line-height:21px;letter-spacing: -1px}
+
+/* 별점 common */
+span.subStarColor{
+  color: rgb(255, 82, 82);
+  font-weight:bold;
+}
+.raking_grade {
+    overflow: hidden;
+    line-height: 22px;
+    margin: 0;
+}
+.raking_grade .bg_star {
+  display:block;
+  float:left;
+  width:106px;
+  height:17px;
+  background:url(images/bg_star_161018.png) no-repeat 0 0;
+}
+.raking_grade .bg_star .inner_star {
+      overflow:hidden;
+      font-size:0;
+      line-height:0;
+      background-position:0 -20px;
+      text-indent:-9999px;
+}
+
+.raking_grade .emph_grade {
+    padding-left:10px;
+    font-size:18px;
+    font-weight:bold;
+  }
+
+.raking_grade .txt_grade {
+    font-size:18px;
+    color:#989898;
+  }
+
+  /* Common styles for all types */
+.bs-callout {
+  padding: 25px 20px 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 3px;
+  border-radius: 3px;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  border-radius: 3px;
+}
+
+/* Tighten up space between multiple callouts */
+.bs-callout + .bs-callout {
+  margin-top: -5px;
+}
+
+/* Variations */
+.bs-callout-danger {
+  border-left-color: #ce4844;
+}
+.bs-callout-danger h4 {
+  color: #ce4844;
+}
+.bs-callout-warning {
+  border-left-color: #aa6708;
+}
+.bs-callout-warning h4 {
+  color: #aa6708;
+}
+.bs-callout-info {
+  border-left-color: #1b809e;
+}
+.bs-callout-info h4 {
+  color: #1b809e;
+}
