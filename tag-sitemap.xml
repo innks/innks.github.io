@@ -58,20 +58,6 @@
     </url>
 
     <url>
-        <loc>http://innks.github.io/tags/npm/</loc>
-        <lastmod>2017-01-21T11:20:57.943Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://innks.github.io/tags/tree/</loc>
-        <lastmod>2017-01-21T11:20:57.943Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://innks.github.io/tags/Linux/</loc>
         <lastmod>2017-01-21T12:14:12.888Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -130,6 +116,20 @@
     <url>
         <loc>http://innks.github.io/tags/OneDrive/</loc>
         <lastmod>2017-01-21T12:34:42.859Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://innks.github.io/tags/npm/</loc>
+        <lastmod>2017-01-21T17:01:25.378Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://innks.github.io/tags/tree/</loc>
+        <lastmod>2017-01-21T17:01:25.378Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
