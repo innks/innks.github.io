@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="Atom 아톰아톰(Atom)은 자유-오픈 소스 형태의 OS X, 리눅스, 윈도용 문서 및 소스 코드 편집기이다. Node.js로 작성된 플러그인, 깃허브가 개발한 임베디드 깃 관리 지원을 포함한다. 대부분의 확장 패키지는 자유 소프트웨어 라이선스를 취하며 커뮤니티가 만들고 관리하고 있다.위키 - 아톰 (문서 편집기)  Atom Editor 를 쓰게된 이야">
+<meta property="og:type" content="article">
+<meta property="og:title" content="아톰(Atom)에서 마크다운(Markdown) 사용하기">
+<meta property="og:url" content="https://innks.github.io/2017/04/23/IT/Atom-Editor/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="Atom 아톰아톰(Atom)은 자유-오픈 소스 형태의 OS X, 리눅스, 윈도용 문서 및 소스 코드 편집기이다. Node.js로 작성된 플러그인, 깃허브가 개발한 임베디드 깃 관리 지원을 포함한다. 대부분의 확장 패키지는 자유 소프트웨어 라이선스를 취하며 커뮤니티가 만들고 관리하고 있다.위키 - 아톰 (문서 편집기)  Atom Editor 를 쓰게된 이야">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/z49B36h.png">
+<meta property="og:image" content="https://i.imgur.com/vWlYOYC.png">
+<meta property="og:image" content="https://i.imgur.com/8ou11un.png">
+<meta property="og:image" content="https://i.imgur.com/dMqb6gv.png">
+<meta property="og:image" content="https://i.imgur.com/Ti93L1E.png">
+<meta property="og:image" content="https://img.shields.io/github/tag/shd101wyy/markdown-preview-enhanced.svg">
+<meta property="og:image" content="https://i.imgur.com/cZzFKUJ.png">
+<meta property="og:image" content="https://i.imgur.com/okEW6IQ.png">
+<meta property="og:image" content="https://i.imgur.com/DUgTPeH.png">
+<meta property="og:image" content="https://i.imgur.com/wf78T84.png">
+<meta property="og:image" content="https://i.imgur.com/NCkU1IT.png">
+<meta property="og:image" content="https://i.imgur.com/mAYySSZ.gif">
+<meta property="og:image" content="https://i.imgur.com/hi43Jtw.gif">
+<meta property="og:image" content="https://i.imgur.com/CaGODyh.gif">
+<meta property="og:image" content="https://i.imgur.com/e0SOPI1.gif">
+<meta property="og:image" content="https://i.imgur.com/IQ2us0t.gif">
+<meta property="og:image" content="https://i.imgur.com/ulGKUFe.png">
+<meta property="og:image" content="https://i.imgur.com/RACT3XF.gif">
+<meta property="article:published_time" content="2017-04-23T13:37:26.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:32:10.289Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Atom">
+<meta property="article:tag" content="마크다운">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/z49B36h.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/04/23/IT/Atom-Editor/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>아톰(Atom)에서 마크다운(Markdown) 사용하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/04/23/IT/Atom-Editor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          아톰(Atom)에서 마크다운(Markdown) 사용하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-04-23 22:37:26" itemprop="dateCreated datePublished" datetime="2017-04-23T22:37:26+09:00">2017-04-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:32:10" itemprop="dateModified" datetime="2017-12-06T00:32:10+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/04/23/IT/Atom-Editor/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/23/IT/Atom-Editor/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://i.imgur.com/z49B36h.png" alt=""></p>
+<h1 id="Atom-아톰"><a href="#Atom-아톰" class="headerlink" title="Atom 아톰"></a>Atom <small>아톰</small></h1><p>아톰(Atom)은 자유-오픈 소스 형태의 OS X, 리눅스, 윈도용 문서 및 소스 코드 편집기이다. Node.js로 작성된 플러그인, 깃허브가 개발한 임베디드 깃 관리 지원을 포함한다. 대부분의 확장 패키지는 자유 소프트웨어 라이선스를 취하며 커뮤니티가 만들고 관리하고 있다.<div class=wikilink><a href="https://ko.wikipedia.org/wiki/%EC%95%84%ED%86%B0_(%EB%AC%B8%EC%84%9C_%ED%8E%B8%EC%A7%91%EA%B8%B0" target="_blank" rel="noopener">위키 - 아톰 (문서 편집기)</a></div></p>
+<hr>
+<h3 id="Atom-Editor-를-쓰게된-이야기"><a href="#Atom-Editor-를-쓰게된-이야기" class="headerlink" title="Atom Editor 를 쓰게된 이야기."></a>Atom Editor 를 쓰게된 이야기.</h3><p>뭐 중요하겠습니까? 이 글을 읽으시는 분들은 이미 atom을 사용하실것 같은데요. <a href="https://innks.github.io/2017/04/29/Atom-vs-etc/">3개의 에디터 비교</a></p>
+<h1 id="Atom-설치"><a href="#Atom-설치" class="headerlink" title="Atom 설치"></a>Atom 설치</h1><p>우선 <a href="https://atom.io/" target="_blank" rel="noopener">Atom사이트</a>에서 최신버전을 받아 설치 합니다.</p>
+<p><img src="https://i.imgur.com/vWlYOYC.png" alt=""><br>사이트 접속 시 OS에 따라 다운로드 버튼이 변화됩니다. 전 windows라 위 사진처럼 나옵니다. 파일을 받아 설치하시면 됩니다.</p>
+<h1 id="설정하기"><a href="#설정하기" class="headerlink" title="설정하기"></a>설정하기</h1><p>설정 단축키로는 <kbd>ctrl + ,</kbd>로 들어가시면 됩니다.<br><img src="https://i.imgur.com/8ou11un.png" alt=""><br>전 <a href="http://hangeul.naver.com/font" target="_blank" rel="noopener">네이버 나눔글골</a>의 서체중에 <code>나눔바른고딕</code>을 주로 사용해서 위의 설정란에 적어 둡니다.</p>
+<p>나머지로는 <code>Soft wrap</code>, <code>Scroll Past End</code>를 체크 합니다.</p>
+<ul>
+<li>Soft Wrap은 화면 크기에 따라 줄을 바꾸는 기능입니다</li>
+<li>Scroll Past End를 설정하면 문서를 더 아래로 스크롤 할 수 있도록 해줍니다. 계속 코드를 적어나갈 때 커서위치가 너무 아래에만 있게되는데 전체적으로 위로 올려서 중간쯤에서 적어나갈 수 있게 되지요.</li>
+</ul>
+<p><img src="https://i.imgur.com/dMqb6gv.png" alt=""><br><img src="https://i.imgur.com/Ti93L1E.png" style="margin:0"></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h1 id="패키지-설치하기"><a href="#패키지-설치하기" class="headerlink" title="패키지 설치하기"></a>패키지 설치하기</h1><p>가본적인 것이 설치되어 있지만, 더 좋은 패키지를 설치 해서 쓰고 있습니다. 그중 몇 가지를 적어 봅니다.<br>설정의 <code>Install</code> 탭에서 검색한 후 설치하시면 됩니다.</p>
+<h2 id="Markdown-preview-enhanced"><a href="#Markdown-preview-enhanced" class="headerlink" title="# Markdown-preview-enhanced "></a># Markdown-preview-enhanced <small><a href="https://atom.io/packages/markdown-preview-enhanced#markdown-preview-enhanced" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><div class=img-reset><img src="https://i.github-camo.com/9dab44ae66776b96ce088fb316869afcba5382e2/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7461672f7368643130317779792f6d61726b646f776e2d707265766965772d656e68616e6365642e737667" alt="" data-canonical-src="https://img.shields.io/github/tag/shd101wyy/markdown-preview-enhanced.svg"> <small>**현재 서버의 최신 버전**</small></div>
+
+<p>기본적으로 아톰(Atom)은 마크다운 기능이 있습니다. 하지만 지금 소개하는 마크다운 Preview는 조금 더 기능이 향상된 부분이 있어 마크다운 입력을 쉽게 할 수 있습니다.<br><img src="https://i.imgur.com/cZzFKUJ.png" alt=""><br>저 같은 경우에는 설치되어 있으므로 Uninstall로 되어 있지만 처음 설치에는 install로 되어 있을 것입니다.</p>
+<ul>
+<li><strong>양면 스크롤 동기화</strong> // <kbd>ctrl-shift-M</kbd></li>
+<li>외부 파일 가져 오기   //<a href="https://github.com/shd101wyy/markdown-preview-enhanced/blob/master/docs/doc-imports.md" target="_blank" rel="noopener">@import “your_file”</a></li>
+<li>Math typesetting support가있는 markdown preview MathJax 또는 KaTeX 를 선택 하여 수학 표현식을 렌더링 할 수 있습니다</li>
+<li>PDF , PNG 및 JPEG , eBook(beta) 내보내기</li>
+<li>아름다운 HTML 내보내기 (휴대 기기 지원)</li>
+<li>Markdown으로 컴파일</li>
+<li>Markdown Preview CSS 맞춤 설정</li>
+<li><strong>목차 생성 (베타)</strong> // <a href="https://github.com/shd101wyy/markdown-preview-enhanced/blob/v0.12.0/docs/toc.md" target="_blank" rel="noopener">TOC</a></li>
+<li>순서도 / 순서도</li>
+<li>작업 목록 (Github Flavored)</li>
+<li><strong>이미지 도우미</strong> //<kbd>ctrl-shift-I</kbd></li>
+<li>각주</li>
+<li>Front Matter</li>
+<li>그리고 더 많은… (베타버전들…)</li>
+</ul>
+<p>이렇게 기능들이 있고 아직 베타버전들도 발전을 계속되고 있습니다. 아톰에서 마크다운 사용 할 때 이 플러그인은 필수가 아닌가 싶네요.</p>
+<h6 id="PS-아톰에는-markdown-preview가-기본으로-탑재되어-있다-해당-플러그인을-사용할러면-기본-플러그인을-disable처리해-줘야한다"><a href="#PS-아톰에는-markdown-preview가-기본으로-탑재되어-있다-해당-플러그인을-사용할러면-기본-플러그인을-disable처리해-줘야한다" class="headerlink" title="PS. 아톰에는 markdown-preview가 기본으로 탑재되어 있다. 해당 플러그인을 사용할러면 기본 플러그인을 disable처리해 줘야한다."></a><span class=WWs>PS.</span> 아톰에는 <code>markdown-preview</code>가 기본으로 탑재되어 있다. 해당 플러그인을 사용할러면 기본 플러그인을 <code>disable</code>처리해 줘야한다.</h6><p><img src="https://i.imgur.com/okEW6IQ.png" alt=""></p>
+<hr>
+<h2 id="Seti-UI"><a href="#Seti-UI" class="headerlink" title="# Seti-UI "></a># Seti-UI <small><a href="https://atom.io/themes/seti-ui" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p><code>Backbone.js</code> 의 제작자 Addy Osmani 도 추천하는 코드 테마. 색깔 조합이 수려해서, 개인적으로 코딩할 때 질리지 않는 colorful 한 테마입니다.<br><img src="https://i.imgur.com/DUgTPeH.png" alt=""><br>설정 &gt; 인스톨 &gt; 검색란에 테마 부분을 검색하시면 나옵니다. 설치 후 테마부분에서 seti로 하시면 됩니다. 참고로 UI Theme은 아톰 프로그램 전체의 스타일이고 Syntax Theme은 글을 편집하는 에디터의 스타일입니다.</p>
+<hr>
+<h2 id="Minimap"><a href="#Minimap" class="headerlink" title="# Minimap "></a># Minimap <small><a href="https://atom.io/packages/minimap" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>서브라임에서는 기본으로 있는 기능이지만 Atom에서는 없어서 아쉬웠는데 찾다 보니 있네요. 이 단순한 기능이지만 있으면 편리한 기능이기도 합니다.<br><img src="https://i.imgur.com/wf78T84.png" alt=""></p>
+<hr>
+<h2 id="Linter"><a href="#Linter" class="headerlink" title="# Linter "></a># Linter <small><a href="https://atom.io/packages/linter" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>에러 체크하기 약간의 도움을 받을 수 있는 부분입니다. 있으면 편리는 한데 귀찮기도 한 부분이고요. 문법상 오류가 났을 때 이 패키지 부분이 생기면서 이 부분이 오류라고 알려주게 됩니다.</p>
+<blockquote>
+<p><strong>꼭! linter를 먼저 install</strong> 하시고 난 후에, 각종 본인이 필요한 html, css, javascipt, c, c++ 등등 예를 들면 linter를 검색하면 linter-csslint와 같이 여러가지가 나오게되는데 필요한 것들을 설치하시면 됩니다.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/NCkU1IT.png" alt=""></p>
+<hr>
+<h2 id="Atom-beautify"><a href="#Atom-beautify" class="headerlink" title="# Atom-beautify "></a># Atom-beautify <small><a href="https://atom.io/packages/atom-beautify" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>마크다운은 굳이 많이 필요하지 않는 것 같지만 다른 주요 언어를 들여쓰기나 코드 간격이 일정하지 않은 복잡한 코드를 보기 좋게 정리해줍니다.</p>
+<blockquote>
+<p>Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom</p>
+</blockquote>
+<p><img src="https://i.imgur.com/mAYySSZ.gif" alt=""></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="마크다운에서-필수는-아니여도-있으면-좋은-패키지"><a href="#마크다운에서-필수는-아니여도-있으면-좋은-패키지" class="headerlink" title="# 마크다운에서 필수는 아니여도 있으면 좋은 패키지"></a><span class=WWs>#</span> 마크다운에서 필수는 아니여도 있으면 좋은 패키지</h2><p>이상 저의 기본 설정 패키지들입니다. 밑의 부분은 저는 사용하지 않지만 많은 분이 추천한 패키지입니다.</p>
+<h2 id="emmet-Zen-Coding"><a href="#emmet-Zen-Coding" class="headerlink" title="# emmet (Zen Coding) "></a># emmet (Zen Coding) <small><a href="https://atom.io/packages/emmet" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>흔히 젠코딩이라 불리는 플러그인입니다. 사용법만 익숙해지면 쉽게 코딩 할 수 있는 패키지입니다. (손가락 관절에 무리를 줄여주고 커피시간을 벌어주는 편리한 플러그인 이라고 말하더군요.)<br>사용법은 <a href="https://docs.emmet.io/" target="_blank" rel="noopener">공식홈페이지</a>에서 보시길 바랍니다. 간단히보기는 <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">여기</a></p>
+<p><img src="https://i.imgur.com/hi43Jtw.gif" alt=""></p>
+<p>너무 많은 기능이 있어서 저에게는 아직 넘을 수 없는 벽인데 알면 정말 쉽게 할 수 있겠다 싶네요.</p>
+<hr>
+<h2 id="Color-Picker"><a href="#Color-Picker" class="headerlink" title="# Color Picker "></a># Color Picker <small><a href="https://atom.io/packages/color-picker" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>CSS 스타일 작성시 색상 팔레트를 편집기 위에서 볼 수 있어 쉽게 변경할 수 있습니다. 밑의 그림을 보시면 알 수 있습니다.</p>
+<img src="https://i.imgur.com/CaGODyh.gif"  style="margin:0">
+
+<h2 id="highlight-selected"><a href="#highlight-selected" class="headerlink" title="# highlight-selected "></a># highlight-selected <small><a href="https://atom.io/packages/highlight-selected" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>한 페이지에서 선택된 단어와 같은 단어를 표시해줍니다. 있으면 유용한 기능입니다.</p>
+<img src="https://i.imgur.com/e0SOPI1.gif"  style="margin:0">
+
+<h2 id="Pigments"><a href="#Pigments" class="headerlink" title="# Pigments "></a># Pigments <small><a href="https://atom.io/packages/pigments" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>나름 쓸 만은 한데 굳이 필수라고는 못하겠네요. CSS 파일의 #FF5252 형태의 컬러 값을 직관적으로 표시해 줍니다.<br><img src="https://i.imgur.com/IQ2us0t.gif" alt=""></p>
+<hr>
+<h2 id="file-icons"><a href="#file-icons" class="headerlink" title="# file-icons "></a># file-icons <small><a href="https://atom.io/packages/file-icons" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>이것은 단순히 파일의 아이콘을 변경하여 조금 더 보기 좋게 하는 패키지입니다. 그냥 보기 좋게 하는 것이라서 중요하지는 않습니다. <strong>Seti-ui를 사용하면 굳이 설치할 필요 없음</strong><br><img src="https://i.imgur.com/ulGKUFe.png" style="margin:0"></p>
+<hr>
+<h2 id="Auto-close-HTML"><a href="#Auto-close-HTML" class="headerlink" title="# Auto close HTML "></a># Auto close HTML <small><a href="https://atom.io/packages/autoclose-html" target="_blank" rel="noopener"><i class="fa fa-external-link"></i></a></small></h2><p>저처럼 블로그를 하는 사람들에게는 나름 쓰일 때가 많은 패키지입니다. html태그 이름을 입력하면 시작 및 종료 태그를 알아서 붙여줍니다.<br><img src="https://i.imgur.com/RACT3XF.gif" alt=""></p>
+<hr>
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="# 마무리"></a># 마무리</h2><p>적다 보니 많이 있네요. 이것 말고도 많이들 있지만 저는 심플(?)한게 좋아서 몇 개 설치 않고 사용합니다. 굳이 마크다운 사용에 있어 많은 부분이 필요가 없더군요. 이상 참고 되었으면 좋겠습니다.</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Atom/" rel="tag"># Atom</a>
+              <a href="/tags/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4/" rel="tag"># 마크다운</a>
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/04/23/IT/Windows-CP-command/" rel="prev" title="Windows 제어판 명령어 리스트">
+      <i class="fa fa-chevron-left"></i> Windows 제어판 명령어 리스트
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/04/25/charmap/charmap-Emoticon/" rel="next" title="특수문자 표 (Emoticon)">
+      특수문자 표 (Emoticon) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Atom-아톰"><span class="nav-text">Atom 아톰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Atom-Editor-를-쓰게된-이야기"><span class="nav-text">Atom Editor 를 쓰게된 이야기.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Atom-설치"><span class="nav-text">Atom 설치</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#설정하기"><span class="nav-text">설정하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#패키지-설치하기"><span class="nav-text">패키지 설치하기</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-preview-enhanced"><span class="nav-text"># Markdown-preview-enhanced </span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#PS-아톰에는-markdown-preview가-기본으로-탑재되어-있다-해당-플러그인을-사용할러면-기본-플러그인을-disable처리해-줘야한다"><span class="nav-text">PS. 아톰에는 markdown-preview가 기본으로 탑재되어 있다. 해당 플러그인을 사용할러면 기본 플러그인을 disable처리해 줘야한다.</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Seti-UI"><span class="nav-text"># Seti-UI </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimap"><span class="nav-text"># Minimap </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linter"><span class="nav-text"># Linter </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atom-beautify"><span class="nav-text"># Atom-beautify </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#마크다운에서-필수는-아니여도-있으면-좋은-패키지"><span class="nav-text"># 마크다운에서 필수는 아니여도 있으면 좋은 패키지</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emmet-Zen-Coding"><span class="nav-text"># emmet (Zen Coding) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Color-Picker"><span class="nav-text"># Color Picker </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#highlight-selected"><span class="nav-text"># highlight-selected </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pigments"><span class="nav-text"># Pigments </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file-icons"><span class="nav-text"># file-icons </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Auto-close-HTML"><span class="nav-text"># Auto close HTML </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#마무리"><span class="nav-text"># 마무리</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/04/23/IT/Atom-Editor/",
+            identifier: "2017/04/23/IT/Atom-Editor/",
+            title: "아톰(Atom)에서 마크다운(Markdown) 사용하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

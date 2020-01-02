@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="LAN CABLE 랜케이블unshielded twisted pair cable의 약어. 이더넷에서 일반적으로 사용되는 케이블. STP 케이블과 비교해서 실드 처리가 되어 있지 않아 잡음에 약하지만, 비용을 낮출 수 있다.[네이버 지식백과] UTP [unshielded twisted pair cable] (컴퓨터인터넷IT용어대사전, 2011.1.20, 일진사">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UTP&#x2F;STP&#x2F;FTP 케이블">
+<meta property="og:url" content="https://innks.github.io/2016/05/30/IT/UTP-STP-FTP/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="LAN CABLE 랜케이블unshielded twisted pair cable의 약어. 이더넷에서 일반적으로 사용되는 케이블. STP 케이블과 비교해서 실드 처리가 되어 있지 않아 잡음에 약하지만, 비용을 낮출 수 있다.[네이버 지식백과] UTP [unshielded twisted pair cable] (컴퓨터인터넷IT용어대사전, 2011.1.20, 일진사">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/uOKiDVH.jpg">
+<meta property="og:image" content="https://i.imgur.com/X92dEsn.jpg">
+<meta property="og:image" content="https://i.imgur.com/v5M7vzo.jpg">
+<meta property="og:image" content="https://i.imgur.com/jLjpizH.gif">
+<meta property="og:image" content="https://i.imgur.com/9QCKjLt.png">
+<meta property="og:image" content="https://i.imgur.com/fyXu0od.jpg">
+<meta property="og:image" content="https://i.imgur.com/PP82CIB.jpg">
+<meta property="og:image" content="https://i.imgur.com/SiMS1cO.jpg">
+<meta property="og:image" content="https://i.imgur.com/BLrSpxU.jpg">
+<meta property="og:image" content="https://i.imgur.com/rdo8vKn.jpg">
+<meta property="og:image" content="https://i.imgur.com/JrpUkhp.png">
+<meta property="og:image" content="https://i.imgur.com/GZjT6Sh.jpg">
+<meta property="og:image" content="https://i.imgur.com/ctqymTT.jpg">
+<meta property="og:image" content="https://i.imgur.com/LLyMrH9.jpg">
+<meta property="og:image" content="https://i.imgur.com/EEbJ1TJ.jpg">
+<meta property="article:published_time" content="2016-05-30T11:09:35.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:36:30.448Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="lan">
+<meta property="article:tag" content="utp">
+<meta property="article:tag" content="stp">
+<meta property="article:tag" content="ftp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/uOKiDVH.jpg">
+
+<link rel="canonical" href="https://innks.github.io/2016/05/30/IT/UTP-STP-FTP/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>UTP/STP/FTP 케이블 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/05/30/IT/UTP-STP-FTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UTP/STP/FTP 케이블
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-05-30 20:09:35" itemprop="dateCreated datePublished" datetime="2016-05-30T20:09:35+09:00">2016-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:36:30" itemprop="dateModified" datetime="2017-12-06T00:36:30+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/05/30/IT/UTP-STP-FTP/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/30/IT/UTP-STP-FTP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="LAN-CABLE-랜케이블"><a href="#LAN-CABLE-랜케이블" class="headerlink" title="LAN CABLE 랜케이블"></a>LAN CABLE <small>랜케이블</small></h3><p>unshielded twisted pair cable의 약어. 이더넷에서 일반적으로 사용되는 케이블. STP 케이블과 비교해서 실드 처리가 되어 있지 않아 잡음에 약하지만, 비용을 낮출 수 있다.<div class="text-right" style="font-size:13px;"><p><strong>[네이버 지식백과]</strong> <a href="https://terms.naver.com/entry.nhn?docId=840781" target="_blank" rel="noopener">UTP [unshielded twisted pair cable] (컴퓨터인터넷IT용어대사전, 2011.1.20, 일진사)</a></p></div></p>
+<hr>
+<h2 id="UTP-FTP-STP-구조와-설명"><a href="#UTP-FTP-STP-구조와-설명" class="headerlink" title="UTP, FTP, STP 구조와 설명"></a>UTP, FTP, STP 구조와 설명</h2><h5 id="UTP-Unshielded-Twist-Pair-비차폐연선"><a href="#UTP-Unshielded-Twist-Pair-비차폐연선" class="headerlink" title="UTP (Unshielded Twist Pair : 비차폐연선 )"></a>UTP (Unshielded Twist Pair : 비차폐연선 )</h5><p>두 선간의 전자기 유도를 줄이기 위하여 서로 꼬여져 있는 케이블인데 제품 전선과 피복만으로 구성되어 있다. 이건 보통 일반적인 랜케이블에 사용한다.</p>
+<p><img src="https://i.imgur.com/uOKiDVH.jpg" alt=""></p>
+<h5 id="FTP-Foil-Screened-Twist-Pair-Cable"><a href="#FTP-Foil-Screened-Twist-Pair-Cable" class="headerlink" title="FTP (Foil Screened Twist Pair Cable)"></a>FTP (Foil Screened Twist Pair Cable)</h5><p>쉴드 처리는 되어있지 않고, 알루미늄 은박이 4가닥의 선을 감싸고 있는 케이블이다.<br>UTP에 비해 절연 기능이 좋고 공장 배선용으로 많이 사용한다.</p>
+<p><img src="https://i.imgur.com/X92dEsn.jpg" alt=""></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="STP-Shielded-Twist-Pair-Cable-차폐연선"><a href="#STP-Shielded-Twist-Pair-Cable-차폐연선" class="headerlink" title="STP (Shielded Twist Pair Cable : 차폐연선)"></a>STP (Shielded Twist Pair Cable : 차폐연선)</h5><p>쉴드라 하는 것은 연선으로 된 케이블 겉에 외부 피복, 또는 차폐재가 추가되는 것을 말한다.<br>이 것은 외부의 노이즈를 차단하거나 전기적 신호의 간섭을 대폭 줄여준다.</p>
+<p><img src="https://i.imgur.com/v5M7vzo.jpg" alt=""><br><img src="https://i.imgur.com/jLjpizH.gif" alt=""></p>
+<hr>
+<h3 id="UTP-STP-표준"><a href="#UTP-STP-표준" class="headerlink" title="UTP/STP 표준"></a>UTP/STP 표준</h3><ul>
+<li>카테고리 1 - 전화망에 주로 사용. 데이터 전송용으로는 부적합</li>
+<li>카테고리 2 - 최대 4Mbps 속도로 전송, 토큰링 네트워크에 자주 쓰였음</li>
+<li>카테고리 3 - 최대 16Mbps 속도로 전송, 10 Base T 네트워크에 사용</li>
+<li>카테고리 4 - 최대 16Mbps 속도로 전송, 토큰링 네트워크에 사용</li>
+<li>카테고리 5 - 최대 100Mbps 속도로 전송, Fast Ethernet용으로 사용, 기가비트 속도 전송 시 8개의 모든 선 사용.<ul>
+<li>Cat. 5는 현재 네트워크 시공이나 전화 시설 등 모든 랜선이 시설되는 장소에서 사용하는 UTP케이블의 표준 규격이라고 할 수 있습니다. 현재 가장 빠른 인터넷도 100Mbps의 광랜이고, 100Mbps 급의 공유기 및 네트워크 장비들도 아직까지 많이 사용하기 때문에 Cat. 5나 Cat. 5e 면 충분히 사용 가능합니다. Cat. 5는 현재 유지 보수용으로만 사용되며, Cat. 5e 규격의 보편화로 현재는 거의 사용되지 않는 규격이라고 보시면 될 것 같습니다.</li>
+<li>Category 5e Cable (Cat. 5e) 케이블은 최대 1Gbps의 속도로 데이터를 전송할 수 있습니다. 대역폭은 예전에 사용했던 Cat. 5와 동일한 100MHz입니다. <strong>Cat. 5e와 Cat. 5의 UTP케이블은 100m 이상 선을 포설할 경우 신호가 현저히 저하가 되기 때문에 끊길 수도 있습니다.</strong> Cat. 5e는 현재 사무실이나 가정집에서 실질적으로 많이 사용하고 있으며, 네트워크공사장비 대부분 이 케이블을 사용합니다.</li>
+</ul>
+</li>
+<li>카테고리 6 - 최대 250MHz의 성능과 1Gbps 인터넷 네트워크에 많이 사용됩니다.<ul>
+<li>Cat. 6는 단순 외관으로는 Cat. 5e와 차이가 별로 없습니다. 하지만 피복을 벗기면 4개의 페어와 내부의 십자 모양의 개재로 구성되어 있습니다. 내부 십자형 개재가 각 페어 간의 간섭을 막을 수 있고, 외부 전자파 장애를 최소화할 수 있게 제작되어 있습니다. 아직은 가정용보다는 회사의 서버나 전산망, IT 계열 업체 등에 많이 활용되고 있습니다. Cat. 5케이블 제작보다 약간? 더 어렵다고 생각하시면 됩니다.</li>
+<li>Category 6e Cable (Cat. 6e) 케이블은 무려.. 최대 10Gbps의 속도로 데이터를 전송할 수 있습니다. 이 속도를 사용하시고 싶으시면 랜카드도 10Gbps를 사용하셔야 합니다. 만약 랜카드가 1Gbps라면, 10Gbps의 속도를 사용할 수가 없습니다. Cat. 6보다 2배 정도 향상된 기능과 케이블 간섭을 최소화한 케이블이라고 보시면 서버용 랜 케이블에 많이 사용합니다. 또한 <strong>CAT6e의 경우 수평배선망의 거리에 따른 신호 손실로 55m까지 10GbE를 지원한다고 하네요.</strong></li>
+<li><strong>참고</strong> : 현재 쇼핑몰에서 구할 수 있는 CAT6 BOX 케이블의 종류는 제조사를 막론하고 크게 아래 2가지입니다.<br>CAT6e - 250Mhz / 24AWG<br>CAT6a - 600Mhz / 23AWG<br>CAT6e는 250Mhz까지 지원하며 대부분의 인터넷쇼핑몰에서 CAT6라고 표기하고 판매중인 제품의 규격은 CAT6e 입니다.<br>CAT6a 케이블은 CAT6e 케이블과 달리 23AWG의 구리심선이 사용됩니다. <strong>AWG란 미국 전선규격이고 숫자가 낮을수록 심선의 굵기가 굵은 제품</strong> 입니다.</li>
+</ul>
+</li>
+<li><em>UTP 케이블의 심선 두께가 두꺼울수록 전기역학적으로 회선에 흐를 수 있는 전류의 양이 많아지므로 주파수 대역폭도 높으며 10GbE 100m까지 지원 가능합니다.*</em><br>( LS전선 CAT6a는 IEEE 802.3 10G base-T 지원 표기 / AMP CAT6 U part No. 1427200는 IEEE 802.3an 지원 표기 )</li>
+<li>카테고리 7 - 4개의 개별 실드 처리된 STP에 적합하며 최대 600 MHz의 전송을 위해 설계되었다.<ul>
+<li>Cat. 7케이블은 최대 10Gbps의 속도로 데이터를 전송할 수 있습니다. 아직은 Cat. 7케이블의 성능을 발휘할 만한 환경이 구성되어 있는 곳은 많지 않기 때문에 일반 기업 사무실과 가정집의 경우 Cat. 5e와 Cat. 6 UTP케이블만으로도 충분히 고속 인터넷으로 사용 가능합니다. 기존 Cat. 5e와 Cat. 6케이블과 달리 제작이 매우 어렵고, 가격 또한 비쌉니다.</li>
+</ul>
+</li>
+</ul>
+<h5 id="케이블-속도별-구분"><a href="#케이블-속도별-구분" class="headerlink" title="케이블 속도별 구분"></a>케이블 속도별 구분</h5><table><tbody><tr><td>10 Base-T</td></tr><tr><td>10 : 속도
+Base : Baseband 용 케이블 (디지털)
+T : TP 케이블 / 최대 전송거리</td></tr></tbody></table>
+
+<p>10 Base T : 10Mbps로 통신. 최대 전송거리 100m . UTP3,4,5 사용<br>10 Base FL : 10Mbps로 통신. FL(Fiber-optic) 광케이블.  ST 커넥터 사용<br>10 Base 2 : 10Mbps로 통신. 최대 전송거리 200m. 일명 Thin 케이블 . BNC 커넥터 사용<br>10 Base 5 : 10Mbps로 통신. 최대 전송거리 500m. 일명 thick 케이블. AUI 인터페이스(15pin) 사용<br>100 Base TX : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.5 케이블 사용<br>100 Base T2 : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.3,4,5 케이블 사용<br>100 Base T4 : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.3 케이블 사용<br>100 Base FX : 전송 속도 100Mbps. 최대 전송거리 2km<del>10km. SC 커넥터 사용<br>1000 Base SX : 기가비트. 전송 속도 1000Mbps. 최대 전송거리 270m</del>550m.<br>1000 Base T : 기가비트. 전송 속도 1000Mbps. 최대 전송거리 100m. UTP케이블 사용</p>
+<hr>
+<h4 id="UTP케이블-연결법-및-구분"><a href="#UTP케이블-연결법-및-구분" class="headerlink" title="UTP케이블 연결법 및 구분"></a>UTP케이블 연결법 및 구분</h4><ul>
+<li>다이렉트(Direct) 케이블 : PC-스위치 / 스위치-공유기 연결 시 사용한다.</li>
+<li>크로스(Cross) 케이블 : PC-PC / 스위치-스위치 / 공유기-공유기 동종 기종 간 연결 시 사용한다.</li>
+</ul>
+<p><img src="https://i.imgur.com/9QCKjLt.png" alt=""><br><img src="https://i.imgur.com/fyXu0od.jpg" alt=""></p>
+<hr>
+<h3 id="일반적을-널리-쓰이는-도구"><a href="#일반적을-널리-쓰이는-도구" class="headerlink" title="일반적을 널리 쓰이는 도구"></a>일반적을 널리 쓰이는 도구</h3><h4 id="랜툴-모듈라-크림핑툴"><a href="#랜툴-모듈라-크림핑툴" class="headerlink" title="랜툴 모듈라 크림핑툴"></a>랜툴 <small>모듈라 크림핑툴</small></h4><p><img src="https://i.imgur.com/PP82CIB.jpg" alt=""><br><img src="https://i.imgur.com/SiMS1cO.jpg" alt=""></p>
+<h4 id="랜테스터기"><a href="#랜테스터기" class="headerlink" title="랜테스터기"></a>랜테스터기</h4><p><img src="https://i.imgur.com/BLrSpxU.jpg" alt=""></p>
+<h4 id="랜선-피복-탈피기"><a href="#랜선-피복-탈피기" class="headerlink" title="랜선 피복 탈피기"></a>랜선 피복 탈피기</h4><p><img src="https://i.imgur.com/rdo8vKn.jpg" alt=""></p>
+<h4 id="RJ-커넥터-RJ-connector"><a href="#RJ-커넥터-RJ-connector" class="headerlink" title="RJ 커넥터 RJ connector"></a>RJ 커넥터 <small>RJ connector</small></h4><p>배선을 연결하는 데 사용되는 표준 커넥터. RJ-11, RJ-12, RJ-45가 흔히 사용된다. 전화선을 연결하는 데는 일반적으로 RJ-11이 사용되며, RJ-45는 구내 정보 통신망(LAN)에서 비차폐 연선(UTP)을 연결할 때 사용되는 것으로 모듈 단위로 4상 배선을 할 수 있다.<div class="text-right" style="font-size:13px;"><p><strong>[네이버 지식백과]</strong> <a href="https://terms.naver.com/entry.nhn?docId=849601&cid=50373&categoryId=50373" target="_blank" rel="noopener">[네이버 지식백과] RJ 커넥터 [RJ connector] (IT용어사전, 한국정보통신기술협회)</a></p></div></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h6 id="RJ-45-8P8C-플러그"><a href="#RJ-45-8P8C-플러그" class="headerlink" title="RJ-45 8P8C 플러그"></a>RJ-45 8P8C 플러그</h6><p><img src="https://i.imgur.com/JrpUkhp.png" alt=""></p>
+<h6 id="RJ-12-6P6C-플러그"><a href="#RJ-12-6P6C-플러그" class="headerlink" title="RJ-12 6P6C 플러그"></a>RJ-12 6P6C 플러그</h6><p><img src="https://i.imgur.com/GZjT6Sh.jpg" alt=""></p>
+<h6 id="RJ11-6P4C-플러그"><a href="#RJ11-6P4C-플러그" class="headerlink" title="RJ11 6P4C 플러그"></a>RJ11 6P4C 플러그</h6><p><img src="https://i.imgur.com/ctqymTT.jpg" alt=""></p>
+<h6 id="RJ11-6P2C-플러그"><a href="#RJ11-6P2C-플러그" class="headerlink" title="RJ11 6P2C 플러그"></a>RJ11 6P2C 플러그</h6><p><img src="https://i.imgur.com/LLyMrH9.jpg" alt=""></p>
+<h6 id="RJ-45-보호캡"><a href="#RJ-45-보호캡" class="headerlink" title="RJ-45 보호캡"></a>RJ-45 보호캡</h6><p><img src="https://i.imgur.com/EEbJ1TJ.jpg" alt=""></p>
+<hr>
+<h6 id="이미지-출처"><a href="#이미지-출처" class="headerlink" title="이미지 출처"></a>이미지 출처</h6><p><a href="http://11st.kr/QR/P/25260915" target="_blank" rel="noopener">http://11st.kr/QR/P/25260915</a><br><a href="http://gmkt.kr/gL3n3m" target="_blank" rel="noopener">http://gmkt.kr/gL3n3m</a><br><a href="http://gmkt.kr/ggWJXQ" target="_blank" rel="noopener">http://gmkt.kr/ggWJXQ</a><br><a href="http://11st.kr/QR/P/1037681640" target="_blank" rel="noopener">http://11st.kr/QR/P/1037681640</a></p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/lan/" rel="tag"># lan</a>
+              <a href="/tags/utp/" rel="tag"># utp</a>
+              <a href="/tags/stp/" rel="tag"># stp</a>
+              <a href="/tags/ftp/" rel="tag"># ftp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/05/story/Incomplete-Life/" rel="prev" title="미생, 명대사">
+      <i class="fa fa-chevron-left"></i> 미생, 명대사
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/09/03/IT/IP-address/" rel="next" title="원도우에서 내 IP주소 확인">
+      원도우에서 내 IP주소 확인 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN-CABLE-랜케이블"><span class="nav-text">LAN CABLE 랜케이블</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UTP-FTP-STP-구조와-설명"><span class="nav-text">UTP, FTP, STP 구조와 설명</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UTP-Unshielded-Twist-Pair-비차폐연선"><span class="nav-text">UTP (Unshielded Twist Pair : 비차폐연선 )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FTP-Foil-Screened-Twist-Pair-Cable"><span class="nav-text">FTP (Foil Screened Twist Pair Cable)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STP-Shielded-Twist-Pair-Cable-차폐연선"><span class="nav-text">STP (Shielded Twist Pair Cable : 차폐연선)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UTP-STP-표준"><span class="nav-text">UTP&#x2F;STP 표준</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#케이블-속도별-구분"><span class="nav-text">케이블 속도별 구분</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTP케이블-연결법-및-구분"><span class="nav-text">UTP케이블 연결법 및 구분</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#일반적을-널리-쓰이는-도구"><span class="nav-text">일반적을 널리 쓰이는 도구</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#랜툴-모듈라-크림핑툴"><span class="nav-text">랜툴 모듈라 크림핑툴</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#랜테스터기"><span class="nav-text">랜테스터기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#랜선-피복-탈피기"><span class="nav-text">랜선 피복 탈피기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RJ-커넥터-RJ-connector"><span class="nav-text">RJ 커넥터 RJ connector</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#RJ-45-8P8C-플러그"><span class="nav-text">RJ-45 8P8C 플러그</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#RJ-12-6P6C-플러그"><span class="nav-text">RJ-12 6P6C 플러그</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#RJ11-6P4C-플러그"><span class="nav-text">RJ11 6P4C 플러그</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#RJ11-6P2C-플러그"><span class="nav-text">RJ11 6P2C 플러그</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#RJ-45-보호캡"><span class="nav-text">RJ-45 보호캡</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#이미지-출처"><span class="nav-text">이미지 출처</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2016/05/30/IT/UTP-STP-FTP/",
+            identifier: "2016/05/30/IT/UTP-STP-FTP/",
+            title: "UTP/STP/FTP 케이블"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

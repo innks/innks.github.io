@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="웹사이트 website웹사이트(영어: website, 문화어: 웨브싸이트)는 인터넷 프로토콜 기반의 네트워크에서 도메인 이름이나 IP 주소, 루트 경로만으로 이루어진 일반 URL을 통하여 보이는 웹 페이지 (Web Page)들의 의미 있는 묶음이다. 대한민국에서 흔히 말하는 홈페이지(블로그등)는 엄밀히 말해 웹사이트를 지칭한다. 최초의 웹사이트는 팀 버너스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="기본적인 웹 사이트 최적화 방법">
+<meta property="og:url" content="https://innks.github.io/2017/04/10/IT/site-optimization/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="웹사이트 website웹사이트(영어: website, 문화어: 웨브싸이트)는 인터넷 프로토콜 기반의 네트워크에서 도메인 이름이나 IP 주소, 루트 경로만으로 이루어진 일반 URL을 통하여 보이는 웹 페이지 (Web Page)들의 의미 있는 묶음이다. 대한민국에서 흔히 말하는 홈페이지(블로그등)는 엄밀히 말해 웹사이트를 지칭한다. 최초의 웹사이트는 팀 버너스">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/9aTpXoO.png">
+<meta property="og:image" content="https://i.imgur.com/IwdSMk1.png">
+<meta property="og:image" content="https://i.imgur.com/HI45cuR.png">
+<meta property="og:image" content="https://i.imgur.com/Nwb6rFL.png">
+<meta property="og:image" content="https://i.imgur.com/Mj3WclA.png">
+<meta property="og:image" content="https://i.imgur.com/k5JKfEJ.png">
+<meta property="og:image" content="https://i.imgur.com/9EOFe6D.png">
+<meta property="og:image" content="https://i.imgur.com/9yIkNEx.png">
+<meta property="og:image" content="https://i.imgur.com/xmn0L0A.png">
+<meta property="og:image" content="https://i.imgur.com/HYy3D2p.png">
+<meta property="og:image" content="https://i.imgur.com/zbQwTRI.png">
+<meta property="og:image" content="http://i.imgur.com/aeDLZUE.png">
+<meta property="og:image" content="http://i.imgur.com/7zrhJY4.png">
+<meta property="article:published_time" content="2017-04-10T02:14:03.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:34:54.605Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="image">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/9aTpXoO.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/04/10/IT/site-optimization/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>기본적인 웹 사이트 최적화 방법 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/04/10/IT/site-optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          기본적인 웹 사이트 최적화 방법
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-04-10 11:14:03" itemprop="dateCreated datePublished" datetime="2017-04-10T11:14:03+09:00">2017-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:34:54" itemprop="dateModified" datetime="2017-12-06T00:34:54+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/04/10/IT/site-optimization/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/10/IT/site-optimization/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="웹사이트-website"><a href="#웹사이트-website" class="headerlink" title="웹사이트 website"></a>웹사이트 <small>website</small></h2><p>웹사이트(영어: website, 문화어: 웨브싸이트)는 인터넷 프로토콜 기반의 네트워크에서 도메인 이름이나 IP 주소, 루트 경로만으로 이루어진 일반 URL을 통하여 보이는 웹 페이지 (Web Page)들의 의미 있는 묶음이다. 대한민국에서 흔히 말하는 홈페이지(블로그등)는 엄밀히 말해 웹사이트를 지칭한다. 최초의 웹사이트는 팀 버너스리가 1990년에 CERN에서 만든 info.cern.ch이다.(지금도 CERN사이트 안에 존재함.)</p>
+<div style="text-align: right;">[<위키>](https://ko.wikipedia.org/wiki/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8)</div>
+
+<hr>
+<img src="https://i.imgur.com/9aTpXoO.png" class="inks_img">
+
+<p>사이트 속도 측정 사이트 : <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="noopener">PageSpeed Insights</a><br>[구글 페이지 스피드]는 웹사이트의 트래픽을 절약하고 속도를 높이는 다양한 방법을 제안하고, 내 사이트는 어떤 걸 더 적용해야 하는지 평가해 주는 온라인 서비스다.</p>
+<h3 id="분석-결과-저의-사이트-분석-결과입니다"><a href="#분석-결과-저의-사이트-분석-결과입니다" class="headerlink" title="분석 결과 저의 사이트 분석 결과입니다."></a>분석 결과 <small>저의 사이트 분석 결과입니다.</small></h3><img src="https://i.imgur.com/IwdSMk1.png" class="inks_img">
+
+
+<p>분석 결과가 <code>52 / 100</code> 입니다. 사이트 보니 수정할 것이 많이 있어 보이네요. 우선 하나하나 해보겠습니다.</p>
+<h2 id="1-이미지-최적화"><a href="#1-이미지-최적화" class="headerlink" title="1. 이미지 최적화"></a>1. 이미지 최적화</h2><p>무엇 보다도 많은 부분이 이미지 같네요. 구글에 검색하면 많이 보이지만 나름 몇몇 곳을 사용해본 결과 4곳을 추천하겠습니다.</p>
+<h5 id="추천"><a href="#추천" class="headerlink" title="추천"></a>추천</h5><ul>
+<li><a href="https://compressor.io/compress" target="_blank" rel="noopener">https://compressor.io/compress</a> &lt;- 단일 이미지 최적화에 좋은 사이트</li>
+<li><a href="https://optimizilla.com/" target="_blank" rel="noopener">https://optimizilla.com/</a> &lt;- 여러 이미지를 할 수 있지만(한꺼번에 20개) 위의 사이트보다는 못하지만 여러 파일을 한꺼번에 할 수 있는 사이트입니다.</li>
+<li><a href="http://www.iloveimg.com/" target="_blank" rel="noopener">http://www.iloveimg.com/</a> &lt;- 이미지 최적화는 그럭저럭 이지만 치수 변경이 좋아서 추천</li>
+</ul>
+<h5 id="약간-추천"><a href="#약간-추천" class="headerlink" title="약간 추천"></a>약간 추천</h5><ul>
+<li><a href="https://tinypng.com/" target="_blank" rel="noopener">https://tinypng.com/</a> &lt;- 여려 이미지를 할수있지만(한번에 20개) 위의 사이트보다 최척화가 작게 되더군요.</li>
+</ul>
+<hr>
+<p>이정도 까지만 있어도 되겠네요. 설명은 굳이 하지않아도 쉽게 사용할수 있습니다.<br>(위의 사이트들은 파일 몇개로 테스트했지만 각각의 사이트마다 프로그램이 달라 하나하나 사용해보시길 바랍니다.)</p>
+<p>저 같은 경우는 각각의 이미지를 1개씩 해서 인터넷에 올려서 씁니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="예-밑에것은-제가-삽질한-것을-적었습니다"><a href="#예-밑에것은-제가-삽질한-것을-적었습니다" class="headerlink" title="예) 밑에것은 제가 삽질한 것을 적었습니다."></a>예) 밑에것은 제가 삽질한 것을 적었습니다.</h3><p> <code>페이지 스피드 사이트</code> 에서 평가한 자료 스샷입니다.</p>
+<p><img src="https://i.imgur.com/HI45cuR.png" alt="이미지부분만 우선 해 봤습니다."></p>
+<p>스샷의 첫번째 부분에 <code>https://i.imgur.com/rnweVep.jpg을(를) 압축하면 495.1KB만큼 줄일 수 있습니다(76% 감소).</code>을 다운받아 우선 무슨사진인지 봅니다.  허 76% 감소라니…</p>
+<h5 id="1-compressor사이트에-넣고-최적화-합니다"><a href="#1-compressor사이트에-넣고-최적화-합니다" class="headerlink" title="1. compressor사이트에 넣고 최적화 합니다."></a>1. <code>compressor</code>사이트에 넣고 최적화 합니다.</h5><p><img src="https://i.imgur.com/Nwb6rFL.png" alt="80%를 줄였다고 하네요."><br><img src="https://i.imgur.com/Mj3WclA.png" alt=""><br>645KB에서 131KB로 줄인 것을 확인합니다. 하지만 사이즈가 1024x799라서 너무 크네요. 사이즈 줄이고 다시 최적화합니다.</p>
+<h5 id="2-사이즈를-줄이자"><a href="#2-사이즈를-줄이자" class="headerlink" title="2. 사이즈를 줄이자"></a>2. 사이즈를 줄이자</h5><p><a href="https://i.imgur.com/rnweVep.jpg" target="_blank" rel="noopener">https://i.imgur.com/rnweVep.jpg</a> 이미지는 1024x799로 수전 사이즈 부터 줄여 봅니다.<br> 그림판을 열어 사이즈를 줄입니다. 포토샵이나 다른 이미지툴이면 좋지만 없는 관계로…(귀찮기도 하구요.)<br><img src="https://i.imgur.com/k5JKfEJ.png" alt=""><br>그림판을 열어 파일을 불러오고 <code>크기조정</code> 에서 <code>기준(B)</code>을 <code>픽셀</code>로 넣고 가로를 1024 -&gt; 700으로 변경한 다음 다른이름으로 저장합니다. 그후 다시 <code>1번</code>의 사이트에서 이미지를 최적화 합니다.</p>
+<p><img src="https://i.imgur.com/9EOFe6D.png" alt="81%네요. 그런데 용량은 더 많아요. :("><br>그림판으로 수정하니 기존것 보다도 용량이 더 있네요. 그것을 <code>compressor</code>사이트에 넣고 최적화 합니다. 이럴때는 인터넷으로 사이즈를 줄입니다. 처음부터 이럴것을…</p>
+<h5 id="3-온라인으로-사이즈를-줄이자"><a href="#3-온라인으로-사이즈를-줄이자" class="headerlink" title="3. 온라인으로 사이즈를 줄이자."></a>3. 온라인으로 사이즈를 줄이자.</h5><p>기존의 원본 파일을 가져와 <a href="http://www.iloveimg.com/resize-image" target="_blank" rel="noopener">http://www.iloveimg.com/resize-image</a> 에서 사이즈를 줄입니다.<br><img src="https://i.imgur.com/9yIkNEx.png" class="inks_img"><br>Select Images를 눌러 기존의 원본 이미지를 클릭합니다.</p>
+<img src="https://i.imgur.com/xmn0L0A.png" class="inks_img">
+위의 이미지만 봐도 알수 있듯이 가로사이즈 1024에서 700으로 변경하고 이미지에서는 보이지 않지만 밑의 `RESIZE IMAGES` 라는 버튼을 클릭합니다.
+그후에 이미지를 다시 `1번`으로 가서 줄여봅니다.
+
+<p><img src="https://i.imgur.com/HYy3D2p.png" alt=""><br>이제야 줄인 용량 나왔네요.<br>스샷의 <code>rnweVep-iloveimg-resized-iloveimg-compressed.jpg</code> 은 iLoveIMG에서 압축 해 본 파일 입니다. 역시 <code>compressor</code> 가 제일 좋네요.</p>
+<h2 id="2-html-css-최적화"><a href="#2-html-css-최적화" class="headerlink" title="2. html/css 최적화"></a>2. html/css 최적화</h2><p>html파일이나 css파일의 공백과 중복 사용 역시 <code>페이지 스피드 사이트</code>에서 수정필요에 나옵니다. 말은 이렇지만 저는 <strong>이 방법을 권하지는 않습니다.</strong> 사용을 많이 않하는 수정할 필요가 없는 부분에서는 사용하시고 아니면 그냥 이미지만 줄이면 될것 같습니다.</p>
+<p>우선 설명을 위해 <code>페이지 스피드 사이트</code>의 스샷입니다.<br><img src="https://i.imgur.com/zbQwTRI.png" class="inks_img"></p>
+<p>수정할수 있는 부분을 표시한것입니다. 나머지는 최소화 했거나 수정한것이나 다른데서 링크된 것입니다. 우선 제가 아는 사이트 2개를 추천 합니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h4 id="추천-1"><a href="#추천-1" class="headerlink" title="추천"></a>추천</h4><ul>
+<li>HTML Compressor :<a href="http://htmlcompressor.com/compressor/" target="_blank" rel="noopener">http://htmlcompressor.com/compressor/</a><ul>
+<li><code>HTML</code> / <code>CSS</code>파일도 가능한 사이트입니다.</li>
+</ul>
+</li>
+<li>HTML Minifier : <a href="http://kangax.github.io/html-minifier/" target="_blank" rel="noopener">http://kangax.github.io/html-minifier/</a></li>
+</ul>
+<hr>
+<h2 id="예-제가-한-것을-적은-것입니다"><a href="#예-제가-한-것을-적은-것입니다" class="headerlink" title="예) 제가 한 것을 적은 것입니다."></a>예) 제가 한 것을 적은 것입니다.</h2><p>저는 html은 하지 않고 css파일 몇개만 했습니다.</p>
+<h4 id="CSS-용량을-줄이는-방법입니다"><a href="#CSS-용량을-줄이는-방법입니다" class="headerlink" title="CSS 용량을 줄이는 방법입니다."></a>CSS 용량을 줄이는 방법입니다.</h4><p>위의 사진에서 보듯이 <code>/libs/../style.css</code>파일 부분이 있습니다. 이 부분은 굳이 수정할 필요하 없는것이기 때문에 위의 추천 사이트에서 공백을 없애 보겠습니다.</p>
+<p>위의 파일은 3개정도인데 예로 1개남 해 봅니다.<br><code>source-code-pro/css/style.css</code>파일을 열어 모두 복사를 합니다. 그후 <code>htmlcompressor</code>사이트에 들어가서 붙여 넣기를 합니다.<br><img src="http://i.imgur.com/aeDLZUE.png" alt=""><br>그후<code>Code tyle</code>의 메뉴중에 <code>CSS</code>로 선택하고 밑의 버튼인 <code>Compress</code>을 눌러 실행합니다.</p>
+<ul>
+<li>줄일 CSS파일 열어 내용을 복사한다.</li>
+<li>HTML Compressor에 넣는다.</li>
+<li>Code tyle -&gt; CSS로 맞춘다.</li>
+<li>Compress을 눌러 최소화 한다.</li>
+</ul>
+<p><img src="http://i.imgur.com/7zrhJY4.png" alt=""><br>최소화를 된 부분을 <code>모두 선택(Selece All)</code>을 해서 복사를 하던가 <code>Here</code>를 눌러 다운로드 해도 된다.</p>
+<ul>
+<li>모두 선택(Selece All) 눌러 복사를 한다.</li>
+<li>줄일 파일을 열어 복사한 내용을 붙여넣기 한다.</li>
+</ul>
+<h4 id="HTML-용량을-줄이는-방법입니다"><a href="#HTML-용량을-줄이는-방법입니다" class="headerlink" title="HTML 용량을 줄이는 방법입니다."></a>HTML 용량을 줄이는 방법입니다.</h4><p>굳이 추천은 하지 않습니다. (나중을 위해…) 하신다면 위의 사이트에서 CSS대신 xhtml을 선택하고 순서데로 하시면 됩니다.</p>
+<h4 id="PS-꼭-원본-파일은-남겨-두시길-바랍니다"><a href="#PS-꼭-원본-파일은-남겨-두시길-바랍니다" class="headerlink" title="PS. 꼭 원본 파일은 남겨 두시길 바랍니다."></a>PS. 꼭 원본 파일은 남겨 두시길 바랍니다.</h4><p>이것은 굳이 이야기하지 않아도 알수 있을 것입니다.</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"># html</a>
+              <a href="/tags/css/" rel="tag"># css</a>
+              <a href="/tags/image/" rel="tag"># image</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/03/22/IT/high-end-gpus/" rel="prev" title="그래픽카드 확인 (순위/가성비/성능 비교)">
+      <i class="fa fa-chevron-left"></i> 그래픽카드 확인 (순위/가성비/성능 비교)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/04/19/story/watch-view/" rel="next" title="손목시계 차는 위치?">
+      손목시계 차는 위치? <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#웹사이트-website"><span class="nav-text">웹사이트 website</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#분석-결과-저의-사이트-분석-결과입니다"><span class="nav-text">분석 결과 저의 사이트 분석 결과입니다.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-이미지-최적화"><span class="nav-text">1. 이미지 최적화</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#추천"><span class="nav-text">추천</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#약간-추천"><span class="nav-text">약간 추천</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#예-밑에것은-제가-삽질한-것을-적었습니다"><span class="nav-text">예) 밑에것은 제가 삽질한 것을 적었습니다.</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-compressor사이트에-넣고-최적화-합니다"><span class="nav-text">1. compressor사이트에 넣고 최적화 합니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-사이즈를-줄이자"><span class="nav-text">2. 사이즈를 줄이자</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-온라인으로-사이즈를-줄이자"><span class="nav-text">3. 온라인으로 사이즈를 줄이자.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-html-css-최적화"><span class="nav-text">2. html&#x2F;css 최적화</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#추천-1"><span class="nav-text">추천</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#예-제가-한-것을-적은-것입니다"><span class="nav-text">예) 제가 한 것을 적은 것입니다.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-용량을-줄이는-방법입니다"><span class="nav-text">CSS 용량을 줄이는 방법입니다.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-용량을-줄이는-방법입니다"><span class="nav-text">HTML 용량을 줄이는 방법입니다.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PS-꼭-원본-파일은-남겨-두시길-바랍니다"><span class="nav-text">PS. 꼭 원본 파일은 남겨 두시길 바랍니다.</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/04/10/IT/site-optimization/",
+            identifier: "2017/04/10/IT/site-optimization/",
+            title: "기본적인 웹 사이트 최적화 방법"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

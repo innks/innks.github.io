@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="graphics card 그래픽카드그래픽 카드(graphics card, 문화어: 도형처리조종소자)는 이미지를 디스플레이 장치로 출력하는 컴퓨터 하드웨어의 부품이자 확장 카드이다. 비디오 카드(video card), 비디오 어댑터(video adapter), 디스플레이 카드(display card), 그래픽 보드(graphics board), 디스플레이 어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="그래픽카드 확인 (순위&#x2F;가성비&#x2F;성능 비교)">
+<meta property="og:url" content="https://innks.github.io/2017/03/22/IT/high-end-gpus/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="graphics card 그래픽카드그래픽 카드(graphics card, 문화어: 도형처리조종소자)는 이미지를 디스플레이 장치로 출력하는 컴퓨터 하드웨어의 부품이자 확장 카드이다. 비디오 카드(video card), 비디오 어댑터(video adapter), 디스플레이 카드(display card), 그래픽 보드(graphics board), 디스플레이 어">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/ZNzhBhf.jpg">
+<meta property="og:image" content="https://i.imgur.com/nnKEBae.gif">
+<meta property="og:image" content="https://i.imgur.com/D5JJvtx.png">
+<meta property="og:image" content="https://i.imgur.com/8rn5AXJ.png">
+<meta property="article:published_time" content="2017-03-22T02:13:25.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:33:14.463Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="그래픽">
+<meta property="article:tag" content="그래픽카드">
+<meta property="article:tag" content="graphics card">
+<meta property="article:tag" content="cpu-z">
+<meta property="article:tag" content="3dp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/ZNzhBhf.jpg">
+
+<link rel="canonical" href="https://innks.github.io/2017/03/22/IT/high-end-gpus/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>그래픽카드 확인 (순위/가성비/성능 비교) | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/03/22/IT/high-end-gpus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          그래픽카드 확인 (순위/가성비/성능 비교)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-03-22 11:13:25" itemprop="dateCreated datePublished" datetime="2017-03-22T11:13:25+09:00">2017-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:33:14" itemprop="dateModified" datetime="2017-12-06T00:33:14+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/03/22/IT/high-end-gpus/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/22/IT/high-end-gpus/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="graphics-card-그래픽카드"><a href="#graphics-card-그래픽카드" class="headerlink" title="graphics card 그래픽카드"></a>graphics card <small>그래픽카드</small></h3><p>그래픽 카드(graphics card, 문화어: 도형처리조종소자)는 이미지를 디스플레이 장치로 출력하는 컴퓨터 하드웨어의 부품이자 확장 카드이다. 비디오 카드(video card), 비디오 어댑터(video adapter), 디스플레이 카드(display card), 그래픽 보드(graphics board), 디스플레이 어댑터(display adapter), 그래픽 어댑터(graphics adapter)라고도 부른다. 대부분의 그래픽 카드는 3차원 화면과 2차원 그래픽스를 위한 가속 렌더링, MPEG-2/MPEG-4 디코딩, TV 출력, 다중 모니터 연결 등 다양한 기능을 제공한다. <a href="https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%98%ED%94%BD_%EC%B9%B4%EB%93%9C" target="_blank" rel="noopener">&lt;위키&gt;</a></p>
+<HR class=change_sm5>
+요즘 거의 컴퓨터성능을 생각하면 CUP/그래픽카드/메모리를 생각 많이 하는데요. 전 키보드랑 마우스도 좋아야 한다고 생각하지만, 아직 여러 지인의 물음에 그래픽 부분이 많이 물어보더군요. 사실 컴퓨터가 느려졌다고들 더 많이 물어보지만 결국에는 이쪽으로 물어보더군요. 그럴 때마다 인터넷 검색하고 찾고 그러기를 반복하니 슬슬 귀찮아지더군요. 그래서 이렇게 이곳에 링크 걸어봅니다.
+
+<h3 id="그래픽카드-순위-순위-가성비-성능-비교-바로보기"><a href="#그래픽카드-순위-순위-가성비-성능-비교-바로보기" class="headerlink" title="그래픽카드 순위 순위/가성비/성능 비교 바로보기"></a>그래픽카드 <small>순위 순위/가성비/성능 비교 바로보기</small></h3><HR class=change_sm6>
+[PassMark Software - PC Benchmark and Test Software](https://www.passmark.com/)
+
+<h4 id="High-End-Video-Card-Chart"><a href="#High-End-Video-Card-Chart" class="headerlink" title="High End Video Card Chart"></a>High End Video Card Chart</h4><HR class=change_sm6>
+빠른링크 : http://www.videocardbenchmark.net/high_end_gpus.html
+
+<h3 id="그래픽카드-순위보기-2017-03-22"><a href="#그래픽카드-순위보기-2017-03-22" class="headerlink" title="그래픽카드 순위보기 2017.03.22"></a>그래픽카드 순위보기 <small>2017.03.22</small></h3><DIV class=col-md-12><DIV class=row><DIV class="col-md-6 col-md-offset-3"><BUTTON class="btn btn-primary btn-sm btn-block" data-toggle="collapse" data-target="#graphicsText">2017.03.22 펼처보기(다소 시간 걸림)</BUTTON> </DIV></DIV></DIV>
+<DIV id=graphicsText class=collapse>![](https://i.imgur.com/bd7snY6.png)</DIV>
+<P>&nbsp;</P>
+
+<HR class=change_sm5>
+
+<h4 id="DxDiag-“DirectX-Diagnostics”-…-DirectX-진단도구"><a href="#DxDiag-“DirectX-Diagnostics”-…-DirectX-진단도구" class="headerlink" title="DxDiag (“DirectX Diagnostics”)… DirectX 진단도구 "></a><SPAN style="COLOR: #ff4031">DxDiag</SPAN> (“<SPAN style="COLOR: #ff4031">D</SPAN>irect<SPAN style="COLOR: #ff4031">X</SPAN> <SPAN style="COLOR: #ff4031">Diag</SPAN>nostics”)… <SMALL>DirectX 진단도구 </SMALL></h4><p>미국 마이크로소프트사가 윈도즈용으로 개발한 멀티미디어 응용 프로그램 인터페이스(API)의 집합. 2차원 및 3차원의 도형, 음성, 동화(動畵) 등 각종 미디어를 사용한 응용 프로그램이 하드웨어 장치를 직접 접속 (direct access)하여 고속으로 처리할 수 있도록 해 주는 API라는 의미에서 다이렉트 X라는 이름이 붙여졌다.</p>
+<P style="FONT-SIZE: 12px; FONT-FAMILY: Dotum; FONT-WEIGHT: normal; COLOR: black; PADDING-BOTTOM: 0px; FONT-STYLE: normal; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 11px 0px 7px; PADDING-RIGHT: 0px"><STRONG style="PADDING-RIGHT: 7px">[네이버 지식백과]</STRONG> <A href="http://terms.naver.com/entry.nhn?docId=844771" target="_blank" rel="noopener">다이렉트 X</A> [Direct X] (IT용어사전, 한국정보통신기술협회)</P>
+<HR class=change_sm5>
+##### windows 10
+
+<p>화면 하단에 검색 아이콘이나 검색란에 dxdiag를 입력하면 상단에 파일이 나옵니다. 또는 엔터를 누릅니다.</p>
+<h5 id="8-1-Windows-나-Windows-8"><a href="#8-1-Windows-나-Windows-8" class="headerlink" title="8.1 Windows 나 Windows 8"></a>8.1 Windows 나 Windows 8</h5><p>화면 오른쪽 가장자리부터 살짝 밀어 및 다음 검색을 누릅니다. (아래로 마우스 포인터를 이동 마우스를 사용 하는 경우 화면의 오른쪽 위 모서리를 가리킨 및 다음 검색을 누릅니다.) 검색 상자 및 다음을 누릅니다 dxdiag 종류 dxdiag.exe를 클릭 합니다.</p>
+<h5 id="Windows-7-또는-Windows-Vista"><a href="#Windows-7-또는-Windows-Vista" class="headerlink" title="Windows 7 또는 Windows Vista"></a>Windows 7 또는 Windows Vista</h5><p>시작 단추를 클릭 하 고 검색 상자에 dxdiag 를 입력 한 다음 Enter 키를 누릅니다.</p>
+<h5 id="Windows-XP"><a href="#Windows-XP" class="headerlink" title="Windows XP"></a>Windows XP</h5><p>시작 단추를 클릭 한 다음 실행을 클릭 합니다. 실행 상자에 dxdiag 를 입력 한 다음 Enter 키를 누릅니다.<br><P style="TEXT-ALIGN: center"><STRONG><SPAN style="COLOR: #000000">&lt;사용 예&gt;</span></strong></p><img src="https://i.imgur.com/ZNzhBhf.jpg" alt=""><br><HR class=change_sm5><br><img src="https://i.imgur.com/nnKEBae.gif" alt=""><br>위에 보이듯이 [DirectX 진단도구]에서 [디스플레이]에 들어가면 PC의 그래픽카드이름을 보여줍니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h4 id="CPU-Z-사용자의-컴퓨터-상태를-체크"><a href="#CPU-Z-사용자의-컴퓨터-상태를-체크" class="headerlink" title="CPU-Z 사용자의 컴퓨터 상태를 체크"></a>CPU-Z <small>사용자의 컴퓨터 상태를 체크</small></h4><div class="ink-grid ink-grid-divider"><div class="col-md-4">![](https://i.imgur.com/cyE3HKa.png)</div><div class="col-md-8">설치 시 약간의 손(각종 툴바등등) 좀 필요하지만 쉬운 인터페이스로 보기 쉽게 사용자의 컴퓨터상태를 보여주는 프로그램입니다. 32bit랑 64bit랑 구분하여 사용하시길 바랍니다.</div></div>
+
+<p>공식사이트 : <a href="http://www.cpuid.com/softwares/cpu-z.html" target="_blank" rel="noopener">http://www.cpuid.com/softwares/cpu-z.html</a><br>쉬운 다운로드 : <a href="http://software.naver.com/search.nhn?query=cpu-z" target="_blank" rel="noopener">http://software.naver.com/search.nhn?query=cpu-z</a></p>
+<p><img src="https://i.imgur.com/D5JJvtx.png" alt=""></p>
+<hr>
+<h4 id="3DP-드라이브-찿아주는-프로그램"><a href="#3DP-드라이브-찿아주는-프로그램" class="headerlink" title="3DP 드라이브 찿아주는 프로그램"></a>3DP <small>드라이브 찿아주는 프로그램</small></h4><div class="ink-grid ink-grid-divider"><div class="col-md-4">![](https://i.imgur.com/BqMMlSK.gif)</div><div class="col-md-8">설치 시 약간의 손(각종 툴바등등) 좀 필요하지만, 각종 설치된 하드웨어를 찾아주고 그에 해당하는 최신 드라이브를 찾아 설치파일 다운로드 할수 있는 유용한 프로그램입니다. 다소 처음 사용자가 사용하기에는 약간의 도움이 필요합니다.</div></div>
+
+<p>공식사이트 : <a href="http://www.3dp.co.kr/" target="_blank" rel="noopener">http://www.3dp.co.kr/</a><br>쉬운 다운로드 : <a href="http://software.naver.com/search.nhn?query=3dp" target="_blank" rel="noopener">http://software.naver.com/search.nhn?query=3dp</a></p>
+<p><img src="https://i.imgur.com/8rn5AXJ.png" alt=""></p>
+<hr>
+<div class="bs-callout bs-callout-info"> <h4>참고하세요!</h4>
+제가 포스트한 글도 있습니다. 읽을 꺼리는 없지만 다운로드 할수도 있습니다.
+[네게 필요한 프로그램 링크](https://innks.github.io/2016/03/21/Utilities-for-Windows/)
+</div>
+
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B7%B8%EB%9E%98%ED%94%BD/" rel="tag"># 그래픽</a>
+              <a href="/tags/%EA%B7%B8%EB%9E%98%ED%94%BD%EC%B9%B4%EB%93%9C/" rel="tag"># 그래픽카드</a>
+              <a href="/tags/graphics-card/" rel="tag"># graphics card</a>
+              <a href="/tags/cpu-z/" rel="tag"># cpu-z</a>
+              <a href="/tags/3dp/" rel="tag"># 3dp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/03/15/IT/EASEUS-Partition-Manager-10/" rel="prev" title="파티션매직(Partition Magic)을 대체할 EASEUS Partition Manager 10.0">
+      <i class="fa fa-chevron-left"></i> 파티션매직(Partition Magic)을 대체할 EASEUS Partition Manager 10.0
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/04/10/IT/site-optimization/" rel="next" title="기본적인 웹 사이트 최적화 방법">
+      기본적인 웹 사이트 최적화 방법 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#graphics-card-그래픽카드"><span class="nav-text">graphics card 그래픽카드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#그래픽카드-순위-순위-가성비-성능-비교-바로보기"><span class="nav-text">그래픽카드 순위 순위&#x2F;가성비&#x2F;성능 비교 바로보기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#High-End-Video-Card-Chart"><span class="nav-text">High End Video Card Chart</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#그래픽카드-순위보기-2017-03-22"><span class="nav-text">그래픽카드 순위보기 2017.03.22</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DxDiag-“DirectX-Diagnostics”-…-DirectX-진단도구"><span class="nav-text">DxDiag (“DirectX Diagnostics”)… DirectX 진단도구 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#8-1-Windows-나-Windows-8"><span class="nav-text">8.1 Windows 나 Windows 8</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Windows-7-또는-Windows-Vista"><span class="nav-text">Windows 7 또는 Windows Vista</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Windows-XP"><span class="nav-text">Windows XP</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU-Z-사용자의-컴퓨터-상태를-체크"><span class="nav-text">CPU-Z 사용자의 컴퓨터 상태를 체크</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3DP-드라이브-찿아주는-프로그램"><span class="nav-text">3DP 드라이브 찿아주는 프로그램</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text">참고하세요!</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/03/22/IT/high-end-gpus/",
+            identifier: "2017/03/22/IT/high-end-gpus/",
+            title: "그래픽카드 확인 (순위/가성비/성능 비교)"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

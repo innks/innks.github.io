@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="Windows 10에서 OneDrive를 완전히 제거하기위한 명령 줄 도구 OneDrive 원드라이브마이크로소프트의 클라우드 드라이브. 예전 이름은 SkyDrive였으며, 2014년 2월 19일 OneDrive로 이름이 바뀌었다. 원도우10을 사용하면 기본으로 설치되어 있습니다. 이것은 실시간으로 컴퓨터에 변화가 있을 때 실시간으로 싱크를 맞추게 됩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="원드라이브(OneDrive) 삭제">
+<meta property="og:url" content="https://innks.github.io/2016/12/23/IT/onedrive-uninstaller/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="Windows 10에서 OneDrive를 완전히 제거하기위한 명령 줄 도구 OneDrive 원드라이브마이크로소프트의 클라우드 드라이브. 예전 이름은 SkyDrive였으며, 2014년 2월 19일 OneDrive로 이름이 바뀌었다. 원도우10을 사용하면 기본으로 설치되어 있습니다. 이것은 실시간으로 컴퓨터에 변화가 있을 때 실시간으로 싱크를 맞추게 됩">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img.shields.io/badge/windows-10.0.14393-blue.svg">
+<meta property="og:image" content="https://img.shields.io/badge/onedrive--uninstaller-1.0.0-cb3837.svg">
+<meta property="og:image" content="https://i.imgur.com/rRlBsWP.png">
+<meta property="og:image" content="https://i.imgur.com/CHAsj4Q.png">
+<meta property="og:image" content="https://i.imgur.com/Ggd9YQh.png">
+<meta property="og:image" content="https://i.imgur.com/ipkgIJq.png">
+<meta property="og:image" content="https://i.imgur.com/GiowMX8.png">
+<meta property="og:image" content="https://i.imgur.com/lc1mVhG.png">
+<meta property="og:image" content="https://i.imgur.com/XWPk8Nn.png">
+<meta property="og:image" content="https://i.imgur.com/2C7sF3r.png">
+<meta property="article:published_time" content="2016-12-23T11:17:13.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:33:54.261Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="windows10">
+<meta property="article:tag" content="OneDrive">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.shields.io/badge/windows-10.0.14393-blue.svg">
+
+<link rel="canonical" href="https://innks.github.io/2016/12/23/IT/onedrive-uninstaller/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>원드라이브(OneDrive) 삭제 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/12/23/IT/onedrive-uninstaller/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          원드라이브(OneDrive) 삭제
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-12-23 20:17:13" itemprop="dateCreated datePublished" datetime="2016-12-23T20:17:13+09:00">2016-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:33:54" itemprop="dateModified" datetime="2017-12-06T00:33:54+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Util-Plugin/" itemprop="url" rel="index">
+                    <span itemprop="name">Util / Plugin</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/12/23/IT/onedrive-uninstaller/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/23/IT/onedrive-uninstaller/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="img-reset">
+<img src="https://img.shields.io/badge/windows-10.0.14393-blue.svg"> <img src="https://img.shields.io/badge/onedrive--uninstaller-1.0.0-cb3837.svg"></div>
+
+<p>Windows 10에서 OneDrive를 완전히 제거하기위한 명령 줄 도구</p>
+<h2 id="OneDrive-원드라이브"><a href="#OneDrive-원드라이브" class="headerlink" title="OneDrive 원드라이브"></a>OneDrive <small>원드라이브</small></h2><p>마이크로소프트의 클라우드 드라이브. 예전 이름은 SkyDrive였으며, 2014년 2월 19일 OneDrive로 이름이 바뀌었다. 원도우10을 사용하면 기본으로 설치되어 있습니다. 이것은 실시간으로 컴퓨터에 변화가 있을 때 실시간으로 싱크를 맞추게 됩니다.</p>
+<p>원도우 10에서는 기본 제공하는 서비스지만 용량이 5GB로 개인 문서나 기본 파일들을 올리기에는 괜찮은것 같으나 저처럼 대용량의 파일을 하드에 저장하고 사용하는 사람으로서는 원드라이브는 그리 좋은 클라우드는 아니라서 또는 잘못 클릭하여 로그인창이 나타나거나 하면 궈찮기도 해서 이번에 깔끔하게 삭제하는 방법을 적으려고 합니다. 인터넷에 떠도는 글을 수집하고 나름 간단하고 쉬운 방법을 적으려고 합니다.</p>
+<hr class="sm5">
+
+<h2 id="삭제하기"><a href="#삭제하기" class="headerlink" title="삭제하기"></a>삭제하기</h2><p>귀찮게 말을 많이 하지 않고 바로 밑의 파일을 받아 <code>실행</code>만 하시면 됩니다. 설명이 필요하신 분들은 밑의 글을 읽어 보시길 바랍니다.</p>
+<div class="col-md-6 col-md-offset-3" style="margin-top: 15px; letter-spacing: 1px;"><button onclick="location.replace('onedrive-uninstaller-master.zip');" onfocus="this.blur()" class="btn btn-gray btn-block"><strong>OneDrive-Uninstaller v1.0</strong></button></div>
+<div class="clear"></div><br>
+
+<h3 id="원도우10에서-원드라이브-삭제"><a href="#원도우10에서-원드라이브-삭제" class="headerlink" title="원도우10에서 원드라이브 삭제"></a>원도우10에서 원드라이브 삭제</h3><p><img src="https://i.imgur.com/rRlBsWP.png" alt=""></p>
+<p>대다수 블로거는 CMD창을 이용해서 삭제한다거나 로컬 그룹 정책 편집기를 이용해서 사용방지를 선택해서 하더군요. 물론 저처럼 <code>Uninstaller</code>를 선택해서 삭제도 합니다. 그중 쉬운 부분을 소개 하려고 합니다.</p>
+<p>마침 해외에서 이 부분을 쉽게 할 수 있게 미리 머리 좋으신 분들이 만들었더군요. 위에 다운이나 설명하듯이 조금더 버전 향상된 파일을 받기 원하시면 밑의 링크로 가셔서 다운하시면 됩니다.</p>
+<center><strong>[원도우10 원드라이브 언인스톨러 CMD 파일 다운로드 하러 가기](https://github.com/tomchappelow/onedrive-uninstaller)</strong></center>
+
+<p><img src="https://i.imgur.com/CHAsj4Q.png" alt=""></p>
+<p>다운 받은 파일을 압축 해제하면 <code>onedrive-uninstaller-master</code> 라는 폴더에서 2개가 나옵니다.</p>
+<p><img src="https://i.imgur.com/Ggd9YQh.png" alt=""></p>
+<p>그중 OneDrive-Uninstaller.cmd라는 파일을 실행(OR 관리자 권한으로 실행)하시면 됩니다.</p>
+<p><img src="https://i.imgur.com/ipkgIJq.png" alt=""></p>
+<p>그후 1~3분 정도 기다리시면 원도우 10에서 원드라이브가 깔끔하게 제거됩니다.</p>
+<p><img src="https://i.imgur.com/GiowMX8.png" alt=""></p>
+<p>탐색기를 열어 보시면 원도우면 OneDrive가 없어진 것을 볼수 있습니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="참고-OneDrive설치"><a href="#참고-OneDrive설치" class="headerlink" title="참고 - OneDrive설치"></a>참고 - OneDrive설치</h3><p>원도우10에서 OneDrive를 삭제하더라도 다시 설치 하려고 사이트 가면 원도우10이 설치되어 있다고만 나와서 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">OneDrive시작</span> 만 됩니다.</p>
+<center><strong>[OneDrive 클라이언트 파일 다운 하러가기](https://onedrive.live.com/about/ko-kr/download/)</strong></center>
+
+<p><img src="https://i.imgur.com/lc1mVhG.png" alt=""></p>
+<p>이때 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">다른 장치가 있습니다.</span> 를 클릭하여</p>
+<p><img src="https://i.imgur.com/XWPk8Nn.png" alt=""></p>
+<p>원도우 10이 아닌 다른 운영체제를 선택하시면 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">다운로드</span>가 됩니다.</p>
+<p><img src="https://i.imgur.com/2C7sF3r.png" alt=""></p>
+<p>위의그림은원도우7을 선택한 화면입니다. <code>다운로드</code>를 클릭하시면 <code>재설치</code>가 됩니다.</p>
+<p>이상 원도우10에서 원드라이브 삭제를 원하시는 분들에게 도움이 되었으면 합니다.</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows10/" rel="tag"># windows10</a>
+              <a href="/tags/OneDrive/" rel="tag"># OneDrive</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/09/03/IT/IP-address/" rel="prev" title="원도우에서 내 IP주소 확인">
+      <i class="fa fa-chevron-left"></i> 원도우에서 내 IP주소 확인
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/11/IT/hyperlink/" rel="next" title="개인적인 유용한 링크">
+      개인적인 유용한 링크 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OneDrive-원드라이브"><span class="nav-text">OneDrive 원드라이브</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#삭제하기"><span class="nav-text">삭제하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#원도우10에서-원드라이브-삭제"><span class="nav-text">원도우10에서 원드라이브 삭제</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#참고-OneDrive설치"><span class="nav-text">참고 - OneDrive설치</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2016/12/23/IT/onedrive-uninstaller/",
+            identifier: "2016/12/23/IT/onedrive-uninstaller/",
+            title: "원드라이브(OneDrive) 삭제"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

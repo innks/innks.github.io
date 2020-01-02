@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="알아두면 편리한 기본 웹페이지 작성 요령입니다.  처음 무슨 말을 해야 할까 고민하다가 이렇게 제목을 정하고 글을 적어 봅니다. 기본적으로 알아야 할 것들과 제가 경험한 요령 정도 등을 이번에 적으려고 합니다. 전 누구를 가르치는 능력이 없습니다. 이 글도 저를 위해 메모용으로 작성한 것이지 제가 많이 알고 있다고 생각은 없습니다. 이점 참고해 주시면 감사">
+<meta property="og:type" content="article">
+<meta property="og:title" content="기본 반응형 웹 페이지 작성 요령">
+<meta property="og:url" content="https://innks.github.io/2017/11/28/css/web-page/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="알아두면 편리한 기본 웹페이지 작성 요령입니다.  처음 무슨 말을 해야 할까 고민하다가 이렇게 제목을 정하고 글을 적어 봅니다. 기본적으로 알아야 할 것들과 제가 경험한 요령 정도 등을 이번에 적으려고 합니다. 전 누구를 가르치는 능력이 없습니다. 이 글도 저를 위해 메모용으로 작성한 것이지 제가 많이 알고 있다고 생각은 없습니다. 이점 참고해 주시면 감사">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/MM0wSO2.gif">
+<meta property="og:image" content="https://innks.github.io/images/FbXEYIx.gif">
+<meta property="article:published_time" content="2017-11-28T11:18:55.000Z">
+<meta property="article:modified_time" content="2019-05-01T22:50:45.343Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Css">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/MM0wSO2.gif">
+
+<link rel="canonical" href="https://innks.github.io/2017/11/28/css/web-page/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>기본 반응형 웹 페이지 작성 요령 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/11/28/css/web-page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          기본 반응형 웹 페이지 작성 요령
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-11-28 20:18:55" itemprop="dateCreated datePublished" datetime="2017-11-28T20:18:55+09:00">2017-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 07:50:45" itemprop="dateModified" datetime="2019-05-02T07:50:45+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/11/28/css/web-page/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/28/css/web-page/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p class=load>알아두면 편리한 기본 웹페이지 작성 요령입니다.</p>
+
+<p>처음 무슨 말을 해야 할까 고민하다가 이렇게 제목을 정하고 글을 적어 봅니다. 기본적으로 알아야 할 것들과 제가 경험한 요령 정도 등을 이번에 적으려고 합니다. 전 누구를 가르치는 능력이 없습니다. 이 글도 저를 위해 메모용으로 작성한 것이지 제가 많이 알고 있다고 생각은 없습니다. 이점 참고해 주시면 감사하겠습니다.<br>우선 반응형 웹을 적어 봅니다.</p>
+<h1 id="반응형-웹-디자인-Responsive-Web-Design"><a href="#반응형-웹-디자인-Responsive-Web-Design" class="headerlink" title="반응형 웹 디자인 Responsive Web Design"></a>반응형 웹 디자인 <small>Responsive Web Design</small></h1><hr>
+<h2 id="반응형-웹"><a href="#반응형-웹" class="headerlink" title="반응형 웹"></a>반응형 웹</h2><p>요즘은 반응형 웹페이지라고 많이들 만들고 또는 사용하시는데요. 반응형이란 여러 장치의 다양한 특성에 대응하는 하나의 웹 문서 또는 사이트라고 합니다. 이때 html은 하나지만 CSS,Js는 여러 개라도 반응형이라고 합니다.</p>
+<div class="wellTip">즉, naver.com과 m.naver.com이 있는 사이트는 반응형이 아니죠.</div>
+
+<hr>
+<h2 id="반응형-웹-고려사항"><a href="#반응형-웹-고려사항" class="headerlink" title="반응형 웹 고려사항"></a>반응형 웹 고려사항</h2><p>여러 사이트들이 고려사항에 대해 적은것이 많습니다. 간추리면</p>
+<ul>
+<li>데스크탑은 <span class=WWsC>&nbsp;5초&nbsp;</span></li>
+<li>모바일은 <span class=WWsC>&nbsp;6초&nbsp;</span></li>
+</ul>
+<p>간단하게 말하면 빨리 로딩할수 있게 하라는 것입니다. 나머지는 노력하에 있는 것이고요. 또다른 것은</p>
+<ol>
+<li>여러개의 컬럼을 해상도에 따라 어떻게 배치할 것인가?</li>
+<li>내비게이션을 작은 화면에서 어떻게 처리할 것인가?</li>
+<li>이미지 해상도를 작게 줄여도 괜찮은가?</li>
+</ol>
+<ul>
+<li><p>낡은 모바일 브라우저 문제 해결</p>
+</li>
+<li><p>IE 6~8 버전 브라우저 문제 해결</p>
+</li>
+<li><p>CSS/Js 속도 개선</p>
+</li>
+<li><p>웹폰트 사용 여부</p>
+</li>
+<li><p>이미지를 얼마나 어떻게 쓸것인가</p>
+</li>
+<li><p>HTML5 Semantics</p>
+</li>
+<li><p>IE6~8 에서도 CSS3 사용</p>
+</li>
+</ul>
+<p>위의 예시보다 더 많이 있을 것입니다. 위의 예시를 바탕으로 해서 빨리 로딩되도록 하는 것이 좋은 반응형 웹이 아닌가 싶네요.</p>
+<p>이중에 몇가지는 여기서 적을 것입니다. 나머지는 차차 적을 려고 합니다.</p>
+<hr>
+<h2 id="낡은-모바일-브라우저-문제-해결-모바일-퍼스트"><a href="#낡은-모바일-브라우저-문제-해결-모바일-퍼스트" class="headerlink" title="낡은 모바일 브라우저 문제 해결 - 모바일 퍼스트"></a>낡은 모바일 브라우저 문제 해결 - 모바일 퍼스트</h2><p>여러 버전의 모바일이 있습니다. 이 브라우저가 각각의 같은 기능이 있는 것이 아닙니다. 이때 이 문제를 해결하는 방법은 모바일 우선 코드를 잡는 것입니다. 이러면 모바일 우선 처리가 먼저고 나중에 같은 코드를 덮어 버리기 때문에 모바일 코드를 먼저 잡으면 됩니다. 즉 media 지원하지 않는 모바일은 앞에 것만 해석합니다. 모바일  장치가 아닌 것은 뒤에 것이 앞에 것을 덮으므로 뒤에 것을 해석합니다.</p>
+<div class="wellTip">즉, 먼저 AAA라는 클래스를 선언하고 뒤에 AAA라는 클래스를 적으면 그 내용이 같은 코드면 뒤에 것이 앞에 것을 덮습니다.</div>
+
+<ul>
+<li>더 자세히 아시겠다면 <a href="/2017/05/28/css/CSS-Selector-ranking/">CSS 선택자(Selector) 우선순위</a>이 글을 읽어 보시면 됩니다.</li>
+</ul>
+<figure class="highlight css"><figcaption><span>css파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 모바일용 CSS 코드를 여기에 작성 */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> all <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">768px</span>) &#123; <span class="comment">/* 768px 보다 크면 적용 */</span></span><br><span class="line">    <span class="comment">/* 모바일용이 아닌 CSS 코드를 여기에 작성 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="IE-6-8-버전-브라우저-문제-해결"><a href="#IE-6-8-버전-브라우저-문제-해결" class="headerlink" title="IE 6~8 버전 브라우저 문제 해결"></a>IE 6~8 버전 브라우저 문제 해결</h2><p>요즘에 이것을 사용하는 분들도 있나 싶지만 우선은 기본이니 적어 봅니다. IE6~8은 미디어쿼리를 사용 못하니 이것을 사용할려면 몇줄 html페이지에 기입하시면 됩니다.</p>
+<figure class="highlight html"><figcaption><span>html파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>respond.min.js 내려받기: <a href="https://github.com/scottjehl/Respond/downloads" target="_blank" rel="noopener">https://github.com/scottjehl/Respond/downloads</a><br>CDN : <a href="https://cdnjs.com/libraries/respond.js/" target="_blank" rel="noopener">https://cdnjs.com/libraries/respond.js/</a></li>
+</ul>
+<p>Internet Explorer 브라우저만 해석할 수 있는 조건부 주석을 사용했기 때문에 다른 표준 브라우저들은 이 코드를 무시하고 JS 파일을 요청하지 않습니다. 조건부 주석에서 [if lt IE 9]의 의미는 ‘[if less than IE 9]’입니다.</p>
+<div class="wellTip">즉, Internet Exploer 9 미만의 브라우저에서만 해석하라는 의미입니다.</div><div class="wellTip"><p class="load">위의 것을 사용해서 IE6~8 에 적용할 경우 CSS주의사항</p>미디어쿼리 작성시 all and 키워드를 생략하면 동작하지 않음.
+@media all and (조건문){실행문}</div>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<hr>
+<h2 id="CSS-Js-속도-개선"><a href="#CSS-Js-속도-개선" class="headerlink" title="CSS/Js 속도 개선"></a>CSS/Js 속도 개선</h2><p>Css/Js파일은 병합, 여백 지우기, 중복검사하기 등의 여러가지 방법이 있다.</p>
+<h3 id="1-병합-HTTP-요청-줄이기"><a href="#1-병합-HTTP-요청-줄이기" class="headerlink" title="1. 병합 (HTTP 요청 줄이기)"></a>1. 병합 (HTTP 요청 줄이기)</h3><p>여러개의 파일을 하나나 몇개의  파일로 병합하는 방법입니다.</p>
+<figure class="highlight css"><figcaption><span>css파일참고</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span><span class="selector-class">.css</span></span><br><span class="line"><span class="selector-tag">layout</span><span class="selector-class">.css</span>                <span class="selector-tag">body</span><span class="selector-class">.css</span></span><br><span class="line"><span class="selector-tag">sidebar</span><span class="selector-class">.css</span>       <span class="selector-tag">-</span>&gt;      <span class="selector-tag">etc</span><span class="selector-class">.css</span></span><br><span class="line"><span class="selector-tag">footer</span><span class="selector-class">.css</span></span><br><span class="line"><span class="selector-tag">etc</span><span class="selector-class">.css</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-여백지우기-CSS-소스-압축"><a href="#2-여백지우기-CSS-소스-압축" class="headerlink" title="2. 여백지우기 (CSS 소스 압축)"></a>2. 여백지우기 (CSS 소스 압축)</h3><p>CSS 소스 압축하기라면 여러 사이트에 있습니다. 물론 헤제사이트 들도 있고요. 조금이라도 로딩 속도를 줄이기 위함이지만 수정할려면 조금 번거롭다는 것이 약간 있습니다.</p>
+<p>CSS/Js/Html 소스 압축하기 : <a href="http://refresh-sf.com/" target="_blank" rel="noopener">http://refresh-sf.com/</a><br>CSS 소스 압축 해제하기 : <a href="http://unminify.com/" target="_blank" rel="noopener">http://unminify.com/</a></p>
+<h3 id="3-중복검사하기-CSS-소스-압축"><a href="#3-중복검사하기-CSS-소스-압축" class="headerlink" title="3. 중복검사하기 (CSS 소스 압축)"></a>3. 중복검사하기 (CSS 소스 압축)</h3><p>css소스 압축의 다른 의미로 압축 하기 입니다. 말 그대로 매번 테스트를 하면서 중복되고 없어도 되는 부분을 찾아 지우는 것입니다. 상위 부분을 이여받고 하위부분의 중복을 지우는 과정은 처음부터 잘 계획을 잡고 해야 하는 부분입니다. 아니면 수작업으로 찾아 지울수 밖에 없는 것이라 많은 에너지놔 시간을 소비합니다.</p>
+<h3 id="4-JS-파일-지연-로딩"><a href="#4-JS-파일-지연-로딩" class="headerlink" title="4. JS 파일 지연 로딩"></a>4. JS 파일 지연 로딩</h3><p>웹에서 파일을 로딩할때 1행부터 순서대로 해석하면서 즉시 화면에 출력하는 특성이 있습니다. 그러나 js파일이 먹통이거나 오래 로딩 된다면 또는 중간에 로딩이 있다면 이때까지 출력하다가 멈추는 현상이 발생 할수 있습니다. 그래서 되도록이면 Js파일은 하단에 배치해 주세요.</p>
+<figure class="highlight html"><figcaption><span>html파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//youhomepage.com/js/script.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>가 아닌</p>
+<figure class="highlight html"><figcaption><span>html파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//youhomepage.com/js/script.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>에 배치해 주세요.</p>
+<hr>
+<h2 id="웹폰트-사용-여부"><a href="#웹폰트-사용-여부" class="headerlink" title="웹폰트 사용 여부"></a>웹폰트 사용 여부</h2><p>우리나라처럼 인터넷 속도가 좋고 어디서나 질좋은 인터넷을 받을수 있다면 이글 또한 필요 없는 것이겠죠. 이번에는 웹폰트로 웹 페이지가 멋지게 보일수 있지만 인터넷에서 폰트를 다운로드 한다는 것을 기억하세요.<br>기본글꼴을 사용하면 되지만 역시 웹폰트를 버릴수 없다면 데스크탑은 사용하고 모바일은 기본으로 사용은 어떨지 생각해 봅니다. 그러게하면 조금더 로딩시간을 줄일수 있지 않을까 싶네요.</p>
+<figure class="highlight css"><figcaption><span>css파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 모든 해상도 공용 글꼴 - 시스템 글꼴만 선언 */</span></span><br><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">section</span>, <span class="selector-tag">article</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">footer</span> &#123;  </span><br><span class="line">    <span class="attribute">font-family</span>: 나눔고딕, NanumGothic, Tahoma, Sans-serif;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 태블릿 PC와 데스크탑용 글꼴 - 시스템 글꼴 다음으로 웹 폰트를 참조하도록 선언 */</span></span><br><span class="line"><span class="keyword">@media</span> all <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="keyword">@font-face</span>&#123;<span class="attribute">font-family</span>:nGothic; <span class="attribute">src</span>:<span class="built_in">url</span>(NanumGothic.eot); <span class="attribute">src</span>:<span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">url</span>(NanumGothic.woff) <span class="built_in">format</span>(<span class="string">'woff'</span>);&#125;</span><br><span class="line">    <span class="selector-tag">body</span>, <span class="selector-tag">section</span>, <span class="selector-tag">article</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">footer</span> &#123;<span class="attribute">font-family</span>:나눔고딕,NanumGothic,nGothic,Tahoma,Sans-serif&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class=wellTip><p class="load">참고로</p>IE 9은 @media 규칙 내부에 @font-face 허용 안함</div>
+
+<figure class="highlight css"><figcaption><span>css파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 모든 해상도 공용 글꼴 - 시스템 글꼴만 선언 */</span></span><br><span class="line"><span class="keyword">@font-face</span>&#123;<span class="attribute">font-family</span>:nGothic; <span class="attribute">src</span>:<span class="built_in">url</span>(NanumGothic.eot); <span class="attribute">src</span>:<span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">url</span>(NanumGothic.woff) <span class="built_in">format</span>(<span class="string">'woff'</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 태블릿 PC와 데스크탑용 글꼴 - 시스템 글꼴 다음으로 웹 폰트를 참조하도록 선언 */</span></span><br><span class="line"><span class="keyword">@media</span> all <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) &#123;    </span><br><span class="line">    <span class="selector-tag">body</span>, <span class="selector-tag">section</span>, <span class="selector-tag">article</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">footer</span> &#123;<span class="attribute">font-family</span>:나눔고딕,NanumGothic,nGothic,Tahoma,Sans-serif&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@media</code> 밖에 글꼴 선언하면 됩니다.</p>
+<hr>
+<h2 id="HTML5-Semantics"><a href="#HTML5-Semantics" class="headerlink" title="HTML5 Semantics"></a>HTML5 Semantics</h2><div class=wellTip><p class="load">HTML5 Semantics</p><ul><li>**header** : 사이트 제목, 또는 본문 헤더.</li><li>**section** : 하나의 주제로 구성된 콘텐츠 또는 애플리케이션 블럭.</li><li>**article** : 본문 콘텐츠로서 주변과 분리해도 하나의 완전한 콘텐츠가 되는 영역.</li><li>**nav** : 내비게이션 링크 그룹.</li><li>**menu** : 애플리케이션 조작을 위한 버튼 그룹.</li><li>**aside** : 주요한 내용이 아닌 부가적인 콘텐츠.</li><li>**footer** : 사이트 풋터, 또는 본문 풋터.</li></ul></div>
+
+<p>홈페이지 :<a href="https://github.com/afarkas/html5shiv" target="_blank" rel="noopener">https://github.com/afarkas/html5shiv</a><br>CDN : <a href="https://cdnjs.com/libraries/html5shiv" target="_blank" rel="noopener">https://cdnjs.com/libraries/html5shiv</a></p>
+<p>단, IE 6~8 HTML5 지원 안 합니다. 그래서 아래의 코드를 입력하면 됩니다.</p>
+<figure class="highlight html"><figcaption><span>html파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><figcaption><span>css파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">header</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">section</span>,<span class="selector-tag">article</span>,<span class="selector-tag">aside</span>,<span class="selector-tag">nav</span>,<span class="selector-tag">hgroup</span>,<span class="selector-tag">details</span>,<span class="selector-tag">menu</span>,<span class="selector-tag">figure</span>,<span class="selector-tag">figcaption</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>:block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이부분은 둘다 적으셔야 합니다. 그렇지 않으면 IE에서 이상하게 보일수 있습니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<hr>
+<h2 id="IE6-8-에서도-CSS3-사용"><a href="#IE6-8-에서도-CSS3-사용" class="headerlink" title="IE6~8 에서도 CSS3 사용"></a>IE6~8 에서도 CSS3 사용</h2><h3 id="IE7-js"><a href="#IE7-js" class="headerlink" title="IE7-js"></a>IE7-js</h3><p> IE6, IE7, IE8이 제대로 알아듣지 못하는 CSS도 사용가능하게 해줍니다.<br>  예) :hover, :first-child, :last-child, min-height, max-width, position: fixed, margin:0 auto, opacity (투명도) 등<br>  홈페이지 : <a href="http://code.google.com/p/ie7-js/" target="_blank" rel="noopener">http://code.google.com/p/ie7-js/</a></p>
+<p>현재 버전 : 2.1 beta4 (몇년째 않되는것으로 봐서는 더이상은 업데이트가 없는것 같습니다.)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 7]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 8]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>IE9.js를 사용하는 경우 IE7 / IE8.js를 포함 할 필요가 없습니다.</p>
+<p>IE6 PNG 투명화 문제 해결은 생략 합니다. IE6사용자가 있을까 싶네요.</p>
+<h3 id="Selectivizr소개"><a href="#Selectivizr소개" class="headerlink" title="Selectivizr소개"></a>Selectivizr소개</h3><p>몇가지 규칙만 따르면 이쪽이 훨식 사용하기 편리할것 같습니다.  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span> /&gt;</span>   <span class="comment">&lt;!-- 선처리 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"[JS library]"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--[if (gte IE 6)&amp;(lte IE 8)]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script type="text/javascript" src="selectivizr.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;noscript&gt;&lt;link rel="stylesheet" href="[fallback css]" /&gt;&lt;/noscript&gt;</span></span><br><span class="line"><span class="comment">  &lt;![endif]--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>여기서 주의해야 할 점은 CSS 파일 링크는 반드시 맨 앞에 나열되어야 합니다. 즉 Css먼저 와야 합니다.</p>
+<hr>
+<h2 id="이미지를-얼마나-어떻게-쓸것인가"><a href="#이미지를-얼마나-어떻게-쓸것인가" class="headerlink" title="이미지를 얼마나 어떻게 쓸것인가"></a>이미지를 얼마나 어떻게 쓸것인가</h2><p>이미지는 가급적이면 많이 사용하는것이 좋지 않습니다.(로딩 면에서…) 그렇다고 안쓰기도 힘드니 각각의 이미지로 불러 쓰는것 보다는 모아서 한장으로 만들어 쪼개서(?) 사용하면 더 좋습니다. 밑의 간단한 사용법을 적어 봅니다. 일단 모바일의 폭에 맞추어 비율 유지되는 이미지 css입니다.</p>
+<figure class="highlight css"><figcaption><span>css소스 이미지 비율 유지</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>나머지 썸네일이나 이미지 자르기 부분은 이주소로 이동후 설명을 읽어 보기 바랍니다. <a href="http://webdir.tistory.com/487" target="_blank" rel="noopener">http://webdir.tistory.com/487</a></p>
+<h3 id="가상-배경-자르기"><a href="#가상-배경-자르기" class="headerlink" title="가상 배경 자르기"></a>가상 배경 자르기</h3><p>본격적으로 <code>background-position</code> 문을 사용하여 합처진 이미지를 정해진 부분만 보여지게 하는 것입니다. 밑의 그림설명 처럼 보여지는 것입니다.</p>
+<style>
+.weather_layer {width: 240px; border: 1px solid #888;font-family:맑은 고딕;}
+.weather_part {position: relative;  height: 115px;}
+.txt_place {  height: 20px;  margin: 17px 0 0 22px;  font-weight: bold;   font-size: 13px;  line-height: 19px;}
+.ico_wm01 {  background-position: -180px 0;}
+.ico_wm { float: left; width: 56px; height: 56px;  margin: 7px 0 0 22px;}
+.ico_wm { background-image: url(https://innks.github.io/asset/img_weather_17.png);    background-repeat: no-repeat;  font-size: 0;  line-height: 0;    text-indent: -9999px;}
+.info_temper { /* overflow: hidden; */  height: 38px;  margin: -38px 0 0 14px;font-size:32px; float: left; font-weight: bold;}
+.state_desc { overflow: hidden;  margin: -7px 0 0 90px;  line-height: 16px;font-size:13px;}
+</style>
+
+<p><img src="/images/MM0wSO2.gif" alt=""><br><img src="/images/FbXEYIx.gif" alt=""><br>위의 그림으로 설명이 될 것인지 모르겠지만 <code>-</code>부호가 붙는 것은 이미지를 왼쪽으로 당겨서 표시되는 영역을 지정하는 것 입니다.</p>
+<div class="weather_layer"><div class="weather_part"><div class="txt_place">대한민국, 대구</div><div class="ico_wm ico_wm01">눈</div><br><div class="info_temper">4 ºC</div><br><div class="state_desc">어제보다 4ºC 높음.</div></div></div>
+
+<figure class="highlight css"><figcaption><span>css소스</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.a</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">56px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">56px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.a</span>&#123;</span><br><span class="line">  <span class="attribute">background-position</span>: -<span class="number">180px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h2><p>정말 두서없이 쓴 글입니다. 부끄럽네요. 잘 알지도 못하면서 … 이글 적으면서 많은 부분을 배웁니다. 쓰다 보니 이글이 제가 알고 있는 것이 정답일까 싶기도 하고 지금까지 만들면서 얼마나 주먹구구식으로 만들었는지 알게 되는 것 같습니다. 지금도 별반 다를것이 없지만….</p>
+<p>수정할 것이나 틀린 부분 있으면 댓글 부탁합니다.</p>
+<h3 id="참조-문건"><a href="#참조-문건" class="headerlink" title="참조 문건"></a>참조 문건</h3><ul>
+<li><a href="http://blog.froont.com/9-basic-principles-of-responsive-web-design/" target="_blank" rel="noopener">9 basic principles of responsive web design</a></li>
+<li><a href="http://nicolasgallagher.com/css-background-image-hacks/" target="_blank" rel="noopener">CSS background image hacks</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Css/" rel="tag"># Css</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/11/27/IT/cmd/" rel="prev" title="원하는 폴더에서 명령 프롬프트(cmd) 창 실행">
+      <i class="fa fa-chevron-left"></i> 원하는 폴더에서 명령 프롬프트(cmd) 창 실행
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/11/29/NAVIEN-Error-List/" rel="next" title="경동나비엔 콘덴싱 가스보일러 에러코드 및 응급조치 방법">
+      경동나비엔 콘덴싱 가스보일러 에러코드 및 응급조치 방법 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#반응형-웹-디자인-Responsive-Web-Design"><span class="nav-text">반응형 웹 디자인 Responsive Web Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#반응형-웹"><span class="nav-text">반응형 웹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#반응형-웹-고려사항"><span class="nav-text">반응형 웹 고려사항</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#낡은-모바일-브라우저-문제-해결-모바일-퍼스트"><span class="nav-text">낡은 모바일 브라우저 문제 해결 - 모바일 퍼스트</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE-6-8-버전-브라우저-문제-해결"><span class="nav-text">IE 6~8 버전 브라우저 문제 해결</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-Js-속도-개선"><span class="nav-text">CSS&#x2F;Js 속도 개선</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-병합-HTTP-요청-줄이기"><span class="nav-text">1. 병합 (HTTP 요청 줄이기)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-여백지우기-CSS-소스-압축"><span class="nav-text">2. 여백지우기 (CSS 소스 압축)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-중복검사하기-CSS-소스-압축"><span class="nav-text">3. 중복검사하기 (CSS 소스 압축)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-JS-파일-지연-로딩"><span class="nav-text">4. JS 파일 지연 로딩</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#웹폰트-사용-여부"><span class="nav-text">웹폰트 사용 여부</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-Semantics"><span class="nav-text">HTML5 Semantics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-8-에서도-CSS3-사용"><span class="nav-text">IE6~8 에서도 CSS3 사용</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IE7-js"><span class="nav-text">IE7-js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selectivizr소개"><span class="nav-text">Selectivizr소개</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#이미지를-얼마나-어떻게-쓸것인가"><span class="nav-text">이미지를 얼마나 어떻게 쓸것인가</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-배경-자르기"><span class="nav-text">가상 배경 자르기</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#마치며"><span class="nav-text">마치며</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#참조-문건"><span class="nav-text">참조 문건</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/11/28/css/web-page/",
+            identifier: "2017/11/28/css/web-page/",
+            title: "기본 반응형 웹 페이지 작성 요령"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

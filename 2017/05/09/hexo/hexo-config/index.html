@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="# 2. 설정하기 아직 설치가 되지 않았다면 [Hexo로 정적 블로그 시작하기][01]로 가시기 바랍니다. 설치가 완료되고 기본 테스트를 거치셨으면 이제 &#96;설정(_config)&#96;을 자신에게 맞게 변경 하시면 됩니다.        # \_config.yml document.write(&quot;   &quot;);  프로젝트 설정은 _config.yaml 파일을 수정하면 되">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 기본설정">
+<meta property="og:url" content="https://innks.github.io/2017/05/09/hexo/hexo-config/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="# 2. 설정하기 아직 설치가 되지 않았다면 [Hexo로 정적 블로그 시작하기][01]로 가시기 바랍니다. 설치가 완료되고 기본 테스트를 거치셨으면 이제 &#96;설정(_config)&#96;을 자신에게 맞게 변경 하시면 됩니다.        # \_config.yml document.write(&quot;   &quot;);  프로젝트 설정은 _config.yaml 파일을 수정하면 되">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img.shields.io/badge/hexo%20package-">
+<meta property="og:image" content="https://img.shields.io/badge/git-">
+<meta property="og:image" content="https://img.shields.io/badge/nodejs-">
+<meta property="article:published_time" content="2017-05-09T09:55:40.000Z">
+<meta property="article:modified_time" content="2019-05-01T23:39:41.236Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="hexojs">
+<meta property="article:tag" content="config">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.shields.io/badge/hexo%20package-">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/09/hexo/hexo-config/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hexo 기본설정 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/09/hexo/hexo-config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 기본설정
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-09 18:55:40" itemprop="dateCreated datePublished" datetime="2017-05-09T18:55:40+09:00">2017-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 08:39:41" itemprop="dateModified" datetime="2019-05-02T08:39:41+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/09/hexo/hexo-config/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/09/hexo/hexo-config/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><svg style="width:36px;height:36px" viewBox="0 -5 24 27"><path fill="#000000" d="M13.5,4A1.5,1.5 0 0,0 12,5.5A1.5,1.5 0 0,0 13.5,7A1.5,1.5 0 0,0 15,5.5A1.5,1.5 0 0,0 13.5,4M13.14,8.77C11.95,8.87 8.7,11.46 8.7,11.46C8.5,11.61 8.56,11.6 8.72,11.88C8.88,12.15 8.86,12.17 9.05,12.04C9.25,11.91 9.58,11.7 10.13,11.36C12.25,10 10.47,13.14 9.56,18.43C9.2,21.05 11.56,19.7 12.17,19.3C12.77,18.91 14.38,17.8 14.54,17.69C14.76,17.54 14.6,17.42 14.43,17.17C14.31,17 14.19,17.12 14.19,17.12C13.54,17.55 12.35,18.45 12.19,17.88C12,17.31 13.22,13.4 13.89,10.71C14,10.07 14.3,8.67 13.14,8.77Z" /></svg> # 2. 설정하기</h1>
+아직 설치가 되지 않았다면 [Hexo로 정적 블로그 시작하기][01]로 가시기 바랍니다. 설치가 완료되고 기본 테스트를 거치셨으면 이제 `설정(_config)`을 자신에게 맞게 변경 하시면 됩니다.
+
+<style type="text/css"><![CDATA[.article-entry table {font-size:14px;}]]></style>
+
+<h1><svg style="width:36px;height:36px" viewBox="0 -7 24 31">   <path fill="#000000" d="M6,15H8V17H6M11,13H18V15H11M11,9H18V11H11M6,7H8V13H6M5,3C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5Z" /></svg> # \_config.yml</h1>
+<script type="text/javascript">document.write("<div class=img-resetH1> <img src='https://img.shields.io/badge/hexo package-"+hexoPackage+"-blue.svg' /> <img src='https://img.shields.io/badge/git-"+GitVer+"-f14e32.svg' /> <img src='https://img.shields.io/badge/nodejs-"+nodejsVer+"-43853d.svg' /></div>");</script>
+
+<p>프로젝트 설정은 _config.yaml 파일을 수정하면 되고 이 파일은 블로그의 전반적인 설정을 할 수 있는 파일입니다<br>여기서는 저의 설정을 적겠습니다.</p>
+<figure class="highlight yml"><figcaption><span>_config.yml - Site 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">innks</span>  <span class="comment">#웹 사이트의 제목</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">Sixth</span> <span class="string">Challenge</span> <span class="comment">#웹 사이트의 부제목</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">theK의</span> <span class="string">여섯번째</span> <span class="string">도전</span> <span class="string">블로그</span> <span class="comment">#description는 검색에 쓰이고 또는 `설명`란입니다.</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">innks</span> <span class="comment">#저자</span></span><br><span class="line"><span class="attr">language:</span>  <span class="string">en</span> <span class="comment">#언어 (기본은 en) - 기본언어로 `메뉴와 도움말` 정도 입니다.</span></span><br><span class="line"><span class="attr">timezone:</span>  <span class="string">Asia/Seoul</span> <span class="comment">#타임존 (기본은 현재 PC의 시간값)</span></span><br></pre></td></tr></table></figure>
+<p>위의 기본 설정입니다.</p>
+<figure class="highlight yml"><figcaption><span>_config.yml - URL 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## 웹 사이트가 http://yoursite.com/child'와 같이 서브디렉토리에 있다면</span></span><br><span class="line"><span class="comment">## url은 http://yoursite.com/child'고 설정하고 root는 /child/로 설정하세요.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://innks.github.io</span> <span class="comment"># 기본 주소입니다.</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span> <span class="comment">#웹 사이트의 루트 디렉토리</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment">#특정 페이지에 영구적으로 할당된 URL 주소.</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>  <span class="comment"># 기본 값인데 안적어도 된다.</span></span><br></pre></td></tr></table></figure>
+<p>홈페이지 URL설정 부분입니다.</p>
+<p>permalink:는 기본값은 1990/01/01/제목/index.md로 사용됩니다.<br>예)</p>
+<h4 id="https-innks-github-io-2090-01-01-title-index-html"><a href="#https-innks-github-io-2090-01-01-title-index-html" class="headerlink" title="https://innks.github.io/2090/01/01/title/index.html"></a><code>https://innks.github.io/2090/01/01/title/index.html</code></h4><p>년월일이 폴더가 되며 title부분이 마지막 폴더가 됩니다. 나머지는 변수는 밑의 표에 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">변수</th>
+<th align="left">설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:year</td>
+<td align="left">포스트를 배포한 연도 (4-digit)</td>
+</tr>
+<tr>
+<td align="left">:month</td>
+<td align="left">포스트를 배포한 월 (2-digit)</td>
+</tr>
+<tr>
+<td align="left">:i_month</td>
+<td align="left">포스트를 배포한 월 (앞에 붙는 0은 생략)</td>
+</tr>
+<tr>
+<td align="left">:day</td>
+<td align="left">포스트를 배포한 날 (2-digit)</td>
+</tr>
+<tr>
+<td align="left">:i_day</td>
+<td align="left">포스트를 배포한 날 (앞에 붙는 0은 생략)</td>
+</tr>
+<tr>
+<td align="left">:title</td>
+<td align="left">파일명</td>
+</tr>
+<tr>
+<td align="left">:id</td>
+<td align="left">포스트 ID</td>
+</tr>
+<tr>
+<td align="left">:category</td>
+<td align="left">포스트가 속한 카테고리. 지정하지 않으면 default_category 값을 사용합니다.</td>
+</tr>
+</tbody></table>
+<p>변수가 많이 있네요. 밑에 쓰기(Writing) 부분을 볼까요.</p>
+<figure class="highlight yml"><figcaption><span>_config.yml - Writing 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># 새 포스트의 파일명 형식 (기본 title.md)</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span> <span class="comment"># 기본 레이아웃 (저장 폴더 기본 _post)</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># 제목을 제목에 맞는 대/소문자로 변경할 것인지 선택 (기본 false)</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># 외부 링크를 새 탭에서 열 것인지 선택 (기본 true)</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span> <span class="comment"># 파일명을 소문자(1) 또는 대문자(2)로 변경 (기본 0)</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span> <span class="comment"># Draft(초안) 문서를 표시할 것인지 선택 (기본 false)</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span> <span class="comment"># `true`면 포스트 만들때 마다 같은 이름의 폴더가 생성되며 링크나 이미지링크를 바로 할수있고 관리도 쉽게 하true면 기위한 부분 (![](image.jpg)</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span> <span class="comment"># 루트 폴더에 대한 상대 경로로 링크를 만들 것인지 선택</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span> <span class="comment"># 미래의 포스트를 표시할 것인지 선택 (?)</span></span><br><span class="line"><span class="attr">highlight:</span> <span class="comment"># highlight설정(?)</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span></span><br></pre></td></tr></table></figure>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="카테고리-부분"><a href="#카테고리-부분" class="headerlink" title="# 카테고리 부분"></a># 카테고리 부분</h3><figure class="highlight yml"><figcaption><span>_config.yml - Category & Tag 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span> <span class="comment"># 카테고리가 없을시 들어가는 부분 (기본 분류)</span></span><br><span class="line"><span class="attr">category_map:</span> <span class="comment"># 분류 목록</span></span><br><span class="line"><span class="attr">tag_map:</span> <span class="comment"># 태그 목록</span></span><br></pre></td></tr></table></figure>
+<h3 id="시간과-날짜-페이지-표시-형식"><a href="#시간과-날짜-페이지-표시-형식" class="headerlink" title="# 시간과 날짜 /페이지 표시 형식"></a># 시간과 날짜 /페이지 표시 형식</h3><figure class="highlight yml"><figcaption><span>_config.yml - Category & Tag / Pagination 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span> <span class="comment"># 하나의 페이지에 표시할 포스트의 개수. 0이면 pagination을 표시하지 않습니다.</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br></pre></td></tr></table></figure>
+<p>굳이 바꾸시려면 하고 그냥 기본으로 쓰시면 됩니다.</p>
+<h3 id="플로그인과-테마"><a href="#플로그인과-테마" class="headerlink" title="# 플로그인과 테마"></a># 플로그인과 테마</h3><figure class="highlight yml"><figcaption><span>_config.yml - Extensions 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">hueman</span></span><br></pre></td></tr></table></figure>
+
+<p>테마입니다. 플로그인은 나중에…</p>
+<h3 id="디플로이먼트-Deployment"><a href="#디플로이먼트-Deployment" class="headerlink" title="# 디플로이먼트 Deployment"></a># 디플로이먼트 <small>Deployment</small></h3><figure class="highlight yml"><figcaption><span>_config.yml - Deployment 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/innks/innks.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>  저의 경우에는 디플로이먼트에서 GitHub로 업로드를 해야 해서 이렇게 적혀 있습니다.</p>
+<ul>
+<li>type: git, heroku, rsync 등 배포 방식을 입력한다. 여기서는 git을 입력하겠습니다.</li>
+<li>repo: 배포할 GitHub 저장소 주소를 입력합니다.</li>
+<li>branch: 배포할 브랜치를 입력합니다. 입력하지 않으면 알아서 메인 브랜치에 올립니다.</li>
+<li>message: 커밋 메세지를 입력합니다. 따로 입력하지 않으면 Site updated: &lt;YYYY-MM-DD HH:mm:ss 형식 날짜&gt; 포맷의 메세지가 기본적으로 입력됩니다.</li>
+</ul>
+<p>여러 곳에 동시에 deploy할 수도 있습니다. Hexo는 순차적으로 deploy를 수행합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- <span class="built_in">type</span>: git</span><br><span class="line">  repo:</span><br><span class="line">- <span class="built_in">type</span>: heroku</span><br><span class="line">  repo:</span><br></pre></td></tr></table></figure>
+
+<nav id="article-nav-post"><a href="/2017/05/09/hexo/make-git-pages/" id="article-nav-newer-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post"><i class="fa fa-arrow-left" aria-hidden="true"></i> 이전편</strong><div class="article-nav-title-post">GitHub Pages 만들기(Hexo용)</div><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a><a href="/2017/05/09/hexo/hexo-newpost/" id="article-nav-older-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post">다음편 <i class="fa fa-arrow-right" aria-hidden="true"></i></strong><div class="article-nav-title-post">Hexo 포스팅하기</div><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i></a></nav>
+
+<h3 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="# 관련 문서 바로가기"></a># 관련 문서 바로가기</h3><ul>
+<li><a href="/2017/05/09/hexo/get-quick-hexo/">초간단 HEXO와 hueman 테마 설치하기</a></li>
+<li><a href="/2017/05/09/hexo/get-started-hexo/">Hexo로 정적 블로그 시작하기</a></li>
+<li><a href="/2017/05/09/hexo/make-git-pages/">GitHub Pages 만들기(Hexo용)</a></li>
+<li><a href="/2017/05/09/hexo/hexo-config/">Hexo 기본설정</a></li>
+<li><a href="/2017/05/09/hexo/hexo-newpost/">Hexo 포스팅하기</a></li>
+<li><a href="/2017/05/09/hexo/hexo-deploy/">hexo 로컬 서버 테스트와 배포(GitHub)</a></li>
+<li><a href="/2017/05/09/hexo/Apply-hueman-hexo-theme/">Hexo 테마 Hueman 적용하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-change-menu/">Hueman테마에 메뉴 변경하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-subtitle/">Hueman 테마에 부제목 추가하기</a></li>
+<li><a href="/2018/02/27/hexo/hexo-setrup/">hexo을 포멧/다른 컴퓨터에 환경을 구축하기</a></li>
+</ul>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexojs/" rel="tag"># hexojs</a>
+              <a href="/tags/config/" rel="tag"># config</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/09/hexo/make-git-pages/" rel="prev" title="GitHub Pages 만들기(Hexo용)">
+      <i class="fa fa-chevron-left"></i> GitHub Pages 만들기(Hexo용)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/09/hexo/hexo-newpost/" rel="next" title="Hexo 포스팅하기">
+      Hexo 포스팅하기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-text"> # 2. 설정하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-text">    # \_config.yml</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#https-innks-github-io-2090-01-01-title-index-html"><span class="nav-text">https:&#x2F;&#x2F;innks.github.io&#x2F;2090&#x2F;01&#x2F;01&#x2F;title&#x2F;index.html</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#카테고리-부분"><span class="nav-text"># 카테고리 부분</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#시간과-날짜-페이지-표시-형식"><span class="nav-text"># 시간과 날짜 &#x2F;페이지 표시 형식</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#플로그인과-테마"><span class="nav-text"># 플로그인과 테마</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#디플로이먼트-Deployment"><span class="nav-text"># 디플로이먼트 Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text"># 관련 문서 바로가기</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/09/hexo/hexo-config/",
+            identifier: "2017/05/09/hexo/hexo-config/",
+            title: "Hexo 기본설정"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

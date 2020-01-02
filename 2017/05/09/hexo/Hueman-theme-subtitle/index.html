@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="# 부제목 or 부제 SubTitle부제(副題). 제목에 덧붙여 그 작품의 내용을 설명하고 본 제목을 보충하는 타이틀. 모든 작품에 반드시 붙지는 않는다. 영어로는 subtitle이라고 하지만 이 단어는 자막이라는 뜻으로 쓰일 때가 더 많다. [나무위키](https:&#x2F;&#x2F;namu.wiki&#x2F;w&#x2F;%EB%B6%80%EC%A0%9C)   # 우선 이야기하기필자는 ‘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hueman 테마에 부제목 추가하기">
+<meta property="og:url" content="https://innks.github.io/2017/05/09/hexo/Hueman-theme-subtitle/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="# 부제목 or 부제 SubTitle부제(副題). 제목에 덧붙여 그 작품의 내용을 설명하고 본 제목을 보충하는 타이틀. 모든 작품에 반드시 붙지는 않는다. 영어로는 subtitle이라고 하지만 이 단어는 자막이라는 뜻으로 쓰일 때가 더 많다. [나무위키](https:&#x2F;&#x2F;namu.wiki&#x2F;w&#x2F;%EB%B6%80%EC%A0%9C)   # 우선 이야기하기필자는 ‘">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/NPYApRB.png">
+<meta property="og:image" content="https://i.imgur.com/mHP1M6h.png">
+<meta property="og:image" content="https://i.imgur.com/hf0oetS.png">
+<meta property="article:published_time" content="2017-05-09T14:49:32.000Z">
+<meta property="article:modified_time" content="2018-02-27T10:05:45.587Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="hexojs">
+<meta property="article:tag" content="hueman">
+<meta property="article:tag" content="Subtitle">
+<meta property="article:tag" content="부제목">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/NPYApRB.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/09/hexo/Hueman-theme-subtitle/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Hueman 테마에 부제목 추가하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/09/hexo/Hueman-theme-subtitle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hueman 테마에 부제목 추가하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-09 23:49:32" itemprop="dateCreated datePublished" datetime="2017-05-09T23:49:32+09:00">2017-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2018-02-27 19:05:45" itemprop="dateModified" datetime="2018-02-27T19:05:45+09:00">2018-02-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/09/hexo/Hueman-theme-subtitle/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/09/hexo/Hueman-theme-subtitle/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="부제목-or-부제-SubTitle"><a href="#부제목-or-부제-SubTitle" class="headerlink" title="# 부제목 or 부제 SubTitle"></a># 부제목 or 부제 <small>SubTitle</small></h1><p>부제(副題). 제목에 덧붙여 그 작품의 내용을 설명하고 본 제목을 보충하는 타이틀. 모든 작품에 반드시 붙지는 않는다. 영어로는 subtitle이라고 하지만 이 단어는 자막이라는 뜻으로 쓰일 때가 더 많다.</p>
+<div style="TEXT-ALIGN: right">[나무위키](https://namu.wiki/w/%EB%B6%80%EC%A0%9C)</div>
+
+<hr>
+<h4 id="우선-이야기하기"><a href="#우선-이야기하기" class="headerlink" title="# 우선 이야기하기"></a># 우선 이야기하기</h4><p>필자는 ‘<strong>마크다운</strong>‘이라는 언어를 최근에 알게 되고 다른 언어적 지식이 없는 관계로 무식하고 단순한 방법으로 하다보니 발견하게 된 것으로 이 더이상 지식은 없습니다. 이것에 대하여 물어 보시거나 혹은 더 좋은 방법이 있으신 분들은 기탄없이 저에게 연락 주시길 바랍니다.</p>
+<h3 id="1-YAML-Front-Matter-추가하기-YAML-헤더"><a href="#1-YAML-Front-Matter-추가하기-YAML-헤더" class="headerlink" title="# 1. YAML Front Matter 추가하기 (YAML 헤더)"></a># 1. YAML Front Matter 추가하기 (YAML 헤더)</h3><p>제목은 이렇게 적었지만 실제로는 title 밑에 글한줄 더 적은것 뿐입니다.</p>
+<img src="https://i.imgur.com/NPYApRB.png" class="inks_img img_left">
+<div class=cap2>붉은 박스 부분이 부제목입니다.</div>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">타이틀</span></span><br><span class="line"><span class="attr">subposttitle:</span> <span class="string">부제목</span> <span class="string">타이틀</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">날짜</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">카테고리</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">서브카테고리</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[테그1,</span> <span class="string">테그2,</span> <span class="string">...]</span></span><br><span class="line"><span class="attr">thumbnail:</span> <span class="string">썸네일</span> <span class="string">주소</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>위에 보여지는 것처럼 <code>subposttitle</code>이 이포스트에서 다룰 YAML 헤더의 메타데이터(?)입니다. 특별이 명칭을 몰라 메타데이터라고 했습니다. 양해를 :)</p>
+<p>이제 이 <code>subposttitle</code>이 메타데이터를 가지고 2군데를 추가 하시면 됩니다.<br>먼저 <strong>list부분</strong> 과 <strong>post</strong> 에 들어가는 <code>title.ejs</code> 파일입니다.<br><code>title.ejs</code>파일은 각각 2군데 모두 호출되어 제목과 썸네일등을 보여주는 파일입니다. 그리고 <code>css파일</code>을 한개 만들어 추가하고 <code>head.ejs</code>파일에 불러오면 됩니다.</p>
+<p><img src="https://i.imgur.com/mHP1M6h.png" class="inks_img"> <strong>list부분</strong> 입니다. <span style="color:#f00"><strong>붉은 부분</strong></span>이 부제목입니다<br /></p>
+<p><img src="https://i.imgur.com/hf0oetS.png" class="inks_img"> <strong>Post부분</strong> 입니다. <span style="color:#f00"><strong>붉은 부분</strong></span>이 부제목입니다.</p>
+<h3 id="2-테마-수정하기-title-ejs"><a href="#2-테마-수정하기-title-ejs" class="headerlink" title="# 2. 테마 수정하기 title.ejs"></a># 2. 테마 수정하기 <small>title.ejs</small></h3><p>위치는 테마 폴더 안에… <code>theman/hueman/layout/common/post/title.ejs</code></p>
+<figure class="highlight html"><figcaption><span>theman/hueman/layout/common/post/title.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">post.link</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">itemprop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"&lt;%= class_name %&gt;"</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(post.link) %&gt;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">itemprop</span>=<span class="string">"url"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> <span class="attr">if</span> (<span class="attr">post.title</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">typeof</span>(<span class="attr">linkable</span>) !== <span class="string">'undefined'</span> &amp;&amp; <span class="attr">linkable</span>) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"&lt;%= class_name %&gt;"</span> <span class="attr">itemprop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(post.path) %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 여기에 들어갈 자리 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"&lt;%= class_name %&gt;"</span> <span class="attr">itemprop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.title</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 여기에 들어갈 자리 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">post.subposttitle</span>) &#123; %&gt;</span> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-subposttitle"</span>&gt;</span> &amp;nbsp# <span class="tag">&lt;<span class="name">%-post.subposttitle</span> %&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>위에 보이는 것과 같이 <code>title.ejs</code>을 열어 <code>&lt;!-- 여기 들어갈 자리 --&gt;</code>부분에 밑의 한 줄을 복사해서 넣습니다. 이때 저는 <strong>css &gt; class_name</strong> 을  <code>article-subposttitle</code>으로 했습니다. <strong>다른이름</strong> 으로 해도 무방합니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="3-스타일시트-추가하기-etc-css"><a href="#3-스타일시트-추가하기-etc-css" class="headerlink" title="#  3. 스타일시트 추가하기 etc.css"></a>#  3. 스타일시트 추가하기 <small>etc.css</small></h3><p>이제 CSS 파일을 하나 만듭니다. blog의 루트폴더에 <code>source</code>폴더안에 <code>css</code>폴더를 만들고 그 안에 <code>etc.css</code>파일을 만듭니다. 벌써 만들었다면 그 안에 추가 하셔도 됩니다. 즉 어느 파일이나 css파일이면 그 안에 넣으시면 됩니다.</p>
+<figure class="highlight css"><figcaption><span>source/css/etc.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 부제목 색변경 */</span></span><br><span class="line"><span class="selector-class">.article-subposttitle</span> &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#3e3f43</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#e7e8ec</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>위에 것을 추가하고 <code>저장</code>을 합니다.</p>
+<h3 id="4-적용하기-head-ejs"><a href="#4-적용하기-head-ejs" class="headerlink" title="# 4. 적용하기 head.ejs"></a># 4. 적용하기 <small>head.ejs</small></h3><p>그리고 <code>head</code>파일을 열어 위에 만들어 놓은 css파일을 추가합니다.</p>
+<figure class="highlight html"><figcaption><span>theman/hueman/layout/common/post/head.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">&lt;!-- 여기에 넣습니다. --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>head.ejs</code>파일에 마지막 부분인 <code>&lt;/head&gt;</code>위에 밑의 css추가를 합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">css</span>('<span class="attr">css</span>/<span class="attr">etc</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>지금까지 <strong>hueman</strong> 테마에 적용하는 부제목 추가하기였습니다. 모바일이나 PC에도 잘 보이고 제목에서 쓰지 못한 기타사항을 쓸려고 했다가 이렇게 부제목까지 만들었네요. 나름 힘들게 삽질하면서 만들었습니다. 저는 좋게 잘 쓰고 있지만, 이것보다 내가 더 잘하시는 분은 주저 말고 지적해 주시길 바랍니다.</p>
+<hr>
+<nav id="article-nav-post"><a href="/2017/05/09/hexo/Hueman-theme-change-menu/" id="article-nav-newer-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post"><i class="fa fa-arrow-left" aria-hidden="true"></i> 이전편</strong><div class="article-nav-title-post">Hueman테마에 메뉴 변경하기</div><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a><a href="/2018/02/27/hexo/hexo-setrup/" id="article-nav-older-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post">다음편 <i class="fa fa-arrow-right" aria-hidden="true"></i></strong><div class="article-nav-title-post">hexo을 포멧/다른 컴퓨터에 환경을 구축하기</div><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i></a></nav>
+
+
+<h3 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="# 관련 문서 바로가기"></a># 관련 문서 바로가기</h3><ul>
+<li><a href="/2017/05/09/hexo/get-quick-hexo/">초간단 HEXO와 hueman 테마 설치하기</a></li>
+<li><a href="/2017/05/09/hexo/get-started-hexo/">Hexo로 정적 블로그 시작하기</a></li>
+<li><a href="/2017/05/09/hexo/make-git-pages/">GitHub Pages 만들기(Hexo용)</a></li>
+<li><a href="/2017/05/09/hexo/hexo-config/">Hexo 기본설정</a></li>
+<li><a href="/2017/05/09/hexo/hexo-newpost/">Hexo 포스팅하기</a></li>
+<li><a href="/2017/05/09/hexo/hexo-deploy/">hexo 로컬 서버 테스트와 배포(GitHub)</a></li>
+<li><a href="/2017/05/09/hexo/Apply-hueman-hexo-theme/">Hexo 테마 Hueman 적용하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-change-menu/">Hueman테마에 메뉴 변경하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-subtitle/">Hueman 테마에 부제목 추가하기</a></li>
+<li><a href="/2018/02/27/hexo/hexo-setrup/">hexo을 포멧/다른 컴퓨터에 환경을 구축하기</a></li>
+</ul>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexojs/" rel="tag"># hexojs</a>
+              <a href="/tags/hueman/" rel="tag"># hueman</a>
+              <a href="/tags/Subtitle/" rel="tag"># Subtitle</a>
+              <a href="/tags/%EB%B6%80%EC%A0%9C%EB%AA%A9/" rel="tag"># 부제목</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/09/hexo/get-quick-hexo/" rel="prev" title="초간단 HEXO와 hueman 테마 설치하기">
+      <i class="fa fa-chevron-left"></i> 초간단 HEXO와 hueman 테마 설치하기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/10/IT/g-analytics-account-del/" rel="next" title="구글 애널리틱스 계정 삭제하기">
+      구글 애널리틱스 계정 삭제하기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#부제목-or-부제-SubTitle"><span class="nav-text"># 부제목 or 부제 SubTitle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#우선-이야기하기"><span class="nav-text"># 우선 이야기하기</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-YAML-Front-Matter-추가하기-YAML-헤더"><span class="nav-text"># 1. YAML Front Matter 추가하기 (YAML 헤더)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-테마-수정하기-title-ejs"><span class="nav-text"># 2. 테마 수정하기 title.ejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-스타일시트-추가하기-etc-css"><span class="nav-text">#  3. 스타일시트 추가하기 etc.css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-적용하기-head-ejs"><span class="nav-text"># 4. 적용하기 head.ejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text"># 관련 문서 바로가기</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/09/hexo/Hueman-theme-subtitle/",
+            identifier: "2017/05/09/hexo/Hueman-theme-subtitle/",
+            title: "Hueman 테마에 부제목 추가하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

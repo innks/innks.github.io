@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="# 만들기 전VSCode 시작하면서 눈에 익숙한 테마를 찾다가 발견한 부분입니다. VSCode는 자신만의 테마를 만들고 공유할 수 있다는 생각에 하나 나도 만들어 볼까 싶어 만들다가 하루를 그냥 이 테마만 만들었네요. 일도 하랴 이것 만들랴 참 바쁜 하루였네요.  참 입맛에 맞는 테마 찾기란 쉽지가 않은 군요.  # 만들기 시작저는 얼마 전까지만 해도 At">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode에서 나만의 테마 만들기 (v1.12 이상)">
+<meta property="og:url" content="https://innks.github.io/2017/05/18/IT/VSCode-MyColor-Theme/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="# 만들기 전VSCode 시작하면서 눈에 익숙한 테마를 찾다가 발견한 부분입니다. VSCode는 자신만의 테마를 만들고 공유할 수 있다는 생각에 하나 나도 만들어 볼까 싶어 만들다가 하루를 그냥 이 테마만 만들었네요. 일도 하랴 이것 만들랴 참 바쁜 하루였네요.  참 입맛에 맞는 테마 찾기란 쉽지가 않은 군요.  # 만들기 시작저는 얼마 전까지만 해도 At">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/SkaNHml.png">
+<meta property="og:image" content="https://i.imgur.com/Uy5UNJw.png">
+<meta property="og:image" content="https://i.imgur.com/fHyjtGq.png">
+<meta property="og:image" content="https://i.imgur.com/9LnSVT4.png">
+<meta property="og:image" content="https://i.imgur.com/1lvqjMr.png">
+<meta property="og:image" content="https://i.imgur.com/nVhTsiL.png">
+<meta property="og:image" content="https://i.imgur.com/jpgpaqg.png">
+<meta property="article:published_time" content="2017-05-18T14:36:04.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:36:52.219Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Atom">
+<meta property="article:tag" content="VSCode">
+<meta property="article:tag" content="OneDark">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/SkaNHml.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/18/IT/VSCode-MyColor-Theme/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>VSCode에서 나만의 테마 만들기 (v1.12 이상) | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/18/IT/VSCode-MyColor-Theme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VSCode에서 나만의 테마 만들기 (v1.12 이상)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-18 23:36:04" itemprop="dateCreated datePublished" datetime="2017-05-18T23:36:04+09:00">2017-05-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:36:52" itemprop="dateModified" datetime="2017-12-06T00:36:52+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/18/IT/VSCode-MyColor-Theme/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/18/IT/VSCode-MyColor-Theme/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="만들기-전"><a href="#만들기-전" class="headerlink" title="# 만들기 전"></a># 만들기 전</h3><p>VSCode 시작하면서 눈에 익숙한 테마를 찾다가 발견한 부분입니다. VSCode는 자신만의 테마를 만들고 공유할 수 있다는 생각에 하나 나도 만들어 볼까 싶어 만들다가 하루를 그냥 이 테마만 만들었네요. 일도 하랴 이것 만들랴 참 바쁜 하루였네요.</p>
+<blockquote>
+<p>참 입맛에 맞는 테마 찾기란 쉽지가 않은 군요.</p>
+</blockquote>
+<h3 id="만들기-시작"><a href="#만들기-시작" class="headerlink" title="# 만들기 시작"></a># 만들기 시작</h3><p>저는 얼마 전까지만 해도 Atom을 사용했습니다. 지금도 VSCode보다는 Atom이 익숙하게 느껴질 정도로 아직도 VSCode가 어색하군요. 그래서 VSCode를 Atom같은 테마로 만들어 사용하려고 이렇게 만들기 시작했습니다.</p>
+<p>우선 <a href="https://code.visualstudio.com/docs/extensions/themes-snippets-colorizers#_adding-a-new-theme" target="_blank" rel="noopener">Themes, Snippets and Colorizers</a>에 들어가서 하나하나 해보기로 했지만, 영어의 울렁증으로 고생(?) 좀 했네요. 이렇게 고생한 김에 이 글을 적어 보기로 했습니다.’라고 이야기하지만 저는 구글 해석으로 해도 무슨 말인지 도통 모르겠고요.</p>
+<p><strong>제가 하는 방법으로 해 보기로 했습니다.</strong></p>
+<h2 id="새로운-테마-추가하기-Adding-a-new-Theme"><a href="#새로운-테마-추가하기-Adding-a-new-Theme" class="headerlink" title="# 새로운 테마 추가하기 Adding a new Theme"></a># 새로운 테마 추가하기 <small>Adding a new Theme</small></h2><p>새로운 버전이 업데이트되면서 쉽게 할 수 있는 방법이 나왔더군요. 자세한 것은 <a href="https://code.visualstudio.com/updates/v1_12" target="_blank" rel="noopener">April 2017 (version 1.12)</a>으로 읽다가 보면 vscode-theme-generator라는 말이 나옵니다. 무엇이냐 하면 새롭게 .tmtheme파일이 아닌 tmtheme.json파일로 한다는 이야기입니다. 빠른 설치를 위해 링크도 있네요. <a href="https://github.com/Tyriar/vscode-theme-generator-quick-start" target="_blank" rel="noopener">vscode-theme-generator-quick-start</a>에 가시면 됩니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="1-먼저-Node-js가-설치가-되어야-한다는-군요"><a href="#1-먼저-Node-js가-설치가-되어야-한다는-군요" class="headerlink" title="1. 먼저 Node.js가 설치가 되어야 한다는 군요."></a><strong>1.</strong> 먼저 Node.js가 설치가 되어야 한다는 군요.</h5><ul>
+<li><a href="https://nodejs.org/ko/" target="_blank" rel="noopener">Node.js</a> 가서 가볍게 설치를 해 줍니다.</li>
+</ul>
+<h5 id="2-설치가-끝나면-Ctrl-를-눌러"><a href="#2-설치가-끝나면-Ctrl-를-눌러" class="headerlink" title="2. 설치가 끝나면 Ctrl , `를 눌러"></a><strong>2.</strong> 설치가 끝나면 <kbd>Ctrl</kbd> , <kbd>`</kbd>를 눌러</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>을 해 줍니다. (일단 합니다.)</p>
+<h5 id="3-위의-vscode-theme-generator-quick-start에-가셔서-다운로드-하고-압축을-풉니다"><a href="#3-위의-vscode-theme-generator-quick-start에-가셔서-다운로드-하고-압축을-풉니다" class="headerlink" title="3. 위의 vscode-theme-generator-quick-start에 가셔서 다운로드 하고 압축을 풉니다."></a><strong>3.</strong> 위의 <a href="https://github.com/Tyriar/vscode-theme-generator-quick-start" target="_blank" rel="noopener">vscode-theme-generator-quick-start</a>에 가셔서 다운로드 하고 압축을 풉니다.</h5><h5 id="4-압축을-풀면-vscode-theme-generator-quick-start-master로-되어-있을-것입니다-여기서-master을-지워-줍니다"><a href="#4-압축을-풀면-vscode-theme-generator-quick-start-master로-되어-있을-것입니다-여기서-master을-지워-줍니다" class="headerlink" title="4. 압축을 풀면 vscode-theme-generator-quick-start-master로 되어 있을 것입니다. 여기서 -master을 지워 줍니다."></a><strong>4.</strong> 압축을 풀면 vscode-theme-generator-quick-start-master로 되어 있을 것입니다. 여기서 <code>-master</code>을 지워 줍니다.</h5><p><img src="https://i.imgur.com/SkaNHml.png" alt=""><br><span class=cap2>아예 다른 이름으로 변경해도 됩니다.</span></p>
+<h5 id="5-전-아예-VSCode-theme-OneDark-plus-S라고-이름-지었습니다"><a href="#5-전-아예-VSCode-theme-OneDark-plus-S라고-이름-지었습니다" class="headerlink" title="5. 전 아예 VSCode-theme-OneDark-plus-S라고 이름 지었습니다."></a><strong>5.</strong> 전 아예 <code>VSCode-theme-OneDark-plus-S</code>라고 이름 지었습니다.</h5><p><img src="https://i.imgur.com/Uy5UNJw.png" alt=""></p>
+<h5 id="6-theme-json을-innks-aodp-theme-json로-변경-했습니다"><a href="#6-theme-json을-innks-aodp-theme-json로-변경-했습니다" class="headerlink" title="6. theme.json을 innks-aodp-theme.json로 변경 했습니다."></a><strong>6.</strong> <code>theme.json</code>을 <code>innks-aodp-theme.json</code>로 변경 했습니다.</h5><p><img src="https://i.imgur.com/fHyjtGq.png" alt=""></p>
+<h5 id="7-edit를-열어-이제-하나하나-바꿔가며-색을-비교하고-저장하고-반복-합니다"><a href="#7-edit를-열어-이제-하나하나-바꿔가며-색을-비교하고-저장하고-반복-합니다" class="headerlink" title="7. edit를 열어 이제 하나하나 바꿔가며 색을 비교하고 저장하고 반복 합니다."></a><strong>7.</strong> edit를 열어 이제 하나하나 바꿔가며 색을 비교하고 저장하고 반복 합니다.</h5><p><img src="https://i.imgur.com/9LnSVT4.png" alt=""><br>물론 매번 다시시작을 반복해야 합니다.</p>
+<h5 id="8-다-끝이-나면-기타-파일-부분-적용하기"><a href="#8-다-끝이-나면-기타-파일-부분-적용하기" class="headerlink" title="8. 다 끝이 나면 기타 파일 부분 적용하기"></a><strong>8.</strong> 다 끝이 나면 기타 파일 부분 적용하기</h5><ul>
+<li>README.md  : 클릭시 처음 화면 입니다.</li>
+<li>package.json : 기타 버전과 변수 값입니다.</li>
+<li>CHANGELOG.md : 업데이트 내역입니다.</li>
+</ul>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="적용하기-Install-an-extension"><a href="#적용하기-Install-an-extension" class="headerlink" title="# 적용하기 Install an extension"></a># 적용하기 <small>Install an extension</small></h2><h3 id="제가-만든것-다운로드-하기"><a href="#제가-만든것-다운로드-하기" class="headerlink" title="# 제가 만든것 다운로드 하기"></a># 제가 만든것 다운로드 하기</h3><h3 id="VSCode-theme-OneDark-plus-S-v0-0-3-다운로드하러-가기"><a href="#VSCode-theme-OneDark-plus-S-v0-0-3-다운로드하러-가기" class="headerlink" title=" VSCode-theme-OneDark-plus-S v0.0.3 다운로드하러 가기"></a><i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/innks/VSCode-theme-OneDark-plus-S" target="_blank" rel="noopener">VSCode-theme-OneDark-plus-S v0.0.3 다운로드하러 가기</a></h3><h5 id="1-다운된-Zip파일을-압축을-적당한-곳에-풀어-줍니다-그후-폴더-뒤에-master을-지워-줍니다"><a href="#1-다운된-Zip파일을-압축을-적당한-곳에-풀어-줍니다-그후-폴더-뒤에-master을-지워-줍니다" class="headerlink" title="1. 다운된 Zip파일을 압축을 적당한 곳에 풀어 줍니다. 그후 폴더 뒤에 -master을 지워 줍니다."></a><strong>1.</strong> 다운된 Zip파일을 압축을 적당한 곳에 풀어 줍니다. 그후 폴더 뒤에 <code>-master</code>을 지워 줍니다.</h5><p><img src="https://i.imgur.com/1lvqjMr.png" alt=""></p>
+<h5 id="2-압축을-푼-VSCode-theme-OneDark-plus-S폴더를-VScode-Extensions-폴더-에-넣고-VSCode를-다시-시작-하시고-색테마를-변경-하면-됩니다"><a href="#2-압축을-푼-VSCode-theme-OneDark-plus-S폴더를-VScode-Extensions-폴더-에-넣고-VSCode를-다시-시작-하시고-색테마를-변경-하면-됩니다" class="headerlink" title="2. 압축을 푼  VSCode-theme-OneDark-plus-S폴더를 VScode Extensions 폴더 에 넣고 VSCode를 다시 시작 하시고 색테마를 변경 하면 됩니다."></a><strong>2.</strong> 압축을 푼  <code>VSCode-theme-OneDark-plus-S</code>폴더를 <strong>VScode Extensions 폴더</strong> 에 넣고 VSCode를 <code>다시 시작</code> 하시고 색테마를 변경 하면 됩니다.</h5><ul>
+<li><strong>VScode Extensions 폴더</strong> :  %USERPROFILE%.vscode\extensions<ul>
+<li>예) C:\Users\유저명\.vscode\extensions</li>
+</ul>
+</li>
+<li><strong>색 테마 변경</strong> : 파일(F) &gt; 기본 설정(P) &gt; 색 테마(C) 에서 만든 <code>Atom-OneDark + S</code>를 선택 하시면 됩니다.</li>
+</ul>
+<p><img src="https://i.imgur.com/nVhTsiL.png" alt=""></p>
+<h4 id="View-Test"><a href="#View-Test" class="headerlink" title="# View Test"></a># View Test</h4><p><img src="https://i.imgur.com/jpgpaqg.png" alt=""></p>
+<p>하루 종일 했는데 결실이 별로 나질 않는군요. :(</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Atom/" rel="tag"># Atom</a>
+              <a href="/tags/VSCode/" rel="tag"># VSCode</a>
+              <a href="/tags/OneDark/" rel="tag"># OneDark</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/17/IT/System-Reserved-Partition-Hidden/" rel="prev" title="원도우 시스템 예약 파티션 숨기기">
+      <i class="fa fa-chevron-left"></i> 원도우 시스템 예약 파티션 숨기기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/21/hexo/Markdown-w/" rel="next" title="마크다운 문법 설명 및 hexo 문법테스트">
+      마크다운 문법 설명 및 hexo 문법테스트 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#만들기-전"><span class="nav-text"># 만들기 전</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#만들기-시작"><span class="nav-text"># 만들기 시작</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#새로운-테마-추가하기-Adding-a-new-Theme"><span class="nav-text"># 새로운 테마 추가하기 Adding a new Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-먼저-Node-js가-설치가-되어야-한다는-군요"><span class="nav-text">1. 먼저 Node.js가 설치가 되어야 한다는 군요.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-설치가-끝나면-Ctrl-를-눌러"><span class="nav-text">2. 설치가 끝나면 Ctrl , &#96;를 눌러</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-위의-vscode-theme-generator-quick-start에-가셔서-다운로드-하고-압축을-풉니다"><span class="nav-text">3. 위의 vscode-theme-generator-quick-start에 가셔서 다운로드 하고 압축을 풉니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-압축을-풀면-vscode-theme-generator-quick-start-master로-되어-있을-것입니다-여기서-master을-지워-줍니다"><span class="nav-text">4. 압축을 풀면 vscode-theme-generator-quick-start-master로 되어 있을 것입니다. 여기서 -master을 지워 줍니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-전-아예-VSCode-theme-OneDark-plus-S라고-이름-지었습니다"><span class="nav-text">5. 전 아예 VSCode-theme-OneDark-plus-S라고 이름 지었습니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-theme-json을-innks-aodp-theme-json로-변경-했습니다"><span class="nav-text">6. theme.json을 innks-aodp-theme.json로 변경 했습니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-edit를-열어-이제-하나하나-바꿔가며-색을-비교하고-저장하고-반복-합니다"><span class="nav-text">7. edit를 열어 이제 하나하나 바꿔가며 색을 비교하고 저장하고 반복 합니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-다-끝이-나면-기타-파일-부분-적용하기"><span class="nav-text">8. 다 끝이 나면 기타 파일 부분 적용하기</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#적용하기-Install-an-extension"><span class="nav-text"># 적용하기 Install an extension</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#제가-만든것-다운로드-하기"><span class="nav-text"># 제가 만든것 다운로드 하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VSCode-theme-OneDark-plus-S-v0-0-3-다운로드하러-가기"><span class="nav-text"> VSCode-theme-OneDark-plus-S v0.0.3 다운로드하러 가기</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-다운된-Zip파일을-압축을-적당한-곳에-풀어-줍니다-그후-폴더-뒤에-master을-지워-줍니다"><span class="nav-text">1. 다운된 Zip파일을 압축을 적당한 곳에 풀어 줍니다. 그후 폴더 뒤에 -master을 지워 줍니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-압축을-푼-VSCode-theme-OneDark-plus-S폴더를-VScode-Extensions-폴더-에-넣고-VSCode를-다시-시작-하시고-색테마를-변경-하면-됩니다"><span class="nav-text">2. 압축을 푼  VSCode-theme-OneDark-plus-S폴더를 VScode Extensions 폴더 에 넣고 VSCode를 다시 시작 하시고 색테마를 변경 하면 됩니다.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Test"><span class="nav-text"># View Test</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/18/IT/VSCode-MyColor-Theme/",
+            identifier: "2017/05/18/IT/VSCode-MyColor-Theme/",
+            title: "VSCode에서 나만의 테마 만들기 (v1.12 이상)"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

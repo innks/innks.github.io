@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="MY SOFTWARE 소프트웨어컴퓨터 소프트웨어(computer software, 혹은 간단히 소프트웨어, 문화어: 쏘프트웨어, 순화 용어: 무른모)는 저장장치에 저장된 특정한 목적의 하나 또는 다수의 컴퓨터 프로그램을 뜻한다. 프로그램 소프트웨어는 컴퓨터 하드웨어에 직접 명령어를 주거나 다른 소프트웨어에 입력을 제공함으로써, 그것이 수행하도록 구현된 기능">
+<meta property="og:type" content="article">
+<meta property="og:title" content="네게 필요한 프로그램 링크 (유틸)">
+<meta property="og:url" content="https://innks.github.io/2016/03/21/IT/Utilities-for-Windows/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="MY SOFTWARE 소프트웨어컴퓨터 소프트웨어(computer software, 혹은 간단히 소프트웨어, 문화어: 쏘프트웨어, 순화 용어: 무른모)는 저장장치에 저장된 특정한 목적의 하나 또는 다수의 컴퓨터 프로그램을 뜻한다. 프로그램 소프트웨어는 컴퓨터 하드웨어에 직접 명령어를 주거나 다른 소프트웨어에 입력을 제공함으로써, 그것이 수행하도록 구현된 기능">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img.shields.io/badge/Utilities%20for%20Windows-17-cb3837.svg">
+<meta property="og:image" content="https://img.shields.io/badge/Post%20Update-20190117-000000.svg">
+<meta property="article:published_time" content="2016-03-21T14:22:52.000Z">
+<meta property="article:modified_time" content="2019-06-24T09:02:03.140Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Utilities">
+<meta property="article:tag" content="작은 프로젝트">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="util">
+<meta property="article:tag" content="유틸">
+<meta property="article:tag" content="프로그램">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.shields.io/badge/Utilities%20for%20Windows-17-cb3837.svg">
+
+<link rel="canonical" href="https://innks.github.io/2016/03/21/IT/Utilities-for-Windows/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>네게 필요한 프로그램 링크 (유틸) | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/03/21/IT/Utilities-for-Windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          네게 필요한 프로그램 링크 (유틸)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-03-21 23:22:52" itemprop="dateCreated datePublished" datetime="2016-03-21T23:22:52+09:00">2016-03-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-06-24 18:02:03" itemprop="dateModified" datetime="2019-06-24T18:02:03+09:00">2019-06-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Util-Plugin/" itemprop="url" rel="index">
+                    <span itemprop="name">Util / Plugin</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/03/21/IT/Utilities-for-Windows/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/21/IT/Utilities-for-Windows/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="MY-SOFTWARE-소프트웨어"><a href="#MY-SOFTWARE-소프트웨어" class="headerlink" title="MY SOFTWARE 소프트웨어"></a>MY SOFTWARE <small>소프트웨어</small></h2><p>컴퓨터 소프트웨어(computer software, 혹은 간단히 소프트웨어, 문화어: 쏘프트웨어, 순화 용어: 무른모)는 저장장치에 저장된 특정한 목적의 하나 또는 다수의 컴퓨터 프로그램을 뜻한다. 프로그램 소프트웨어는 컴퓨터 하드웨어에 직접 명령어를 주거나 다른 소프트웨어에 입력을 제공함으로써, 그것이 수행하도록 구현된 기능을 수행한다.</p>
+<p>“소프트웨어”라는 용어는 1957년에 존 터키(John W. Tukey)가 처음 사용한 용어이다. 일상적으로 이 용어는 응용 소프트웨어의 의미로 자주 쓰인다. 컴퓨터 과학과 컴퓨터 공학에서 “컴퓨터 소프트웨어”는 컴퓨터 시스템, 프로그램, 데이터에 의해 처리된 모든 정보를 말한다.</p>
+<p>컴퓨터 소프트웨어는 컴퓨터 하드웨어의 반대 의미로, 컴퓨터 하드웨어는 소프트웨어가 실행되고 저장되는 물리 구조이다. –<a href="https://ko.wikipedia.org/wiki/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4" target="_blank" rel="noopener">위키</a></p>
+<hr>
+<div class="img-reset"><img src="https://img.shields.io/badge/Utilities for Windows-17-cb3837.svg"> <img src="https://img.shields.io/badge/Post Update-20190117-000000.svg"></div>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+.f-ti{font-family: 'Ubuntu', sans-serif;letter-spacing: -1px;color:#000;font-size: 50px;}.tumm {border: 1px solid #ddd; border-radius: 4px;padding:30px 20px 10px;margin:20px 0} b {font-size:20px;line-height: 60px;} .article-entry a {border-bottom: 2px solid #5AE8FD!important; color:#2b2d32!important;padding-bottom: 0px;} .img-reset a {border-bottom: 0!important;} .article-entry .p-link a {border-bottom: 2px solid #FC5AE7!important; color:#2b2d32!important;padding-bottom: 0px;}</style>
+
+<hr>
+<h3 id="“앗-파일명이-기억이-안나-ㅠㅠ-어떻게-찾지-”"><a href="#“앗-파일명이-기억이-안나-ㅠㅠ-어떻게-찾지-”" class="headerlink" title="“앗! 파일명이 기억이 안나 ㅠㅠ 어떻게 찾지?”"></a>“앗! 파일명이 기억이 안나 ㅠㅠ 어떻게 찾지?”</h3><p>이런 문구를 읽고 앗! 이것이다. 제목으로 무얼 적을까 하다가 이 말이 제일 어울리지 않을까 싶을 정도네요.</p>
+<div class="tumm"><center class="f-ti"><strong>Utilities for Windows</strong><br><b>UpDate : 2019-1-17</b></center></div>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h4 id="ShanaEncoder-샤나인코더"><a href="#ShanaEncoder-샤나인코더" class="headerlink" title="# ShanaEncoder  샤나인코더"></a># <span class="inks-fOne">ShanaEncoder <small> 샤나인코더</small></span></h4><ul>
+<li>설명: 샤나인코더는 빠른 속도와 높은 압축률을 자랑하는 고화질 동영상 (HEVC,4K,x265 지원)/오디오 인코딩 프로그램입니다.</li>
+<li>최신 다운로드: <a href="https://shana.pe.kr/shanaencoder_download" target="_blank" rel="noopener">https://shana.pe.kr/shanaencoder_download</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2r" target="_blank" rel="noopener">ShanaEncoder v4.9.0.1</a></span></li>
+</ul>
+<hr>
+<h4 id="Windows-USB-DVD-Download-Tool-KR-Windows-USB-DVD-다운로드-도구-한글"><a href="#Windows-USB-DVD-Download-Tool-KR-Windows-USB-DVD-다운로드-도구-한글" class="headerlink" title="# Windows USB/DVD Download Tool KR Windows USB / DVD 다운로드 도구 한글"></a># <span class="inks-fOne">Windows USB/DVD Download Tool KR <small>Windows USB / DVD 다운로드 도구 한글</small></span></h4><ul>
+<li>설명: windows 7 USB부팅 디스크 만들기 입니다. 물론 USB 8G 이상이고 PC가 USB부팅이 되어야 됩니다.</li>
+<li>공식 사이트 가기: <a href="http://wudt.codeplex.com/releases/view/37074" target="_blank" rel="noopener">http://wudt.codeplex.com/releases/view/37074</a>,<br><a href="https://www.microsoft.com/ko-kr/download/windows-usb-dvd-download-tool" target="_blank" rel="noopener">https://www.microsoft.com/ko-kr/download/windows-usb-dvd-download-tool</a><ul>
+<li>참고: windows XP일 경우에는 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=1639" target="_blank" rel="noopener">Microsoft .NET Framework 2.0</a>이상이 있어야 실행이 됩니다.</li>
+<li>아니면 이쪽 링크 : Microsoft .NET Framework 2.0 Service Pack 2<br><span class="p-link"><a href="http://inurl.ga/u/su.php?u=2u" target="_blank" rel="noopener">NetFx20SP2_x86.exe</a></span>,<br><span class="p-link"><a href="http://inurl.ga/u/su.php?u=2v" target="_blank" rel="noopener">NetFx20SP2_ia64.exe</a></span>,<br><span class="p-link"><a href="http://inurl.ga/u/su.php?u=2w" target="_blank" rel="noopener">NetFx20SP2_x64.exe</a></span></li>
+<li>Microsoft Image Mastering API v2가 설치되어 있어야합니다. 이 파일은 <a href="https://software.naver.com/software/summary.nhn?softwareId=MFS_100171" target="_blank" rel="noopener">https://software.naver.com/software/summary.nhn?softwareId=MFS_100171</a> (네이버자료실)에서 다운로드 할 수 있습니다.</li>
+<li>아니면 이쪽 링크 : Microsoft Image Mastering API v2 <a href="https://xrl.kr/uy6iSbDX" target="_blank" rel="noopener">https://xrl.kr/uy6iSbDX</a></li>
+</ul>
+</li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2t" target="_blank" rel="noopener">Windows USB/DVD Download Tool 한글</a></span></li>
+</ul>
+<hr>
+<h4 id="balabolka-바라볼카"><a href="#balabolka-바라볼카" class="headerlink" title="# balabolka 바라볼카"></a># <span class="inks-fOne">balabolka <small>바라볼카</small></span></h4><ul>
+<li>설명: Balabolka는 텍스트 음성 변환(Text-To-Speech, TTS) 프로그램입니다. 즉 Txt파일을 불러넣어서 <span style="COLOR: #000"><strong>컴퓨터가 읽어 주는 프로그램</strong></span>입니다.</li>
+<li>최신버전 다운로드: <a href="http://www.cross-plus-a.com/kr/balabolka.htm" target="_blank" rel="noopener">http://www.cross-plus-a.com/kr/balabolka.htm</a><ul>
+<li>윈도우 XP/Vista/7/8/10 에서 동작합니다.</li>
+</ul>
+</li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3p" target="_blank" rel="noopener">LinkPage -windows(US) v2.15.0.691</a></span></li>
+<li>한글 언어 패치는 영어 설치하고 프로그램 실행 후 한국어로 변경 하면 됩니다.<ul>
+<li>한국어 TTS 앤진 : <a href="http://download.microsoft.com/download/4/0/D/40D6347A-AFA5-417D-A9BB-173D937BEED4/MSSpeech_TTS_ko-KR_Heami.msi" target="_blank" rel="noopener">MSSpeech_TTS_ko-KR_Heami</a></li>
+<li>설치후 <code>microsoft Speech Platform</code>을 클릭 펼침 메뉴에서 한국어(ko-KR, Heami)로 선택 하면 됩니다.</li>
+<li>않될시(windows7 x64) : <a href="https://www.microsoft.com/en-us/download/details.aspx?id=27224" target="_blank" rel="noopener">Microsoft Speech Platform - Runtime Languages (Version 11) 설치</a> -&gt; <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3q" target="_blank" rel="noopener">heami_64.reg</a></span> 실행 (reg는 않될때 하세요.)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="AOMEI-Backupper-Standard"><a href="#AOMEI-Backupper-Standard" class="headerlink" title="# AOMEI Backupper Standard"></a># <span class="inks-fOne">AOMEI Backupper Standard</span></h4><ul>
+<li>설명: 매우 심플한 사용자 인터페이스를 제공하는 <span style="COLOR: #000"><strong>백업 및 복구</strong></span> 프로그램</li>
+<li>최신버전 다운로드: <a href="http://www.backup-utility.com/download.html" target="_blank" rel="noopener">http://www.backup-utility.com/download.html</a><ul>
+<li>윈도우 10/8.1/8/7/Vista/XP (all editions, 32 &amp; 64 bit). 에서 동작합니다.</li>
+</ul>
+</li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3r" target="_blank" rel="noopener">LinkPage -windows(US) v4.6.1</a></span></li>
+<li>한글 언어 패치 링크 : <a href="https://windowsforum.kr/data/11000893" target="_blank" rel="noopener">https://windowsforum.kr/data/11000893</a><ul>
+<li>위의 한글 패치 사이트에 가시면 설명이 되어 있습니다. 다운 않되시면 <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3s" target="_blank" rel="noopener">http://inurl.ga/u/su.php?u=3s</a></span></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="PhotoScape-포토스케이프"><a href="#PhotoScape-포토스케이프" class="headerlink" title="# PhotoScape 포토스케이프"></a># <span class="inks-fOne">PhotoScape <small>포토스케이프</small></span></h4><ul>
+<li>설명: 매우 심플한 사용자 인터페이스를 제공하는데 이미지의 색상 조절, 자르기, 보정, 인쇄, GIF 애니메이션 만들기 등 <span style="COLOR: #000"><strong>아주 기본적인 이미지 편집</strong></span>을 쉽게 할 수 있도록 도와줍니다.</li>
+<li>최신버전 다운로드: <a href="http://www.photoscape.co.kr/ps/main/download.php" target="_blank" rel="noopener">http://www.photoscape.co.kr/ps/main/download.php</a><ul>
+<li>윈도우 XP, Vista, 7, 8, 10, 2000, NT 에서 동작합니다.</li>
+<li>원도우 10은  따로 구매하셔야 합니다. <a href="http://x.photoscape.org/" target="_blank" rel="noopener">http://x.photoscape.org/</a></li>
+</ul>
+</li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2x" target="_blank" rel="noopener">LinkPage -windows(korea) v3.7</a></span></li>
+</ul>
+<hr>
+<h4 id="GIMP-김프"><a href="#GIMP-김프" class="headerlink" title="# GIMP 김프"></a># <span class="inks-fOne">GIMP <small>김프</small></span></h4><ul>
+<li>설명: <span style="COLOR: #000"><strong>강력한 그래픽 편집 프로그램</strong></span>이며 맥, 리눅스, 윈도우를 지원한다. 오픈 소스 커뮤니티에서는 포토샵의 대용품으로 자주 .</li>
+<li>최신버전 다운로드: <a href="https://www.gimp.org/downloads/" target="_blank" rel="noopener">https://www.gimp.org/downloads/</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3t" target="_blank" rel="noopener">LinkPage - windows(English) v2.10.8</a></span></li>
+</ul>
+<hr>
+<h4 id="cpu-z"><a href="#cpu-z" class="headerlink" title="# cpu-z"></a># <span class="inks-fOne">cpu-z</span></h4><ul>
+<li>설명: <span style="COLOR: #000"><strong>CPU</strong></span>, 메인보드, 메모리등의 정보 확인.</li>
+<li>최신버전 다운로드: <a href="http://www.cpuid.com/softwares/cpu-z.html" target="_blank" rel="noopener">http://www.cpuid.com/softwares/cpu-z.html</a></li>
+<li>한글화 사이트 : <a href="http://blog.clsw.kr/132?category=554396" target="_blank" rel="noopener">http://blog.clsw.kr/132?category=554396</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3u" target="_blank" rel="noopener">LinkPage - windows(zip) v1.87 ko</a></span></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3v" target="_blank" rel="noopener">LinkPage - windows(zip) v1.87 en</a></span></li>
+</ul>
+<hr>
+<h4 id="ColorCop-색상-추출기"><a href="#ColorCop-색상-추출기" class="headerlink" title="# ColorCop 색상 추출기"></a># <span class="inks-fOne">ColorCop <small>색상 추출기</small></span></h4><ul>
+<li>설명: 설치 없이 화면에 보이는 <span style="COLOR: #000"><strong>색 추출기</strong></span>.</li>
+<li>최신버전 다운로드: <a href="http://colorcop.net/download/" target="_blank" rel="noopener">http://colorcop.net/download/</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2y" target="_blank" rel="noopener">LinkPage - windows(zip) v5.4.5</a></span></li>
+</ul>
+<hr>
+<h4 id="μTorrent-유토렌트"><a href="#μTorrent-유토렌트" class="headerlink" title="# μTorrent 유토렌트"></a># <span class="inks-fOne">μTorrent <small>유토렌트</small></span></h4><ul>
+<li>설명: P2P 파일 공유, 멀티 다운로드가 가능한 ‘<span style="COLOR: #000"><strong>토렌트</strong></span>‘</li>
+<li>최신 다운로드: <a href="http://www.utorrent.com/intl/ko/desktop/" target="_blank" rel="noopener">http://www.utorrent.com/intl/ko/desktop/</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2z" target="_blank" rel="noopener">LinkPage - windows v3.5.5 build 45146</a></span></li>
+</ul>
+<hr>
+<h4 id="Sublime-Text-3-서브라임-텍스트"><a href="#Sublime-Text-3-서브라임-텍스트" class="headerlink" title="# Sublime Text 3 서브라임 텍스트"></a># <span class="inks-fOne">Sublime Text 3 <small>서브라임 텍스트</small></span></h4><ul>
+<li>설명: Sublime Text는 그 자체로도 가볍고 쓸만한 <span style="COLOR: #000000"><strong>텍스트 편집기</strong></span>,</li>
+<li>최신 및 다른 버전 다운로드: <a href="http://www.sublimetext.com/3" target="_blank" rel="noopener">http://www.sublimetext.com/3</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=33" target="_blank" rel="noopener">LinkPage - windows x64 portable version Build 3200</a></span></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=31" target="_blank" rel="noopener">LinkPage - windows x32 portable version Build 3200</a></span></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=32" target="_blank" rel="noopener">LinkPage - windows x64 installer Build 3200</a></span></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=30" target="_blank" rel="noopener">LinkPage - windows x32 installer Build 3200</a></span></li>
+</ul>
+<hr>
+<h4 id="Atom-아톰"><a href="#Atom-아톰" class="headerlink" title="# Atom 아톰"></a># <span class="inks-fOne">Atom <small>아톰</small></span></h4><ul>
+<li>설명: <a href="https://github.com/" target="_blank" rel="noopener">깃허브</a>가 개발한 강력한 <span style="COLOR: #000000"><strong>문서 편집기</strong></span>.</li>
+<li>최신 및 다른OS버전 다운로드: <a href="https://atom.io/" target="_blank" rel="noopener">https://atom.io/</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3w" target="_blank" rel="noopener">LinkPage - windows x64 v1.34.0</a></span></li>
+</ul>
+<hr>
+<h4 id="OneKey-Ghost-원키고스트-nbsp"><a href="#OneKey-Ghost-원키고스트-nbsp" class="headerlink" title="# OneKey Ghost 원키고스트 &nbsp;"></a># <span class="inks-fOne">OneKey Ghost <small>원키고스트</small></span> &nbsp;<i class="fa fa-star" aria-hidden="true"></i></h4><ul>
+<li>설명: 드라이버를 쉽게 <span style="COLOR: #000000"><strong>백업 및 복구</strong></span>해주는 프로그램.</li>
+<li>다운로드: <a href="http://hangulhwa.tistory.com/42" target="_blank" rel="noopener">http://hangulhwa.tistory.com/42</a></li>
+<li>MF download : <span class="p-link"><a href="https://hoy.kr/hocXP" target="_blank" rel="noopener">LinkPage - windows v14.5.8.215 fix</a></span></li>
+<li>추가 MF download : <span class="p-link"><a href="https://hoy.kr/K55tr" target="_blank" rel="noopener">OneK<br>eyGhost_7.3.2_KO</a></span>, <span class="p-link"><a href="https://hoy.kr/yeySI" target="_blank" rel="noopener">OneKey_7.3ko</a></span></li>
+</ul>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h4 id="DaView-Indy-다뷰-인디"><a href="#DaView-Indy-다뷰-인디" class="headerlink" title="# DaView Indy 다뷰 인디"></a># <span class="inks-fOne">DaView Indy <small>다뷰 인디</small></span></h4><ul>
+<li>설명: 오피스, 한글, PDF, CAD 파일까지 모두 호환, <span style="COLOR: #000000"><strong>만능 뷰어</strong></span>.</li>
+<li>최신 다운로드: <a href="http://datools.kr/" target="_blank" rel="noopener">http://datools.kr/</a></li>
+<li>MF download : <span class="p-link"><a href="https://hoy.kr/851SQ" target="_blank" rel="noopener">LinkPage - windows v8.987</a></span></li>
+</ul>
+<hr>
+<h4 id="K-Subtitle-동영상과-자막파일-이름-맞추기"><a href="#K-Subtitle-동영상과-자막파일-이름-맞추기" class="headerlink" title="# K_Subtitle 동영상과 자막파일 이름 맞추기"></a># <span class="inks-fOne">K_Subtitle <small>동영상과 자막파일 이름 맞추기</small></span></h4><ul>
+<li>설명: 동영상과 자막 파일이름이 안맞을때 한방에 수정하는 프로그램! <span style="COLOR: #000000"><strong>K_Subtitle</strong></span>.</li>
+<li>다운로드: <a href="http://kcoder.tistory.com/146" target="_blank" rel="noopener">http://kcoder.tistory.com/146</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=37" target="_blank" rel="noopener">LinkPage - windows v1.0</a></span></li>
+</ul>
+<hr>
+<h4 id="3DP-Chip-3DP-칩-nbsp"><a href="#3DP-Chip-3DP-칩-nbsp" class="headerlink" title="# 3DP Chip 3DP 칩 &nbsp;"></a># <span class="inks-fOne">3DP Chip <small>3DP 칩</small></span> &nbsp;<i class="fa fa-star" aria-hidden="true"></i></h4><ul>
+<li>설명: ‘3DP 칩’은 CPU, 메인보드, 그래픽등 <span style="COLOR: #000000"><strong>최적드라이버</strong></span> 연동.</li>
+<li>최신 다운로드: <a href="http://www.3dpchip.com/3dp/chip_down_kor.php" target="_blank" rel="noopener">http://www.3dpchip.com/3dp/chip_down_kor.php</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2n" target="_blank" rel="noopener">LinkPage - windows Lite_v19.02</a></span></li>
+</ul>
+<hr>
+<h4 id="3DP-Net-3DP-넷-nbsp"><a href="#3DP-Net-3DP-넷-nbsp" class="headerlink" title="# 3DP Net 3DP 넷 &nbsp;"></a># <span class="inks-fOne">3DP Net <small>3DP 넷</small></span> &nbsp;<i class="fa fa-star" aria-hidden="true"></i></h4><ul>
+<li>설명: 3DP 넷’은 윈도우즈 설치 후 <span style="COLOR: #000000"><strong>랜카드 드라이버</strong></span> 설치프로그램.</li>
+<li>최신 다운로드: <a href="https://www.3dpchip.com/3dp/net_down_kor.php" target="_blank" rel="noopener">https://www.3dpchip.com/3dp/net_down_kor.php</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2o" target="_blank" rel="noopener">LinkPage - windows v18.12</a></span></li>
+</ul>
+<hr>
+<h4 id="7-Zip"><a href="#7-Zip" class="headerlink" title="# 7-Zip"></a># <span class="inks-fOne">7-Zip</span></h4><ul>
+<li>설명: 괜찮은 <span style="COLOR: #000000"><strong>압축</strong></span>률을 자랑하는 프로그램</li>
+<li>최신 다운로드: <a href="http://www.7-zip.org" target="_blank" rel="noopener">http://www.7-zip.org</a></li>
+<li>MF download : <span class="p-link">LinkPage - windows <span style="COLOR: #000000"><strong>v19.00</strong></span> <a href="https://hoy.kr/FrgtD" target="_blank" rel="noopener">x32</a>, <a href="https://hoy.kr/iKCpi" target="_blank" rel="noopener">x64</a></span></li>
+</ul>
+<hr>
+<h4 id="GoClean-고클린"><a href="#GoClean-고클린" class="headerlink" title="# GoClean  고클린"></a># <span class="inks-fOne">GoClean <small> 고클린</small></span></h4><ul>
+<li>설명: ‘<span style="COLOR: #000000"><strong>고클린</strong></span>‘ 다기능을 갖춘 PC관리 및 최적화 프로그램</li>
+<li>최신 다운로드: <a href="http://www.gobest.kr/goclean_app/index.htm" target="_blank" rel="noopener">http://www.gobest.kr/goclean_app/index.htm</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3l" target="_blank" rel="noopener">LinkPage - windows v1.4.9</a></span></li>
+</ul>
+<hr>
+<h4 id="CrystalDiskInfo-크리스탈-디스크인포"><a href="#CrystalDiskInfo-크리스탈-디스크인포" class="headerlink" title="# CrystalDiskInfo  크리스탈 디스크인포"></a># <span class="inks-fOne">CrystalDiskInfo <small> 크리스탈 디스크인포</small></span></h4><ul>
+<li>설명: 하드디스크 사용시간 수명 확인 프로그램 ‘<span style="COLOR: #000000"><strong>크리스탈 디스크인포</strong></span>‘</li>
+<li>최신 다운로드: <a href="http://crystalmark.info/download/index-e.html" target="_blank" rel="noopener">http://crystalmark.info/download/index-e.html</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3m" target="_blank" rel="noopener">CrystalDiskInfo 8.0.0</a></span></li>
+</ul>
+<hr>
+<h4 id="CacaoEncoder-카카오인코더"><a href="#CacaoEncoder-카카오인코더" class="headerlink" title="# CacaoEncoder  카카오인코더"></a># <span class="inks-fOne">CacaoEncoder <small> 카카오인코더</small></span></h4><ul>
+<li>설명: 카카오인코더(CacaoEncoder)는 각종 동영상(mp4, mkv, mpg, avi, flv, mov, wmv, asf, swf, divx, rm, skm, k3g, 3gp, webm 외 다수) 및 오디오파일(mp3, aac, ac3, ogg, wav, m4a, m4r, flac, mmf 등)을 변환시켜주는 동영상변환기입니다. 국내에서 가장 많은 변환 포멧을 지원합니다.</li>
+<li>최신 다운로드: <a href="http://www.cacaotools.com/cacaoencoder/" target="_blank" rel="noopener">http://www.cacaotools.com/cacaoencoder/</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=2s" target="_blank" rel="noopener">Cacaoencoder v1.95</a></span></li>
+</ul>
+<hr>
+<h4 id="DaumPotEncoder-다음-팟인코더-마지막-버전"><a href="#DaumPotEncoder-다음-팟인코더-마지막-버전" class="headerlink" title="# DaumPotEncoder  다음 팟인코더 마지막 버전"></a># <span class="inks-fOne">DaumPotEncoder <small> 다음 팟인코더 마지막 버전</small></span></h4><ul>
+<li>설명: 팟인코더는 다양한 동영상 파일에서 원하는 부분을 잘라내거나 통째로 다른 파일로 손쉽게 변환할 수 있는 무료 인코더입니다.</li>
+<li>최신 버전 없음 - 공개 자료실 등에서 검색해보면 다운로드 받을 수 있겠지만 블로그에 백업겸 제가 사용하려고 업로드 해놓습니다.</li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3n" target="_blank" rel="noopener">DaumPotEncoder b2.1.4.62</a></span></li>
+</ul>
+<hr>
+<h4 id="DirectX-9-0c-End-User-Runtime-다이렉트x-DirectX-최종사용자-런타임"><a href="#DirectX-9-0c-End-User-Runtime-다이렉트x-DirectX-최종사용자-런타임" class="headerlink" title="# DirectX 9.0c End-User Runtime  다이렉트x(DirectX) 최종사용자 런타임 "></a># <span class="inks-fOne">DirectX 9.0c End-User Runtime <small> 다이렉트x(DirectX) 최종사용자 런타임 </small></span></h4><ul>
+<li>설명: Microsoft DirectX® 9.0c은 DirectX 기술의 최신 버전으로 DirectX를 사용하는 게임과 다른 여러 미디어 소프트웨어에 대해 빠른 성능을 제공합니다.</li>
+<li>최신 버전 없음 - 공개 자료실 등에서 검색해보면 다운로드 받을 수 있겠지만 블로그에 백업겸 제가 사용하려고 업로드 해놓습니다.</li>
+<li>microsoft download : <a href="https://www.microsoft.com/ko-kr/download/details.aspx?id=35" target="_blank" rel="noopener">Microsoft DirectX® 9.0c</a></li>
+<li>MF download : <span class="p-link"><a href="http://inurl.ga/u/su.php?u=3o" target="_blank" rel="noopener">DirectX® 9.0c</a></span></li>
+</ul>
+<hr>
+<h4 id="참조-이-포스트는-저의-빠른-링크를-위해-만들었습니다"><a href="#참조-이-포스트는-저의-빠른-링크를-위해-만들었습니다" class="headerlink" title="[참조] 이 포스트는 저의 빠른 링크를 위해 만들었습니다."></a><span class=WWs>[참조]</span> 이 포스트는 저의 빠른 링크를 위해 만들었습니다.</h4><ul>
+<li>짧은 소개맨트는 개인적인 생각의 글입니다</li>
+<li>위에 파일 링크들은 windows용입니다.</li>
+<li>설치시 광고부분을 <span class=WWs>꼭</span> 확인 하시길 바랍니다.</li>
+<li>다운로드 저장소는 MEGA이며 WinX에 링크를 걸었습니다.</li>
+</ul>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Utilities/" rel="tag"># Utilities</a>
+              <a href="/tags/%EC%9E%91%EC%9D%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/" rel="tag"># 작은 프로젝트</a>
+              <a href="/tags/windows/" rel="tag"># windows</a>
+              <a href="/tags/util/" rel="tag"># util</a>
+              <a href="/tags/%EC%9C%A0%ED%8B%B8/" rel="tag"># 유틸</a>
+              <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/" rel="tag"># 프로그램</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/03/15/game/PC-game-dev-tycoon/" rel="prev" title="게임 개발 타이쿤 공략 (game dev tycoon)">
+      <i class="fa fa-chevron-left"></i> 게임 개발 타이쿤 공략 (game dev tycoon)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/05/05/story/socialpass/" rel="next" title="소셜패스는 무슨 뜻인가?">
+      소셜패스는 무슨 뜻인가? <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MY-SOFTWARE-소프트웨어"><span class="nav-text">MY SOFTWARE 소프트웨어</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#“앗-파일명이-기억이-안나-ㅠㅠ-어떻게-찾지-”"><span class="nav-text">“앗! 파일명이 기억이 안나 ㅠㅠ 어떻게 찾지?”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ShanaEncoder-샤나인코더"><span class="nav-text"># ShanaEncoder  샤나인코더</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-USB-DVD-Download-Tool-KR-Windows-USB-DVD-다운로드-도구-한글"><span class="nav-text"># Windows USB&#x2F;DVD Download Tool KR Windows USB &#x2F; DVD 다운로드 도구 한글</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#balabolka-바라볼카"><span class="nav-text"># balabolka 바라볼카</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOMEI-Backupper-Standard"><span class="nav-text"># AOMEI Backupper Standard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PhotoScape-포토스케이프"><span class="nav-text"># PhotoScape 포토스케이프</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GIMP-김프"><span class="nav-text"># GIMP 김프</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cpu-z"><span class="nav-text"># cpu-z</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ColorCop-색상-추출기"><span class="nav-text"># ColorCop 색상 추출기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#μTorrent-유토렌트"><span class="nav-text"># μTorrent 유토렌트</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime-Text-3-서브라임-텍스트"><span class="nav-text"># Sublime Text 3 서브라임 텍스트</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Atom-아톰"><span class="nav-text"># Atom 아톰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OneKey-Ghost-원키고스트-nbsp"><span class="nav-text"># OneKey Ghost 원키고스트 &amp;nbsp;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DaView-Indy-다뷰-인디"><span class="nav-text"># DaView Indy 다뷰 인디</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K-Subtitle-동영상과-자막파일-이름-맞추기"><span class="nav-text"># K_Subtitle 동영상과 자막파일 이름 맞추기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3DP-Chip-3DP-칩-nbsp"><span class="nav-text"># 3DP Chip 3DP 칩 &amp;nbsp;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3DP-Net-3DP-넷-nbsp"><span class="nav-text"># 3DP Net 3DP 넷 &amp;nbsp;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Zip"><span class="nav-text"># 7-Zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GoClean-고클린"><span class="nav-text"># GoClean  고클린</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CrystalDiskInfo-크리스탈-디스크인포"><span class="nav-text"># CrystalDiskInfo  크리스탈 디스크인포</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CacaoEncoder-카카오인코더"><span class="nav-text"># CacaoEncoder  카카오인코더</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DaumPotEncoder-다음-팟인코더-마지막-버전"><span class="nav-text"># DaumPotEncoder  다음 팟인코더 마지막 버전</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DirectX-9-0c-End-User-Runtime-다이렉트x-DirectX-최종사용자-런타임"><span class="nav-text"># DirectX 9.0c End-User Runtime  다이렉트x(DirectX) 최종사용자 런타임 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#참조-이-포스트는-저의-빠른-링크를-위해-만들었습니다"><span class="nav-text">[참조] 이 포스트는 저의 빠른 링크를 위해 만들었습니다.</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2016/03/21/IT/Utilities-for-Windows/",
+            identifier: "2016/03/21/IT/Utilities-for-Windows/",
+            title: "네게 필요한 프로그램 링크 (유틸)"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

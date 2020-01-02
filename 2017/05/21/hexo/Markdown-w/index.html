@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="마크다운 Markdown마크다운 (Markdown)은 마크업 언어의 일종으로, 존 그루버(John Gruber)와 아론 스워츠(Aaron Swartz)가 만들었다. 읽기도 쓰기도 쉽다는 장점이 있다. ‘존 그루버’는 마크다운으로 작성한 문서를 HTML로 변환하는 펄 스크립트도 만들었다. 확장자는 .md를 쓴다.  저번 포스트에는 장점과 단점을 이야기">
+<meta property="og:type" content="article">
+<meta property="og:title" content="마크다운 문법 설명 및 hexo 문법테스트">
+<meta property="og:url" content="https://innks.github.io/2017/05/21/hexo/Markdown-w/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="마크다운 Markdown마크다운 (Markdown)은 마크업 언어의 일종으로, 존 그루버(John Gruber)와 아론 스워츠(Aaron Swartz)가 만들었다. 읽기도 쓰기도 쉽다는 장점이 있다. ‘존 그루버’는 마크다운으로 작성한 문서를 HTML로 변환하는 펄 스크립트도 만들었다. 확장자는 .md를 쓴다.  저번 포스트에는 장점과 단점을 이야기">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img.shields.io/badge/Markdown-1.0.1-000000.svg">
+<meta property="article:published_time" content="2017-05-21T02:14:03.000Z">
+<meta property="article:modified_time" content="2019-02-14T12:34:52.188Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.shields.io/badge/Markdown-1.0.1-000000.svg">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/21/hexo/Markdown-w/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>마크다운 문법 설명 및 hexo 문법테스트 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/21/hexo/Markdown-w/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          마크다운 문법 설명 및 hexo 문법테스트
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-21 11:14:03" itemprop="dateCreated datePublished" datetime="2017-05-21T11:14:03+09:00">2017-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-02-14 21:34:52" itemprop="dateModified" datetime="2019-02-14T21:34:52+09:00">2019-02-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/21/hexo/Markdown-w/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/21/hexo/Markdown-w/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="img-reset">
+<img src="https://img.shields.io/badge/Markdown-1.0.1-000000.svg" /></div>
+
+<h1 id="마크다운-Markdown"><a href="#마크다운-Markdown" class="headerlink" title="마크다운 Markdown"></a>마크다운 <small>Markdown</small></h1><p>마크다운 (Markdown)은 마크업 언어의 일종으로, 존 그루버(John Gruber)와 아론 스워츠(Aaron Swartz)가 만들었다. 읽기도 쓰기도 쉽다는 장점이 있다. ‘존 그루버’는 마크다운으로 작성한 문서를 HTML로 변환하는 펄 스크립트도 만들었다. 확장자는 .md를 쓴다.</p>
+<hr>
+<p>저번 포스트에는 장점과 단점을 이야기 했습니다. 이번에는 장점중에 하나인 <code>배우기 쉽다</code>라는 부분에서 왜 그런지 간단히 적어 보겠습니다.</p>
+<style>table.marklist {border-collapse:collapse;border:1px solid #d7d7d7;font-size:12px;line-height:17px;}.marklist td, .marklist th {border:1px solid #d7d7d7;padding:12px 10px 8px 10px !important;font-size:16px; width:50%;line-height:32px;}td.dotumf{font-family:Dotum,sans-serif;}th{background-color:#fcf8e3}table a {color: #1e8cbe;border-bottom: 1px solid #21759b;}a:hover {text-decoration:none;}span.dotumf{font-family:Dotum,sans-serif;}td.Nw700{font-weight:700;}.codeB { color: #f2f2f2; background: #000; margin: 1.6em 0;display: block; overflow-x: auto; padding: 15px 20px; font-size: 14px; font-family: Consolas, 'Source Code Pro', 'NanumBarunGothic', '나눔바른고딕', dotum, AppleGothic, sans-serif; line-height: 22.400000000000002px; border-radius: 3px;}.numB{color: #666; text-align: right; padding-right: 20px;width:29px;float: left;}.memoA{clear: both}.memoB{float: left;}.selector-tag{color:#e8bf6a;}</style>
+
+<h1 id="마크다운-명령어"><a href="#마크다운-명령어" class="headerlink" title="마크다운 명령어"></a>마크다운 명령어</h1><h2 id="1-제목"><a href="#1-제목" class="headerlink" title="1. 제목"></a>1. 제목</h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>&#35; 제목 1<br />&#35;&#35; 제목 2<br />&#35;&#35;&#35; 제목 3 <br />&#35;&#35;&#35;&#35; 제목 4 &#35;&#35;&#35;&#35;<br />&#35;&#35;&#35;&#35;&#35; 제목 5 &#35;&#35;&#35;&#35;&#35;<br />&#35;&#35;&#35;&#35;&#35;&#35; 제목 6 &#35;&#35;&#35;&#35;&#35;&#35;</td><td><p class=h1>제목1</p><p class=h2>제목2</p><p class=h3>제목1</p><p class=h4>제목4</p><p class=h5>제목5</p><p class=h6>제목6</p></td></tr><tr><td colspan=2>`&#35;`을 앞, 뒤에 모두 붙여도 되고, 앞에만 붙여도 된다.</td></tr></table>
+
+<hr>
+<h2 id="2-강조-기울여쓰기-굵게쓰기"><a href="#2-강조-기울여쓰기-굵게쓰기" class="headerlink" title="2. 강조 기울여쓰기 / 굵게쓰기"></a>2. 강조 <small>기울여쓰기 / 굵게쓰기</small></h2><p><strong>기울여 쓰기</strong> 는 HTML에서 <strong>&lt;em&gt;</strong> 태그를, <strong>굵게쓰기</strong> 는 HTML에서 <strong>&lt;strong&gt;</strong> 태그를 의미합니다. 따라서 CSS에서 그 태그들이 어떻게 보이도록 설정되었는지에 따라 보이는 모습이 달라질 수 있습니다.</p>
+<table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class="dotumf Nw700">&#42;기울여쓰기(italic)&#42;  &#95;기울여쓰기(italic)&#95;<br /> &#42;&#42;굵게쓰기(bold)&#42;&#42; &#95;&#95;굵게쓰기(bold)&#95;&#95;<br />&#126;&#126;cancelline&#126;&#126;</td><td>_기울여쓰기(italic)_<br /> **굵게쓰기(bold)**<br />~~cancelline~~</td></tr><tr><td colspan=2>이때  <span class=dotumf><strong>&#42;</strong></span> 과 **_** 사이에는 공백이 있어서는 안 됩니다.</td></tr></table>
+
+<hr>
+<h2 id="3-링크-인라인-링크-참조-링크-URL만으로-링크하기"><a href="#3-링크-인라인-링크-참조-링크-URL만으로-링크하기" class="headerlink" title="3. 링크 인라인 링크 / 참조 링크 / URL만으로 링크하기"></a>3. 링크 <small>인라인 링크 / 참조 링크 / URL만으로 링크하기</small></h2><h3 id="ㄱ-인라인-링크"><a href="#ㄱ-인라인-링크" class="headerlink" title="ㄱ. 인라인 링크"></a>ㄱ. 인라인 링크</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>\[링크](http&#58;//example.com "링크제목")</td><td class=none>[링크](http://example.com "링크제목")</td></tr><tr><td colspan=2>대부분 브라우저에서는 마우스 커서를 링크에 가져가면 링크 제목이 뜹니다.</td></tr></table>
+
+<h3 id="ㄴ-참조-링크"><a href="#ㄴ-참조-링크" class="headerlink" title="ㄴ. 참조 링크"></a>ㄴ. 참조 링크</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>\[링크1]\[1] 과 \[링크2]\[2].<br /><br />\[1]: http&#58;//example.com/ "링크제목1"<br />\[2]: http&#58;//example.org/ "링크제목2"</td><td>[링크1][1] 과 [링크2][2]</td></tr><tr><td colspan=2>참조 부분은 문서의 어떤 부분에 있어도 상관없습니다. 그리고 또 주의해야 할 것 중 하나는, 참조부분에서 **[]과 :는 꼭 붙어있어야 한다는 것** 이다.</td></tr></table>
+
+<h3 id="ㄷ-URL만으로-링크하기-자동연결"><a href="#ㄷ-URL만으로-링크하기-자동연결" class="headerlink" title="ㄷ. URL만으로 링크하기 자동연결"></a>ㄷ. URL만으로 링크하기 <small>자동연결</small></h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>http&#58;//example.com/<br />&lt;address&#64;example.com&gt;</td><td>http://example.com<br /><address@example.com></td></tr></table>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="4-이미지-인라인-이미지-참조-이미지-링크된-이미지"><a href="#4-이미지-인라인-이미지-참조-이미지-링크된-이미지" class="headerlink" title="4. 이미지 인라인 이미지 / 참조 이미지 / 링크된 이미지"></a>4. 이미지 <small>인라인 이미지 / 참조 이미지 / 링크된 이미지</small></h2><h3 id="ㄱ-인라인-이미지"><a href="#ㄱ-인라인-이미지" class="headerlink" title="ㄱ. 인라인 이미지"></a>ㄱ. 인라인 이미지</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>!\[대체텍스트](/path/to/img.jpg "이미지제목")</td><td>![](https://i.imgur.com/C9ZVylf.png)</td></tr><tr><td colspan=2>대체텍스트는 시각장애인용 브라우저를 이용할 때 사용되는 것이지만 hexo-hueman에서는 하단에 표시됩니다.<br /> /path/to/img.jpg 부분에 이미지 주소를 넣어주면 됩니다.</td></tr></table>
+
+<h3 id="ㄴ-참조-이미지"><a href="#ㄴ-참조-이미지" class="headerlink" title="ㄴ. 참조 이미지"></a>ㄴ. 참조 이미지</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>!\[대체텍스트]\[1]<br />\[1]: /path/to/img.jpg "이미지제목"</td><td>![][3]</td></tr></table>
+
+<h3 id="ㄷ-링크된-이미지"><a href="#ㄷ-링크된-이미지" class="headerlink" title="ㄷ. 링크된 이미지"></a>ㄷ. 링크된 이미지</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>\[!\[대체텍스트](/img.jpg)](http&#58;//example.com/ "링크제목")</td><td>[![](https://i.imgur.com/tergQ6G.png)](http://example.com/ "링크제목")</td></tr><tr><td colspan=2>원래는 링크가 맞지만 여기 hexo-heuman에서는 light gallery가 되어 있어 이 기능을 볼 수 없습니다.</td></tr></table>
+
+<hr>
+<h2 id="5-수평선-Horizontal-Rules"><a href="#5-수평선-Horizontal-Rules" class="headerlink" title="5. 수평선 Horizontal Rules"></a>5. 수평선 <small>Horizontal Rules</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class="dotumf Nw700">&#42;&#42;&#42;<br />&#45;&#45;&#45;<br />&#95;&#95;&#95;</td><td><hr /><br/><hr /><br/><hr /></td></tr><tr><td colspan=2>수평선을 그리고 싶으면 <span class=dotumf>&#45;, &#42;, &#95;</span> 를 3개 이상 나열하면 됩니다. 이때 “<span class=dotumf>&#45; &#45; &#45;</span>“와 같은 식으로 중간에 공백을 넣어도 상관없습니다.</td></tr></table>
+
+<hr>
+<h2 id="6-각주-footnote"><a href="#6-각주-footnote" class="headerlink" title="6. 각주 footnote"></a>6. <del>각주</del> <del><small>footnote</small></del></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>각주 \[&#94;1] 는 이렇게 만든다.<br />\[&#94;1]: 각주다.</td><td>각주 [&#94;1] 는 이렇게 만든다.<br />\[&#94;1]: 각주다.</td></tr><tr><td colspan=2>~~각주는 문서의 가장 밑에 원래 읽던 곳으로 돌아갈 수 있는 링크와 함께 추가된다.~~<br />GitHub에서는 footnote를 지원해주지 않습니다.</td></tr></table>
+
+<hr>
+<h2 id="7-줄넘기기"><a href="#7-줄넘기기" class="headerlink" title="7. 줄넘기기"></a>7. <del>줄넘기기</del></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>각 라인의 끝에<br />2개 이상의 스페이스를 넣으면<br />줄 넘기기가 된다.</td><td>각 라인의 끝에<br />2개 이상의 스페이스를 넣으면<br />줄 넘기기가 된다.</td></tr><tr><td colspan=2>~~HTML에서와 같이 마크다운(Markdown)에서도, 에디터상에서 엔터를 쳐서 줄을 넘겨도 브라우저상에서 표현될 때는 줄이 넘겨지지 않은 상태로 나온다.~~<br /><strong>이 프로그램(hexo)에서는 지원해주지 않습니다.</strong></td></tr></table>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="8-리스트-순서없는-리스트-순서있는-리스트-혼합-목록"><a href="#8-리스트-순서없는-리스트-순서있는-리스트-혼합-목록" class="headerlink" title="8. 리스트 순서없는 리스트 / 순서있는 리스트 / 혼합 목록"></a>8. 리스트 <small>순서없는 리스트 / 순서있는 리스트 / 혼합 목록</small></h2><h3 id="ㄱ-순서-없는-리스트-Unordered-Lists"><a href="#ㄱ-순서-없는-리스트-Unordered-Lists" class="headerlink" title="ㄱ. 순서 없는 리스트 Unordered Lists"></a>ㄱ. 순서 없는 리스트 <small>Unordered Lists<small></h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>\* list item 1<br />&nbsp;&nbsp;&nbsp;&nbsp;\* list item 1-1<br />&nbsp;&nbsp;&nbsp;&nbsp;\* list item 1-2</td><td><ul><li>list item 1<ul style="list-style:circle"><li>list item 1-1</li><li>list item 1-2</li></ul></li></ul></td></tr><tr><td class=Nw700>\+ list item 1<br />&nbsp;&nbsp;&nbsp;&nbsp;\+ list item 1-1<br />&nbsp;&nbsp;&nbsp;&nbsp;\+ list item 1-2</td><td><ul><li>list item 1<ul style="list-style:circle"><li>list item 1-1</li><li>list item 1-2</li></ul></li></ul></td></tr><tr><td class=Nw700>\- list item 1<br />&nbsp;&nbsp;&nbsp;&nbsp;\- list item 1-1<br />&nbsp;&nbsp;&nbsp;&nbsp;\- list item 1-2</td><td><ul><li>list item 1<ul style="list-style:circle"><li>list item 1-1</li><li>list item 1-2</li></ul></li></ul></td></tr><tr><td colspan=2>순서없는 리스트를 작성하기 위해서는 <span class=dotumf>&#45;, &#42;, &#43;</span>을 맨앞에 적으면 됩니다.<br /><strong> 원래는 2번째 리스트에 circle이 나와야 하지만 여기서는 disc가 나옵니다.</strong> </td></tr></table>
+
+<h3 id="ㄴ-순서있는-리스트-Ordered-Lists"><a href="#ㄴ-순서있는-리스트-Ordered-Lists" class="headerlink" title="ㄴ. 순서있는 리스트 Ordered Lists"></a>ㄴ. 순서있는 리스트 <small>Ordered Lists</small></h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>1. list item 1<br />1. list item 2<br />2. list item 3<br />0. list item 4<br />3. list item 5</td><td><ul style="list-style:decimal"><li>list item 1</li><li>list item 2</li><li>list item 3</li><li>list item 4</li><li>list item 5</li></ul></td></tr><tr><td colspan=2>순서 있는 리스트를 작성하기 위해서는 <strong>숫자 다음 .</strong>을 찍습니다. 순서는 적힌 숫자랑 상관없이 순서대로 번호가 매겨집니다.</td></tr></table>
+
+<h3 id="ㄷ-혼합-목록"><a href="#ㄷ-혼합-목록" class="headerlink" title="ㄷ. 혼합 목록"></a>ㄷ. 혼합 목록</h3><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>1. list item 1<br /><span class=dotumf>&nbsp;&nbsp;&nbsp;&nbsp;\*</span> list item 1-1<br /><span class=dotumf>&nbsp;&nbsp;&nbsp;&nbsp;\*</span> list item 1-2<br />0. list item 4<br />3. list item 5</td><td><ul style="list-style:decimal"><li>list item 1<ul><li>list item 1-1</li><li>list item 1-2</li></ul></li><li>list item 4</li><li>list item 5</li></ul></td></tr></table>
+
+<hr>
+<h2 id="9-인용-Blockquotes"><a href="#9-인용-Blockquotes" class="headerlink" title="9. 인용 Blockquotes"></a>9. 인용 <small>Blockquotes</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700> \>인용문<br /> \>\>인용문</td><td> <blockquote>인용문 <blockquote>인용문</blockquote></blockquote></td></tr><tr><td colspan=2>인용문의 모양은 css에 어떻게 모양이 정의되었는지에 따라 달라진다. 따라서 테마를 바꾸면 인용문의 모양도 달라질 수 있습니다.</small></td></tr></table>
+
+<hr>
+<h2 id="10-서식-설정-텍스트"><a href="#10-서식-설정-텍스트" class="headerlink" title="10. 서식 설정 텍스트"></a>10. <del>서식 설정 텍스트</del></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>각각의 줄을 2개 이상의 <br />스페이스로 시작하면 <br />글을 타이핑하는 그대로 정확히 <br />보여지게 할 수 있다.<br />&#91;test&#93;(http:&#47;&#47;test.com&#41;</td><td>각각의 줄을 2개 이상의 <br />스페이스로 시작하면 <br />글을 타이팅하는 그대로 정확히 <br />보여지게 할 수 있다.<br />&#91;test&#93;(http:&#47;&#47;test.com&#41;</td></tr><tr><td colspan=2>서식 설정 텍스트 태그는 마크다운이나 HTML 태그 등을 그대로 보여주고자 할 때 사용하면 됩니다.</td></tr></table>
+
+<h2 id="11-코드-code"><a href="#11-코드-code" class="headerlink" title="11. 코드 code"></a>11. 코드 <small>code</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>'코드 [test&#93;(http:&#47;&#47;test.com)'</td><td><code>코드 [test&#93;(http:&#47;&#47;test.com)</code></td></tr><tr><td colspan=2>코드 안에는 링크가 되지 않습니다.</td></tr></table>
+
+<h2 id="12-코드-블록-code-block"><a href="#12-코드-블록-code-block" class="headerlink" title="12. 코드 블록 code block"></a>12. 코드 블록 <small>code block</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>&#126;&#126;&#126;<br />코드가 들어갈 부분<br />&#126;&#126;&#126;<br />&#96;&#96;&#96;</br />코드가 들어갈 부분<br />&#96;&#96;&#96;</td><td><div class=codeB><div class=numB>1</div><div class=memoB>코드가 들어갈 부분</div></div><div class=codeB><div class=numB>1</div><div class=memoB>코드가 들어갈 부분</div></div></td></tr></table>
+
+<h2 id="13-문법-강조-hexo에서는-이렇게-됩니다"><a href="#13-문법-강조-hexo에서는-이렇게-됩니다" class="headerlink" title="13. 문법 강조 hexo에서는 이렇게 됩니다."></a>13. 문법 강조 <small>hexo에서는 이렇게 됩니다.</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>&#96;&#96;&#96;{지원언어} [타이틀]<br />코드가 들어갈 부분<br />&#96;&#96;&#96;<br />&#96;&#96;&#96;css css<br /># test {}<br />&#96;&#96;&#96;</td><td><div class=codeB><div class=memoA >css</div><div class=numB>1</div><div class=memoB><span class=selector-tag>#test</span> {}</div></div></td></tr><tr><td colspan=2>{지원언어}는 여러가지 언어를 사용 가능합니다.</td></tr></table>
+
+<h2 id="14-정의-목록-Definition-Lists"><a href="#14-정의-목록-Definition-Lists" class="headerlink" title="14. 정의 목록 Definition Lists"></a>14. <del>정의 목록</del> <small>Definition Lists</small></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>Hexo<br />: 정적 웹사이트 제작 도구</td><td>Hexo<br />&nbsp;&nbsp;&nbsp;: 정적 웹사이트 제작 도구</td></tr><tr><td colspan=2>실험 결과 hexo에서는 안 되고 있습니다.</td></tr></table>
+
+<h2 id="15-약어"><a href="#15-약어" class="headerlink" title="15. 약어"></a>15. <del>약어</del></h2><table border=0 cellpadding=3 cellspacing=1 class="list marklist" width=100%><tr><th>마크다운</th><th>변환된 모습</th></tr><tr><td class=Nw700>마크다운(Markdown)은 일반 텍스트를 HTML로 변환한다.<br />&#42;[HTML]: HyperText Markup Language</td><td>마크다운(Markdown)은 일반 텍스트를 <abbr title="HyperText Markup Language">HTML</abbr>로 변환한다.</td></tr><tr><td colspan=2>실험 결과 hexo에서는 안 되고 있습니다.</td></tr></table>
+
+<hr>
+<h1 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h1><p>마크다운을 사용하면서 한번은 정리해야지 생각하다가 이렇게 정리했습니다. 막상 하다 보니 되는것과 안돼는 것이 더러 있네요. 플러그인을 사용해야 하는 부분도 있어서 시간 나면 이것도 정리해 볼까 합니다. 우선은 여기 가지 정리해 봅니다.</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/18/IT/VSCode-MyColor-Theme/" rel="prev" title="VSCode에서 나만의 테마 만들기 (v1.12 이상)">
+      <i class="fa fa-chevron-left"></i> VSCode에서 나만의 테마 만들기 (v1.12 이상)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/27/css/starting-CSS/" rel="next" title="CSS 시작하기">
+      CSS 시작하기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#마크다운-Markdown"><span class="nav-text">마크다운 Markdown</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#마크다운-명령어"><span class="nav-text">마크다운 명령어</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-제목"><span class="nav-text">1. 제목</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-강조-기울여쓰기-굵게쓰기"><span class="nav-text">2. 강조 기울여쓰기 &#x2F; 굵게쓰기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-링크-인라인-링크-참조-링크-URL만으로-링크하기"><span class="nav-text">3. 링크 인라인 링크 &#x2F; 참조 링크 &#x2F; URL만으로 링크하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄱ-인라인-링크"><span class="nav-text">ㄱ. 인라인 링크</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄴ-참조-링크"><span class="nav-text">ㄴ. 참조 링크</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄷ-URL만으로-링크하기-자동연결"><span class="nav-text">ㄷ. URL만으로 링크하기 자동연결</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-이미지-인라인-이미지-참조-이미지-링크된-이미지"><span class="nav-text">4. 이미지 인라인 이미지 &#x2F; 참조 이미지 &#x2F; 링크된 이미지</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄱ-인라인-이미지"><span class="nav-text">ㄱ. 인라인 이미지</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄴ-참조-이미지"><span class="nav-text">ㄴ. 참조 이미지</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄷ-링크된-이미지"><span class="nav-text">ㄷ. 링크된 이미지</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-수평선-Horizontal-Rules"><span class="nav-text">5. 수평선 Horizontal Rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-각주-footnote"><span class="nav-text">6. 각주 footnote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-줄넘기기"><span class="nav-text">7. 줄넘기기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-리스트-순서없는-리스트-순서있는-리스트-혼합-목록"><span class="nav-text">8. 리스트 순서없는 리스트 &#x2F; 순서있는 리스트 &#x2F; 혼합 목록</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄱ-순서-없는-리스트-Unordered-Lists"><span class="nav-text">ㄱ. 순서 없는 리스트 Unordered Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄴ-순서있는-리스트-Ordered-Lists"><span class="nav-text">ㄴ. 순서있는 리스트 Ordered Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄷ-혼합-목록"><span class="nav-text">ㄷ. 혼합 목록</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-인용-Blockquotes"><span class="nav-text">9. 인용 Blockquotes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-서식-설정-텍스트"><span class="nav-text">10. 서식 설정 텍스트</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-코드-code"><span class="nav-text">11. 코드 code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-코드-블록-code-block"><span class="nav-text">12. 코드 블록 code block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-문법-강조-hexo에서는-이렇게-됩니다"><span class="nav-text">13. 문법 강조 hexo에서는 이렇게 됩니다.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-정의-목록-Definition-Lists"><span class="nav-text">14. 정의 목록 Definition Lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-약어"><span class="nav-text">15. 약어</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#정리"><span class="nav-text">정리</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/21/hexo/Markdown-w/",
+            identifier: "2017/05/21/hexo/Markdown-w/",
+            title: "마크다운 문법 설명 및 hexo 문법테스트"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

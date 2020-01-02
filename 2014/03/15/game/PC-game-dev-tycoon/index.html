@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="GAME DEV TYCOON 게임 개발 타이쿤게임 순서는 차고-&gt; 소규모사무실 -&gt; 사무실 및 환경 PC 업그레이드-&gt; 중규모 사무실 -&gt; 연구실 -&gt; 하드웨어 개발실 등등이며 80 년대에 자신의 비디오 게임 개발 회사를 시작하여 30년간 게임 개발하고 팬을 확보하며 연구, 게임업계에 선두주자가 된다는 게임입니다. h5 {bord">
+<meta property="og:type" content="article">
+<meta property="og:title" content="게임 개발 타이쿤 공략 (game dev tycoon)">
+<meta property="og:url" content="https://innks.github.io/2014/03/15/game/PC-game-dev-tycoon/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="GAME DEV TYCOON 게임 개발 타이쿤게임 순서는 차고-&gt; 소규모사무실 -&gt; 사무실 및 환경 PC 업그레이드-&gt; 중규모 사무실 -&gt; 연구실 -&gt; 하드웨어 개발실 등등이며 80 년대에 자신의 비디오 게임 개발 회사를 시작하여 30년간 게임 개발하고 팬을 확보하며 연구, 게임업계에 선두주자가 된다는 게임입니다. h5 {bord">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/y7TNeTc.jpg">
+<meta property="og:image" content="https://innks.github.io/images/J7wkYpM.jpg">
+<meta property="og:image" content="https://innks.github.io/images/lN1OkBj.jpg">
+<meta property="og:image" content="https://innks.github.io/images/SFfTuvP.gif">
+<meta property="article:published_time" content="2014-03-15T02:26:09.000Z">
+<meta property="article:modified_time" content="2019-04-29T10:31:23.271Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="game dev tycoon">
+<meta property="article:tag" content="게임 개발 타이쿤">
+<meta property="article:tag" content="게임 공략">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/y7TNeTc.jpg">
+
+<link rel="canonical" href="https://innks.github.io/2014/03/15/game/PC-game-dev-tycoon/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>게임 개발 타이쿤 공략 (game dev tycoon) | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2014/03/15/game/PC-game-dev-tycoon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          게임 개발 타이쿤 공략 (game dev tycoon)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2014-03-15 11:26:09" itemprop="dateCreated datePublished" datetime="2014-03-15T11:26:09+09:00">2014-03-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-04-29 19:31:23" itemprop="dateModified" datetime="2019-04-29T19:31:23+09:00">2019-04-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Library/" itemprop="url" rel="index">
+                    <span itemprop="name">Library</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Library/Game/" itemprop="url" rel="index">
+                    <span itemprop="name">Game</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/03/15/game/PC-game-dev-tycoon/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/03/15/game/PC-game-dev-tycoon/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="GAME-DEV-TYCOON-게임-개발-타이쿤"><a href="#GAME-DEV-TYCOON-게임-개발-타이쿤" class="headerlink" title="GAME DEV TYCOON 게임 개발 타이쿤"></a>GAME DEV TYCOON <small>게임 개발 타이쿤</small></h3><p>게임 순서는 차고-&gt; 소규모사무실 -&gt; 사무실 및 환경 PC 업그레이드-&gt; 중규모 사무실 -&gt; 연구실 -&gt; 하드웨어 개발실 등등이며 80 년대에 자신의 비디오 게임 개발 회사를 시작하여 30년간 게임 개발하고 팬을 확보하며 연구, 게임업계에 선두주자가 된다는 게임입니다.</p>
+<style type="text/css">h5 {border-bottom:1px solid #555; margin-top: 10px;  margin-bottom: 10px; line-height:120%; padding-bottom: 5px;}.article-entry p, .article-entry table {margin-top:0}.s_box {border:1px solid #e5e6ee;overflow:hidden;width:100%;padding:12px 30px;font:11px/21px '돋움',dotum;color:#989898;letter-spacing:-1px}.s_box dl{height:27px;}.s_box dt{float:left;width:120px;color:#777;line-height:23px;background-color:#e5e6ee;padding-left:10px;}.s_box dd{float:left;width:570px;color:#000;line-height:23px;padding-left:10px;}.s_j {border-radius: 4px; -webkit-border-radius: 4px; -mo-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px;}.s_j th {border-bottom:1px solid #e5e6ee;}.s_j tr, .s_j td{text-align:center;}.s_j th{color:#000;text-align:center;}.s_j .dnS{width:100px;}.s_j .Pbox{background-color:#ff7272; color:#FFF;}.s_j .projjj{width:100px; color:#000;}.s_j .gonsa{ width:2%;}.s_j1 {border-radius: 4px; -webkit-border-_j1 tr{}.s_j1 th{colorradius: 4px; -mo-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px;}.s:#000;}.s_j1 .Pboxt2{background-color:#ff7272; color:#FFF;}.s_j1 .Pboxt1{background-color:#fc4a4a; color:#FFF;}.s_j1 .Pboxt3{background-color:#fdb3b3; color:#FFF;}.s_j1 .projjj{ color:#000;}.s_j2 {margin-top:0;}.s_j2 tr{text-align:center;}.s_j2 th{color:#000;text-align:center; font-size:16px;}.s_j2 .Pbox{background-color:#ff7272; color:#FFF;}.s_j2 .Pboxt3{background-color:#fdb3b3; color:#FFF;}.s_j2 .projjj{color:#000;}.s_j2 td{text-align:center; width:25%}.s_j3 {margin-top:0;}.s_j3 tr{text-align:center;}.s_j3 th{color:#000;text-align:center;}.s_j3 .Pbox{background-color:#ff7272; color:#FFF; line-height:1.08}.s_j3 .Pboxt3{background-color:#fdb3b3; color:#FFF;}.s_j3 .projjj{color:#000;width:40%;}.s_j3 td{text-align:center; width:20%}.c_m {font-size:80%}.c_m .proje3{ width:20%; text-align:center;}.c_m .desij{background-color:#ffbd43; text-align:center;}.c_m .proij{background-color:#00bfff; text-align:center;}.c_m .c45 {border: 1px solid #ddd !important; width:100%;}.c_m .c451 {width:80%;}.c_m .c451 td{ height:15px; line-height:15px;}.Eng_tm {}.Eng_t {text-align:center;}.Eng_t td {height:25px; line-height:25px; font: 18px/25px #000; padding:3px;}.Eng_tin td { padding:5px; border:1px solid #666; background-color:#8ce2ff;}.Eng_tin {width:300px; text-align:center; padding-left:25px;}.Eng_t .Subs_in {background-color:#ffc456; height:30px}.scrool_y {display: block; overflow: auto; overflow-y: scroll; position: relative; z-index: 3; padding: 18px 10px 17px; border: 1px solid #e5e6ee; height: 150px;}</style>
+
+<hr>
+<p><img src="/images/y7TNeTc.jpg" alt=""><br>공식 사이트 : <a href="http://www.greenheartgames.com/app/game-dev-tycoon/" target="_blank" rel="noopener">http://www.greenheartgames.com/app/game-dev-tycoon/</a></p>
+<hr>
+<div class="thumbnail" style="PADDING-TOP: 0px"><dl class="dl-horizontal" style="COLOR: #000"><dt style="PADDING-RIGHT: 10px">지원되는 프로세서</dt><dd>x86, x64, ARM</dd><dt style="PADDING-RIGHT: 10px">시스템 요구 사항</dt><dd>하드웨어 그래픽 가속 ~ 2GB 렘 추천</dd><dt style="PADDING-RIGHT: 10px">언어</dt><dd>영어(미국)</dd></dl></div>
+
+<div class="video-container"><iframe src="https://www.youtube.com/embed/5gSf2T7rMIk" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+<p><img src="/images/J7wkYpM.jpg" alt=""><br>처음은 차고에서부터 시작합니다. 소자본으로 시작해서 은행 빛과 파산도 있습니다.</p>
+<hr>
+<h5 id="새게임-개발-컨셉-잡기"><a href="#새게임-개발-컨셉-잡기" class="headerlink" title="새게임 개발 | 컨셉 잡기"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">새게임 개발</span> <span style="COLOR: rgb(140,140,140)">|</span> 컨셉 잡기</strong></span></h5><div class="row"><div class="col-md-4" style="padding-right:10px">![](/images/sPIobnD.jpg)</div><div class="col-md-7" style="font-size:90%;"><strong><span style="COLOR: #000000">게임 제목</span></strong>
+<span style="COLOR: #000000"><strong>크기.</strong></span> <span style="COLOR: #a6a6a6">( 이것은 또한 개발비용,게임을 개발하는데 걸리는 시간에 영향을 미칩니다. 작은 게임은 10점의 평균 점수를 얻기에 매우 어렵습니다)</span>
+<span style="COLOR: #000000"><strong>구매 대상층.</strong></span>
+<span style="COLOR: #a6a6a6">게임의 일반적인 주제 (밀리터리, 판타지, 공상 과학 등).</span>
+<span style="COLOR: #000000"><strong>장르.</strong></span>
+<span style="COLOR: #000000"><strong>플랫폼.(게임기,PC등)</strong></span>
+<span style="COLOR: #000000"><strong>게임 엔진.</strong></span></div></div>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="게임-방법-게임을-당신의-방법으로-만들기"><a href="#게임-방법-게임을-당신의-방법으로-만들기" class="headerlink" title="게임 방법 | 게임을 당신의 방법으로 만들기"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">게임 방법</span> <span style="COLOR: rgb(140,140,140)">|</span> 게임을 당신의 방법으로 만들기</strong></span></h5><div class="row"><div class="col-md-4" style="padding-right:10px">![](/images/4TfcWaA.jpg)</div><div class="col-md-7" style="font-size:90%;">게임 데브 타이쿤은 당신이 개발하는 동안의 3단계를 거쳐 결정을 해야 합니다.
+<span style="COLOR: #000000"><strong>1개발단계</strong></span>(엔진,게임 플레이,스토리/퀘스트),
+<span style="COLOR: #000000"><strong>2개발단계</strong></span>(대화, 레벨 디자인, 인공지능),
+<span style="COLOR: #000000"><strong>3개발단계</strong></span>(월드디자인, 그래픽, 사운드)등의 문제를 당신이 초점을 맞추고 싶은 부분을 결정하고 선택가능한 부분을 선택하여 게임의 장르와 적절히 맞추어야합니다.
+이러한 결정은 게임의 성공에 큰 영향을 미칠 것이고 더 종은 점수(?)를 받을 수 있습니다.</div></div>
+
+<h5 id="게임-완성-개발-완료-경험"><a href="#게임-완성-개발-완료-경험" class="headerlink" title="게임 완성 | 개발 완료 /경험"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">게임 완성</span> <span style="COLOR: rgb(140,140,140)">|</span> 개발 완료 /경험</strong></span></h5><div class="row"><div class="col-md-4" style="padding-right:10px">![](/images/1Ps4LKI.jpg)</div><div class="col-md-7" style="font-size:90%;">게임 개발 타이쿤에서는 개발이 완료되면 각각의 경험치가 더해집니다. 어떤 조합,주제,콤보,트렌드등등에 따라 보너스를 주어져 더 많이 경험치를 확보할 수 있습니다. 때론 레벨업을 함으로서 숨겨진 연구물이 나올 수도 있습니다. 또한, 결과물을 출시 하지 않더라도 경험치는 싸이므로 굳이 출시되기 껄끄러운 작품은 과감히 삭제하는 것도 좋습니다.</div></div>
+
+<h5 id="게임-완성-개발-완료-경험-1"><a href="#게임-완성-개발-완료-경험-1" class="headerlink" title="게임 완성 | 개발 완료 /경험"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">게임 완성</span> <span style="COLOR: rgb(140,140,140)">|</span> 개발 완료 /경험</strong></span></h5><div class="row"><div class="col-md-4" style="padding-right:10px">![](/images/69Bgpip.jpg)</div><div class="col-md-7" style="font-size:90%;">몇번 해본 결과 종은 리뷰를 받기 원한다면 같은 장르와 종류를 반복하지 않는 것이 좋은 점수가 나오는 길입니다. 매번 다른 장르를 하여야 하며 확장팩출시가 아닌 이상 그 플랫폼의 선호와 게임업계유행, 주 판매대상등을 맞아야 좋은 리뷰를 받을수 있습니다.
+__참고로__ 디자인+기술 포인트, 게임의 규모 ,게임 품질 조정, 직원의 기술능력등이 있지만 그것은 차차 하다보면 알게 됩니다.</div></div>
+
+<h5 id="회사를-확장-규모및-시설-연구소"><a href="#회사를-확장-규모및-시설-연구소" class="headerlink" title="회사를 확장 | 규모및 시설, 연구소"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">회사를 확장</span> <span style="COLOR: rgb(140,140,140)">|</span> 규모및 시설, 연구소</strong></span></h5><div class="row"><div class="col-md-6">![](/images/JlapLv3.jpg)</div><div class="col-md-6">![](/images/clwPx0L.jpg)</div></div>
+
+<p>어느정도 몇몇개 게임을 성공적으로 개발하고 자금이 싸이면 <strong>&lt;새로운 사무실?&gt;</strong> 이라는 메시지가 뜨고 150K를 지급하면 새로운 사무실로 이전합니다.</p>
+<h5 id="직원-고용-총-6명의-직원-고용-가능"><a href="#직원-고용-총-6명의-직원-고용-가능" class="headerlink" title="직원 고용 | 총 6명의 직원 고용 가능"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">직원 고용 </span><span style="COLOR: rgb(140,140,140)">|</span> 총 6명의 직원 고용 가능</strong></span></h5><div class="row"><div class="col-md-6">![](/images/toHCCc8.jpg)</div><div class="col-md-6">![](/images/O44Pw3I.jpg)</div></div>
+
+<p>직원찾기는 총 3가지 분류로 찾을수 있으며 예산을 많이 지급하면 어쩌다 좋은 직원(500이상정도 능력)을 고용할수 있습니다. 이때 속도와 연구도 필요하니 잘 보고 고용하시길 바랍니다.(고용해서 올릴수도 있습니다.) 나중에 해고도 가능하니 몇번이나 찾을 필요는 없습니다.</p>
+<h5 id="계약자-찾기-출판자-찾기-find-contract-work…-find-publishing-deal…"><a href="#계약자-찾기-출판자-찾기-find-contract-work…-find-publishing-deal…" class="headerlink" title="계약자 찾기 / 출판자 찾기 | find contract work… / find publishing deal…"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">계약자 찾기 / 출판자 찾기 </span><span style="COLOR: rgb(140,140,140)">|</span> find contract work… / find publishing deal…</strong></span></h5><div class="row"><div class="col-md-6">![](/images/AAgXHKL.jpg)</div><div class="col-md-6">![](/images/N4ZIZnX.jpg)</div></div>
+
+<p>게임을 하다보면 돈이 부족하거나 잠깐 장르와 플랫폼 찾기 귀찮을때 시도할만한 메뉴입니다. 퍼블리셔는 일정한 판매량만 맞추어 주면 되고 선금도 주니 돈이 부족할때 한번 써 보면 좋은 메뉴입니다.</p>
+<h5 id="중요사항-참고사항"><a href="#중요사항-참고사항" class="headerlink" title="중요사항 | 참고사항"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">중요사항 </span><span style="COLOR: rgb(140,140,140)">|</span> 참고사항</strong></span></h5><ul>
+<li>동일한 주제와 장르를 연속해서 개발하지 말것 (확장팩 제외)</li>
+<li>확장팩은 이전 최종시리즈 개발시점에서 40주안에 개발할것</li>
+<li>같은 엔진을 사용하여 속편을 개발하지 말것. (확장팩은 제외)</li>
+<li>큰게임은 2D 그래픽 V4 또는 그 이상 / 3D 그래픽 V3 이상을 사용해야 좋다.</li>
+<li>AAA게임은 3D 그래픽 V5 또는 더 높은 버전을 사용해야 좋다.</li>
+<li>AAA게임은 직원중 전문가과정 교육을 받은 3명이 있어야 좋다.</li>
+<li>게임의 품질은 게임종류에 따라 &lt;디자인 : 기술&gt;의 배율에 영향을 미친다.</li>
+<li>&lt;기술 / 디자인&gt; 균형</li>
+<li>슬라이더 (개발 시간 비율) 할당</li>
+<li>게임 장르 / 주제 조합 / 플랫폼 조합</li>
+<li>게임 동향 (게임중 시장조사를 통해 표시되는 주요 구매층, 유행 장르, 유행게임규모을 유심히 잘봐야한다)</li>
+<li>버그는 최소한 없도록 한다.</li>
+</ul>
+<h5 id="주제-장르조합-싱글버전-복합버전"><a href="#주제-장르조합-싱글버전-복합버전" class="headerlink" title="주제/장르조합 | 싱글버전 / 복합버전"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">주제/장르조합 </span><span style="COLOR: rgb(140,140,140)">|</span> 싱글버전 / 복합버전</strong></span></h5><div class="well well-sm">사전 제작의 큰 부분은 게임의 주제 및 장르를 선택하는 것입니다.&nbsp;주제와 장르의 결합도 "훌륭한 콤보" 또는 "어색한 콤보"가 발생할 수 있습니다</div>
+<div class="panel panel-default"><!-- Default panel contents --><div class="panel-heading" style="LINE-HEIGHT: 1.08">복합버전</div><div class="panel-body" style="font-size:80%">하나의 주제에 2개의 장르를 합해서 사용하는 것(조금 진행해야 숨겨진 것이 나옵니다.)입니다.
+예를 들어 &lt;비행기&gt;의 주제에 &lt;액션/케쥬얼&gt;을 합했을때 "훌륭한 콤보"가 나옵니다.</div><table class="s_j table table-bordered" style="font-size:80%; text-align:center;"><tbody><tr><th class="projjj">주제(토픽)/장르</th><th>액션</th><th>모험</th><th>RPG</th><th>시뮬레이션</th><th>전략</th><th>캐쥬얼</th><th class="dnS">주판매대상<br />(청소년/모두/장년)</th></tr><tr><td class="projjj">비행기</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">외계인</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">고대 문명 , 대체 역사</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">비지니스</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">도시</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">코메디</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">사이버 펑크</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">댄스</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">EM</td></tr><tr><td class="projjj">탐정물 , 형사</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">감옥</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">진화</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">판타지</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">패션</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">게임 개발</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">정부</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">해킹</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">역사</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">공포</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">병원</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">사냥</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">법률</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">생활</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">격투 , 무술</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">중세</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">밀리터리</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">영화</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">음악</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">미스터리</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">닌자</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">해적</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">종말론</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">감옥</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">레이싱</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">로맨스</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">리듬</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">공상 과학</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">학교</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">우주</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">스포츠</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">YEM</td></tr><tr><td class="projjj">스파이</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">창업</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">슈퍼 영웅</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">수술</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">시간 여행</td><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">운반</td><td>-</td><td>-</td><td>-</td><td  class="Pbox">+</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">UFO</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="dnS">YEM</td></tr><tr><td class="projjj">흡혈귀</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">가상 애완 동물</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td class="dnS">Y</td></tr><tr><td class="projjj">어휘</td><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="dnS">EM</td></tr><tr><td class="projjj">늑대 인간</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><td class="projjj">서부</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td class="dnS">EM</td></tr><tr><th class="projjj"></th><th>액션</th><th>모험</th><th>RPG</th><th>시뮬레이션</th><th>전략</th><th>캐쥬얼</th><th class="dnS">주판매대상</th></tr></tbody></table></div>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<hr>
+<h5 id="장르-플랫폼-조합-각각에-다른-인기도와-그에따른-리뷰도-영향이-있습니다"><a href="#장르-플랫폼-조합-각각에-다른-인기도와-그에따른-리뷰도-영향이-있습니다" class="headerlink" title="장르 / 플랫폼 조합 | 각각에 다른 인기도와 그에따른 리뷰도 영향이 있습니다."></a><span style="COLOR: #000000"><strong><span class="WWs">장르 / 플랫폼 조합</span> | 각각에 다른 인기도와 그에따른 리뷰도 영향이 있습니다.</strong></span></h5><div class="panel panel-default"><!-- Default panel contents --><div class="panel-heading" style="LINE-HEIGHT: 1.08">장르</div><table class="s_j table table-bordered"><tbody><tr><th></th><th>액션</th><th>모험</th><th>RPG</th><th>시뮬레이션</th><th>전략</th><th>캐쥬얼</th></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/PC") -->PC</th><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Govodore_64") -->G64</th><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/TES") -->TES</th><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Master_V") -->마스터 V</th><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Gameling") -->Gameling</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Vena_Gear")-->Vena&nbsp;Gear</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Vena_Oasis") -->Vena&nbsp;Oasis</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Super_TES") -->슈퍼 TES</th><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem") -->Playsystem</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/TES_64") -->TES 64</th><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/DreamVast") -->DreamVast</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_2") -->Playsystem 2</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox") -->MBOX</th><td class="Pbox">+ +</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Game_Sphere") -->Game&nbsp;Sphere</th><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GS") -->GS</th><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/PPS") -->PPS</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox_360") -->MBOX 360</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Nuu") -->NUU</th><td>-</td><td>-</td><td>-</td><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_3") -->Playsystem 3</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GrPhone") -->grPhone</th><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GrPad") -->grPad</th><td>-</td><td>-</td><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MPad") -->MPAD</th><td>-</td><td>-</td><td>-</td><td class="Pbox">+ +</td><td class="Pbox">+</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Wuu") -->Wuu</th><td>-</td><td>-</td><td>-</td><td class="Pbox">+ +</td><td>-</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox_Next") -->MBOX NEXT</th><td class="Pbox">+ +</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_4") -->Playsystem 4</th><td class="Pbox">+</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Custom_Console") -->사용자&nbsp;개발&nbsp;콘솔</th><td class="Pbox">+ +</td><td>-</td><td class="Pbox">+</td><td>-</td><td>-</td><td class="Pbox">+ +</td></tr><tr><th></th><th>액션</th><th>모험</th><th>RPG</th><th>시뮬레이션</th><th>전략</th><th>캐쥬얼</th></tr></tbody></table></div>
+
+<div class="panel panel-default"><!-- Default panel contents --><div class="panel-heading" style="LINE-HEIGHT: 1.08">인기도</div><table class="s_j table table-bordered"><tbody><tr><th></th><th>청소년</th><th>모든연령</th><th>장년</th></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/PC") -->PC</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Govodore_64") -->G64</th><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/TES") -->TES</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Master_V") -->마스터 V</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Gameling") -->Gameling</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Vena_Gear") -->Vena&nbsp;Gear</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Vena_Oasis") -->Vena&nbsp;Oasis</th><td>-</td><td class="Pbox">+</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Super_TES") -->슈퍼 TES</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem") -->Playsystem</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/TES_64") -->TES 64</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/DreamVast") -->DreamVast</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_2") -->Playsystem 2</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox") -->MBOX</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Game_Sphere") -->Game&nbsp;Sphere</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GS") -->GS</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/PPS") -->PPS</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox_360") -->MBOX 360</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Nuu") -->NUU</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_3") -->Playsystem 3</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GrPhone") -->grPhone</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/GrPad") -->grPad</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MPad") -->MPAD</th><td class="Pbox">+</td><td class="Pbox">+</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Wuu") -->Wuu</th><td class="Pbox">+</td><td>-</td><td>-</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/MBox_Next") -->MBOX NEXT</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Playsystem_4") -->Playsystem 4</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th><!-- Not Allowed Attribute Filtered ( href="/Custom_Console") -->사용자&nbsp;개발&nbsp;콘솔</th><td class="Pbox">+</td><td class="Pbox">+ +</td><td class="Pbox">+ +</td></tr><tr><th></th><th>청소년</th><th>모든연령</th><th>장년</th></tr></tbody></table></div>
+
+<hr>
+<h5 id="플랫폼-대상-주판매대상-조합-nbsp"><a href="#플랫폼-대상-주판매대상-조합-nbsp" class="headerlink" title="플랫폼 / 대상 | 주판매대상 조합&nbsp;"></a><span style="COLOR: #000000"><strong><span class="WWs">플랫폼 / 대상</span> <span style="COLOR: #8c8c8c">|</span> 주판매대상 조합&nbsp;</strong></span></h5><div class="well well-sm">게임에서&nbsp;간혹 당신이 선택한 대상과 플랫폼이 &nbsp;일치&nbsp;or 불일치 한다는 메시지를 받게됩니다. 대중의 선택으로 약간의 효과가 미치지만 판매수와도 영향이 있습니다.</div><div class="panel panel-default"><!-- Default panel contents --><table class="s_j1 table table-bordered"><tbody><tr><th scope="col">주판매대상</th><th scope="col">맞지 않는 플랫폼 <br />(&lt;80 %)</th><th scope="col">약간 부적합 플랫폼 <br />(80-99%)</th><th scope="col">잘 맞는 플랫폼 <br />(&gt; 100 %)</th></tr><tr><td class="projjj">청소년</td><td class="Pboxt3">없음</td><td class="Pboxt2">Vena&nbsp;Oasis (0.9)<br /></td><td class="Pboxt1">없음</td></tr><tr><td class="projjj">모두</td><td class="Pboxt3">GS (0.7)<br />PPS (0.7)<br />grPad (0.7)<br />grPhone (0.7)<br />Gameling (0.7)<br />DreamVast (825)<br />Vena&nbsp;Gear (825)<br /></td><td class="Pboxt2">NUU (0.9)<br />Wuu (0.9)<br />TES (0.8)<br />TES 64 (0.8)<br />마스터 V (0.8)<br />슈퍼 TES (0.8)<br />PlaySystem (0.85)<br />Game&nbsp;Sphere (0.8)<br /></td><td class="Pboxt1">PC (1.15)<br />MBOX 360 (1.3)<br />MBOX&nbsp;NEXT (1.3)<br />Playsystem 3 (1.3)<br />Playsystem 4 (1.3)<br />사용자&nbsp;개발&nbsp;콘솔 (1.3)<br /></td></tr><tr><td class="projjj">장년층</td><td class="Pboxt3">GS (0.6)<br />TES (0.6)<br />MPAD (0.1)<br />grPad (0.6)<br />TES 64 (0.7)<br />grPhone (0.6)<br />Gameling (0.6)<br />마스터 V (0.6)<br />슈퍼 TES (0.6)<br />Vena&nbsp;Gear (0.6)<br />PlaySystem (825)<br />Game&nbsp;Sphere (0.6)<br /></td><td class="Pboxt2">NUU (0.85)<br />PPS (0.8)<br />Wuu (0.85)<br />MBOX (0.85)<br />DreamVast (0.8)<br />Vena&nbsp;Oasis (0.9)<br />PlaySystem 2 (0.85)<br /></td><td class="Pboxt1">PC (1.3)<br />MBOX 360 (1.2)<br />MBOX&nbsp;NEXT (1.2)<br />PlaySystem 3 (1.2)<br />Playsystem 4 (1.2)<br />사용자&nbsp;개발&nbsp;콘솔 (1.2)<br /></td></tr></tbody></table></div>
+
+<h5 id="개발단계-슬라이드-할당"><a href="#개발단계-슬라이드-할당" class="headerlink" title="개발단계 | 슬라이드 할당"></a><span style="COLOR: #000000"><strong><span class="WWs">개발단계</span> <span style="COLOR: #8c8c8c">|</span> 슬라이드 할당</strong></span></h5><div class="well well-sm">여기서 표는 있기는 하지만 슬라이드를 움직여서 최대한 많이 할당하는것이 좋더군요. 매번 엔진이 변화하고 그에 맞는 직원의 필요도도 있으니 그것에 맞게 할당하기란 쉽지 않습니다.</div><h2 class="WWs">조합</h2><div class="table-responsive panel panel-default"><!-- Default panel contents --><div class="panel-heading" style="LINE-HEIGHT: 1.08">**조합**</div><div class="panel-body" style="PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px"><small class="WWs">"+" 최소 40%이상 , "-" 20% 이하</small></div></div>
+<table class="s_j2 table table-bordered"><tbody><tr><th rowspan="2">장르 (균형 T / D)</th><th colspan="3">1 단계</th></tr><tr><th>기본엔진</th><th>조작성</th><th>스토리/퀘스트</th></tr><tr><td class="projjj">액션 (1.8)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj">모험 (0.4)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj">RPG (0.6)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">시뮬레이션 (1.6)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj">전략 (1.6)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj">캐주얼 (0.5)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr></tbody></table>
+<table class="s_j2 table table-bordered"><tbody><tr><th rowspan="2">장르 (균형 T / D)</th><th colspan="3">2 단계</th></tr><tr><th>대화</th><th>레벨업 디자인</th><th>인공지능</th></tr><tr><td class="projjj">액션 (1.8)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">모험 (0.4)</td><td class="Pbox">+</td><td></td><td class="Pboxt3">-</td></tr><tr><td class="projjj">RPG (0.6)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj">시뮬레이션 (1.6)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">전략 (1.6)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">캐주얼 (0.5)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr></tbody></table>
+<table class="s_j2 table table-bordered"><tbody><tr><th rowspan="2">장르 (균형 T / D)</th><th colspan="3">3 단계</th></tr><tr><th>게임세계 디자인</th><th>그래픽</th><th>사운드</th></tr><tr><td class="projjj">액션 (1.8)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">모험 (0.4)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj">RPG (0.6)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj">시뮬레이션 (1.6)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">전략 (1.6)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj">캐주얼 (0.5)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr></tbody></table><h2 class="WWs">다중조합</h2><div class="table-responsive panel panel-default"><!-- Default panel contents --><div class="panel-heading" style="LINE-HEIGHT: 1.08">**다중 조합**</div><div class="panel-body" style="PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px"><small class="WWs">"+" 최소 40%이상 , "-" 20% 이하</small></div></div><table class="s_j3 table table-bordered"><tbody><tr><th class="projjj" rowspan="2" colspan="2">장르 조합 (밸런스 T / D)</th><th colspan="3">1 단계</th></tr><tr><th>기본엔진</th><th>조작성</th><th>스토리 / 퀘스트</th></tr><tr><td class="projjj" colspan="2">액션 / 어드벤처 (1.10)</td><td class="Pbox">+</td><td></td><td></td></tr><tr><td class="projjj" colspan="2">액션 / RPG (1.24)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">액션 / 시뮬레이션 (1.73)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">액션 / 전략 (1.73)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">액션 / 캐주얼 (1.24)</td><td></td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">모험 / 액션 (0.68)</td><td></td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">어드벤처 / RPG (0.46)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">모험 / 시뮬레이션 (0.65)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">모험 / 전략 (0.65)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">모험 / 캐주얼 (0.46)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">RPG / 액션 (0.87)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">RPG / 모험 (0.53)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">RPG / 시뮬레이션 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">RPG / 전략 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">RPG / 캐주얼 (0.60)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 액션 (1.66)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 어드벤쳐 (1.02)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 전략 (1.60)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 캐주얼 (1.15)</td><td></td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">전략 / 액션 (1.66)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">전략 / 모험 (1.02)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / 시뮬레이션 (1.60)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / 캐주얼 (1.15)</td><td></td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 액션 (0.87)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 모험 (0.53)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">캐주얼 / RPG (0.60)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 시뮬레이션 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 전략 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr></tbody></table>
+<table class="s_j3 table table-bordered"><tbody><tr><th class="projjj" rowspan="2" colspan="2">장르 조합 (밸런스 T / D)</th><th colspan="3">2 단계</th></tr><tr><th>대화</th><th>레벨업 디자인</th><th>인공지능</th></tr><tr><td class="projjj" colspan="2">액션 / 어드벤처 (1.10)</td><td class="Pboxt3">-</td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / RPG (1.24)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / 시뮬레이션 (1.73)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / 전략 (1.73)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / 캐주얼 (1.24)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">모험 / 액션 (0.68)</td><td></td><td></td><td></td></tr><tr><td class="projjj" colspan="2">어드벤처 / RPG (0.46)</td><td class="Pbox">+</td><td></td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">모험 / 시뮬레이션 (0.65)</td><td class="Pbox">+</td><td></td><td></td></tr><tr><td class="projjj" colspan="2">모험 / 전략 (0.65)</td><td class="Pbox">+</td><td></td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">모험 / 캐주얼 (0.46)</td><td class="Pbox">+</td><td></td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">RPG / 액션 (0.87)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 모험 (0.53)</td><td class="Pbox">+</td><td></td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">RPG / 시뮬레이션 (0.84)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 전략 (0.84)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 캐주얼 (0.60)</td><td></td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 액션 (1.66)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 어드벤쳐 (1.02)</td><td></td><td></td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 전략 (1.60)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 캐주얼 (1.15)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / 액션 (1.66)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">전략 / 모험 (1.02)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / 시뮬레이션 (1.60)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">전략 / 캐주얼 (1.15)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">캐주얼 / 액션 (0.87)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 모험 (0.53)</td><td></td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / RPG (0.60)</td><td class="Pbox">+</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 시뮬레이션 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 전략 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pboxt3">-</td></tr></tbody></table>
+<div><table class="s_j3 table table-bordered"><tbody><tr><th class="projjj" rowspan="2" colspan="2">장르 조합 (밸런스 T / D)</th><th colspan="3">3 단계</th></tr><tr><th>세계관 디자인</th><th>그래픽</th><th>사운드</th></tr><tr><td class="projjj" colspan="2">액션 / 어드벤처 (1.10)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">액션 / RPG (1.24)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">액션 / 시뮬레이션 (1.73)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / 전략 (1.73)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">액션 / 캐주얼 (1.24)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">모험 / 액션 (0.68)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">어드벤처 / RPG (0.46)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">모험 / 시뮬레이션 (0.65)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">모험 / 전략 (0.65)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">모험 / 캐주얼 (0.46)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 액션 (0.87)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 모험 (0.53)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 시뮬레이션 (0.84)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 전략 (0.84)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">RPG / 캐주얼 (0.60)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 액션 (1.66)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 어드벤쳐 (1.02)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 전략 (1.60)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">시뮬레이션 / 캐주얼 (1.15)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">전략 / 액션 (1.66)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">전략 / 모험 (1.02)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / RPG (1.15)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">전략 / 시뮬레이션 (1.60)</td><td></td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">전략 / 캐주얼 (1.15)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 액션 (0.87)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 모험 (0.53)</td><td></td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">캐주얼 / RPG (0.60)</td><td class="Pbox">+</td><td class="Pbox">+</td><td></td></tr><tr><td class="projjj" colspan="2">캐주얼 / 시뮬레이션 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr><tr><td class="projjj" colspan="2">캐주얼 / 전략 (0.84)</td><td class="Pboxt3">-</td><td class="Pbox">+</td><td class="Pbox">+</td></tr></tbody></table></div>
+
+<h5 id="새로운-엔진-제작-숨겨진-기능들을-모아보세요"><a href="#새로운-엔진-제작-숨겨진-기능들을-모아보세요" class="headerlink" title="새로운 엔진 제작 | 숨겨진 기능들을 모아보세요."></a><span style="COLOR: #000000"><strong><span class="WWs">새로운 엔진 제작</span> <span style="COLOR: #8c8c8c">|</span> 숨겨진 기능들을 모아보세요.</strong></span></h5><p><strong>새로운 엔진 제작 리스트 및 가격</strong></p>
+<div class="row"><div class="col-md-5">하나하나 레벨이 오르면서 하나 또는 몇개가 생겨나고 연구로 풀어서 엔진을 업그레이드 하세요.</div><div class="scrool_y col-md-6"><table class="Eng_tm"><tbody><tr><td>&nbsp;&nbsp; </td><td><table class="Eng_t"><tbody><tr class="Subs_in"><td>그래픽</td></tr><tr class="SubUs"><td><table class="Eng_tin"><tbody><tr><td>2D 그래픽 V2 (50K)</td></tr><tr><td>2D 그래픽 V3 (100K)</td></tr><tr><td>2D 그래픽 V4 (140K)</td></tr><tr><td>2D 그래픽 V5 (180K)</td></tr><tr><td>3D 그래픽 V1 (30K)</td></tr><tr><td>3D 그래픽 V2 (50K)</td></tr><tr><td>3D 그래픽 V3 (100K)</td></tr><tr><td>3D 그래픽 V4 (140K)</td></tr><tr><td>3D 그래픽 V5 (180K)</td></tr><tr><td>3D 그래픽 V6 (350K)</td></tr><tr><td>3D 그래픽 V7 (500K)</td></tr><tr><td>입체 3D (50K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>소리</td></tr><tr class="SubUs"><td><table class="Eng_tin"><tbody><tr><td>모노 사운드 (30K)</td></tr><tr><td>스데레오 사운드 (50K)</td></tr><tr><td>사운드 트랙 (50K)</td></tr><tr><td>서라운드 사운드 (100K)</td></tr><tr><td>오케스트라 사운드트랙 (140K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>스토리/퀘스트</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>직선스토리 (30K)</td></tr><tr><td>분기점 (50K)</td></tr><tr><td>간단한 컷씬 (30K)</td></tr><tr><td>고급 컷씬 (50K)</td></tr><tr><td>풀모션 비디오 (100K)</td></tr><tr><td>대화식 (100K)</td></tr><tr><td>도덕적 선택 (100K)</td></tr><tr><td>성우 추가 (140K)</td></tr><tr><td>반응 퀘스트 (180K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>엔진</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>게임저장 (10K)</td></tr><tr><td>멀티플레이어 (30K)</td></tr><tr><td>비디오 재생 (50K)</td></tr><tr><td>시본물리학 (50K)</td></tr><tr><td>온라인 (100K)</td></tr><tr><td>고급 물리학 (140K)</td></tr><tr><td>MMO 지원 (180K)</td></tr><tr><td>클라우드저장 (30K)</td></tr><tr><td>모드 지원 (30K)</td></tr><tr><td>소프트웨어 개발키트 (100K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>게임플레이</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>마우스 (10K)</td></tr><tr><td>조이스틱 (10K)</td></tr><tr><td>게임 패드 (10K)</td></tr><tr><td>핸들 (10K)</td></tr><tr><td>업적 (30K)</td></tr><tr><td>캐릭터 발전 (50K)</td></tr><tr><td>스킬트리 (100K)</td></tr><tr><td>협동 플레이 (140K)</td></tr><tr><td>보이스 챗 (180K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>대화</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>진보된 대화 (10K)</td></tr><tr><td>대화 트리 (50K)</td></tr><tr><td>음성지원 (100K)</td></tr><tr><td>간단한 동작 (100K)</td></tr><tr><td>고급 동작 (140K)</td></tr><tr><td>목소리 연기 (100K)</td></tr><tr><td>사실적인 동작 (180K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>레벨디자인</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>레벨 레디터 (10K)</td></tr><tr><td>숨겨진 기능 (30K)</td></tr><tr><td>미니 게임 (50K)</td></tr><tr><td>역동적인 환경 (100K)</td></tr><tr><td>로딩화면 축소 (140K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>인공 지능</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>진보한 인공 지능 (30K)</td></tr><tr><td>동료의 인공 지능 (50K)</td></tr><tr><td>자체학습 인공 지능 (180K)</td></tr></tbody></table></td></tr><tr class="Subs_in"><td>월드디자인</td></tr><tr><td><table class="Eng_tin"><tbody><tr><td>세계 오픈 (30K)</td></tr><tr><td>일과 바 주기 (30K)</td></tr><tr><td>기상경제 (50K)</td></tr><tr><td>현실적인 날씨 (100K)</td></tr><tr><td>역동적인 세계 (140K)</td></tr></tbody></table></td></tr><tr><td style="HEIGHT: 5px"></td></tr></tbody></table></td></tr></tbody></table></div></div>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="직원-6-1명의-직원으로-9가지-슬라이드를-사용해야-합니다"><a href="#직원-6-1명의-직원으로-9가지-슬라이드를-사용해야-합니다" class="headerlink" title="직원 | 6+1명의 직원으로 9가지 슬라이드를 사용해야 합니다."></a><span style="COLOR: #000000"><strong><span class="WWs">직원</span> <span style="COLOR: #8c8c8c">|</span> 6+1명의 직원으로 9가지 슬라이드를 사용해야 합니다.</strong></span></h5><p>각각 직원의 능력치 중에 디자인과 기술이 중요하고 나머지 스피드랑 연구는 비중이 작습니다. 그래도 스피드랑 연구는 개발시 영향이 있으니 이것역시 많이 올려주는것도 중요합니다.&nbsp;표도 있지만 나중에는 그리 많이 중요하지 않습니다.</p>
+<div class="table-responsive"><table class="c_m table table-bordered"><tbody><tr><td class="proje3">&nbsp;</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="50%"><strong>디자인</strong></td><td class="proij" width="50%"><strong>기술</strong></td></tr></tbody></table></td></tr><tr><td class="proje3">기본엔진</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="20%">180</td><td class="proij" width="80%">720</td></tr></tbody></table></td></tr><tr><td class="proje3">조작성</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="80%">720</td><td class="proij" width="20%">180</td></tr></tbody></table></td></tr><tr><td class="proje3">스토리 / 퀘스트</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="80%">720</td><td class="proij" width="20%">180</td></tr></tbody></table></td></tr><tr><td class="proje3">대화</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="90%">810</td><td class="proij" width="10%">90</td></tr></tbody></table></td></tr><tr><td class="proje3">레벨업 디자인</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="40%">360</td><td class="proij" width="60%">540</td></tr></tbody></table></td></tr><tr><td class="proje3">인공지능</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="20%">180</td><td class="proij" width="80%">720</td></tr></tbody></table></td></tr><tr><td class="proje3">세계관 디자인</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="60%">540</td><td class="proij" width="40%">360</td></tr></tbody></table></td></tr><tr><td class="proje3">그래픽</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="50%">450</td><td class="proij" width="50%">450</td></tr></tbody></table></td></tr><tr><td class="proje3">사운드</td><td class="c451"><table class="c45"><tbody><tr><td class="desij" width="60%">540</td><td class="proij" width="40%">360</td></tr></tbody></table></td></tr></tbody></table></div>
+
+<p>중 / 대 규모의 게임에서 특정 위와 같은 항목마다 원하는 직원을 할당 할 수 있습니다. AAA게임은 전문교육을 받은 직원이 최소 3명이 필요합니다. 할당시 100%를 초과하지 않는다면 “좋은 관리 콤보” 20%의 추가 경험치를 보너스로 받습니다. (리뷰점수에는 영향을 주지 않습니다.)</p>
+<h5 id="연구-대규모-프로젝트-만들기"><a href="#연구-대규모-프로젝트-만들기" class="headerlink" title="연구 | 대규모 프로젝트 만들기"></a><span style="COLOR: #000000"><strong><span class="WWs">연구</span> <span style="COLOR: #8c8c8c">|</span> 대규모 프로젝트 만들기</strong></span></h5><p>연구소랑 하드웨어 개발실까지 만들었다면 MMO와 AAA게임, 콘솔기계 개발등등을 할수 있고 온라인도 할수 있습니다.</p>
+<div class="row"><div class="col-md-4">![](/images/tSCDH9h.jpg)</div><div class="col-md-4">![](/images/Dp6YB7F.jpg)</div><div class="col-md-4">![](/images/4ndcOsM.jpg)</div></div>
+
+<p><img src="/images/lN1OkBj.jpg" alt=""></p>
+<p>이쯤 되면 거의 게임 끝 마무리가 되어 갑니다. 새로이 개발시간이 많이 걸리고 대규모로 하고 자체 개발한 콘솔기기로 온라인까지 하면 됩니다. 저는 한글 버전으로 하여서 그런지 엄청난 에러와 오역된 것이 많더군요.</p>
+<p>마지막으로 ‘Game Dev Story’를 해보고 이것을 하니 처음에는 비슷하였지만, 나중에 가보니 독창적인 면이 많더군요. 마지막까지 해보곤 느낀점은 아쉽다는 생각이 많이 듭니다.</p>
+<h5 id="FAQs-자주-묻는-말"><a href="#FAQs-자주-묻는-말" class="headerlink" title="FAQs | 자주 묻는 말"></a><span style="COLOR: rgb(0,0,0)"><strong><span class="WWs">FAQs </span><span style="COLOR: rgb(140,140,140)">|</span> 자주 묻는 말</strong></span></h5><p>한글판은?</p>
+<ul>
+<li>아직 스팀에서는 한글 정식 버전이 없다고 하네요. 팀 이노임 에서 ‘게임데브타이쿤 공식 한글화’했다는데 링크가 깨져 있네요. <a href="http://inoym.egloos.com/" target="_blank" rel="noopener">http://inoym.egloos.com/</a> 진행사항은 <a href="http://translate.greenheartgames.com/" target="_blank" rel="noopener">http://translate.greenheartgames.com/</a> 전 토렌트로 받은것을 플레이한 것이라서요. 1.3버전입니다.</li>
+</ul>
+<p>처음부터 에디터를 써서 확장하고 직원 관리 배우니 Error 떠요?</p>
+<ul>
+<li>주인공 레벨이 최소 2이상은 되어야 에러가 없더군요</li>
+</ul>
+<h5 id="토렌트-세이브-파일-에디터"><a href="#토렌트-세이브-파일-에디터" class="headerlink" title="토렌트 / 세이브 파일 에디터"></a><span style="COLOR: rgb(0,0,0)">토렌트 / 세이브 파일 에디터</span></h5><p>토렌트 파일 | <a href="asset/GameDevTycoon.zip.torrent">GameDevTycoon.zip.torrent</a></p>
+<p>세이브 파일 에디터 | <a href="Save_Editor.zip">Save_Editor.zip</a></p>
+<p>&lt;주의사항&gt;</p>
+<p>반드시 <strong>영어로된 회사이름과 케릭이름을 입력</strong> 하세요 세이브 파일을 조작이라 한글이면 로드시 이상해 집니다.<br><img src="/images/SFfTuvP.gif" alt=""><br><strong>1.0</strong> 이라고 적혀 있는 부분은 <strong>&lt;속도&gt;</strong> 와 <strong>&lt;연구&gt;</strong> 입니다. 몇번을 수치 바꿔서 해 보았는데 에러가 조금 생기더군요. 그냥 자연스럽게 올라가는 것인것 같습니다. 아니면 답글 부탁 드립니다. 참고로 캐시 옆에는 <strong>&lt;팬수&gt;</strong> 입니다.</p>
+<p>win7기준 세이브 파일 위치<br>C:\Users\Administrator\AppData\Local\Game Dev Tycoon</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/game-dev-tycoon/" rel="tag"># game dev tycoon</a>
+              <a href="/tags/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-%ED%83%80%EC%9D%B4%EC%BF%A4/" rel="tag"># 게임 개발 타이쿤</a>
+              <a href="/tags/%EA%B2%8C%EC%9E%84-%EA%B3%B5%EB%9E%B5/" rel="tag"># 게임 공략</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/03/14/game/Hamlet/" rel="prev" title="Hamlet 공략">
+      <i class="fa fa-chevron-left"></i> Hamlet 공략
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/03/21/IT/Utilities-for-Windows/" rel="next" title="네게 필요한 프로그램 링크 (유틸)">
+      네게 필요한 프로그램 링크 (유틸) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAME-DEV-TYCOON-게임-개발-타이쿤"><span class="nav-text">GAME DEV TYCOON 게임 개발 타이쿤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#새게임-개발-컨셉-잡기"><span class="nav-text">새게임 개발 | 컨셉 잡기</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#게임-방법-게임을-당신의-방법으로-만들기"><span class="nav-text">게임 방법 | 게임을 당신의 방법으로 만들기</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#게임-완성-개발-완료-경험"><span class="nav-text">게임 완성 | 개발 완료 &#x2F;경험</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#게임-완성-개발-완료-경험-1"><span class="nav-text">게임 완성 | 개발 완료 &#x2F;경험</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#회사를-확장-규모및-시설-연구소"><span class="nav-text">회사를 확장 | 규모및 시설, 연구소</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#직원-고용-총-6명의-직원-고용-가능"><span class="nav-text">직원 고용 | 총 6명의 직원 고용 가능</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#계약자-찾기-출판자-찾기-find-contract-work…-find-publishing-deal…"><span class="nav-text">계약자 찾기 &#x2F; 출판자 찾기 | find contract work… &#x2F; find publishing deal…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#중요사항-참고사항"><span class="nav-text">중요사항 | 참고사항</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#주제-장르조합-싱글버전-복합버전"><span class="nav-text">주제&#x2F;장르조합 | 싱글버전 &#x2F; 복합버전</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#장르-플랫폼-조합-각각에-다른-인기도와-그에따른-리뷰도-영향이-있습니다"><span class="nav-text">장르 &#x2F; 플랫폼 조합 | 각각에 다른 인기도와 그에따른 리뷰도 영향이 있습니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#플랫폼-대상-주판매대상-조합-nbsp"><span class="nav-text">플랫폼 &#x2F; 대상 | 주판매대상 조합&amp;nbsp;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#개발단계-슬라이드-할당"><span class="nav-text">개발단계 | 슬라이드 할당</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-text">조합</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-text">다중조합</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#새로운-엔진-제작-숨겨진-기능들을-모아보세요"><span class="nav-text">새로운 엔진 제작 | 숨겨진 기능들을 모아보세요.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#직원-6-1명의-직원으로-9가지-슬라이드를-사용해야-합니다"><span class="nav-text">직원 | 6+1명의 직원으로 9가지 슬라이드를 사용해야 합니다.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#연구-대규모-프로젝트-만들기"><span class="nav-text">연구 | 대규모 프로젝트 만들기</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FAQs-자주-묻는-말"><span class="nav-text">FAQs | 자주 묻는 말</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#토렌트-세이브-파일-에디터"><span class="nav-text">토렌트 &#x2F; 세이브 파일 에디터</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2014/03/15/game/PC-game-dev-tycoon/",
+            identifier: "2014/03/15/game/PC-game-dev-tycoon/",
+            title: "게임 개발 타이쿤 공략 (game dev tycoon)"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

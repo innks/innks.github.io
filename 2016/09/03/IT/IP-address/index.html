@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="ip 주소 (INTERNET PROTOCOL ADDRESS)IP 주소(Internet Protocol address, 표준어: 인터넷규약주소)는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다. 네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다. 이 번호를 이용하여">
+<meta property="og:type" content="article">
+<meta property="og:title" content="원도우에서 내 IP주소 확인">
+<meta property="og:url" content="https://innks.github.io/2016/09/03/IT/IP-address/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="ip 주소 (INTERNET PROTOCOL ADDRESS)IP 주소(Internet Protocol address, 표준어: 인터넷규약주소)는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다. 네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다. 이 번호를 이용하여">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/3lPFn9k.gif">
+<meta property="og:image" content="https://i.imgur.com/nXr1txq.gif">
+<meta property="og:image" content="https://i.imgur.com/5XDCVFB.gif">
+<meta property="og:image" content="https://i.imgur.com/WMXzZFI.gif">
+<meta property="og:image" content="https://i.imgur.com/K6ivGlc.gif">
+<meta property="og:image" content="https://i.imgur.com/orIarwe.gif">
+<meta property="og:image" content="https://i.imgur.com/5lVWXGj.gif">
+<meta property="og:image" content="https://i.imgur.com/WyWKTHA.gif">
+<meta property="og:image" content="https://i.imgur.com/Pv9Gtxi.gif">
+<meta property="og:image" content="https://i.imgur.com/F5lZ8eP.gif">
+<meta property="article:published_time" content="2016-09-03T10:53:21.000Z">
+<meta property="article:modified_time" content="2017-05-13T18:00:04.967Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="IP">
+<meta property="article:tag" content="address">
+<meta property="article:tag" content="IPv4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/3lPFn9k.gif">
+
+<link rel="canonical" href="https://innks.github.io/2016/09/03/IT/IP-address/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>원도우에서 내 IP주소 확인 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/09/03/IT/IP-address/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          원도우에서 내 IP주소 확인
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-09-03 19:53:21" itemprop="dateCreated datePublished" datetime="2016-09-03T19:53:21+09:00">2016-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 03:00:04" itemprop="dateModified" datetime="2017-05-14T03:00:04+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/09/03/IT/IP-address/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/03/IT/IP-address/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="ip-주소-INTERNET-PROTOCOL-ADDRESS"><a href="#ip-주소-INTERNET-PROTOCOL-ADDRESS" class="headerlink" title="ip 주소 (INTERNET PROTOCOL ADDRESS)"></a>ip 주소 (INTERNET PROTOCOL ADDRESS)</h3><p>IP 주소(Internet Protocol address, 표준어: 인터넷규약주소)는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다. 네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다. 이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다. IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다. …<div class="text-right"><a href="https://ko.wikipedia.org/wiki/IP_%EC%A3%BC%EC%86%8C" target="_blank" rel="noopener">&lt;위키&gt;</a></div></p>
+<h2 id="윈도우에서-내-IP주소를-확인하는-방법"><a href="#윈도우에서-내-IP주소를-확인하는-방법" class="headerlink" title="윈도우에서 내 IP주소를 확인하는 방법"></a>윈도우에서 내 IP주소를 확인하는 방법</h2><p>오늘 회사 컴퓨터 드라이브 설치 하면서 공유기 정리하다가 잠시 잃어버린 IP확인방법을 이렇게 보고 정리해서 올려 봅니다. 간혹 잃어버리는 저는 이렇게라도 적어 놔야 잃어버리지 않으니 이렇게 적네요.</p>
+<h3 id="1-명령-프롬프트를-이용하여-확인하기"><a href="#1-명령-프롬프트를-이용하여-확인하기" class="headerlink" title="1. 명령 프롬프트를 이용하여 확인하기"></a>1. 명령 프롬프트를 이용하여 확인하기</h3><p><img src="https://i.imgur.com/3lPFn9k.gif" alt=""></p>
+<h5 id="방법-3가지"><a href="#방법-3가지" class="headerlink" title="방법 3가지"></a>방법 3가지</h5><blockquote>
+<p><strong>1-1.</strong> 윈도우에서 시작버튼에서 마우스 오른쪽 버튼을 눌러 명령 프롬프트를 실행하시면 됩니다.<br><strong>1-2.</strong> 윈도우키 + X 를 눌러 오른쪽 버튼을 누른 것과 같은 화면을 나오게 할 수 있습니다.<br><strong>1-3.</strong> 윈도우 7을 사용하는 경우에는 윈도우키 + R (시작버튼에서 실행과 같은 역활) cmd를 입력하면 됩니다.</p>
+</blockquote>
+<h4 id="도스창이-실행되었으면-ipconfig를-입력합니다"><a href="#도스창이-실행되었으면-ipconfig를-입력합니다" class="headerlink" title="도스창이 실행되었으면, ipconfig를 입력합니다."></a>도스창이 실행되었으면, ipconfig를 입력합니다.</h4><p><img src="https://i.imgur.com/nXr1txq.gif" alt=""></p>
+<h4 id="ipconfig를-입력하고-엔터를-치면-다음과-같은-내용이-나오는데-그중에-IPv4-주소를-주목하시면-됩니다"><a href="#ipconfig를-입력하고-엔터를-치면-다음과-같은-내용이-나오는데-그중에-IPv4-주소를-주목하시면-됩니다" class="headerlink" title="ipconfig를 입력하고 엔터를 치면 다음과 같은 내용이 나오는데,그중에 IPv4 주소를 주목하시면 됩니다."></a>ipconfig를 입력하고 엔터를 치면 다음과 같은 내용이 나오는데,그중에 IPv4 주소를 주목하시면 됩니다.</h4><p><img src="https://i.imgur.com/5XDCVFB.gif" alt=""><br><span class=cap2>192.168.x.x는 사설 IP(공유기 내의 IP)입니다. <a href="https://www.ktword.co.kr/abbr_view.php?m_temp1=2260" target="_blank" rel="noopener">자세히…</a></span></p>
+<p><button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapse_IP" aria-expanded="false" aria-controls="collapse_IP">  ipTIME형 외부 IP보기</button></p>
+<div class="collapse" id="collapse_IP"><h4>ipTIME형 외부 IP보기</h4>인터넷 주소란에 `192.168.0.1`을 입력합니다.
+![](https://i.imgur.com/uY9WXN4.gif)
+`관리도구`에 클릭하여 들어 갑니다.
+
+<p><img src="https://i.imgur.com/WMXzZFI.gif" alt=""><br><code>외부 IP 주소</code> 란에 보시면 됩니다. 위 그림에서는 <code>111.111.111.111</code>이 외부 IP입니다.</div></p>
+<h3 id="2-네트워크-창에서의-IP-확인하기"><a href="#2-네트워크-창에서의-IP-확인하기" class="headerlink" title="2. 네트워크 창에서의 IP 확인하기"></a>2. 네트워크 창에서의 IP 확인하기</h3><p><img src="https://i.imgur.com/K6ivGlc.gif" alt=""><br>작업 표시줄 하단에 시꼐 옆을 보면 컴퓨터와 랜선 같은 느낌의 아이콘에서 <code>마우스 오른쪽 버튼</code>을 눌러 <code>네트워크 및 공유 센터 열기</code>를 해줍니다.</p>
+<p><img src="https://i.imgur.com/orIarwe.gif" alt=""><br>네트워크 및 공유센터 열기를 클릭해 줍니다.</p>
+<p><img src="https://i.imgur.com/5lVWXGj.gif" alt=""><br>네트워크 및 공유센터 열기 창이 나오면 액세스 형식의<code>로컬 영역 연결</code>을 클릭하고 그 창에서 <code>자세히(E)...</code> 을 클릭합니다.</p>
+<p><img src="https://i.imgur.com/WyWKTHA.gif" alt=""><br>세부 정보 창에서 <code>IPv4 주소</code>란에 보시면 IP가 보입니다.</p>
+<h3 id="3-인터넷을-통해-IP확인하기"><a href="#3-인터넷을-통해-IP확인하기" class="headerlink" title="3. 인터넷을 통해 IP확인하기"></a>3. 인터넷을 통해 IP확인하기</h3><p>간단하게 네이버나, 다음에 검색란에 <code>IP 주소</code>라고 입력하면 됩니다.<br><img src="https://i.imgur.com/Pv9Gtxi.gif" class=inks_img><br><img src="https://i.imgur.com/F5lZ8eP.gif" class=inks_img></p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+              <a href="/tags/IP/" rel="tag"># IP</a>
+              <a href="/tags/address/" rel="tag"># address</a>
+              <a href="/tags/IPv4/" rel="tag"># IPv4</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/30/IT/UTP-STP-FTP/" rel="prev" title="UTP/STP/FTP 케이블">
+      <i class="fa fa-chevron-left"></i> UTP/STP/FTP 케이블
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/12/23/IT/onedrive-uninstaller/" rel="next" title="원드라이브(OneDrive) 삭제">
+      원드라이브(OneDrive) 삭제 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ip-주소-INTERNET-PROTOCOL-ADDRESS"><span class="nav-text">ip 주소 (INTERNET PROTOCOL ADDRESS)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#윈도우에서-내-IP주소를-확인하는-방법"><span class="nav-text">윈도우에서 내 IP주소를 확인하는 방법</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-명령-프롬프트를-이용하여-확인하기"><span class="nav-text">1. 명령 프롬프트를 이용하여 확인하기</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#방법-3가지"><span class="nav-text">방법 3가지</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#도스창이-실행되었으면-ipconfig를-입력합니다"><span class="nav-text">도스창이 실행되었으면, ipconfig를 입력합니다.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ipconfig를-입력하고-엔터를-치면-다음과-같은-내용이-나오는데-그중에-IPv4-주소를-주목하시면-됩니다"><span class="nav-text">ipconfig를 입력하고 엔터를 치면 다음과 같은 내용이 나오는데,그중에 IPv4 주소를 주목하시면 됩니다.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#collapse_IP"><span class="nav-text">ipTIME형 외부 IP보기</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-네트워크-창에서의-IP-확인하기"><span class="nav-text">2. 네트워크 창에서의 IP 확인하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-인터넷을-통해-IP확인하기"><span class="nav-text">3. 인터넷을 통해 IP확인하기</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2016/09/03/IT/IP-address/",
+            identifier: "2016/09/03/IT/IP-address/",
+            title: "원도우에서 내 IP주소 확인"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

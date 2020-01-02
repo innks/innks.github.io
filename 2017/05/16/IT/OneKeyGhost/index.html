@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="# 원키고스트 OneKeyGhost이제 고스트가 일반유 저들에게도 많이 알려져서 사용법은 웬만큼 아실 것이지만, 그런데도 어려움을 많이 격고 있어 새로이 포맷하고 윈도우 새로 설치하시는 분들이 가끔 있으신 것 같습니다.속이 시원하게 알려드립니다. 원키고스트가 훨씬 사용하기 쉬우니 한 번씩 사용해 보시면 될 것입니다. # 설치전 준비 사항주의사항 : 미리 (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OneKeyGhost(원키고스트) 사용하여 원도우 백업&#x2F;복원 하기">
+<meta property="og:url" content="https://innks.github.io/2017/05/16/IT/OneKeyGhost/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="# 원키고스트 OneKeyGhost이제 고스트가 일반유 저들에게도 많이 알려져서 사용법은 웬만큼 아실 것이지만, 그런데도 어려움을 많이 격고 있어 새로이 포맷하고 윈도우 새로 설치하시는 분들이 가끔 있으신 것 같습니다.속이 시원하게 알려드립니다. 원키고스트가 훨씬 사용하기 쉬우니 한 번씩 사용해 보시면 될 것입니다. # 설치전 준비 사항주의사항 : 미리 (">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/1hJlbiZ.png">
+<meta property="og:image" content="https://i.imgur.com/LHJgNUS.png">
+<meta property="og:image" content="https://i.imgur.com/uxmmVOB.png">
+<meta property="og:image" content="https://i.imgur.com/tjgh8LU.png">
+<meta property="og:image" content="https://i.imgur.com/U5psSnl.png">
+<meta property="og:image" content="https://i.imgur.com/fHuiQfs.png">
+<meta property="article:published_time" content="2017-05-15T18:20:20.000Z">
+<meta property="article:modified_time" content="2017-12-05T15:34:14.125Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="OneKeyGhost">
+<meta property="article:tag" content="원키고스트">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/1hJlbiZ.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/16/IT/OneKeyGhost/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>OneKeyGhost(원키고스트) 사용하여 원도우 백업/복원 하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/16/IT/OneKeyGhost/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OneKeyGhost(원키고스트) 사용하여 원도우 백업/복원 하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-16 03:20:20" itemprop="dateCreated datePublished" datetime="2017-05-16T03:20:20+09:00">2017-05-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:34:14" itemprop="dateModified" datetime="2017-12-06T00:34:14+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/16/IT/OneKeyGhost/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/16/IT/OneKeyGhost/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="원키고스트-OneKeyGhost"><a href="#원키고스트-OneKeyGhost" class="headerlink" title="# 원키고스트 OneKeyGhost"></a># 원키고스트 <small>OneKeyGhost</small></h1><p>이제 고스트가 일반유 저들에게도 많이 알려져서 사용법은 웬만큼 아실 것이지만, 그런데도 어려움을 많이 격고 있어 새로이 포맷하고 윈도우 새로 설치하시는 분들이 가끔 있으신 것 같습니다.<br>속이 시원하게 알려드립니다. 원키고스트가 훨씬 사용하기 쉬우니 한 번씩 사용해 보시면 될 것입니다.</p>
+<h2 id="설치전-준비-사항"><a href="#설치전-준비-사항" class="headerlink" title="# 설치전 준비 사항"></a># 설치전 준비 사항</h2><p><strong>주의사항</strong> : 미리 (파티션 2개)로 있어야 합니다.</p>
+<ol>
+<li>C:로컬 디스크, D:로컬 디스크 같이 있어야 합니다. 또는 더많은 디스크.</li>
+<li>C:(SSD) D:(HDD) 상태라도 제대로 작동 안 됩니다.</li>
+</ol>
+<p>제가 올린 첨부파일 <a href="/2016/03/21/IT/Utilities-for-Windows/index.html#OneKey-Ghost-원키고스트-nbsp">OneKey_V14.5.8.215fix_Kor.zip</a> 파일 받으시던가 <a href="http://www.onekeyghost.com/" target="_blank" rel="noopener">공식 사이트</a>, <a href="http://hangulhwa.tistory.com/42" target="_blank" rel="noopener">한글화 성진님의 블로그</a> 에서 받고(<a href="https://www.dropbox.com/s/4to4vvype0ma3h1/OneKeyGhost_7.3.2_KO.exe?dl=0" target="_blank" rel="noopener">OneKeyGhost_7.3.2_KO</a>, <a href="https://www.dropbox.com/s/59dg8j5tqoshjkt/OneKey_7.3ko.exe?dl=0" target="_blank" rel="noopener">OneKey_7.3ko</a> 추가 파일입니다. 7.3.2는 테스트 못했습니다.)</p>
+<h5 id="시작-밑의-파일은-OneKey-V14-5-8-215fix-Ko-파일을-했습니다"><a href="#시작-밑의-파일은-OneKey-V14-5-8-215fix-Ko-파일을-했습니다" class="headerlink" title="# 시작 밑의 파일은  OneKey_V14.5.8.215fix_Ko 파일을 했습니다."></a># 시작 밑의 파일은  OneKey_V14.5.8.215fix_Ko 파일을 했습니다.</h5><p>D: 드라이브에 압축을 풀어줍니다.</p>
+<ul>
+<li>혹시라도 바이러스나, 트로이목마 잡히면 안심하셔도 됩니다. 백신에서 제외해주세요.</li>
+</ul>
+<img src="https://i.imgur.com/1hJlbiZ.png" class="inks_img img_left">
+
+<h2 id="당부-말씀"><a href="#당부-말씀" class="headerlink" title="# 당부 말씀"></a># 당부 말씀</h2><p>회사에서는 원도우 7을 사용하고 집에서는 원도우10을 사용해서 해본 결과 잘되더군요.<br>일단 저는 원도우 포맷 후 1번 백업, 모든 유틸 설치하고 1번 백업 한답니다.<br>그러면 여러 가지 부분에서 유용하더군요.</p>
+<p>기본적으로 C드라이브 용량을 최대한 줄여서 바이러스나 최적화를 하고 난 후 백업을 합니다. 혹시 모를 부분에 대하여 서류나 기타 중요한 부분은 <strong>따로 백업하시길 바랍니다.</strong><br>또한, 백업전 Windows defender 와 기타 백신 프로그램은 꺼두세요. 그리고 각기 다른 컴퓨터에 각기 다른 모양이 되기도 한답니다. 어떤 컴퓨터는 백업하고 부팅시 계속 고스트에 들어가기도 하고 재부팅시 멀티 부팅되기도 한답니다. 하지만 보통은 잘 됩니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="백업하기"><a href="#백업하기" class="headerlink" title="# 백업하기"></a># 백업하기</h2><p>우선 원키고스트를 압축 푼 사항에서 실행 파일을 실행하고 밑의 그림대로 합니다.</p>
+<p><img src="https://i.imgur.com/LHJgNUS.png" alt=""></p>
+<p>위는 원키고스트 실행화면입니다. 순서대로 <strong>①-백업(B), ②-드라이브:\파일이름, ③-실행</strong> 하시면 됩니다.</p>
+<blockquote>
+<ul>
+<li>기본이 C:로 되어 있으므로 따로 안 하셔도 되지만 안 되어 있다면 C:를 선택하시기 바랍니다.</li>
+<li>백업이되는 드라이브와 동일한 드라이브에는 백업이 되지 않습니다. 다른 파티션을 잡아주셔야하고,외장 메모리에도 불가능하다고 합니다.</li>
+<li>C (SSD) D(HDD) 라면 이미지는 만들어집니다. 하지만 자동 복구는 되지 않고 수동으로 고스트 진입해서 복구 해줘야 합니다.</li>
+</ul>
+</blockquote>
+<div class=tip><strong>②</strong> - 란에 그냥 하시지 마시고 따로 파일을 지정 해 주시는게 좋습니다. 예) <strong>win7_basic_20170517.GHO</strong></div>
+
+<blockquote>
+<p>한글로 이름을 수정하면 나중에 복원시 에러가 날수 있습니다.</p>
+</blockquote>
+<div class=Tip_Area><h4> # 참고 - 고급설정 부분 <small>크게 설정할 내용은 없지 않을까 싶네요.</small></h4>![](https://i.imgur.com/Jv5lsya.png)
+기본으로 하셔도 무방하지만 IDE사용자라면 한번 고급으로 하셔야 됩니다. 물론 자동으로 된다고 알고 있습니다.
+나머지는 위의 기본과 같고, <strong>③</strong>-부분이 추가 됩니다.<ul><li>IDE 장치 비활성화(D) - 예전 IDE 방식 하드 디스트를 인식 해야한다면 체크되어진 부분을 해제 시켜주세요.</li><li>암호(P) - 보안이 필요한 작업이라면 암호(P) 부분을 체크후 설정해주시면 백업 파일에 암호를 걸수 있답니다.</li></ul></div>
+
+<p>모두 완료 후 실행을 클릭하면,<br><img src="https://i.imgur.com/uxmmVOB.png" class=img_left><br>이창이 뜨면 <strong>예(Y)</strong> 하시면 재부팅 되면 백업이 실행 됩니다.</p>
+<p><img src="https://i.imgur.com/tjgh8LU.png" alt=""><br>그냥 아무것도 하실 필요 없습니다. 알아서 재부팅이 됩니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="복원하기"><a href="#복원하기" class="headerlink" title="# 복원하기"></a># 복원하기</h2><p>얼마간 어느샌가 컴퓨터가 느려지거나, 사용하는 데 문제가 생기는 경우! 누구나 컴퓨터 사용자라면 한 번씩은 겪어보셨을 것입니다. 이때 복원을 해야겠다는 생각이 들기도 합니다. 이때를 위해 복원을 하는 방법을 설명하겠습니다.</p>
+<p><img src="https://i.imgur.com/U5psSnl.png" alt=""><br>위의 설명은  순서대로 <strong>①-복원(R), ②-드라이브:\파일이름, ③-실행</strong> 하시면 됩니다.<br>또한 굳이 C:를 선택 하지 않아도 기본이 C:로 되어 있습니다.</p>
+<div class=Tip_Area><h4> # 참고 - 고급설정 부분 <small>크게 설정할 내용은 없지 않을까 싶네요.</small></h4>![](https://i.imgur.com/5zXWvm0.png)
+이것 역시 그냥 기본으로 하는것이 좋습니다. 굳이 해야 한다면 위의 설명으로 여기는 생략하겠습니다.</div>
+
+<p>모두 완료 후 실행을 클릭하면,<br><img src="https://i.imgur.com/fHuiQfs.png" class=img_left><br>이창이 뜨면 <strong>예(Y)</strong> 하시면 재부팅 되면 백업이 실행 됩니다.</p>
+<Div class=tip>c드라이브에 **중요** 하거나 최근 작업한것은 미리 백업을 하시기 바랍니다. 꼭...</div>
+
+<div class=Tip_Area><h4> # 참고 - 설치부분 </h4> 백업과 복원 옆에 설치부분을 체크 하시면 작은 창이 생깁니다.
+![](https://i.imgur.com/9JEPry8.png)
+사실 저는 이 부분에 대해서는 설명만 읽었지 해보지는 않았습니다. 우선 설치는 원도우에서 원키 고스트를 실행해서 사용하지만 이마저도 안될 때 DOS모드에서 사용하도록 설치를 하는 것입니다.<h4> # 설명</h4><ul><li><strong>기형 폴더 생성</strong> : 폴더를 열어볼 수 없습니다.</li><li><strong>일반 폴더 생성</strong> : 폴더를 열어 볼수 있습니다.</li><li><strong>생성된 폴더 숨김</strong> : 폴더를 숨김 처리 합니다.</li><li><strong>마지막 파티션 숨김</strong> : 탐색기에서 마지막 파티션을 숨김 처리 합니다.</li><li><strong>암호</strong> : 도스 모드 접근을 암호화하여 보호 할수 있습니다.</li><li><strong>OS 선택 메뉴</strong> : 부팅시 멀티 부팅 메뉴와 같이 OS와 원키를 선택할수 있습니다.</li><li><strong>단축키</strong> : F7 ~ F12 중 선택, 부팅시 해당 단축키를 입력 하여 사용할수 있습니다.</li><li><strong>메뉴 대기 시간</strong> : OS 선택 부팅, 단축키 대기 시간을 설정합니다.</li></ul><strong> # 참고로 밑의 글을 읽어 보시고 꼭 필요 하신 분만 설치하시길 바랍니다.</strong><br /></div>
+
+<hr>
+<div class=Tip_Area><h4> # 참고 - 오류부분</h4>**"non-MBR partition Cannot be installed "**
+OneKey Ghost 는 MBR 파티션만 인식합니다. **GPT 파티션에서는 설치가 안됩니다.** 백업할 드라이브, 백업을 저장할 공간 모두 GPT 파티션이면 안됩니다.
+즉 MBR(마스터 부트 레코드)의 드라이브만 인식 됩니다.
+해결(?) - `내컴퓨터 – 관리`에서 GPT 파티션을 확인하고 있다면 파티션을 삭제하고 다시 MBR 로 리빌드 합니다.
+
+<p><strong>“okldr.mbr” or 무한 리부팅</strong><br>만약 위의 맨트가 나오고 무한 재부팅이 된다면 <strong>포맷</strong> 이 좋지 않을까 생각됩니다.<br>그리고 원도우 부팅이 된다면 <strong>멀티 부팅을 삭제</strong> 하시는 것이 좋습니다. 방법은 인터넷에 많이 있습니다.<br>하지만 쉬운 방법을 소개 하자면 <a href="http://www.snoopybox.co.kr/1386" target="_blank" rel="noopener">스누피박스(snoopybox)블로그</a>에 cmd파일을 실행하시면 손쉽게 삭제할 수 있습니다.<br>cmd 다운이 안 되시면 이쪽으로…<a href="/asset/multibootingdelete.zip">다운</a> 스누피박스의 cmd파일을 zip로 한것일 뿐입니다.</div></p>
+<hr>
+<p>이상 더이상은 저도 잘 모르겠네요. :)<br>원체 오래된 프로그램이고 좋은 프로그램이기는 하지만 백업/복원하는 프로그램이라 각각의 시스템에서 완벽하다고 생각이 되지 않습니다. 제가 아는 한도까지는 적었는데 더 많은 부분은 저도 잘 모른다는 점 이해하시길 바랍니다.</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OneKeyGhost/" rel="tag"># OneKeyGhost</a>
+              <a href="/tags/%EC%9B%90%ED%82%A4%EA%B3%A0%EC%8A%A4%ED%8A%B8/" rel="tag"># 원키고스트</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/10/IT/g-analytics-account-del/" rel="prev" title="구글 애널리틱스 계정 삭제하기">
+      <i class="fa fa-chevron-left"></i> 구글 애널리틱스 계정 삭제하기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/17/IT/System-Reserved-Partition-Hidden/" rel="next" title="원도우 시스템 예약 파티션 숨기기">
+      원도우 시스템 예약 파티션 숨기기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#원키고스트-OneKeyGhost"><span class="nav-text"># 원키고스트 OneKeyGhost</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#설치전-준비-사항"><span class="nav-text"># 설치전 준비 사항</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#시작-밑의-파일은-OneKey-V14-5-8-215fix-Ko-파일을-했습니다"><span class="nav-text"># 시작 밑의 파일은  OneKey_V14.5.8.215fix_Ko 파일을 했습니다.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#당부-말씀"><span class="nav-text"># 당부 말씀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#백업하기"><span class="nav-text"># 백업하기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text"> # 참고 - 고급설정 부분 크게 설정할 내용은 없지 않을까 싶네요.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#복원하기"><span class="nav-text"># 복원하기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text"> # 참고 - 고급설정 부분 크게 설정할 내용은 없지 않을까 싶네요.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text"> # 참고 - 설치부분 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text"> # 설명</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-text"> # 참고 - 오류부분</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/16/IT/OneKeyGhost/",
+            identifier: "2017/05/16/IT/OneKeyGhost/",
+            title: "OneKeyGhost(원키고스트) 사용하여 원도우 백업/복원 하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

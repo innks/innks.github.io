@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="CSS Cascading Style SheetsCascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다. 스타일 규칙Rule Set(Rule)은 HTML페이지 안의 특정 요소들을 어떻게 렌더링(Rendering) 할 것인지">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 기억해야할 선택자 형식">
+<meta property="og:url" content="https://innks.github.io/2017/06/05/css/css-Selector-note/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="CSS Cascading Style SheetsCascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다. 스타일 규칙Rule Set(Rule)은 HTML페이지 안의 특정 요소들을 어떻게 렌더링(Rendering) 할 것인지">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/ITjxNNi.png">
+<meta property="og:image" content="https://innks.github.io/images/M9NUNak.png">
+<meta property="og:image" content="https://innks.github.io/images/WAJWHBW.png">
+<meta property="article:published_time" content="2017-06-05T02:13:31.000Z">
+<meta property="article:modified_time" content="2019-05-01T22:48:19.593Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Css">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/ITjxNNi.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/06/05/css/css-Selector-note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>CSS 기억해야할 선택자 형식 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/06/05/css/css-Selector-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS 기억해야할 선택자 형식
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-06-05 11:13:31" itemprop="dateCreated datePublished" datetime="2017-06-05T11:13:31+09:00">2017-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 07:48:19" itemprop="dateModified" datetime="2019-05-02T07:48:19+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/06/05/css/css-Selector-note/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/05/css/css-Selector-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSS-Cascading-Style-Sheets"><a href="#CSS-Cascading-Style-Sheets" class="headerlink" title="CSS Cascading Style Sheets"></a>CSS <small>Cascading Style Sheets</small></h1><p>Cascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다.</p>
+<h1 id="스타일-규칙"><a href="#스타일-규칙" class="headerlink" title="스타일 규칙"></a>스타일 규칙</h1><p>Rule Set(Rule)은 HTML페이지 안의 특정 요소들을 어떻게 렌더링(Rendering) 할 것인지 브라우저에게 알려주는 CSS 문장입니다. 밑의 스타일 규칙이라고도 불리는 이 문장은 스타일에 관한 규칙들을 나타냅니다.  <a href="http://css.maxdesign.com.au/selectutorial/rule.htm" target="_blank" rel="noopener">rule set 자세히 알아보기</a><br><img src="/images/ITjxNNi.png" alt="Rule structure"></p>
+<style>h2::before{font-size:14px;content: "{...} "; color: #e13d3c; letter-spacing:1.5px !important;}h2 {letter-spacing:1px !important; font-weight:700 !important; color:#000; font-size:32px !important; }h3 {letter-spacing:1px !important; font-weight:700 !important; color:#000;} h2 > span, h3 > span {color:#cbcbcb;} h2 > small {font-size:70% !important;}.font {font-weight:700;}</style>
+
+<h1 id="기억해야할-기본-CSS"><a href="#기억해야할-기본-CSS" class="headerlink" title="기억해야할 기본 CSS"></a>기억해야할 기본 CSS</h1><h2 id="1-전체선택자-Universal-Selector"><a href="#1-전체선택자-Universal-Selector" class="headerlink" title="1. * 전체선택자(Universal Selector)"></a><span>1.</span> * <small>전체선택자(Universal Selector)</small></h2><p>별표는 페이지의 모든 요소를 ​​타겟팅합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">   <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <code>&#39;*&#39;</code> - 전체선택자(Universal Selector)로 다른 선택자와 같이 사용할 때는 생략할 수 있습니다. 즉,</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-class">.abc</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"><span class="selector-class">.abc</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br></pre></td></tr></table></figure>
+<p>는 같은 결과를 만듭니다. 또한 자식 선택자와 함께 사용할 수 있습니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span> * &#123;</span><br><span class="line"> <span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>하지만 전체선택자는 아주 많이 사용하지 마십시오. 브라우저에 너무 많은 가중치를 추가합니다.</p>
+<hr>
+<h2 id="2-X-아이디-선택자-ID-Selector"><a href="#2-X-아이디-선택자-ID-Selector" class="headerlink" title="2. #X 아이디 선택자(ID Selector)"></a><span>2.</span> #X <small>아이디 선택자(ID Selector)<small></h2><p>특정 값을 id 속성(attribute)의 값으로 갖는 요소(element)를 선택합니다. 속성값 앞에 <code>#</code>을 붙여 아이디임을 나타냅니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">960px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>id선택자는 한 문서에 한번만 사용할 수 있습니다. 꼭 증요한것이나 <strong>한개만</strong> 필요한 부분에 사용하십시요.</p>
+<hr>
+<h2 id="3-X-클래스-선택자-Class-Selector"><a href="#3-X-클래스-선택자-Class-Selector" class="headerlink" title="3. .X 클래스 선택자(Class Selector)"></a><span>3.</span> .X <small>클래스 선택자(Class Selector)</small></h2><p>특정 값을 class 속성(attribute)의 값으로 갖는 요소(element)를 선택합니다. 속성값 앞에 <code>.</code>을 붙여 클래스임을 나타냅니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.abc</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>class선택자는 id선택자와의 차이점은 여러개 사용할수 있다는 것입니다. 또한 <code>.</code>앞에 아무것도 없을때는 ‘<span class=font> * </span>‘ 생략한 것입니다. &lt;전체선택자&gt;참조</p>
+<h3 id="3-1-A-X-클래스-선택자-앞에-무언가-있으면"><a href="#3-1-A-X-클래스-선택자-앞에-무언가-있으면" class="headerlink" title="- 3.1 A.X 클래스 선택자 앞에 무언가 있으면"></a><span>- 3.1</span> A.X <small style="color:#000;">클래스 선택자 앞에 무언가 있으면</small></h3><p>클래스 선택자 앞에 무언가 있으면 모두 만족하는 요소를 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.abc</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>class 값으로 abc를 갖는 p 요소를 선택합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"abc"</span>&gt;</span>Logo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-X-Y-클래스-값이-여러-개인-요소-선택하기"><a href="#3-2-X-Y-클래스-값이-여러-개인-요소-선택하기" class="headerlink" title="- 3.2 .X.Y 클래스 값이 여러 개인 요소 선택하기"></a><span>- 3.2</span> .X.Y <small style="color:#000;">클래스 값이 여러 개인 요소 선택하기</small></h3><p>클래스 선택자 여러 개인 요소값을 선택해야 할때 써 줍니다. 주의할 점은 선택자 사이(.X와 .Y 사이)에 <strong>공백이 없어야한다</strong> 는 것입니다</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.aaa</span><span class="selector-class">.bbb</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/mmYEYO" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="3-3-X-Y-클래스-값이-여러-개인-요소-선택하기-공백-있음"><a href="#3-3-X-Y-클래스-값이-여러-개인-요소-선택하기-공백-있음" class="headerlink" title="- 3.3 .X .Y 클래스 값이 여러 개인 요소 선택하기(공백 있음)"></a><span>- 3.3</span> .X .Y <small style="color:#000;">클래스 값이 여러 개인 요소 선택하기(공백 있음)</small></h3><p>선택자 공백이 있다면 하위 선택자로 인식됩니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ccc</span> <span class="selector-class">.ddd</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/mmYEYO" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="3-4-X-Y-체인-chain-선택자"><a href="#3-4-X-Y-체인-chain-선택자" class="headerlink" title="- 3.4 X, Y 체인(chain) 선택자"></a><span>- 3.4</span> X, Y <small  style="color:#000;">체인(chain) 선택자</small></h3><p>체인 선택자는 한 요소에 여러개의 클래스가 지정된 경우에 사용한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ccc</span>, <span class="selector-class">.ddd</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<hr>
+<h2 id="4-X-타입-선택자-Type-Selector"><a href="#4-X-타입-선택자-Type-Selector" class="headerlink" title="4. X 타입 선택자(Type Selector)"></a><span>4.</span> X <small>타입 선택자(Type Selector)</small></h2><p>h1, p, div, span 등 HTML 요소(Element)를 선택하는 선택자입니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>:<span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-복합-선택자-Combinator"><a href="#5-복합-선택자-Combinator" class="headerlink" title="5. 복합 선택자 (Combinator)"></a><span>5.</span> 복합 선택자 (Combinator)</h2><p><img src="/images/M9NUNak.png" alt=""></p>
+<h3 id="5-1-X-Y-하위-선택자-Descendant-Combinator"><a href="#5-1-X-Y-하위-선택자-Descendant-Combinator" class="headerlink" title="5-1. X Y 하위 선택자(Descendant Combinator)"></a><span>5-1.</span> X Y <small>하위 선택자(Descendant Combinator)</small></h3><p>하위 선택자는 선택자(<strong>X</strong>)의 모든 하위 요소 중 선택자(<strong>Y</strong>)와 일치하는 요소를 <strong>모두</strong> 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+<p>class 속성은 여러 개의 값을 가질 수 있습니다. 이 경우 CSS 코드 순서대로 적용됩니다. 2개 이상일때는 우선순위는 위에 설명한 <a href="#선택자-Selector-우선순위">선택자(Selector)우선순위</a>을 보시면 됩니다.</p>
+<p><a href="https://codepen.io/innks/pen/ybWNjV" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<hr>
+<h3 id="5-2-X-gt-Y-자식-선택자-Child-Combinator"><a href="#5-2-X-gt-Y-자식-선택자-Child-Combinator" class="headerlink" title="5.2. X &gt; Y 자식 선택자(Child Combinator)"></a><span>5.2.</span> X &gt; Y <small>자식 선택자(Child Combinator)</small></h3><p>자식 선택자는 선택자(<strong>X</strong>)의 모든 자식 요소 중 선택자(<strong>Y</strong>)와 일치하는 요소를 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/xdNGzW" target="_blank" rel="noopener">데모 결과 보기</a><br>자식 선택자는 바로 아래 자식 요소에만 적용합니다.</p>
+<hr>
+<h2 id="6-형제-동위-선택자-Sibling-Combinator"><a href="#6-형제-동위-선택자-Sibling-Combinator" class="headerlink" title="6. 형제(동위) 선택자 (Sibling Combinator)"></a>6. 형제(동위) 선택자 (Sibling Combinator)</h2><p><img src="/images/WAJWHBW.png" alt=""></p>
+<h3 id="6-1-X-Y-인접-형제-선택자-Adjacent-Sibling-Combinator"><a href="#6-1-X-Y-인접-형제-선택자-Adjacent-Sibling-Combinator" class="headerlink" title="6-1. X + Y 인접 형제 선택자(Adjacent Sibling Combinator)"></a><span>6-1.</span> X + Y <small>인접 형제 선택자(Adjacent Sibling Combinator)</small></h3><p>이 선택자는 인접 선택자 혹은 형제 선택자라고 합니다. 선택자(<strong>X</strong>)의 형제 요소 중 선택자(<strong>X</strong>) <strong>바로 뒤</strong> 에 위치하는 선택자(<strong>Y</strong>) 요소를 선택한다. (<strong>X</strong>)와 (<strong>Y</strong>) 사이에 다른 요소가 존재하면 선택되지 않는다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">span</span><span class="selector-class">.test</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/eWowRj" target="_blank" rel="noopener">데모 결과 보기</a><br>이름에서 알수 있듯이 인접 <strong>형제</strong> 선택자는 <strong>바로 뒤</strong> 에 오는  선택자 만 되고 태그사이에 즉, <strong>태그 안 선택자는 되지 않습니다.</strong></p>
+<hr>
+<h3 id="6-2-X-Y-일반-형제-선택자-General-Sibling-Combinator"><a href="#6-2-X-Y-일반-형제-선택자-General-Sibling-Combinator" class="headerlink" title="6-2. X ~ Y 일반 형제 선택자(General Sibling Combinator)"></a><span>6-2.</span> X ~ Y <small>일반 형제 선택자(General Sibling Combinator)</small></h3><p>선택자(X)의 형제 요소 중 선택자(<strong>X</strong>) 뒤에 위치하는 선택자(<strong>Y</strong>) 요소를 <strong>모두 선택</strong> 한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">span</span><span class="selector-class">.test</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/XRwKZy" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h2 id="7-속성선택자-Attribute-Selector"><a href="#7-속성선택자-Attribute-Selector" class="headerlink" title="7. 속성선택자 (Attribute Selector)"></a>7. 속성선택자 (Attribute Selector)</h2><p>속성 선택자(Attribute Selector)는 특정 속성(attribute)을 갖고 있거나 특정 속성이 특정 값 등을 갖고 있는 요소(element)를 선택합니다.</p>
+<ul>
+<li>선택자[속성] : 지정 속성이 포함된 요소 선택.</li>
+<li>선택자[속성=”값”] : 지정 속성과 값이 일치하는 요소 선택.</li>
+<li>선택자[속성~=”값”]: 지정 속성의 값에 지정 속성값을 (공백으로 분리된 단어로) 포함하는 요소 선택.</li>
+<li>선택자[속성|=”값”] : 지정 속성값과 일치하거나 지정 속성값 뒤 연이은 하이픈(“값-“)으로 시작하는 요소 선택.</li>
+<li>선택자[속성^=”값”] : 지정 속성값으로 시작하는 요소 선택.</li>
+<li>선택자[속성$=”값”] : 지정 속성값으로 끝나는 요소 선택.</li>
+<li>선택자[속성*=”값”] : 지정 속성값을 포함하는 요소 선택.</li>
+</ul>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="7-1-X-attributename-선택자-속성"><a href="#7-1-X-attributename-선택자-속성" class="headerlink" title="7-1. X[attributename] 선택자[속성]"></a><span>7-1.</span> X[attributename] <small>선택자[속성]</small></h3><p>이것은 다른 방법으로 특정 링크의 스타일을 지정하고자 할 때 유용합니다. 위의 소스는 ‘a’태그에 ‘title’속성을 가진 태그만 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* a 요소 중에 title속성을 가지는 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[title]</span> &#123;<span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/innks/pen/gWJEwb" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-2-X-attributename-”value”-선택자-속성-”값”"><a href="#7-2-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-2. X[attributename=”value”] 선택자[속성=”값”]"></a><span>7-2.</span> X[attributename=”value”] <small>선택자[속성=”값”]</small></h3><p><strong>X</strong> 속성과 값이 일치하는 요소를 선택한다.<br> 하지만 사용시 주의 하세요. 속성값이 <strong>정확히 일치</strong> 해야 한다는 것입니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* a 요소 중에 target 속성값이 "_blank"인 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[target=<span class="string">"_blank"</span>]</span> &#123;<span class="attribute">color</span>: <span class="number">#f00</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/innks/pen/KmLENm" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-3-X-attributename-”value”-선택자-속성-”값”"><a href="#7-3-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-3. X[attributename|=”value”] 선택자[속성=”값”]"></a><span>7-3.</span> X[attributename|<del>=”value”] <small>선택자[속성</del>=”값”]</small></h3><p><strong>X</strong> 속성의 값에 지정 속성값을 (공백으로 분리된 단어로) 포함하는 요소를 선택한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* a 요소 중에 title 속성값에 "image"를 단어로 포함하는 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[title~=<span class="string">"image"</span>]</span>&#123;<span class="attribute">border</span>: <span class="number">1px</span> solid black;&#125;</span><br><span class="line"><span class="comment">/* a 요소 중에 title 속성값에 "ex"를 단어로 포함하는 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[title~=<span class="string">"ex"</span>]</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/innks/pen/VbOREw" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-4-X-attributename-”value”-선택자-속성-”값”"><a href="#7-4-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-4. X[attributename|=”value”] 선택자[속성|=”값”]"></a><span>7-4.</span> X[attributename|=”value”] <small>선택자[속성|=”값”]</small></h3><p><strong>X</strong> 속성의 값이 value이거나 value-로 시작하는 요소를 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* lang 속성값이 "ko"과 일치하거나 "ko-"로 시작하는 요소 */</span></span><br><span class="line"><span class="selector-attr">[lang|=<span class="string">"ko"</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/Emzrjg" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-5-X-attributename-”value”-선택자-속성-”값”"><a href="#7-5-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-5. X[attributename^=”value”] 선택자[속성^=”값”]"></a><span>7-5.</span> X[attributename^=”value”] <small>선택자[속성^=”값”]</small></h3><p><strong>X</strong> 속성값으로 시작하는 요소를 선택한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* a 요소 중에 href 속성값이 "https://"로 시작하는 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^=<span class="string">"https://"</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/wdbZwq" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-6-X-attributename-”value”-선택자-속성-”값”"><a href="#7-6-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-6. X[attributename$=”value”] 선택자[속성$=”값”]"></a><span>7-6.</span> X[attributename$=”value”] <small>선택자[속성$=”값”]</small></h3><p><strong>X</strong> 속성값으로 끝나는 요소를 선택한다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* a 요소 중에 href 속성값이 ".html"로 끝나는 요소 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$=<span class="string">".html"</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/oWROjX" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h3 id="7-7-X-attributename-”value”-선택자-속성-”값”"><a href="#7-7-X-attributename-”value”-선택자-속성-”값”" class="headerlink" title="7-7. X[attributename*=”value”] 선택자[속성*=”값”]"></a><span>7-7.</span> X[attributename*=”value”] <small>선택자[속성*=”값”]</small></h3><p><strong>X</strong> 속성의 값이 value를 포함한 요소를 선택합니다. 예를 들어 ‘a’태그에 ‘facebook’이 들어가는 모든 부분에 속성을 선택합니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[title*=<span class="string">"facebook"</span>]</span> &#123;<span class="attribute">color</span>: blue;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://codepen.io/innks/pen/pPmBNx" target="_blank" rel="noopener">데모 결과 보기</a></p>
+<h1 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h1><p><a href="http://htmlcss.kr/css/css-selector/" target="_blank" rel="noopener">http://htmlcss.kr/css/css-selector/</a></p>
+<hr>
+<nav id="article-nav-post"><a href="/2017/06/04/css/CSS-Px-to-Em/" id="article-nav-newer-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post"><i class="fa fa-arrow-left" aria-hidden="true"></i> 이전편</strong><div class="article-nav-title-post">글꼴 크기 비교 지정하기</div><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a><!--a href="/2017/06/05/css/css-Selector-note/" id="article-nav-older-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post">다음편 <i class="fa fa-arrow-right" aria-hidden="true"></i></strong><div class="article-nav-title-post">CSS 기억해야할 선택자 형식</div><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i></a--></nav>
+
+<h1 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="관련 문서 바로가기"></a>관련 문서 바로가기</h1><ul>
+<li><a href="/2017/05/27/css/starting-CSS/">CSS 시작하기</a></li>
+<li><a href="/2017/05/28/css/CSS-Selector-ranking/">선택자(Selector) 우선순위</a></li>
+<li><a href="/2017/05/30/css/Reset-CSS/">Reset CSS 사용하기</a></li>
+<li><a href="/2017/06/04/css/CSS-Px-to-Em/">글꼴 크기 비교 지정하기</a></li>
+<li><a href="/2017/06/05/css/css-Selector-note/">CSS 기억해야할 선택자 형식</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Css/" rel="tag"># Css</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/06/04/css/CSS-Px-to-Em/" rel="prev" title="글꼴 크기 비교 지정하기">
+      <i class="fa fa-chevron-left"></i> 글꼴 크기 비교 지정하기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/06/22/coin/Alternative-coin/" rel="next" title="결국 가상화폐(암호화폐) 직접 채굴하게 되었다.">
+      결국 가상화폐(암호화폐) 직접 채굴하게 되었다. <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Cascading-Style-Sheets"><span class="nav-text">CSS Cascading Style Sheets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#스타일-규칙"><span class="nav-text">스타일 규칙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#기억해야할-기본-CSS"><span class="nav-text">기억해야할 기본 CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-전체선택자-Universal-Selector"><span class="nav-text">1. * 전체선택자(Universal Selector)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-X-아이디-선택자-ID-Selector"><span class="nav-text">2. #X 아이디 선택자(ID Selector)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-X-클래스-선택자-Class-Selector"><span class="nav-text">3. .X 클래스 선택자(Class Selector)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-A-X-클래스-선택자-앞에-무언가-있으면"><span class="nav-text">- 3.1 A.X 클래스 선택자 앞에 무언가 있으면</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-X-Y-클래스-값이-여러-개인-요소-선택하기"><span class="nav-text">- 3.2 .X.Y 클래스 값이 여러 개인 요소 선택하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-X-Y-클래스-값이-여러-개인-요소-선택하기-공백-있음"><span class="nav-text">- 3.3 .X .Y 클래스 값이 여러 개인 요소 선택하기(공백 있음)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-X-Y-체인-chain-선택자"><span class="nav-text">- 3.4 X, Y 체인(chain) 선택자</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-X-타입-선택자-Type-Selector"><span class="nav-text">4. X 타입 선택자(Type Selector)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-복합-선택자-Combinator"><span class="nav-text">5. 복합 선택자 (Combinator)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-X-Y-하위-선택자-Descendant-Combinator"><span class="nav-text">5-1. X Y 하위 선택자(Descendant Combinator)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-X-gt-Y-자식-선택자-Child-Combinator"><span class="nav-text">5.2. X &gt; Y 자식 선택자(Child Combinator)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-형제-동위-선택자-Sibling-Combinator"><span class="nav-text">6. 형제(동위) 선택자 (Sibling Combinator)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-X-Y-인접-형제-선택자-Adjacent-Sibling-Combinator"><span class="nav-text">6-1. X + Y 인접 형제 선택자(Adjacent Sibling Combinator)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-X-Y-일반-형제-선택자-General-Sibling-Combinator"><span class="nav-text">6-2. X ~ Y 일반 형제 선택자(General Sibling Combinator)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-속성선택자-Attribute-Selector"><span class="nav-text">7. 속성선택자 (Attribute Selector)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-X-attributename-선택자-속성"><span class="nav-text">7-1. X[attributename] 선택자[속성]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-2. X[attributename&#x3D;”value”] 선택자[속성&#x3D;”값”]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-3. X[attributename|&#x3D;”value”] 선택자[속성&#x3D;”값”]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-4. X[attributename|&#x3D;”value”] 선택자[속성|&#x3D;”값”]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-5. X[attributename^&#x3D;”value”] 선택자[속성^&#x3D;”값”]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-6-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-6. X[attributename$&#x3D;”value”] 선택자[속성$&#x3D;”값”]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-7-X-attributename-”value”-선택자-속성-”값”"><span class="nav-text">7-7. X[attributename*&#x3D;”value”] 선택자[속성*&#x3D;”값”]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#참고-자료"><span class="nav-text">참고 자료</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text">관련 문서 바로가기</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/06/05/css/css-Selector-note/",
+            identifier: "2017/06/05/css/css-Selector-note/",
+            title: "CSS 기억해야할 선택자 형식"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

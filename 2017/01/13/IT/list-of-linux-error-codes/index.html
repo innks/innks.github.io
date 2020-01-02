@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="{:리눅스} 표준 에러 코드 List of Linux Error Codes 이 블로그를 만지면서 몇번인가 에러가 생겼습니다. 이 에러를 찾다가 생각 해보니 한번 저장하면 다시 고생을 많이 안하겠다 싶어서 이렇게 저장 합니다.      NO 참고    #define EPERM 1 &#x2F;* Operation not permitted *&#x2F; 명령 권한이 없을때   #">
+<meta property="og:type" content="article">
+<meta property="og:title" content="List of Linux Error Codes">
+<meta property="og:url" content="https://innks.github.io/2017/01/13/IT/list-of-linux-error-codes/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="{:리눅스} 표준 에러 코드 List of Linux Error Codes 이 블로그를 만지면서 몇번인가 에러가 생겼습니다. 이 에러를 찾다가 생각 해보니 한번 저장하면 다시 고생을 많이 안하겠다 싶어서 이렇게 저장 합니다.      NO 참고    #define EPERM 1 &#x2F;* Operation not permitted *&#x2F; 명령 권한이 없을때   #">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://i.imgur.com/6TNsHGy.png">
+<meta property="article:published_time" content="2017-01-13T10:53:21.000Z">
+<meta property="article:modified_time" content="2017-05-13T18:00:13.725Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Error">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/6TNsHGy.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/01/13/IT/list-of-linux-error-codes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>List of Linux Error Codes | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/13/IT/list-of-linux-error-codes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          List of Linux Error Codes
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-13 19:53:21" itemprop="dateCreated datePublished" datetime="2017-01-13T19:53:21+09:00">2017-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 03:00:13" itemprop="dateModified" datetime="2017-05-14T03:00:13+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/13/IT/list-of-linux-error-codes/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/IT/list-of-linux-error-codes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="리눅스-표준-에러-코드-List-of-Linux-Error-Codes"><a href="#리눅스-표준-에러-코드-List-of-Linux-Error-Codes" class="headerlink" title="{:리눅스} 표준 에러 코드 List of Linux Error Codes"></a>{:리눅스} 표준 에러 코드 <small>List of Linux Error Codes</small></h2><p><img src="https://i.imgur.com/6TNsHGy.png" alt=""></p>
+<p>이 블로그를 만지면서 몇번인가 에러가 생겼습니다. 이 에러를 찾다가 생각 해보니 한번 저장하면 다시 고생을 많이 안하겠다 싶어서 이렇게 저장 합니다.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left">NO</th>
+<th align="left">참고</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">#define</td>
+<td align="left">EPERM</td>
+<td align="left">1</td>
+<td align="left">/* Operation not permitted */ 명령 권한이 없을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOENT</td>
+<td align="left">2</td>
+<td align="left">/* No such file or directory */ 파일이 존재하지 않을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESRCH</td>
+<td align="left">3</td>
+<td align="left">/* No such process */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINTR</td>
+<td align="left">4</td>
+<td align="left">/* Interrupted system call */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EIO</td>
+<td align="left">5</td>
+<td align="left">/* I/O error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENXIO</td>
+<td align="left">6</td>
+<td align="left">/* No such device or address */ 없는 디바이스나 메모리)주소</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">E2BIG</td>
+<td align="left">7</td>
+<td align="left">/* Argument list too long */ 가변인자나 배열에 대해 그 크기가 너무 클때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOEXEC</td>
+<td align="left">8</td>
+<td align="left">/* Exec format error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADF</td>
+<td align="left">9</td>
+<td align="left">/* Bad file number */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECHILD</td>
+<td align="left">10</td>
+<td align="left">/* No child processes */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EAGAIN</td>
+<td align="left">11</td>
+<td align="left">/* Try again */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMEM</td>
+<td align="left">12</td>
+<td align="left">/* Out of memory */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EACCES</td>
+<td align="left">13</td>
+<td align="left">/* Permission denied */ 파일에 권한이 없을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EFAULT</td>
+<td align="left">14</td>
+<td align="left">/* Bad address */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTBLK</td>
+<td align="left">15</td>
+<td align="left">/* Block device required */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBUSY</td>
+<td align="left">16</td>
+<td align="left">/* Device or resource busy */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EEXIST</td>
+<td align="left">17</td>
+<td align="left">/* File exists */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EXDEV</td>
+<td align="left">18</td>
+<td align="left">/* Cross-device link */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENODEV</td>
+<td align="left">19</td>
+<td align="left">/* No such device */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTDIR</td>
+<td align="left">20</td>
+<td align="left">/* Not a directory */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISDIR</td>
+<td align="left">21</td>
+<td align="left">/* Is a directory */ 디렉토리 일때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINVAL</td>
+<td align="left">22</td>
+<td align="left">/* Invalid argument */ 인자값이 이상한 값이 들어갈때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENFILE</td>
+<td align="left">23</td>
+<td align="left">/* File table overflow */ 파일 테이블에 노드가 초과</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMFILE</td>
+<td align="left">24</td>
+<td align="left">/* Too many open files */ 지정 갯수의 오픈 파일 갯수 초과시</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTTY</td>
+<td align="left">25</td>
+<td align="left">/* Not a typewriter */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETXTBSY</td>
+<td align="left">26</td>
+<td align="left">/* Text file busy */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EFBIG</td>
+<td align="left">27</td>
+<td align="left">/* File too large */ 파일이 너무 클때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSPC</td>
+<td align="left">28</td>
+<td align="left">/* No space left on device */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESPIPE</td>
+<td align="left">29</td>
+<td align="left">/* Illegal seek */ 올바르지 않은 seek</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EROFS</td>
+<td align="left">30</td>
+<td align="left">/* Read-only file system */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMLINK</td>
+<td align="left">31</td>
+<td align="left">/* Too many links */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPIPE</td>
+<td align="left">32</td>
+<td align="left">/* Broken pipe */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDOM</td>
+<td align="left">33</td>
+<td align="left">/* Math argument out of domain of func */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERANGE</td>
+<td align="left">34</td>
+<td align="left">/* Math result not representable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDEADLK</td>
+<td align="left">35</td>
+<td align="left">/* Resource deadlock would occur */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENAMETOOLONG</td>
+<td align="left">36</td>
+<td align="left">/* File name too long */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOLCK</td>
+<td align="left">37</td>
+<td align="left">/* No record locks available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSYS</td>
+<td align="left">38</td>
+<td align="left">/* Function not implemented */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTEMPTY</td>
+<td align="left">39</td>
+<td align="left">/* Directory not empty */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELOOP</td>
+<td align="left">40</td>
+<td align="left">/* Too many symbolic links encountered */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EWOULDBLOCK</td>
+<td align="left">EAGAIN</td>
+<td align="left">/* Operation would block */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMSG</td>
+<td align="left">42</td>
+<td align="left">/* No message of desired type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EIDRM</td>
+<td align="left">43</td>
+<td align="left">/* Identifier removed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECHRNG</td>
+<td align="left">44</td>
+<td align="left">/* Channel number out of range */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL2NSYNC</td>
+<td align="left">45</td>
+<td align="left">/* Level 2 not synchronized */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL3HLT</td>
+<td align="left">46</td>
+<td align="left">/* Level 3 halted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL3RST</td>
+<td align="left">47</td>
+<td align="left">/* Level 3 reset */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELNRNG</td>
+<td align="left">48</td>
+<td align="left">/* Link number out of range */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUNATCH</td>
+<td align="left">49</td>
+<td align="left">/* Protocol driver not attached */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOCSI</td>
+<td align="left">50</td>
+<td align="left">/* No CSI structure available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL2HLT</td>
+<td align="left">51</td>
+<td align="left">/* Level 2 halted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADE</td>
+<td align="left">52</td>
+<td align="left">/* Invalid exchange */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADR</td>
+<td align="left">53</td>
+<td align="left">/* Invalid request descriptor */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EXFULL</td>
+<td align="left">54</td>
+<td align="left">/* Exchange full */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOANO</td>
+<td align="left">55</td>
+<td align="left">/* No anode */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADRQC</td>
+<td align="left">56</td>
+<td align="left">/* Invalid request code */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADSLT</td>
+<td align="left">57</td>
+<td align="left">/* Invalid slot */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDEADLOCK</td>
+<td align="left">EDEADLK</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBFONT</td>
+<td align="left">59</td>
+<td align="left">/* Bad font file format */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSTR</td>
+<td align="left">60</td>
+<td align="left">/* Device not a stream */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENODATA</td>
+<td align="left">61</td>
+<td align="left">/* No data available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETIME</td>
+<td align="left">62</td>
+<td align="left">/* Timer expired */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSR</td>
+<td align="left">63</td>
+<td align="left">/* Out of streams resources */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENONET</td>
+<td align="left">64</td>
+<td align="left">/* Machine is not on the network */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOPKG</td>
+<td align="left">65</td>
+<td align="left">/* Package not installed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMOTE</td>
+<td align="left">66</td>
+<td align="left">/* Object is remote */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOLINK</td>
+<td align="left">67</td>
+<td align="left">/* Link has been severed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADV</td>
+<td align="left">68</td>
+<td align="left">/* Advertise error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESRMNT</td>
+<td align="left">69</td>
+<td align="left">/* Srmount error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECOMM</td>
+<td align="left">70</td>
+<td align="left">/* Communication error on send */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTO</td>
+<td align="left">71</td>
+<td align="left">/* Protocol error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMULTIHOP</td>
+<td align="left">72</td>
+<td align="left">/* Multihop attempted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDOTDOT</td>
+<td align="left">73</td>
+<td align="left">/* RFS specific error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADMSG</td>
+<td align="left">74</td>
+<td align="left">/* Not a data message */ 데이터가 없을때 (페이로드 길이가 0 일때)</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOVERFLOW</td>
+<td align="left">75</td>
+<td align="left">/* Value too large for defined data type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTUNIQ</td>
+<td align="left">76</td>
+<td align="left">/* Name not unique on network */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADFD</td>
+<td align="left">77</td>
+<td align="left">/* File descriptor in bad state */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMCHG</td>
+<td align="left">78</td>
+<td align="left">/* Remote address changed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBACC</td>
+<td align="left">79</td>
+<td align="left">/* Can not access a needed shared library */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBBAD</td>
+<td align="left">80</td>
+<td align="left">/* Accessing a corrupted shared library */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBSCN</td>
+<td align="left">81</td>
+<td align="left">/* .lib section in a.out corrupted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBMAX</td>
+<td align="left">82</td>
+<td align="left">/* Attempting to link in too many shared libraries */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBEXEC</td>
+<td align="left">83</td>
+<td align="left">/* Cannot exec a shared library directly */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EILSEQ</td>
+<td align="left">84</td>
+<td align="left">/* Illegal byte sequence */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERESTART</td>
+<td align="left">85</td>
+<td align="left">/* Interrupted system call should be restarted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESTRPIPE</td>
+<td align="left">86</td>
+<td align="left">/* Streams pipe error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUSERS</td>
+<td align="left">87</td>
+<td align="left">/* Too many users */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTSOCK</td>
+<td align="left">88</td>
+<td align="left">/* Socket operation on non-socket */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDESTADDRREQ</td>
+<td align="left">89</td>
+<td align="left">/* Destination address required */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMSGSIZE</td>
+<td align="left">90</td>
+<td align="left">/* Message too long */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTOTYPE</td>
+<td align="left">91</td>
+<td align="left">/* Protocol wrong type for socket */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOPROTOOPT</td>
+<td align="left">92</td>
+<td align="left">/* Protocol not available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTONOSUPPORT</td>
+<td align="left">93</td>
+<td align="left">/* Protocol not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESOCKTNOSUPPORT</td>
+<td align="left">94</td>
+<td align="left">/* Socket type not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOPNOTSUPP</td>
+<td align="left">95</td>
+<td align="left">/* Operation not supported on transport endpoint */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPFNOSUPPORT</td>
+<td align="left">96</td>
+<td align="left">/* Protocol family not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EAFNOSUPPORT</td>
+<td align="left">97</td>
+<td align="left">/* Address family not supported by protocol */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADDRINUSE</td>
+<td align="left">98</td>
+<td align="left">/* Address already in use */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADDRNOTAVAIL</td>
+<td align="left">99</td>
+<td align="left">/* Cannot assign requested address */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETDOWN</td>
+<td align="left">100</td>
+<td align="left">/* Network is down */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETUNREACH</td>
+<td align="left">101</td>
+<td align="left">/* Network is unreachable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETRESET</td>
+<td align="left">102</td>
+<td align="left">/* Network dropped connection because of reset */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNABORTED</td>
+<td align="left">103</td>
+<td align="left">/* Software caused connection abort */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNRESET</td>
+<td align="left">104</td>
+<td align="left">/* Connection reset by peer */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOBUFS</td>
+<td align="left">105</td>
+<td align="left">/* No buffer space available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISCONN</td>
+<td align="left">106</td>
+<td align="left">/* Transport endpoint is already connected */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTCONN</td>
+<td align="left">107</td>
+<td align="left">/* Transport endpoint is not connected */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESHUTDOWN</td>
+<td align="left">108</td>
+<td align="left">/* Cannot send after transport endpoint shutdown */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETOOMANYREFS</td>
+<td align="left">109</td>
+<td align="left">/* Too many references: cannot splice */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETIMEDOUT</td>
+<td align="left">110</td>
+<td align="left">/* Connection timed out */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNREFUSED</td>
+<td align="left">111</td>
+<td align="left">/* Connection refused */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHOSTDOWN</td>
+<td align="left">112</td>
+<td align="left">/* Host is down */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHOSTUNREACH</td>
+<td align="left">113</td>
+<td align="left">/* No route to host */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EALREADY</td>
+<td align="left">114</td>
+<td align="left">/* Operation already in progress */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINPROGRESS</td>
+<td align="left">115</td>
+<td align="left">/* Operation now in progress */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESTALE</td>
+<td align="left">116</td>
+<td align="left">/* Stale NFS file handle */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUCLEAN</td>
+<td align="left">117</td>
+<td align="left">/* Structure needs cleaning */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTNAM</td>
+<td align="left">118</td>
+<td align="left">/* Not a XENIX named type file */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENAVAIL</td>
+<td align="left">119</td>
+<td align="left">/* No XENIX semaphores available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISNAM</td>
+<td align="left">120</td>
+<td align="left">/* Is a named type file */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMOTEIO</td>
+<td align="left">121</td>
+<td align="left">/* Remote I/O error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDQUOT</td>
+<td align="left">122</td>
+<td align="left">/* Quota exceeded */ 쿼타를 넘어서면.</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMEDIUM</td>
+<td align="left">123</td>
+<td align="left">/* No medium found */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMEDIUMTYPE</td>
+<td align="left">124</td>
+<td align="left">/* Wrong medium type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECANCELED</td>
+<td align="left">125</td>
+<td align="left">/* Operation Canceled */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOKEY</td>
+<td align="left">126</td>
+<td align="left">/* Required key not available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYEXPIRED</td>
+<td align="left">127</td>
+<td align="left">/* Key has expired */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYREVOKED</td>
+<td align="left">128</td>
+<td align="left">/* Key has been revoked */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYREJECTED</td>
+<td align="left">129</td>
+<td align="left">/* Key was rejected by service */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOWNERDEAD</td>
+<td align="left">130</td>
+<td align="left">/* Owner died */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTRECOVERABLE</td>
+<td align="left">131</td>
+<td align="left">/* State not recoverable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERFKILL</td>
+<td align="left">132</td>
+<td align="left">/* Operation not possible due to RF-kill */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHWPOISON</td>
+<td align="left">133</td>
+<td align="left">/* Memory page has hardware error */</td>
+</tr>
+</tbody></table>
+<p>출처: <a href="https://onecellboy.tistory.com/228" target="_blank" rel="noopener">https://onecellboy.tistory.com/228</a> [신불사 - 신현호라 불리는 사나이]</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Error/" rel="tag"># Error</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/01/11/IT/hyperlink/" rel="prev" title="개인적인 유용한 링크">
+      <i class="fa fa-chevron-left"></i> 개인적인 유용한 링크
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/13/story/whoami/" rel="next" title="나는 누구일까?">
+      나는 누구일까? <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#리눅스-표준-에러-코드-List-of-Linux-Error-Codes"><span class="nav-text">{:리눅스} 표준 에러 코드 List of Linux Error Codes</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/01/13/IT/list-of-linux-error-codes/",
+            identifier: "2017/01/13/IT/list-of-linux-error-codes/",
+            title: "List of Linux Error Codes"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

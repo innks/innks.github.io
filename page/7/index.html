@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="theK의 8번째 도전 블로그">
+<meta property="og:type" content="website">
+<meta property="og:title" content="姜仁規">
+<meta property="og:url" content="https://innks.github.io/page/7/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="theK의 8번째 도전 블로그">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:author" content="theK">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://innks.github.io/page/7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/17/story/innsk-tip-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/17/story/innsk-tip-01/" class="post-title-link" itemprop="url">여행 영어로는 무엇이지?</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-17 22:24:24" itemprop="dateCreated datePublished" datetime="2017-01-17T22:24:24+09:00">2017-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-02-18 11:07:07" itemprop="dateModified" datetime="2019-02-18T11:07:07+09:00">2019-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">일상, 생활</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/%E8%AA%AA-%EC%84%A4-%EC%9D%84-%ED%92%80%EB%8B%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">說(설)을 풀다</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/17/story/innsk-tip-01/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/17/story/innsk-tip-01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="여행-영어로는-무엇이지"><a href="#여행-영어로는-무엇이지" class="headerlink" title="여행 영어로는 무엇이지?"></a>여행 <small>영어로는 무엇이지?</small></h1><p>이번에는 지극히 저 개인적인 이야기 입니다.</p>
+<p>갑자기 궁금해서 찾다가 이렇게 적어 봅니다. 얼마 전 여행이라는 생각으로 잠깐 나들이 갔다가 온 기억이 있습니다. 그리고 포스트 쓸려고 하니 문뜩 생각이 나더군요. 한국어로는 <code>여행</code>인데 영어로는 무엇일까?</p>
+<p>일반적으로 여행이라고 하면 travel이라고  아니면 tour이라고도 많이 이야기 하고 쓰기도 합니다. 처음 외국에 가서는 무엇을 물어볼까 싶어 책에 있는 공항부분을 달달 외우곤 했지만 결국 스마일 하나로 통과 되곤 했습니다.</p>
+<p>그때도 궁금했지만 ‘뭐 다 뜻이 비슷하지’라고 생각에 넘어 갔는데 이번에 찾아서 제대로 써 보자는 생각입니다.</p>
+<hr>
+<h1 id="여행-관광-영어는"><a href="#여행-관광-영어는" class="headerlink" title="여행/관광 영어는?"></a>여행/관광 <small>영어는?</small></h1><p>네이버에 검색하니 4개 정도 나오네요. 아 배낭여행도 있는데 우선 여행만 적어 봅니다.</p>
+<h2 id="travel-trӕvl"><a href="#travel-trӕvl" class="headerlink" title="travel [|trӕvl]"></a>travel [|trӕvl]</h2><p>– (특히 장거리를) 여행하다.</p>
+<h2 id="trip-trɪp"><a href="#trip-trɪp" class="headerlink" title="trip [trɪp]"></a>trip [trɪp]</h2><p>– 여행(특히 짧고, 관광이나 어떤 특정한 목적을 위한 것), (어디까지의) 이동[오고감]</p>
+<h2 id="tour-tʊr"><a href="#tour-tʊr" class="headerlink" title="tour [tʊr]"></a>tour [tʊr]</h2><p>– (여러 도시・국가 등을 방문하는) 여행<br>– (도시・건물 등을 걸어서 둘러보는) 관광[방문</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="journey-dƷ3-rni"><a href="#journey-dƷ3-rni" class="headerlink" title="journey [|dƷ3:rni]"></a>journey [|dƷ3:rni]</h2><p>– (특히 멀리 가는) 여행[여정/이동] &lt;보통 육로의 비교적&gt;</p>
+<p>이렇게 4개 정도 정리가 되는것 같습니다. 전 2개만 있는 줄 알았는데 4개네요. 특히 마지막 4번째는 몰랐네요. 위에 보시면 4개가 약간씩 다른데 3번째는 <code>관광</code>이라고 해석이 되겠네요.(제 기준에서는…)</p>
+<h1 id="PS-어원"><a href="#PS-어원" class="headerlink" title="PS. 어원"></a>PS. 어원</h1><p>적는 김에 어원도 알아 보았습니다. 밑에 보니 깊은 뜻이 있었네요.</p>
+<blockquote>
+<p>여행을 뜻하는 영어 단어 ‘travel’의 어원은 ‘travail(고통, 고난)’이다.</p>
+</blockquote>
+<p>여행은 고통에서 나왔다는 말. 생각해보니 집 떠나면 고생이라는 말이 왜 있는지 알겠네요. 하지만, 그것마저도 여행이 아닐까 싶네요.</p>
+<p>밑에는 구글검색의 책부분에서…</p>
+<blockquote>
+<p>trip는 treppan의 어원이며 a pleasure trip(관광 여행)처럼 가벼운 당일치기 나들이나 a delivery trip(배달 돌기)처럼 일을 위한 외출을 의미한다. 미국 영어에서는 trip을 긴 여행, 짧은 여행 가리지 않고 두루 쓰지만 ‘사업상 여행하다’는 make a trip, ‘즐기고자 여행하다’를 take a trip으로 구분하여 말한다.<footer>– 박영수 , <a href="https://books.google.co.kr/books?id=JdxwBgAAQBAJ&pg=PT138&lpg=PT138&dq=tour+%EC%96%B4%EC%9B%90&source=bl&ots=yki63hG56Y&sig=TNtiMCXm52wjy14wsr6vsE1tVfk&hl=ko&sa=X&ved=0ahUKEwimg9GpqcnRAhUDvrwKHV7nDeYQ6AEIQTAG#v=onepage&q&f=false" target="_blank" rel="noopener">영어유래사전-단어편</a> 중에…</footer></p>
+</blockquote>
+<p>길지만 trip에 관해서 설명이 좋네요.</p>
+<blockquote>
+<p>tour는 사찰 또는 유람 여행을 가리킬 때 쓴다. ‘원을 그리는 도구’라는 뜻의 그리스어 tornos가 어원이며 이것이 ‘한 바퀴 도는 여행’, ‘일주’, ‘유람’이 된것이다.<footer>– 박영수 , <a href="https://books.google.co.kr/books?id=JdxwBgAAQBAJ&pg=PT138&lpg=PT138&dq=tour+%EC%96%B4%EC%9B%90&source=bl&ots=yki63hG56Y&sig=TNtiMCXm52wjy14wsr6vsE1tVfk&hl=ko&sa=X&ved=0ahUKEwimg9GpqcnRAhUDvrwKHV7nDeYQ6AEIQTAG#v=onepage&q&f=false" target="_blank" rel="noopener">영어유래사전-단어편</a> 중에…</footer></p>
+</blockquote>
+<p>어머니들의 관광을 왜 tour로 쓰는지 알겠네요.</p>
+<blockquote>
+<p>journey는 일반적으로 시간 . 거리에 중점을 둔 육로 여행을 의미한다.<br>-중약-<br>journey는 ‘날’, ‘하루’를 뜻하는 고대 프랑스어 jornee에 어원을 둔 말로 날마다 되풀이 되는 지겨운 과정을 의미한다. 여기에서 ‘여정’, ‘여로’의 뜻이 나왔다. <footer>– 박영수 , <a href="https://books.google.co.kr/books?id=JdxwBgAAQBAJ&pg=PT138&lpg=PT138&dq=tour+%EC%96%B4%EC%9B%90&source=bl&ots=yki63hG56Y&sig=TNtiMCXm52wjy14wsr6vsE1tVfk&hl=ko&sa=X&ved=0ahUKEwimg9GpqcnRAhUDvrwKHV7nDeYQ6AEIQTAG#v=onepage&q&f=false" target="_blank" rel="noopener">영어유래사전-단어편</a> 중에…</footer></p>
+</blockquote>
+<p>육로 여행이라고 생각하면 되겠지만 알다가도 모르겠는 어원이네요.</p>
+<h1 id="PS-참고"><a href="#PS-참고" class="headerlink" title="PS. 참고"></a>PS. 참고</h1><blockquote>
+<p>수잔 손택은 여행이 무엇인가를 사진에 담기 위한 하나의 전략이 되고 있다고 말한 바 있다. 특히 노동 윤리가 냉혹한 사람들일수록 사진찍기에 더욱 집착하는데, 그건 그저 일만 몸에 배어버린 사람들은 휴가 중이나 휴일 같은 시간에 일하지 않는 것에 대한 불안감을 사진기를 들고 어디로든 나가 부지런히 찍음으로써 무엇인가 일 비슷한 것을 하고 있다고 생각할 수 있기 때문이라는 것이다.<footer><a href="http://blog.aladin.co.kr/common/popup/printPopup/print_Paper.aspx?PaperId=969863" target="_blank" rel="noopener">여행중 사진 찍기에 관하여 - 수잔 손택</a></footer></p>
+</blockquote>
+<p>이 문구를 보니 제가 왜 디카들고 다니는지 알것도 같네요. :)</p>
+<h1 id="PS-배낭여행-영어는"><a href="#PS-배낭여행-영어는" class="headerlink" title="PS. 배낭여행 영어는?"></a>PS. 배낭여행 <small>영어는?</small></h1><p>ㆍ배낭 - <strong>backpack</strong><br>ㆍ배낭여행 - <strong>backpacking</strong><br>ㆍ배낭여행자 - <strong>backpacker</strong><br>ㆍ고급 배낭여행 - <strong>flashpacking</strong><br>ㆍ고급 배낭여행자 - <strong>flashpacker</strong></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/14/IT/npm-tree-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/14/IT/npm-tree-install/" class="post-title-link" itemprop="url">npm를 이용 tree 설치하기</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-14 16:23:53" itemprop="dateCreated datePublished" datetime="2017-01-14T16:23:53+09:00">2017-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:33:39" itemprop="dateModified" datetime="2017-12-06T00:33:39+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Util-Plugin/" itemprop="url" rel="index">
+                    <span itemprop="name">Util / Plugin</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/14/IT/npm-tree-install/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/IT/npm-tree-install/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <script type="text/javascript">
+document.write("<br /><div class=img-reset><img src='https://img.shields.io/badge/npm-"+npmVer+"-cb3837.svg' /> <img src='https://img.shields.io/badge/nodejs-"+nodejsVer+"-43853d.svg' /> <img src='https://img.shields.io/badge/tree-"+treeVer+"-66aa6f.svg' /></div>");</script>
+
+
+<p>디렉토리의 내용을 나무와 같은 형식으로 나열합니다.</p>
+<p><img src="https://i.imgur.com/HjCYQEd.png" alt="tree명령어를 적으면 이렇게 보여집니다."></p>
+<p>간단한 프로그램이지만 있으면 유용한 것 같네요. 리눅스에서는 있지만(?) 여기 윈도우에서는 없고 hexo만 설치했으면 아마 없을 것입니다.</p>
+<h2 id="설치-install"><a href="#설치-install" class="headerlink" title="설치 install"></a>설치 <small>install</small></h2><p>먼저 npm 명령어를 쓸려면 <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">Node.js</a> 설치가 되어 있어야 하겠죠.</p>
+<ul>
+<li><a href="https://nodejs.org/ko/" target="_blank" rel="noopener">Node.js</a></li>
+</ul>
+<p>Node.js가 설치되었다면 터미널을 열어 다음 명령어를 입력해서 tree를 설치합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g tree-cli</span><br></pre></td></tr></table></figure>
+<p>기다리면 설치가 되는 모습을 볼수 있습니다.<br>이제 버전을 확인 해보죠.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tree --version</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/cQ5lShI.png" alt="버전확인"></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="옵션-options"><a href="#옵션-options" class="headerlink" title="옵션 options"></a>옵션 <small>options</small></h2><p>사실 전 그리 많이 쓰지는 않습니다. 그냥 ‘tree’라고 적고 보는 것이 다입니다. 그래도 옵션을 적어서 쓰시는 분들이 있으니 이렇게 적어 봅니다. 영어는 구글 직역이라 이상할 수도 있습니다.<div class="well-C-hidden">```bash<br>USAGE<br>    tree <options></p>
+<p>OPTIONS:<br>–help : 자세한 사용 목록을 출력합니다.<br>–version : tree-cli의 버전을 출력한다.<br>–debug : 디버그 정보를 보여준다.<br>–fullpath : 각 파일의 전체 경로 접두어를 인쇄합니다.<br>–ignore : 지정한 디렉토리 또는 파일을 무시합니다. - 배열을 쉼표로 구분 된 문자열로 허용합니다. ‘node_modules/, .git/, .gitignore’<br>–link : 심볼릭 링크가 디렉토리를 가리키는 경우, 마치 디렉토리 인 것처럼 심볼릭 링크를 따른다. 재귀를 초래할 수있는 심볼릭 링크는 탐지되면 피할 수 있습니다.<br>–noreport : 트리 목록의 끝에 파일 및 디렉토리 보고서 인쇄를 생략하고 콘솔에서 트리를 인쇄하지 않습니다.<br>-a : 모든 파일이 인쇄됩니다. 기본적으로 트리는 숨겨진 파일 (도트 ‘.’로 시작하는 파일)을 인쇄하지 않습니다. 어떤 경우에도 트리가 파일 시스템을 인쇄하지 않습니다. ‘ (현재 디렉토리) 및 ‘..’(이전 디렉토리).<br>-d : 디렉토리 만 나열하십시오.<br>-f : 디렉토리에 ‘/‘를 추가하고 소켓 파일에 ‘=’를 추가하고 ‘|’ FIFO 용.<br>-i : indentation 행을 트리에 인쇄하지 않게합니다. -f 옵션과 함께 사용할 때 유용합니다.<br>-l : 디렉토리 트리의 최대 표시 깊이.<br>-o : 출력을 filename으로 보냅니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">## 제거 &lt;small&gt;uninatsll&lt;&#x2F;small&gt;</span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">$ npm uninstall tree</span><br></pre></td></tr></table></figure>
+<p>제거도 그리 어렵지가 않네요.</p>
+<p><img src="https://i.imgur.com/6ydxgm5.png" alt="제거 후 버전확인"></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/13/story/whoami/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/13/story/whoami/" class="post-title-link" itemprop="url">나는 누구일까?</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-13 20:28:32" itemprop="dateCreated datePublished" datetime="2017-01-13T20:28:32+09:00">2017-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 03:04:19" itemprop="dateModified" datetime="2017-05-14T03:04:19+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">일상, 생활</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/%E8%AA%AA-%EC%84%A4-%EC%9D%84-%ED%92%80%EB%8B%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">說(설)을 풀다</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/13/story/whoami/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/story/whoami/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="나는-누구일까-Who-am-i"><a href="#나는-누구일까-Who-am-i" class="headerlink" title="나는 누구일까? Who am i?"></a>나는 누구일까? <small>Who am i?</small></h2><ul>
+<li>ID : innks</li>
+<li>e-mail : <a href="mailto:algiddl11@gmail.com">algiddl11@gmail.com</a></li>
+<li>Google+ : <a href="https://plus.google.com/+algiddl11" target="_blank" rel="noopener">https://plus.google.com/+algiddl11</a></li>
+</ul>
+<p><img src="https://i.imgur.com/JKNUzek.jpg" alt=""></p>
+<p>주말이나 쉬는날에도 근무하고 그날이면 이렇게 빌려 쓰는 자리입니다.<br>저는 시설직으로 화이트 칼라의 직업은 아니지만 전 생각해보면 그런일 못할것 같은 사람입니다.  한때는 책상에서 일하는 것이 좋게 보이고 (지금도 부럽지만) 했지만 누워서 생각해보면 과연 나라는 사람이 이런일을 할수 있나 생각하면 아니요 같네요.  컴터 앞을 좋아하지만 일로써는 모르겠습니다. 높은 사람이나 한번듣고 기억하는 그런류의 사람이 아닌것은 맞네요.</p>
+<hr>
+<h2 id="HIStory-2001"><a href="#HIStory-2001" class="headerlink" title="HIStory 2001~ "></a>HIStory <small>2001~ </small></h2><ul>
+<li><strong>2017.01.12</strong> : <a href="https://jekyllrb-ko.github.io/" target="_blank" rel="noopener">jekyll</a>에서 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>로 변경했습니다.</li>
+<li><strong>2017.01.10</strong> : <a href="http://innks.gitub.io" target="_blank" rel="noopener">http://innks.gitub.io</a> 라는 곳으로 블로그 이적합니다.</li>
+<li><strong>2016.12</strong> : Git라는 곳으로 블로그 이적 계획을 잡고 옛날 서적들을 보기 시작합니다. Github의 정적블로그 있다는 글을 읽고 다시 불타 봅니다.</li>
+<li><strong>2014.5</strong> : 이제부터 스킨 작업에 맛을 알았다 싶을 정도로 스킨 작업에 몰두 합니다. 이미지 위주의 블로그에서 텍스트 위주로 블로그가 만들어지고 글로만 해도 디자인이 되는것을 알게 됩니다.</li>
+<li><strong>2014.3</strong> : 아직 꿈을 버리지 못하고 블로그 다시 시작합니다. (the3.tistoey.com)으로 변경해서 시작.</li>
+<li><strong>2013</strong> : 좀더 넓은 곳을 보기 위해 여행을 다녀 봅니다. 디카와 함께 … 하지만 공허함이 많이 밀려 드는것 같네요.</li>
+<li><strong>2012</strong> : 블로그 잠적 중단합니다.(r5xsv3.tistory.com) 이 길이 아닌것을 이제야 알기 시작합니다.</li>
+<li><strong>2011.3</strong> : 텍스트큐브중단으로 티스토리 이전.(r5xs.textcube.com -&gt; r5xsv3.tistory.com/)</li>
+<li><strong>2010.11</strong> : 잠깐 다른곳에 갔다가 돌아오곤합니다. 하지만 2010년에 드디어 프로 블로그라는 것에 도전하기 시작합니다.(r5xs.textcube.com)</li>
+<li><strong>2010</strong> : 서울의 작은 방에서 컴터 4대와 함깨 생활하기 시작합니다. 처음에는 이렇게 시작하는 것이지… 잡스 아저씨를 보고 작은 꿈을 키우기 시작합니다.</li>
+<li><strong>2009</strong> : 드디어 작은 독립. 모든것을 리셋하고 인터넷이라는 바다에 본격적으로 들어가 봅니다. 하지만 이미 IT쪽은 환갑인 상태… IT블로그 만들었는데 약간의 SVN를 시작합니다.</li>
+<li><strong>2008</strong> : 작은 회사 다니면서 블로그를 하지만 이 때까지 홈페이지를 만들고 있습니다.</li>
+<li><strong>2007</strong> : 드디어 디카 샀지만 출사는 가지 못하고 가끔 레이싱걸을 찍으러 다닙니다. 본격적으로 블로그(<a href="http://www.naver.com" target="_blank" rel="noopener">네이버</a>) 시작 합니다.</li>
+<li><strong>2005</strong> : 홈페이지를 만들어 주고 돈도 조금 만지기 시작하지만 오프라인(일반 회사 생활)에서 하는 일이 더 돈이 되는 관계로 웹 생활은 취미로 하기로 합니다.</li>
+<li><strong>2003</strong> : 몇년간 인터넷을 배우기 시작합니다. 웹마스터라는 과정을 거치고 블로그를 개설합니다. (3rd.pe.kr)</li>
+<li><strong>2001</strong> : 군대 선임을 만나 인터넷이라는 것을 알게 되며 개인 홈페이지를 시작합니다. (rain4x.net)</li>
+</ul>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/13/IT/list-of-linux-error-codes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/13/IT/list-of-linux-error-codes/" class="post-title-link" itemprop="url">List of Linux Error Codes</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-13 19:53:21" itemprop="dateCreated datePublished" datetime="2017-01-13T19:53:21+09:00">2017-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 03:00:13" itemprop="dateModified" datetime="2017-05-14T03:00:13+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/13/IT/list-of-linux-error-codes/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/IT/list-of-linux-error-codes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="리눅스-표준-에러-코드-List-of-Linux-Error-Codes"><a href="#리눅스-표준-에러-코드-List-of-Linux-Error-Codes" class="headerlink" title="{:리눅스} 표준 에러 코드 List of Linux Error Codes"></a>{:리눅스} 표준 에러 코드 <small>List of Linux Error Codes</small></h2><p><img src="https://i.imgur.com/6TNsHGy.png" alt=""></p>
+<p>이 블로그를 만지면서 몇번인가 에러가 생겼습니다. 이 에러를 찾다가 생각 해보니 한번 저장하면 다시 고생을 많이 안하겠다 싶어서 이렇게 저장 합니다.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left">NO</th>
+<th align="left">참고</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">#define</td>
+<td align="left">EPERM</td>
+<td align="left">1</td>
+<td align="left">/* Operation not permitted */ 명령 권한이 없을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOENT</td>
+<td align="left">2</td>
+<td align="left">/* No such file or directory */ 파일이 존재하지 않을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESRCH</td>
+<td align="left">3</td>
+<td align="left">/* No such process */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINTR</td>
+<td align="left">4</td>
+<td align="left">/* Interrupted system call */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EIO</td>
+<td align="left">5</td>
+<td align="left">/* I/O error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENXIO</td>
+<td align="left">6</td>
+<td align="left">/* No such device or address */ 없는 디바이스나 메모리)주소</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">E2BIG</td>
+<td align="left">7</td>
+<td align="left">/* Argument list too long */ 가변인자나 배열에 대해 그 크기가 너무 클때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOEXEC</td>
+<td align="left">8</td>
+<td align="left">/* Exec format error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADF</td>
+<td align="left">9</td>
+<td align="left">/* Bad file number */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECHILD</td>
+<td align="left">10</td>
+<td align="left">/* No child processes */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EAGAIN</td>
+<td align="left">11</td>
+<td align="left">/* Try again */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMEM</td>
+<td align="left">12</td>
+<td align="left">/* Out of memory */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EACCES</td>
+<td align="left">13</td>
+<td align="left">/* Permission denied */ 파일에 권한이 없을때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EFAULT</td>
+<td align="left">14</td>
+<td align="left">/* Bad address */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTBLK</td>
+<td align="left">15</td>
+<td align="left">/* Block device required */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBUSY</td>
+<td align="left">16</td>
+<td align="left">/* Device or resource busy */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EEXIST</td>
+<td align="left">17</td>
+<td align="left">/* File exists */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EXDEV</td>
+<td align="left">18</td>
+<td align="left">/* Cross-device link */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENODEV</td>
+<td align="left">19</td>
+<td align="left">/* No such device */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTDIR</td>
+<td align="left">20</td>
+<td align="left">/* Not a directory */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISDIR</td>
+<td align="left">21</td>
+<td align="left">/* Is a directory */ 디렉토리 일때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINVAL</td>
+<td align="left">22</td>
+<td align="left">/* Invalid argument */ 인자값이 이상한 값이 들어갈때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENFILE</td>
+<td align="left">23</td>
+<td align="left">/* File table overflow */ 파일 테이블에 노드가 초과</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMFILE</td>
+<td align="left">24</td>
+<td align="left">/* Too many open files */ 지정 갯수의 오픈 파일 갯수 초과시</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTTY</td>
+<td align="left">25</td>
+<td align="left">/* Not a typewriter */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETXTBSY</td>
+<td align="left">26</td>
+<td align="left">/* Text file busy */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EFBIG</td>
+<td align="left">27</td>
+<td align="left">/* File too large */ 파일이 너무 클때</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSPC</td>
+<td align="left">28</td>
+<td align="left">/* No space left on device */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESPIPE</td>
+<td align="left">29</td>
+<td align="left">/* Illegal seek */ 올바르지 않은 seek</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EROFS</td>
+<td align="left">30</td>
+<td align="left">/* Read-only file system */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMLINK</td>
+<td align="left">31</td>
+<td align="left">/* Too many links */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPIPE</td>
+<td align="left">32</td>
+<td align="left">/* Broken pipe */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDOM</td>
+<td align="left">33</td>
+<td align="left">/* Math argument out of domain of func */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERANGE</td>
+<td align="left">34</td>
+<td align="left">/* Math result not representable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDEADLK</td>
+<td align="left">35</td>
+<td align="left">/* Resource deadlock would occur */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENAMETOOLONG</td>
+<td align="left">36</td>
+<td align="left">/* File name too long */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOLCK</td>
+<td align="left">37</td>
+<td align="left">/* No record locks available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSYS</td>
+<td align="left">38</td>
+<td align="left">/* Function not implemented */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTEMPTY</td>
+<td align="left">39</td>
+<td align="left">/* Directory not empty */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELOOP</td>
+<td align="left">40</td>
+<td align="left">/* Too many symbolic links encountered */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EWOULDBLOCK</td>
+<td align="left">EAGAIN</td>
+<td align="left">/* Operation would block */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMSG</td>
+<td align="left">42</td>
+<td align="left">/* No message of desired type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EIDRM</td>
+<td align="left">43</td>
+<td align="left">/* Identifier removed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECHRNG</td>
+<td align="left">44</td>
+<td align="left">/* Channel number out of range */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL2NSYNC</td>
+<td align="left">45</td>
+<td align="left">/* Level 2 not synchronized */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL3HLT</td>
+<td align="left">46</td>
+<td align="left">/* Level 3 halted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL3RST</td>
+<td align="left">47</td>
+<td align="left">/* Level 3 reset */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELNRNG</td>
+<td align="left">48</td>
+<td align="left">/* Link number out of range */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUNATCH</td>
+<td align="left">49</td>
+<td align="left">/* Protocol driver not attached */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOCSI</td>
+<td align="left">50</td>
+<td align="left">/* No CSI structure available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EL2HLT</td>
+<td align="left">51</td>
+<td align="left">/* Level 2 halted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADE</td>
+<td align="left">52</td>
+<td align="left">/* Invalid exchange */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADR</td>
+<td align="left">53</td>
+<td align="left">/* Invalid request descriptor */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EXFULL</td>
+<td align="left">54</td>
+<td align="left">/* Exchange full */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOANO</td>
+<td align="left">55</td>
+<td align="left">/* No anode */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADRQC</td>
+<td align="left">56</td>
+<td align="left">/* Invalid request code */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADSLT</td>
+<td align="left">57</td>
+<td align="left">/* Invalid slot */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDEADLOCK</td>
+<td align="left">EDEADLK</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBFONT</td>
+<td align="left">59</td>
+<td align="left">/* Bad font file format */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSTR</td>
+<td align="left">60</td>
+<td align="left">/* Device not a stream */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENODATA</td>
+<td align="left">61</td>
+<td align="left">/* No data available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETIME</td>
+<td align="left">62</td>
+<td align="left">/* Timer expired */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOSR</td>
+<td align="left">63</td>
+<td align="left">/* Out of streams resources */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENONET</td>
+<td align="left">64</td>
+<td align="left">/* Machine is not on the network */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOPKG</td>
+<td align="left">65</td>
+<td align="left">/* Package not installed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMOTE</td>
+<td align="left">66</td>
+<td align="left">/* Object is remote */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOLINK</td>
+<td align="left">67</td>
+<td align="left">/* Link has been severed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADV</td>
+<td align="left">68</td>
+<td align="left">/* Advertise error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESRMNT</td>
+<td align="left">69</td>
+<td align="left">/* Srmount error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECOMM</td>
+<td align="left">70</td>
+<td align="left">/* Communication error on send */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTO</td>
+<td align="left">71</td>
+<td align="left">/* Protocol error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMULTIHOP</td>
+<td align="left">72</td>
+<td align="left">/* Multihop attempted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDOTDOT</td>
+<td align="left">73</td>
+<td align="left">/* RFS specific error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADMSG</td>
+<td align="left">74</td>
+<td align="left">/* Not a data message */ 데이터가 없을때 (페이로드 길이가 0 일때)</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOVERFLOW</td>
+<td align="left">75</td>
+<td align="left">/* Value too large for defined data type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTUNIQ</td>
+<td align="left">76</td>
+<td align="left">/* Name not unique on network */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EBADFD</td>
+<td align="left">77</td>
+<td align="left">/* File descriptor in bad state */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMCHG</td>
+<td align="left">78</td>
+<td align="left">/* Remote address changed */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBACC</td>
+<td align="left">79</td>
+<td align="left">/* Can not access a needed shared library */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBBAD</td>
+<td align="left">80</td>
+<td align="left">/* Accessing a corrupted shared library */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBSCN</td>
+<td align="left">81</td>
+<td align="left">/* .lib section in a.out corrupted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBMAX</td>
+<td align="left">82</td>
+<td align="left">/* Attempting to link in too many shared libraries */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ELIBEXEC</td>
+<td align="left">83</td>
+<td align="left">/* Cannot exec a shared library directly */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EILSEQ</td>
+<td align="left">84</td>
+<td align="left">/* Illegal byte sequence */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERESTART</td>
+<td align="left">85</td>
+<td align="left">/* Interrupted system call should be restarted */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESTRPIPE</td>
+<td align="left">86</td>
+<td align="left">/* Streams pipe error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUSERS</td>
+<td align="left">87</td>
+<td align="left">/* Too many users */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTSOCK</td>
+<td align="left">88</td>
+<td align="left">/* Socket operation on non-socket */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDESTADDRREQ</td>
+<td align="left">89</td>
+<td align="left">/* Destination address required */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMSGSIZE</td>
+<td align="left">90</td>
+<td align="left">/* Message too long */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTOTYPE</td>
+<td align="left">91</td>
+<td align="left">/* Protocol wrong type for socket */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOPROTOOPT</td>
+<td align="left">92</td>
+<td align="left">/* Protocol not available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPROTONOSUPPORT</td>
+<td align="left">93</td>
+<td align="left">/* Protocol not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESOCKTNOSUPPORT</td>
+<td align="left">94</td>
+<td align="left">/* Socket type not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOPNOTSUPP</td>
+<td align="left">95</td>
+<td align="left">/* Operation not supported on transport endpoint */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EPFNOSUPPORT</td>
+<td align="left">96</td>
+<td align="left">/* Protocol family not supported */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EAFNOSUPPORT</td>
+<td align="left">97</td>
+<td align="left">/* Address family not supported by protocol */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADDRINUSE</td>
+<td align="left">98</td>
+<td align="left">/* Address already in use */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EADDRNOTAVAIL</td>
+<td align="left">99</td>
+<td align="left">/* Cannot assign requested address */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETDOWN</td>
+<td align="left">100</td>
+<td align="left">/* Network is down */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETUNREACH</td>
+<td align="left">101</td>
+<td align="left">/* Network is unreachable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENETRESET</td>
+<td align="left">102</td>
+<td align="left">/* Network dropped connection because of reset */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNABORTED</td>
+<td align="left">103</td>
+<td align="left">/* Software caused connection abort */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNRESET</td>
+<td align="left">104</td>
+<td align="left">/* Connection reset by peer */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOBUFS</td>
+<td align="left">105</td>
+<td align="left">/* No buffer space available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISCONN</td>
+<td align="left">106</td>
+<td align="left">/* Transport endpoint is already connected */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTCONN</td>
+<td align="left">107</td>
+<td align="left">/* Transport endpoint is not connected */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESHUTDOWN</td>
+<td align="left">108</td>
+<td align="left">/* Cannot send after transport endpoint shutdown */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETOOMANYREFS</td>
+<td align="left">109</td>
+<td align="left">/* Too many references: cannot splice */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ETIMEDOUT</td>
+<td align="left">110</td>
+<td align="left">/* Connection timed out */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECONNREFUSED</td>
+<td align="left">111</td>
+<td align="left">/* Connection refused */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHOSTDOWN</td>
+<td align="left">112</td>
+<td align="left">/* Host is down */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHOSTUNREACH</td>
+<td align="left">113</td>
+<td align="left">/* No route to host */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EALREADY</td>
+<td align="left">114</td>
+<td align="left">/* Operation already in progress */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EINPROGRESS</td>
+<td align="left">115</td>
+<td align="left">/* Operation now in progress */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ESTALE</td>
+<td align="left">116</td>
+<td align="left">/* Stale NFS file handle */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EUCLEAN</td>
+<td align="left">117</td>
+<td align="left">/* Structure needs cleaning */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTNAM</td>
+<td align="left">118</td>
+<td align="left">/* Not a XENIX named type file */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENAVAIL</td>
+<td align="left">119</td>
+<td align="left">/* No XENIX semaphores available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EISNAM</td>
+<td align="left">120</td>
+<td align="left">/* Is a named type file */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EREMOTEIO</td>
+<td align="left">121</td>
+<td align="left">/* Remote I/O error */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EDQUOT</td>
+<td align="left">122</td>
+<td align="left">/* Quota exceeded */ 쿼타를 넘어서면.</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOMEDIUM</td>
+<td align="left">123</td>
+<td align="left">/* No medium found */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EMEDIUMTYPE</td>
+<td align="left">124</td>
+<td align="left">/* Wrong medium type */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ECANCELED</td>
+<td align="left">125</td>
+<td align="left">/* Operation Canceled */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOKEY</td>
+<td align="left">126</td>
+<td align="left">/* Required key not available */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYEXPIRED</td>
+<td align="left">127</td>
+<td align="left">/* Key has expired */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYREVOKED</td>
+<td align="left">128</td>
+<td align="left">/* Key has been revoked */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EKEYREJECTED</td>
+<td align="left">129</td>
+<td align="left">/* Key was rejected by service */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EOWNERDEAD</td>
+<td align="left">130</td>
+<td align="left">/* Owner died */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ENOTRECOVERABLE</td>
+<td align="left">131</td>
+<td align="left">/* State not recoverable */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">ERFKILL</td>
+<td align="left">132</td>
+<td align="left">/* Operation not possible due to RF-kill */</td>
+</tr>
+<tr>
+<td align="left">#define</td>
+<td align="left">EHWPOISON</td>
+<td align="left">133</td>
+<td align="left">/* Memory page has hardware error */</td>
+</tr>
+</tbody></table>
+<p>출처: <a href="https://onecellboy.tistory.com/228" target="_blank" rel="noopener">https://onecellboy.tistory.com/228</a> [신불사 - 신현호라 불리는 사나이]</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/01/11/IT/hyperlink/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/11/IT/hyperlink/" class="post-title-link" itemprop="url">개인적인 유용한 링크</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-01-11 20:18:55" itemprop="dateCreated datePublished" datetime="2017-01-11T20:18:55+09:00">2017-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2018-02-15 11:02:40" itemprop="dateModified" datetime="2018-02-15T11:02:40+09:00">2018-02-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/11/IT/hyperlink/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/11/IT/hyperlink/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="하이퍼-링크"><a href="#하이퍼-링크" class="headerlink" title="하이퍼 링크?"></a>하이퍼 링크?</h1><p>하이퍼링크(hyperlink, 문화어: 초연결, 하이퍼연결)는 하이퍼텍스트 문서 안에서 직접 모든 형식의 자료를 가리킬 수 있는 참조 고리이다. 이를테면 동영상, 글, 음악, 그림, 프로그램, 파일, 글의 특정 위치 등을 지정할 수 있다. 이는 하이퍼텍스트의 핵심 개념이며, HTML을 비롯한 마크업 언어에서 구현하고 있다. 이 용어는 단순히 링크(link, 고리)라고 줄여 말하기도 한다. 한마디로 누르면 웹 사이트나 프로그램 등으로 이동하는 것이다.</p>
+<div class=cap1>[위키](https://ko.wikipedia.org/wiki/%ED%95%98%EC%9D%B4%ED%8D%BC%EB%A7%81%ED%81%AC)</div>
+
+<h2 id="유용한-링크"><a href="#유용한-링크" class="headerlink" title="# 유용한 링크"></a># 유용한 링크</h2><p>이번에 쓸 글은 지극히 저의 개인적인 글입니다. 인터넷을 하면서 알게 된 링크들을 모아 저같은 사람과 저처럼 잘 잃어버리는 사람을 위해 이렇게 글을 적습니다. 사실 제가 필요해서 인터넷에 적은 글입니다.</p>
+<h2 id="유튜브-다운로더"><a href="#유튜브-다운로더" class="headerlink" title="# 유튜브 다운로더"></a># 유튜브 다운로더</h2><div class="wellX well-sm"><h5><span class=h5>YouTube 비디오 컨버터 - MP3, MP4, AVI로 다운로드</span></h5># https://www.onlinevideoconverter.com/ko/video-converter
+유튜브다운로드 할때 자주 사용하는 곳입니다.</div>
+
+<h2 id="웹-프론트엔드-프레임워크"><a href="#웹-프론트엔드-프레임워크" class="headerlink" title="# 웹 프론트엔드 프레임워크"></a># 웹 프론트엔드 프레임워크</h2><div class="wellX well-sm"><h5><span class=h5>Bootstrap 4(부트스트랩)</span></h5># https://getbootstrap.com/    
+Bootstrap 4 많이들 사용하는 사이트입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>ZURB의 Foundation</span></h5># https://foundation.zurb.com/
+Foundation은 페이스북, 모질라, 이베이, 야후와 내셔널지오그레픽 과 같은 이름있는 큰 웹사이트에 사용되었습니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>Semantic UI</span></h5># https://semantic-ui.com/
+읽고 이해하기 쉽게 순수한 언어 원리로 조금만 보면 쉽게 할수 있다</div>    
+
+<div class="wellX well-sm"><h5><span class=h5>YOOtheme의 UIkit</span></h5># https://getuikit.com/
+빠르고 강력한 웹 인터페이스를 개발하기 위한 경량 및 모듈 형 프론트엔드 프레임 워크입니다. 솔찍히 2번째로 많이 사용합니다. 기능이 많습니다.</div>    
+
+<div class="wellX well-sm"><h5><span class=h5>Yahoo의 Pure</span></h5># https://purecss.io/
+반응형 CSS 모듈의 작은 세트. 솔직히 사용 하지 않았습니다. 웹상으로는 기본만 있습니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>MV* framework</span></h5># http://todomvc.com/
+사실 잘 모른다 하지만 프레임워크검색에 있어서 올린다.</div>
+
+<h2 id="HTML-CSS-압축및-압축-해제"><a href="#HTML-CSS-압축및-압축-해제" class="headerlink" title="# HTML / CSS 압축및 압축 해제"></a># HTML / CSS 압축및 압축 해제</h2><div class="wellX well-sm"><h5><span class=h5>CSS Script - JavaScript / HTML5 / CSS3</span></h5># https://www.cssscript.com/
+css나 기타 소스들을 검색해서 공부할수 있는 사이트 입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>(css-unminify) css 압축해제</span></h5># https://mrcoles.com/blog/css-unminify/
+css소스 압축된것을 해제하는 사이트 입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>온라인 JavaScript / CSS / HTML 압축기</span></h5># http://refresh-sf.com/
+JavaScript / CSS / HTML 압축하는 사이트 입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>CSS 2 -> SASS / SCSS 변환기</span></h5># http://css2sass.herokuapp.com/
+CSS 파일의 내용을 SASS나 SCSS 내용으로 변경하는 사이트 입니다.</div>
+
+<h2 id="PNG-및-JPEG-압축"><a href="#PNG-및-JPEG-압축" class="headerlink" title="# PNG 및 JPEG 압축"></a># PNG 및 JPEG 압축</h2><div class="wellX well-sm"><h5><span class=h5>TinyPNG</span></h5># https://tinypng.com/
+JPEG나 PNG파일의 용량을 줄여 줍니다.(대량이미지 변환 가능)</div>
+
+<div class="wellX well-sm"><h5><span class=h5>Optimizilla</span></h5># http://optimizilla.com/
+이미지 용량 줄이는것 비교할수 있고 대량 이미지 변환 가능.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>iLoveIMG</span></h5>https://www.iloveimg.com/ko/compress-image/
+JPG,PNG,GIF 이미지를 자르고 줄이고(사이즈), 압축에 변환까지 할수 있는 사이트</div>
+
+<div class="wellX well-sm"><h5><span class=h5>compressor.io</span></h5>https://compressor.io/compress
+이미지 용량을 줄이는 사이트 이지만 한장씩 가능, 하지만 용량은 가장 많이 줄임</div>
+
+
+<h2 id="게임"><a href="#게임" class="headerlink" title="# 게임"></a># 게임</h2><div class="wellX well-sm"><h5><span class=h5>안드로이드 버그 게임블로그</span></h5># http://darkandroid.tistory.com/
+안드로이드 버그 게임을 다운할수 있고 수시로 업데이트 되는 블로그입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>안드로이드 버그 게임블로그</span></h5># http://goodkandroid.tistory.com
+위와 같이 안드로이드 버그 게임을 다운할수 있고 수시로 업데이트 되는 블로그입니다.</div>
+
+<div class="wellX well-sm"><h5><span class=h5>고전게임 크래쉬 블로그</span></h5># http://jun1517.tistory.com/
+고전 게임 에뮬레이터모음이나 롬파일 다운 가능한 블로그 입니다.</div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/12/23/IT/onedrive-uninstaller/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/12/23/IT/onedrive-uninstaller/" class="post-title-link" itemprop="url">원드라이브(OneDrive) 삭제</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-12-23 20:17:13" itemprop="dateCreated datePublished" datetime="2016-12-23T20:17:13+09:00">2016-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:33:54" itemprop="dateModified" datetime="2017-12-06T00:33:54+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Util-Plugin/" itemprop="url" rel="index">
+                    <span itemprop="name">Util / Plugin</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/12/23/IT/onedrive-uninstaller/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/23/IT/onedrive-uninstaller/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div class="img-reset">
+<img src="https://img.shields.io/badge/windows-10.0.14393-blue.svg"> <img src="https://img.shields.io/badge/onedrive--uninstaller-1.0.0-cb3837.svg"></div>
+
+<p>Windows 10에서 OneDrive를 완전히 제거하기위한 명령 줄 도구</p>
+<h2 id="OneDrive-원드라이브"><a href="#OneDrive-원드라이브" class="headerlink" title="OneDrive 원드라이브"></a>OneDrive <small>원드라이브</small></h2><p>마이크로소프트의 클라우드 드라이브. 예전 이름은 SkyDrive였으며, 2014년 2월 19일 OneDrive로 이름이 바뀌었다. 원도우10을 사용하면 기본으로 설치되어 있습니다. 이것은 실시간으로 컴퓨터에 변화가 있을 때 실시간으로 싱크를 맞추게 됩니다.</p>
+<p>원도우 10에서는 기본 제공하는 서비스지만 용량이 5GB로 개인 문서나 기본 파일들을 올리기에는 괜찮은것 같으나 저처럼 대용량의 파일을 하드에 저장하고 사용하는 사람으로서는 원드라이브는 그리 좋은 클라우드는 아니라서 또는 잘못 클릭하여 로그인창이 나타나거나 하면 궈찮기도 해서 이번에 깔끔하게 삭제하는 방법을 적으려고 합니다. 인터넷에 떠도는 글을 수집하고 나름 간단하고 쉬운 방법을 적으려고 합니다.</p>
+<hr class="sm5">
+
+<h2 id="삭제하기"><a href="#삭제하기" class="headerlink" title="삭제하기"></a>삭제하기</h2><p>귀찮게 말을 많이 하지 않고 바로 밑의 파일을 받아 <code>실행</code>만 하시면 됩니다. 설명이 필요하신 분들은 밑의 글을 읽어 보시길 바랍니다.</p>
+<div class="col-md-6 col-md-offset-3" style="margin-top: 15px; letter-spacing: 1px;"><button onclick="location.replace('onedrive-uninstaller-master.zip');" onfocus="this.blur()" class="btn btn-gray btn-block"><strong>OneDrive-Uninstaller v1.0</strong></button></div>
+<div class="clear"></div><br>
+
+<h3 id="원도우10에서-원드라이브-삭제"><a href="#원도우10에서-원드라이브-삭제" class="headerlink" title="원도우10에서 원드라이브 삭제"></a>원도우10에서 원드라이브 삭제</h3><p><img src="https://i.imgur.com/rRlBsWP.png" alt=""></p>
+<p>대다수 블로거는 CMD창을 이용해서 삭제한다거나 로컬 그룹 정책 편집기를 이용해서 사용방지를 선택해서 하더군요. 물론 저처럼 <code>Uninstaller</code>를 선택해서 삭제도 합니다. 그중 쉬운 부분을 소개 하려고 합니다.</p>
+<p>마침 해외에서 이 부분을 쉽게 할 수 있게 미리 머리 좋으신 분들이 만들었더군요. 위에 다운이나 설명하듯이 조금더 버전 향상된 파일을 받기 원하시면 밑의 링크로 가셔서 다운하시면 됩니다.</p>
+<center><strong>[원도우10 원드라이브 언인스톨러 CMD 파일 다운로드 하러 가기](https://github.com/tomchappelow/onedrive-uninstaller)</strong></center>
+
+<p><img src="https://i.imgur.com/CHAsj4Q.png" alt=""></p>
+<p>다운 받은 파일을 압축 해제하면 <code>onedrive-uninstaller-master</code> 라는 폴더에서 2개가 나옵니다.</p>
+<p><img src="https://i.imgur.com/Ggd9YQh.png" alt=""></p>
+<p>그중 OneDrive-Uninstaller.cmd라는 파일을 실행(OR 관리자 권한으로 실행)하시면 됩니다.</p>
+<p><img src="https://i.imgur.com/ipkgIJq.png" alt=""></p>
+<p>그후 1~3분 정도 기다리시면 원도우 10에서 원드라이브가 깔끔하게 제거됩니다.</p>
+<p><img src="https://i.imgur.com/GiowMX8.png" alt=""></p>
+<p>탐색기를 열어 보시면 원도우면 OneDrive가 없어진 것을 볼수 있습니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h3 id="참고-OneDrive설치"><a href="#참고-OneDrive설치" class="headerlink" title="참고 - OneDrive설치"></a>참고 - OneDrive설치</h3><p>원도우10에서 OneDrive를 삭제하더라도 다시 설치 하려고 사이트 가면 원도우10이 설치되어 있다고만 나와서 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">OneDrive시작</span> 만 됩니다.</p>
+<center><strong>[OneDrive 클라이언트 파일 다운 하러가기](https://onedrive.live.com/about/ko-kr/download/)</strong></center>
+
+<p><img src="https://i.imgur.com/lc1mVhG.png" alt=""></p>
+<p>이때 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">다른 장치가 있습니다.</span> 를 클릭하여</p>
+<p><img src="https://i.imgur.com/XWPk8Nn.png" alt=""></p>
+<p>원도우 10이 아닌 다른 운영체제를 선택하시면 <span style="background-color: rgb(70, 115, 255); color: rgb(255, 255, 255);">다운로드</span>가 됩니다.</p>
+<p><img src="https://i.imgur.com/2C7sF3r.png" alt=""></p>
+<p>위의그림은원도우7을 선택한 화면입니다. <code>다운로드</code>를 클릭하시면 <code>재설치</code>가 됩니다.</p>
+<p>이상 원도우10에서 원드라이브 삭제를 원하시는 분들에게 도움이 되었으면 합니다.</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/09/03/IT/IP-address/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/09/03/IT/IP-address/" class="post-title-link" itemprop="url">원도우에서 내 IP주소 확인</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-09-03 19:53:21" itemprop="dateCreated datePublished" datetime="2016-09-03T19:53:21+09:00">2016-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 03:00:04" itemprop="dateModified" datetime="2017-05-14T03:00:04+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/09/03/IT/IP-address/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/03/IT/IP-address/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="ip-주소-INTERNET-PROTOCOL-ADDRESS"><a href="#ip-주소-INTERNET-PROTOCOL-ADDRESS" class="headerlink" title="ip 주소 (INTERNET PROTOCOL ADDRESS)"></a>ip 주소 (INTERNET PROTOCOL ADDRESS)</h3><p>IP 주소(Internet Protocol address, 표준어: 인터넷규약주소)는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다. 네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다. 이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다. IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다. …<div class="text-right"><a href="https://ko.wikipedia.org/wiki/IP_%EC%A3%BC%EC%86%8C" target="_blank" rel="noopener">&lt;위키&gt;</a></div></p>
+<h2 id="윈도우에서-내-IP주소를-확인하는-방법"><a href="#윈도우에서-내-IP주소를-확인하는-방법" class="headerlink" title="윈도우에서 내 IP주소를 확인하는 방법"></a>윈도우에서 내 IP주소를 확인하는 방법</h2><p>오늘 회사 컴퓨터 드라이브 설치 하면서 공유기 정리하다가 잠시 잃어버린 IP확인방법을 이렇게 보고 정리해서 올려 봅니다. 간혹 잃어버리는 저는 이렇게라도 적어 놔야 잃어버리지 않으니 이렇게 적네요.</p>
+<h3 id="1-명령-프롬프트를-이용하여-확인하기"><a href="#1-명령-프롬프트를-이용하여-확인하기" class="headerlink" title="1. 명령 프롬프트를 이용하여 확인하기"></a>1. 명령 프롬프트를 이용하여 확인하기</h3><p><img src="https://i.imgur.com/3lPFn9k.gif" alt=""></p>
+<h5 id="방법-3가지"><a href="#방법-3가지" class="headerlink" title="방법 3가지"></a>방법 3가지</h5><blockquote>
+<p><strong>1-1.</strong> 윈도우에서 시작버튼에서 마우스 오른쪽 버튼을 눌러 명령 프롬프트를 실행하시면 됩니다.<br><strong>1-2.</strong> 윈도우키 + X 를 눌러 오른쪽 버튼을 누른 것과 같은 화면을 나오게 할 수 있습니다.<br><strong>1-3.</strong> 윈도우 7을 사용하는 경우에는 윈도우키 + R (시작버튼에서 실행과 같은 역활) cmd를 입력하면 됩니다.</p>
+</blockquote>
+<h4 id="도스창이-실행되었으면-ipconfig를-입력합니다"><a href="#도스창이-실행되었으면-ipconfig를-입력합니다" class="headerlink" title="도스창이 실행되었으면, ipconfig를 입력합니다."></a>도스창이 실행되었으면, ipconfig를 입력합니다.</h4><p><img src="https://i.imgur.com/nXr1txq.gif" alt=""></p>
+<h4 id="ipconfig를-입력하고-엔터를-치면-다음과-같은-내용이-나오는데-그중에-IPv4-주소를-주목하시면-됩니다"><a href="#ipconfig를-입력하고-엔터를-치면-다음과-같은-내용이-나오는데-그중에-IPv4-주소를-주목하시면-됩니다" class="headerlink" title="ipconfig를 입력하고 엔터를 치면 다음과 같은 내용이 나오는데,그중에 IPv4 주소를 주목하시면 됩니다."></a>ipconfig를 입력하고 엔터를 치면 다음과 같은 내용이 나오는데,그중에 IPv4 주소를 주목하시면 됩니다.</h4><p><img src="https://i.imgur.com/5XDCVFB.gif" alt=""><br><span class=cap2>192.168.x.x는 사설 IP(공유기 내의 IP)입니다. <a href="https://www.ktword.co.kr/abbr_view.php?m_temp1=2260" target="_blank" rel="noopener">자세히…</a></span></p>
+<p><button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapse_IP" aria-expanded="false" aria-controls="collapse_IP">  ipTIME형 외부 IP보기</button></p>
+<div class="collapse" id="collapse_IP"><h4>ipTIME형 외부 IP보기</h4>인터넷 주소란에 `192.168.0.1`을 입력합니다.
+![](https://i.imgur.com/uY9WXN4.gif)
+`관리도구`에 클릭하여 들어 갑니다.
+
+<p><img src="https://i.imgur.com/WMXzZFI.gif" alt=""><br><code>외부 IP 주소</code> 란에 보시면 됩니다. 위 그림에서는 <code>111.111.111.111</code>이 외부 IP입니다.</div></p>
+<h3 id="2-네트워크-창에서의-IP-확인하기"><a href="#2-네트워크-창에서의-IP-확인하기" class="headerlink" title="2. 네트워크 창에서의 IP 확인하기"></a>2. 네트워크 창에서의 IP 확인하기</h3><p><img src="https://i.imgur.com/K6ivGlc.gif" alt=""><br>작업 표시줄 하단에 시꼐 옆을 보면 컴퓨터와 랜선 같은 느낌의 아이콘에서 <code>마우스 오른쪽 버튼</code>을 눌러 <code>네트워크 및 공유 센터 열기</code>를 해줍니다.</p>
+<p><img src="https://i.imgur.com/orIarwe.gif" alt=""><br>네트워크 및 공유센터 열기를 클릭해 줍니다.</p>
+<p><img src="https://i.imgur.com/5lVWXGj.gif" alt=""><br>네트워크 및 공유센터 열기 창이 나오면 액세스 형식의<code>로컬 영역 연결</code>을 클릭하고 그 창에서 <code>자세히(E)...</code> 을 클릭합니다.</p>
+<p><img src="https://i.imgur.com/WyWKTHA.gif" alt=""><br>세부 정보 창에서 <code>IPv4 주소</code>란에 보시면 IP가 보입니다.</p>
+<h3 id="3-인터넷을-통해-IP확인하기"><a href="#3-인터넷을-통해-IP확인하기" class="headerlink" title="3. 인터넷을 통해 IP확인하기"></a>3. 인터넷을 통해 IP확인하기</h3><p>간단하게 네이버나, 다음에 검색란에 <code>IP 주소</code>라고 입력하면 됩니다.<br><img src="https://i.imgur.com/Pv9Gtxi.gif" class=inks_img><br><img src="https://i.imgur.com/F5lZ8eP.gif" class=inks_img></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/05/30/IT/UTP-STP-FTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/30/IT/UTP-STP-FTP/" class="post-title-link" itemprop="url">UTP/STP/FTP 케이블</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-05-30 20:09:35" itemprop="dateCreated datePublished" datetime="2016-05-30T20:09:35+09:00">2016-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-12-06 00:36:30" itemprop="dateModified" datetime="2017-12-06T00:36:30+09:00">2017-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/05/30/IT/UTP-STP-FTP/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/30/IT/UTP-STP-FTP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="LAN-CABLE-랜케이블"><a href="#LAN-CABLE-랜케이블" class="headerlink" title="LAN CABLE 랜케이블"></a>LAN CABLE <small>랜케이블</small></h3><p>unshielded twisted pair cable의 약어. 이더넷에서 일반적으로 사용되는 케이블. STP 케이블과 비교해서 실드 처리가 되어 있지 않아 잡음에 약하지만, 비용을 낮출 수 있다.<div class="text-right" style="font-size:13px;"><p><strong>[네이버 지식백과]</strong> <a href="https://terms.naver.com/entry.nhn?docId=840781" target="_blank" rel="noopener">UTP [unshielded twisted pair cable] (컴퓨터인터넷IT용어대사전, 2011.1.20, 일진사)</a></p></div></p>
+<hr>
+<h2 id="UTP-FTP-STP-구조와-설명"><a href="#UTP-FTP-STP-구조와-설명" class="headerlink" title="UTP, FTP, STP 구조와 설명"></a>UTP, FTP, STP 구조와 설명</h2><h5 id="UTP-Unshielded-Twist-Pair-비차폐연선"><a href="#UTP-Unshielded-Twist-Pair-비차폐연선" class="headerlink" title="UTP (Unshielded Twist Pair : 비차폐연선 )"></a>UTP (Unshielded Twist Pair : 비차폐연선 )</h5><p>두 선간의 전자기 유도를 줄이기 위하여 서로 꼬여져 있는 케이블인데 제품 전선과 피복만으로 구성되어 있다. 이건 보통 일반적인 랜케이블에 사용한다.</p>
+<p><img src="https://i.imgur.com/uOKiDVH.jpg" alt=""></p>
+<h5 id="FTP-Foil-Screened-Twist-Pair-Cable"><a href="#FTP-Foil-Screened-Twist-Pair-Cable" class="headerlink" title="FTP (Foil Screened Twist Pair Cable)"></a>FTP (Foil Screened Twist Pair Cable)</h5><p>쉴드 처리는 되어있지 않고, 알루미늄 은박이 4가닥의 선을 감싸고 있는 케이블이다.<br>UTP에 비해 절연 기능이 좋고 공장 배선용으로 많이 사용한다.</p>
+<p><img src="https://i.imgur.com/X92dEsn.jpg" alt=""></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="STP-Shielded-Twist-Pair-Cable-차폐연선"><a href="#STP-Shielded-Twist-Pair-Cable-차폐연선" class="headerlink" title="STP (Shielded Twist Pair Cable : 차폐연선)"></a>STP (Shielded Twist Pair Cable : 차폐연선)</h5><p>쉴드라 하는 것은 연선으로 된 케이블 겉에 외부 피복, 또는 차폐재가 추가되는 것을 말한다.<br>이 것은 외부의 노이즈를 차단하거나 전기적 신호의 간섭을 대폭 줄여준다.</p>
+<p><img src="https://i.imgur.com/v5M7vzo.jpg" alt=""><br><img src="https://i.imgur.com/jLjpizH.gif" alt=""></p>
+<hr>
+<h3 id="UTP-STP-표준"><a href="#UTP-STP-표준" class="headerlink" title="UTP/STP 표준"></a>UTP/STP 표준</h3><ul>
+<li>카테고리 1 - 전화망에 주로 사용. 데이터 전송용으로는 부적합</li>
+<li>카테고리 2 - 최대 4Mbps 속도로 전송, 토큰링 네트워크에 자주 쓰였음</li>
+<li>카테고리 3 - 최대 16Mbps 속도로 전송, 10 Base T 네트워크에 사용</li>
+<li>카테고리 4 - 최대 16Mbps 속도로 전송, 토큰링 네트워크에 사용</li>
+<li>카테고리 5 - 최대 100Mbps 속도로 전송, Fast Ethernet용으로 사용, 기가비트 속도 전송 시 8개의 모든 선 사용.<ul>
+<li>Cat. 5는 현재 네트워크 시공이나 전화 시설 등 모든 랜선이 시설되는 장소에서 사용하는 UTP케이블의 표준 규격이라고 할 수 있습니다. 현재 가장 빠른 인터넷도 100Mbps의 광랜이고, 100Mbps 급의 공유기 및 네트워크 장비들도 아직까지 많이 사용하기 때문에 Cat. 5나 Cat. 5e 면 충분히 사용 가능합니다. Cat. 5는 현재 유지 보수용으로만 사용되며, Cat. 5e 규격의 보편화로 현재는 거의 사용되지 않는 규격이라고 보시면 될 것 같습니다.</li>
+<li>Category 5e Cable (Cat. 5e) 케이블은 최대 1Gbps의 속도로 데이터를 전송할 수 있습니다. 대역폭은 예전에 사용했던 Cat. 5와 동일한 100MHz입니다. <strong>Cat. 5e와 Cat. 5의 UTP케이블은 100m 이상 선을 포설할 경우 신호가 현저히 저하가 되기 때문에 끊길 수도 있습니다.</strong> Cat. 5e는 현재 사무실이나 가정집에서 실질적으로 많이 사용하고 있으며, 네트워크공사장비 대부분 이 케이블을 사용합니다.</li>
+</ul>
+</li>
+<li>카테고리 6 - 최대 250MHz의 성능과 1Gbps 인터넷 네트워크에 많이 사용됩니다.<ul>
+<li>Cat. 6는 단순 외관으로는 Cat. 5e와 차이가 별로 없습니다. 하지만 피복을 벗기면 4개의 페어와 내부의 십자 모양의 개재로 구성되어 있습니다. 내부 십자형 개재가 각 페어 간의 간섭을 막을 수 있고, 외부 전자파 장애를 최소화할 수 있게 제작되어 있습니다. 아직은 가정용보다는 회사의 서버나 전산망, IT 계열 업체 등에 많이 활용되고 있습니다. Cat. 5케이블 제작보다 약간? 더 어렵다고 생각하시면 됩니다.</li>
+<li>Category 6e Cable (Cat. 6e) 케이블은 무려.. 최대 10Gbps의 속도로 데이터를 전송할 수 있습니다. 이 속도를 사용하시고 싶으시면 랜카드도 10Gbps를 사용하셔야 합니다. 만약 랜카드가 1Gbps라면, 10Gbps의 속도를 사용할 수가 없습니다. Cat. 6보다 2배 정도 향상된 기능과 케이블 간섭을 최소화한 케이블이라고 보시면 서버용 랜 케이블에 많이 사용합니다. 또한 <strong>CAT6e의 경우 수평배선망의 거리에 따른 신호 손실로 55m까지 10GbE를 지원한다고 하네요.</strong></li>
+<li><strong>참고</strong> : 현재 쇼핑몰에서 구할 수 있는 CAT6 BOX 케이블의 종류는 제조사를 막론하고 크게 아래 2가지입니다.<br>CAT6e - 250Mhz / 24AWG<br>CAT6a - 600Mhz / 23AWG<br>CAT6e는 250Mhz까지 지원하며 대부분의 인터넷쇼핑몰에서 CAT6라고 표기하고 판매중인 제품의 규격은 CAT6e 입니다.<br>CAT6a 케이블은 CAT6e 케이블과 달리 23AWG의 구리심선이 사용됩니다. <strong>AWG란 미국 전선규격이고 숫자가 낮을수록 심선의 굵기가 굵은 제품</strong> 입니다.</li>
+</ul>
+</li>
+<li><em>UTP 케이블의 심선 두께가 두꺼울수록 전기역학적으로 회선에 흐를 수 있는 전류의 양이 많아지므로 주파수 대역폭도 높으며 10GbE 100m까지 지원 가능합니다.*</em><br>( LS전선 CAT6a는 IEEE 802.3 10G base-T 지원 표기 / AMP CAT6 U part No. 1427200는 IEEE 802.3an 지원 표기 )</li>
+<li>카테고리 7 - 4개의 개별 실드 처리된 STP에 적합하며 최대 600 MHz의 전송을 위해 설계되었다.<ul>
+<li>Cat. 7케이블은 최대 10Gbps의 속도로 데이터를 전송할 수 있습니다. 아직은 Cat. 7케이블의 성능을 발휘할 만한 환경이 구성되어 있는 곳은 많지 않기 때문에 일반 기업 사무실과 가정집의 경우 Cat. 5e와 Cat. 6 UTP케이블만으로도 충분히 고속 인터넷으로 사용 가능합니다. 기존 Cat. 5e와 Cat. 6케이블과 달리 제작이 매우 어렵고, 가격 또한 비쌉니다.</li>
+</ul>
+</li>
+</ul>
+<h5 id="케이블-속도별-구분"><a href="#케이블-속도별-구분" class="headerlink" title="케이블 속도별 구분"></a>케이블 속도별 구분</h5><table><tbody><tr><td>10 Base-T</td></tr><tr><td>10 : 속도
+Base : Baseband 용 케이블 (디지털)
+T : TP 케이블 / 최대 전송거리</td></tr></tbody></table>
+
+<p>10 Base T : 10Mbps로 통신. 최대 전송거리 100m . UTP3,4,5 사용<br>10 Base FL : 10Mbps로 통신. FL(Fiber-optic) 광케이블.  ST 커넥터 사용<br>10 Base 2 : 10Mbps로 통신. 최대 전송거리 200m. 일명 Thin 케이블 . BNC 커넥터 사용<br>10 Base 5 : 10Mbps로 통신. 최대 전송거리 500m. 일명 thick 케이블. AUI 인터페이스(15pin) 사용<br>100 Base TX : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.5 케이블 사용<br>100 Base T2 : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.3,4,5 케이블 사용<br>100 Base T4 : 전송 속도 100Mbps. 최대 전송거리 100m. CAT.3 케이블 사용<br>100 Base FX : 전송 속도 100Mbps. 최대 전송거리 2km<del>10km. SC 커넥터 사용<br>1000 Base SX : 기가비트. 전송 속도 1000Mbps. 최대 전송거리 270m</del>550m.<br>1000 Base T : 기가비트. 전송 속도 1000Mbps. 최대 전송거리 100m. UTP케이블 사용</p>
+<hr>
+<h4 id="UTP케이블-연결법-및-구분"><a href="#UTP케이블-연결법-및-구분" class="headerlink" title="UTP케이블 연결법 및 구분"></a>UTP케이블 연결법 및 구분</h4><ul>
+<li>다이렉트(Direct) 케이블 : PC-스위치 / 스위치-공유기 연결 시 사용한다.</li>
+<li>크로스(Cross) 케이블 : PC-PC / 스위치-스위치 / 공유기-공유기 동종 기종 간 연결 시 사용한다.</li>
+</ul>
+<p><img src="https://i.imgur.com/9QCKjLt.png" alt=""><br><img src="https://i.imgur.com/fyXu0od.jpg" alt=""></p>
+<hr>
+<h3 id="일반적을-널리-쓰이는-도구"><a href="#일반적을-널리-쓰이는-도구" class="headerlink" title="일반적을 널리 쓰이는 도구"></a>일반적을 널리 쓰이는 도구</h3><h4 id="랜툴-모듈라-크림핑툴"><a href="#랜툴-모듈라-크림핑툴" class="headerlink" title="랜툴 모듈라 크림핑툴"></a>랜툴 <small>모듈라 크림핑툴</small></h4><p><img src="https://i.imgur.com/PP82CIB.jpg" alt=""><br><img src="https://i.imgur.com/SiMS1cO.jpg" alt=""></p>
+<h4 id="랜테스터기"><a href="#랜테스터기" class="headerlink" title="랜테스터기"></a>랜테스터기</h4><p><img src="https://i.imgur.com/BLrSpxU.jpg" alt=""></p>
+<h4 id="랜선-피복-탈피기"><a href="#랜선-피복-탈피기" class="headerlink" title="랜선 피복 탈피기"></a>랜선 피복 탈피기</h4><p><img src="https://i.imgur.com/rdo8vKn.jpg" alt=""></p>
+<h4 id="RJ-커넥터-RJ-connector"><a href="#RJ-커넥터-RJ-connector" class="headerlink" title="RJ 커넥터 RJ connector"></a>RJ 커넥터 <small>RJ connector</small></h4><p>배선을 연결하는 데 사용되는 표준 커넥터. RJ-11, RJ-12, RJ-45가 흔히 사용된다. 전화선을 연결하는 데는 일반적으로 RJ-11이 사용되며, RJ-45는 구내 정보 통신망(LAN)에서 비차폐 연선(UTP)을 연결할 때 사용되는 것으로 모듈 단위로 4상 배선을 할 수 있다.<div class="text-right" style="font-size:13px;"><p><strong>[네이버 지식백과]</strong> <a href="https://terms.naver.com/entry.nhn?docId=849601&cid=50373&categoryId=50373" target="_blank" rel="noopener">[네이버 지식백과] RJ 커넥터 [RJ connector] (IT용어사전, 한국정보통신기술협회)</a></p></div></p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h6 id="RJ-45-8P8C-플러그"><a href="#RJ-45-8P8C-플러그" class="headerlink" title="RJ-45 8P8C 플러그"></a>RJ-45 8P8C 플러그</h6><p><img src="https://i.imgur.com/JrpUkhp.png" alt=""></p>
+<h6 id="RJ-12-6P6C-플러그"><a href="#RJ-12-6P6C-플러그" class="headerlink" title="RJ-12 6P6C 플러그"></a>RJ-12 6P6C 플러그</h6><p><img src="https://i.imgur.com/GZjT6Sh.jpg" alt=""></p>
+<h6 id="RJ11-6P4C-플러그"><a href="#RJ11-6P4C-플러그" class="headerlink" title="RJ11 6P4C 플러그"></a>RJ11 6P4C 플러그</h6><p><img src="https://i.imgur.com/ctqymTT.jpg" alt=""></p>
+<h6 id="RJ11-6P2C-플러그"><a href="#RJ11-6P2C-플러그" class="headerlink" title="RJ11 6P2C 플러그"></a>RJ11 6P2C 플러그</h6><p><img src="https://i.imgur.com/LLyMrH9.jpg" alt=""></p>
+<h6 id="RJ-45-보호캡"><a href="#RJ-45-보호캡" class="headerlink" title="RJ-45 보호캡"></a>RJ-45 보호캡</h6><p><img src="https://i.imgur.com/EEbJ1TJ.jpg" alt=""></p>
+<hr>
+<h6 id="이미지-출처"><a href="#이미지-출처" class="headerlink" title="이미지 출처"></a>이미지 출처</h6><p><a href="http://11st.kr/QR/P/25260915" target="_blank" rel="noopener">http://11st.kr/QR/P/25260915</a><br><a href="http://gmkt.kr/gL3n3m" target="_blank" rel="noopener">http://gmkt.kr/gL3n3m</a><br><a href="http://gmkt.kr/ggWJXQ" target="_blank" rel="noopener">http://gmkt.kr/ggWJXQ</a><br><a href="http://11st.kr/QR/P/1037681640" target="_blank" rel="noopener">http://11st.kr/QR/P/1037681640</a></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/05/05/story/Incomplete-Life/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/05/story/Incomplete-Life/" class="post-title-link" itemprop="url">미생, 명대사</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-05-05 19:38:20" itemprop="dateCreated datePublished" datetime="2016-05-05T19:38:20+09:00">2016-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-02-18 11:06:12" itemprop="dateModified" datetime="2019-02-18T11:06:12+09:00">2019-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">일상, 생활</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/%E8%AA%AA-%EC%84%A4-%EC%9D%84-%ED%92%80%EB%8B%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">說(설)을 풀다</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/05/05/story/Incomplete-Life/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/05/story/Incomplete-Life/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="미생-未生"><a href="#미생-未生" class="headerlink" title="미생 未生"></a>미생 <small>未生</small></h1><p>바둑에서 미생(未生)은 집이나 대마 등이 살아있지 않은 상태 혹은 그 돌을 이르는 말이다. 완전히 죽은 돌을 뜻하는 사석(死石)과는 달리 미생은 완생할 여지를 남기고 있는 돌을 의미한다는 차이가 있다.</p>
+<p><small>바둑을 아는 사람들은 ‘미생’이란 단어가 불쑥 나온다는 것 자체가 죽음이 근처에 와 있고, 살기 위해 얼마만큼의 지난한 노력을 해야 하며, 때로는 큰 대가를 치러야 한다는 의미라는 걸 알고들 있을 겁니다.</small></p>
+<p>제가 볼때는 우리들의 삶이고 우리들이라는 것입니다. “우린 아직 다 미생이야!”</p>
+<h1 id="미생-未生-Incomplete-Life"><a href="#미생-未生-Incomplete-Life" class="headerlink" title="미생 未生(Incomplete Life)"></a>미생 <small>未生(Incomplete Life)</small></h1><p><img src="/images/X40vILZ.jpg" alt=""><br><span class="cap1">몇번을 봐도 직장인들의 이야기중에 최고의 작품이라고 생각하는 드라마 입니다.</span></p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/zz7O2TJMs8E" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+<p>《미생》은 2014년 10월 17일부터 12월 20일까지 tvN에서 방영된 tvN 금토드라마이다. 2012년 1월 17일부터 2013년 8월 13일까지 다음에서 연재된 웹툰을 각색해 제작된 드라마이며 업데이트된 ‘TV 손자병법’이라고 불린다. &lt;<a href="https://ko.wikipedia.org/wiki/%EB%AF%B8%EC%83%9D_(%EB%93%9C%EB%9D%BC%EB%A7%88)" target="_blank" class="tx-link">위키</a>&gt;</p>
+<h1 id="명대사"><a href="#명대사" class="headerlink" title="명대사"></a>명대사</h1><h5 id="회사가-전쟁터라고-밀어낼-때까지-그만두지-마라-밖은-지옥이다"><a href="#회사가-전쟁터라고-밀어낼-때까지-그만두지-마라-밖은-지옥이다" class="headerlink" title="# 회사가 전쟁터라고? 밀어낼 때까지 그만두지 마라! 밖은 지옥이다."></a># 회사가 전쟁터라고? 밀어낼 때까지 그만두지 마라! 밖은 지옥이다.</h5><p>짧지만, 아주 임팩트있는 미생 명대사입니다.</p>
+<h5 id="잊지-말자-나는-어머님의-자부심이다-모자라고-부족한-자식이-아니다"><a href="#잊지-말자-나는-어머님의-자부심이다-모자라고-부족한-자식이-아니다" class="headerlink" title="# 잊지 말자. 나는 어머님의 자부심이다. 모자라고 부족한 자식이 아니다."></a># 잊지 말자. 나는 어머님의 자부심이다. 모자라고 부족한 자식이 아니다.</h5><p>누구나 어머니에게는 최고의 아들입니다.</p>
+<h5 id="최선은-학교-다닐때나-대우-받는-거고-직장은-결과만-대접-받는다"><a href="#최선은-학교-다닐때나-대우-받는-거고-직장은-결과만-대접-받는다" class="headerlink" title="# 최선은 학교 다닐때나 대우 받는 거고, 직장은 결과만 대접 받는다."></a># 최선은 학교 다닐때나 대우 받는 거고, 직장은 결과만 대접 받는다.</h5><p>직장 상사가 신입에게 하는 말이니 더 와닫습니다.</p>
+<h5 id="아무리-빨리-새벽을-맞아도-어김없이-길에는-사람들이-있었다-남들이-아직-꿈속을-헤맬거나-생각했지만-언제나-그렇긋-세상은-나보다-빠르다"><a href="#아무리-빨리-새벽을-맞아도-어김없이-길에는-사람들이-있었다-남들이-아직-꿈속을-헤맬거나-생각했지만-언제나-그렇긋-세상은-나보다-빠르다" class="headerlink" title="# 아무리 빨리 새벽을 맞아도 어김없이 길에는 사람들이 있었다 남들이 아직 꿈속을 헤맬거나 생각했지만 언제나 그렇긋 세상은 나보다 빠르다."></a># 아무리 빨리 새벽을 맞아도 어김없이 길에는 사람들이 있었다 남들이 아직 꿈속을 헤맬거나 생각했지만 언제나 그렇긋 세상은 나보다 빠르다.</h5><p>이말이 가장 많이 들었는 말이고 가장 많은 버전이 있는 말이네요. 세상에는 나보다 더 잘하는 사람이 더 많다라… 씁씁하네요.</p>
+<h5 id="선택의-순간들을-모아두면-그게-삶이고-인생이-되는거에요-매순간-어떤-선택을-하느냐-그게-바로-삶의-질을-결정짓는거-아니겠어요"><a href="#선택의-순간들을-모아두면-그게-삶이고-인생이-되는거에요-매순간-어떤-선택을-하느냐-그게-바로-삶의-질을-결정짓는거-아니겠어요" class="headerlink" title="# 선택의 순간들을 모아두면 그게 삶이고 인생이 되는거에요 매순간 어떤 선택을 하느냐 그게 바로 삶의 질을 결정짓는거 아니겠어요?"></a># 선택의 순간들을 모아두면 그게 삶이고 인생이 되는거에요 매순간 어떤 선택을 하느냐 그게 바로 삶의 질을 결정짓는거 아니겠어요?</h5><p>매순간이 결정의 연속이다 누군가 이야기 한것이 생각 나는 군요.</p>
+<h5 id="뭔가-만족하고-싶다면-일단-너만-생각해-모두를-만족시키는-선택은-없어-그-선택에-책임을-지라고"><a href="#뭔가-만족하고-싶다면-일단-너만-생각해-모두를-만족시키는-선택은-없어-그-선택에-책임을-지라고" class="headerlink" title="# 뭔가 만족하고 싶다면 일단 너만 생각해 모두를 만족시키는 선택은 없어 그 선택에 책임을 지라고"></a># 뭔가 만족하고 싶다면 일단 너만 생각해 모두를 만족시키는 선택은 없어 그 선택에 책임을 지라고</h5><p>공감 많이 가는 부분입니다. 많은 시간이 지나야 알수 있는 말이구요.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h5 id="보이는-것이-보여지기-위해-보이지-않는-영역의-희생이-필요한-것이다"><a href="#보이는-것이-보여지기-위해-보이지-않는-영역의-희생이-필요한-것이다" class="headerlink" title="# 보이는 것이 보여지기 위해 보이지 않는 영역의 희생이 필요한 것이다."></a># 보이는 것이 보여지기 위해 보이지 않는 영역의 희생이 필요한 것이다.</h5><p>직장 생활하면 이것 많이 생각하게 합니다. 실제로도 보여지지 않는 곳에서 일하시는 분들이 더 많이 있습니다. 저도 그중 하나구요.</p>
+<h5 id="인생은-끊임없는-반복-반복에-지치지-않는-자가-성취한다"><a href="#인생은-끊임없는-반복-반복에-지치지-않는-자가-성취한다" class="headerlink" title="# 인생은 끊임없는 반복. 반복에 지치지 않는 자가 성취한다."></a># 인생은 끊임없는 반복. 반복에 지치지 않는 자가 성취한다.</h5><p>위의 버티는 것과 비슷하지만 다른 말입니다. 지경움이죠 보통 직장생화 3년 5년의 고비가 온다고들 합니다. 반복에 지겨움에 약간의 알고 나서 오는 것들… 지치게 마련이죠. 이것을 다른 이유로 커버가 가능하면 좋겠지만 아니면 힘들어 지죠.</p>
+<h5 id="이기고-싶다면-충분한-고민을-버텨줄-몸을-먼저-만들어-체력이-약하면-빨리-편안함을-찾게-마련이고-그러다-결국-피로감을-견디지-못하면-승부-따윈-상관없는-지경에-이르지"><a href="#이기고-싶다면-충분한-고민을-버텨줄-몸을-먼저-만들어-체력이-약하면-빨리-편안함을-찾게-마련이고-그러다-결국-피로감을-견디지-못하면-승부-따윈-상관없는-지경에-이르지" class="headerlink" title="# 이기고 싶다면, 충분한 고민을 버텨줄 몸을 먼저 만들어. 체력이 약하면, 빨리 편안함을 찾게 마련이고,그러다 결국 피로감을 견디지 못하면, 승부 따윈 상관없는 지경에 이르지."></a># 이기고 싶다면, 충분한 고민을 버텨줄 몸을 먼저 만들어. 체력이 약하면, 빨리 편안함을 찾게 마련이고,그러다 결국 피로감을 견디지 못하면, 승부 따윈 상관없는 지경에 이르지.</h5><p>전 이부분을 보지 못한것인지 제 머리에는 없는데요. 글에 뜻과 같이 있네요. 공감가는 부분이기도 합니다.</p>
+<h5 id="버텨라-그것이-이기는-거다"><a href="#버텨라-그것이-이기는-거다" class="headerlink" title="# 버텨라. 그것이 이기는 거다."></a># 버텨라. 그것이 이기는 거다.</h5><h5 id="오늘-하루도-견디느라-수고-했어-내일도-버티고-모레도-견디고-계속-계속-살아-남으라고"><a href="#오늘-하루도-견디느라-수고-했어-내일도-버티고-모레도-견디고-계속-계속-살아-남으라고" class="headerlink" title="# 오늘 하루도 견디느라 수고 했어.내일도 버티고, 모레도 견디고, 계속 계속 살아 남으라고."></a># 오늘 하루도 견디느라 수고 했어.내일도 버티고, 모레도 견디고, 계속 계속 살아 남으라고.</h5><p>제가 본 명언중에 제일 와닫는 내용입니다. 이것이 진실일것 같네요.</p>
+<h5 id="순류에-역류를-일으킬-때-즉각-반응하는-것은-어리석다-상대가-역류를-일으켰을-때-나의-순류를-유지하는-것은-상대에-처지에서-보면-역류가-된다"><a href="#순류에-역류를-일으킬-때-즉각-반응하는-것은-어리석다-상대가-역류를-일으켰을-때-나의-순류를-유지하는-것은-상대에-처지에서-보면-역류가-된다" class="headerlink" title="# 순류에 역류를 일으킬 때, 즉각 반응하는 것은 어리석다. 상대가 역류를 일으켰을 때, 나의 순류를 유지하는 것은 상대에 처지에서 보면 역류가 된다."></a># 순류에 역류를 일으킬 때, 즉각 반응하는 것은 어리석다. 상대가 역류를 일으켰을 때, 나의 순류를 유지하는 것은 상대에 처지에서 보면 역류가 된다.</h5><p>이 어리석음을 알면서도 못하는 것이 어리석네요</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2016/05/05/story/socialpass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/05/story/socialpass/" class="post-title-link" itemprop="url">소셜패스는 무슨 뜻인가?</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2016-05-05 19:38:20" itemprop="dateCreated datePublished" datetime="2016-05-05T19:38:20+09:00">2016-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2017-05-14 02:54:02" itemprop="dateModified" datetime="2017-05-14T02:54:02+09:00">2017-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">일상, 생활</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/%E8%AA%AA-%EC%84%A4-%EC%9D%84-%ED%92%80%EB%8B%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">說(설)을 풀다</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/05/05/story/socialpass/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/05/story/socialpass/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="소셜패스"><a href="#소셜패스" class="headerlink" title="소셜패스"></a>소셜패스</h1><p><img src="https://i.imgur.com/hikPQqp.jpg" alt=""></p>
+<p>미생보다가 소셜패스라는 말이 나와서 인터넷으로 찾고 이렇게 글적어 봅니다.</p>
+<p>소셜패스(socialpass)란?<br>자기가 속해있는 집단에서 특정한 방향으로만 끌고 갈려는 상향을 기지고 집단화시키는 개인을 말하며 그 특별한 성향에 대해 죄책감을 느끼지 아니하며, 자기를 합리화 시키는 집단으로 종교화 파쇼화 성격이 강하며 후천적 성격이 강하다.  결국 사회적 환경에서 비롯되며 사이코패스나 소시오패스처럼 정신병적으로 분류된다.</p>
+<p>소시오패스는 다르다. 자기성공을 위해 수단이나 방법을 가리지않고 나쁜짓에 대해 죄책감도 느끼지않는다. 계산적이고 치밀하다. 머리가 영리하고 똑똑하나 비도덕적 성향를 가진다. 자신 행위에 대해 철저한 무책임하다. 소셜패스와는 다소 다르다.</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>

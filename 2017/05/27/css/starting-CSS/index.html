@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="CSS Cascading Style SheetsCascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다. CSS 속성의 주요 위치CSS를 사용하면 웹 개발자와 디자이너 분리가 가능해지게 됩니다. 적용 방식은 4가지 있습니다">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 시작하기">
+<meta property="og:url" content="https://innks.github.io/2017/05/27/css/starting-CSS/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="CSS Cascading Style SheetsCascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다. CSS 속성의 주요 위치CSS를 사용하면 웹 개발자와 디자이너 분리가 가능해지게 됩니다. 적용 방식은 4가지 있습니다">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/ITjxNNi.png">
+<meta property="article:published_time" content="2017-05-27T01:13:31.000Z">
+<meta property="article:modified_time" content="2019-02-14T11:53:33.325Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Css">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/ITjxNNi.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/27/css/starting-CSS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>CSS 시작하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/27/css/starting-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS 시작하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-27 10:13:31" itemprop="dateCreated datePublished" datetime="2017-05-27T10:13:31+09:00">2017-05-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-02-14 20:53:33" itemprop="dateModified" datetime="2019-02-14T20:53:33+09:00">2019-02-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/27/css/starting-CSS/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/27/css/starting-CSS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSS-Cascading-Style-Sheets"><a href="#CSS-Cascading-Style-Sheets" class="headerlink" title="CSS Cascading Style Sheets"></a>CSS <small>Cascading Style Sheets</small></h1><p>Cascading Style Sheets (CSS)는 documents가 사용자에게 어떻게 보여질가를 기술하는 언어입니다. html문이 뼈대라면 css는 겉 피부 또는 화장이라고 할수 있습니다.</p>
+<h2 id="CSS-속성의-주요-위치"><a href="#CSS-속성의-주요-위치" class="headerlink" title="CSS 속성의 주요 위치"></a>CSS 속성의 주요 위치</h2><p>CSS를 사용하면 웹 개발자와 디자이너 분리가 가능해지게 됩니다. 적용 방식은 4가지 있습니다.</p>
+<ul>
+<li>HTML 파일 안에 CSS를 포함 할 경우 &lt;head&gt; 태그 안에 &lt;style&gt; 태그를 넣어 사용할수 있습니다.</li>
+<li>CSS 파일을 분리 된 경우 <code>파일이름.css</code> 파일을 생성하고 HTML파일에서 불러오는 형식으로 사용할수 있습니다.</li>
+</ul>
+<figure class="highlight html"><figcaption><span>HTML 파일 안에 CSS를 포함 할 경우</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">body</span>&#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>link 요소를 이용한 외부 CSS 파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"파일명.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>import를 이용한 외부 CSS 파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="keyword">@import</span> url(style.css);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>HTML 요소에 인라인 스타일로 삽입</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"height:100px; color:blue"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS파일-만들기"><a href="#CSS파일-만들기" class="headerlink" title="CSS파일 만들기"></a>CSS파일 만들기</h2><p>외부에서 파일을 호출 할 경우에는 밑의 앳(@)명령문중 하나인 charset으로 utf-8 값을 설정하는것이 좋습니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">"utf-8"</span>;   <span class="comment">/* CSS의 @문으로 언어 인코딩을 utf-8로 설정합니다. */</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="스타일-규칙-CSS-기본-문법"><a href="#스타일-규칙-CSS-기본-문법" class="headerlink" title="스타일 규칙 CSS 기본 문법"></a>스타일 규칙 <small>CSS 기본 문법</small></h1><p>Rule Set(Rule)은 HTML페이지 안의 특정 요소들을 어떻게 렌더링(Rendering) 할 것인지 브라우저에게 알려주는 CSS 문장입니다. 밑의 스타일 규칙이라고도 불리는 이 문장은 스타일에 관한 규칙들을 나타냅니다.  <a href="http://css.maxdesign.com.au/selectutorial/rule.htm" target="_blank" rel="noopener">rule set 자세히 알아보기</a><br><img src="/images/ITjxNNi.png" alt="Rule structure"></p>
+<h2 id="예제-본문-body-스타일링"><a href="#예제-본문-body-스타일링" class="headerlink" title="예제 본문(body) 스타일링"></a>예제 본문(body) 스타일링</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> <span class="comment">/* 꾸미고자 하는 대상인 &lt;body&gt;요소를 선택합니다. 이를 `선택자`라고 합니다. */</span></span><br></pre></td></tr></table></figure>
+<div class=tip>`/* ... */`문은 설명을 적은 글이라서 생략 가능합니다.</div>다음으로 꾸미고자 하는 명령어를 입력합니다. 각 대상마다 명령문이 달라질수 있기 때문에 구분을 해야 합니다. 이 구분으로 각 대상의 영역을 나부게 되며 이를 구분하는데 중괄호 `{}`으로 나눕니다.
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;   <span class="comment">/* 여는 중괄호로 시작을 알립니다. */</span></span><br><span class="line">  <span class="comment">/* 꾸밀 선언문이 들어갈 부분입니다. */</span></span><br><span class="line">&#125; <span class="comment">/* 닫는 중괄호로 끝을 나타냅니다. */</span></span><br></pre></td></tr></table></figure>
+이제 대상을 선언하고 꾸미는 일만 남았습니다.
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-size </span>: <span class="number">75%</span>; <span class="comment">/*웹 브라우저의 기본 글짜 크기는 16px으로 75%(12px)로 설정 됩니다. */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>여기까지는 css의 기본과 작성 기초 문법을 배웠습니다. 다음에는 <code>선택자(Selector) 우선순위</code>에 대해 알아 보겠습니다.</p>
+<nav id="article-nav-post"><!--a href="/2017/05/09/hexo/hexo-deploy/" id="article-nav-newer-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post"><i class="fa fa-arrow-left" aria-hidden="true"></i> 이전편</strong><div class="article-nav-title-post">hexo 로컬 서버 테스트와 배포(GitHub)</div><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a--><a href="/2017/05/28/css/CSS-Selector-ranking/" id="article-nav-older-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post">다음편 <i class="fa fa-arrow-right" aria-hidden="true"></i></strong><div class="article-nav-title-post">선택자(Selector) 우선순위</div><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i></a></nav>
+
+<h1 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="관련 문서 바로가기"></a>관련 문서 바로가기</h1><ul>
+<li><a href="/2017/05/27/css/starting-CSS/">CSS 시작하기</a></li>
+<li><a href="/2017/05/28/css/CSS-Selector-ranking/">선택자(Selector) 우선순위</a></li>
+<li><a href="/2017/05/30/css/Reset-CSS/">Reset CSS 사용하기</a></li>
+<li><a href="/2017/06/04/css/CSS-Px-to-Em/">글꼴 크기 비교 지정하기</a></li>
+<li><a href="/2017/06/05/css/css-Selector-note/">CSS 기억해야할 선택자 형식</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Css/" rel="tag"># Css</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/21/hexo/Markdown-w/" rel="prev" title="마크다운 문법 설명 및 hexo 문법테스트">
+      <i class="fa fa-chevron-left"></i> 마크다운 문법 설명 및 hexo 문법테스트
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/28/css/CSS-Selector-ranking/" rel="next" title="CSS 선택자(Selector) 우선순위">
+      CSS 선택자(Selector) 우선순위 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Cascading-Style-Sheets"><span class="nav-text">CSS Cascading Style Sheets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-속성의-주요-위치"><span class="nav-text">CSS 속성의 주요 위치</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS파일-만들기"><span class="nav-text">CSS파일 만들기</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#스타일-규칙-CSS-기본-문법"><span class="nav-text">스타일 규칙 CSS 기본 문법</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#예제-본문-body-스타일링"><span class="nav-text">예제 본문(body) 스타일링</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#마치며"><span class="nav-text">마치며</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text">관련 문서 바로가기</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/27/css/starting-CSS/",
+            identifier: "2017/05/27/css/starting-CSS/",
+            title: "CSS 시작하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

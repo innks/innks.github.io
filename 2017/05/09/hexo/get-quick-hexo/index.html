@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="# 준비에서 실행까지 단 몇 분 만에 끝바쁜신 분들을 위해 준비 했습니다. 간단 블로그 만들기 0. Git, Node.js를 설치 한다. Git 설치하러 가기 NodeJs 설치하러가기  1. 폴더 만들고 Hexo 설치하기123456$ npm install -g hexo-cli$ hexo init Blog$ cd Blog$ npm install$ npm i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="초간단 HEXO와 hueman 테마 설치하기">
+<meta property="og:url" content="https://innks.github.io/2017/05/09/hexo/get-quick-hexo/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="# 준비에서 실행까지 단 몇 분 만에 끝바쁜신 분들을 위해 준비 했습니다. 간단 블로그 만들기 0. Git, Node.js를 설치 한다. Git 설치하러 가기 NodeJs 설치하러가기  1. 폴더 만들고 Hexo 설치하기123456$ npm install -g hexo-cli$ hexo init Blog$ cd Blog$ npm install$ npm i">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/rx9WgtJ.png">
+<meta property="og:image" content="https://innks.github.io/images/7FgUh43.png">
+<meta property="og:image" content="https://innks.github.io/images/PYR429A.png">
+<meta property="og:image" content="https://innks.github.io/images/sfmbsKg.png">
+<meta property="og:image" content="https://innks.github.io/images/j90h8Q4.png">
+<meta property="og:image" content="https://innks.github.io/images/YMzuBDO.png">
+<meta property="article:published_time" content="2017-05-09T14:34:46.000Z">
+<meta property="article:modified_time" content="2019-05-01T23:16:56.025Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="hexojs">
+<meta property="article:tag" content="hueman">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="GitHub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/rx9WgtJ.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/05/09/hexo/get-quick-hexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>초간단 HEXO와 hueman 테마 설치하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/05/09/hexo/get-quick-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          초간단 HEXO와 hueman 테마 설치하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-05-09 23:34:46" itemprop="dateCreated datePublished" datetime="2017-05-09T23:34:46+09:00">2017-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 08:16:56" itemprop="dateModified" datetime="2019-05-02T08:16:56+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/05/09/hexo/get-quick-hexo/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/09/hexo/get-quick-hexo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="/images/rx9WgtJ.png" alt=""></p>
+<h1 id="준비에서-실행까지-단-몇-분-만에-끝"><a href="#준비에서-실행까지-단-몇-분-만에-끝" class="headerlink" title="# 준비에서 실행까지 단 몇 분 만에 끝"></a># 준비에서 실행까지 단 몇 분 만에 끝</h1><p>바쁜신 분들을 위해 준비 했습니다. 간단 블로그 만들기</p>
+<h2 id="0-Git-Node-js를-설치-한다"><a href="#0-Git-Node-js를-설치-한다" class="headerlink" title="0. Git, Node.js를 설치 한다."></a>0. Git, Node.js를 설치 한다.</h2><ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git 설치하러 가기</a></li>
+<li><a href="https://nodejs.org/ko/" target="_blank" rel="noopener">NodeJs 설치하러가기</a></li>
+</ul>
+<h2 id="1-폴더-만들고-Hexo-설치하기"><a href="#1-폴더-만들고-Hexo-설치하기" class="headerlink" title="1. 폴더 만들고 Hexo 설치하기"></a>1. 폴더 만들고 Hexo 설치하기</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init Blog</span><br><span class="line">$ <span class="built_in">cd</span> Blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-server --save <span class="comment"># server 명령문이 실행 되지 않을</span></span><br><span class="line">$ npm install hexo-deployer-git --save <span class="comment"># Git 서버 배포 플러그인</span></span><br></pre></td></tr></table></figure>
+<p>Blog폴더의 <code>_config.yml</code>을 연다.</p>
+<figure class="highlight bash"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: innks <span class="comment"># 타이틀</span></span><br><span class="line">subtitle: Sixth Challenge <span class="comment"># 서브 타이틀</span></span><br><span class="line">description: theK의 여섯번째 도전 블로그  <span class="comment"># 블로그 설명</span></span><br><span class="line">author: theK <span class="comment"># 저자 이름</span></span><br><span class="line">language: en</span><br><span class="line">timezone: Asia/Seoul</span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: http://innks.github.io <span class="comment"># 앞에서 만든 github page 주소</span></span><br><span class="line">root: / <span class="comment"># 기본은 / 이고 만약 서브디렉토리 구조를 가진다면 루트를 지정하는 부분.</span></span><br><span class="line">permalink: :year/:month/:day/:title/ <span class="comment"># 기본 permalink (고정 url). 새글 생성 시 자동으로 지정된 형식의 URL이 할당된다.</span></span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/innks/innks.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>위의 부분을 수정합니다. 참고 예는 저의 설정 파일 입니다. 뜩같이 적지 말고 자신의 사이트에 맞게 수정합니다.</p>
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="2-GitHub-Pages-만들기"><a href="#2-GitHub-Pages-만들기" class="headerlink" title="2. GitHub Pages 만들기"></a>2. GitHub Pages 만들기</h2><ol>
+<li><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 사이트에 가입.</li>
+<li>로그인</li>
+<li>new repository : <a href="https://github.com/new" target="_blank" rel="noopener">https://github.com/new</a> 에 자인의 이름과 같이 http:&#47;&#47;{자신의계정}.github.io를 만든다.<br>- 예) 계정이 innks이면, <strong>innks/innks.github.io</strong></li>
+</ol>
+<img src="/images/7FgUh43.png" class=img_left>
+
+<p><code>자신의계정</code>을 기입하고  만들기를 눌러 만들고 화면상에 있는 <kbd style="background-color:#ccc !important;color:#333 !important;padding: 3px 9px !important;">HTTPS</kbd>란에 있는 <code>https://github.com/innks/innk.github.io.git</code>을 Hexo의 <code>_config.yml</code>파일에 넣으시면 됩니다.</p>
+<figure class="highlight yml"><figcaption><span>_config.yml - Deployment 부분</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/innks/innks.github.io.git</span> <span class="comment"># 이부분을 수정 (중요)</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-테마-적용하기"><a href="#3-테마-적용하기" class="headerlink" title="3. 테마 적용하기"></a>3. 테마 적용하기</h2><p><code>root 폴더</code>의 <code>_config.yml</code> 파일을 열어 테마부분을 수정합니다. (이때 <code>_config.yml</code>파일은 테마폴더는 아닙니다.)</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">hueman</span></span><br></pre></td></tr></table></figure>
+
+<p>콘솔창을 열어 테마를 설치 합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br><span class="line">$ npm install -S hexo-generator-json-content <span class="comment"># hueman 테마 검색을 위해서</span></span><br></pre></td></tr></table></figure>
+
+<p> 이제 블로그의 <code>_config.yml</code>말고 테마 폴더 안에 있는 <code>_config.yml.example</code>의 이름을 <code>_config.yml</code>로 수정합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/hueman</span><br><span class="line">$ ren _config.yml.example _config.yml</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4-커스터마이징-customizing"><a href="#4-커스터마이징-customizing" class="headerlink" title="4. 커스터마이징 customizing"></a>4. 커스터마이징 <small>customizing</small></h2><p>테마 폴더안의 <code>_config.yml</code>을 수정하여 자기의 블로그에 맞게 수정하겠습니다.</p>
+<p>자세히 보실분은 이쪽으로 이동 -&gt; <a href="/2017/05/09/hexo/hexo-config/">Hexo 기본설정</a></p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menus</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">    <span class="comment"># Delete this row if you don't want categories in your header nav bar</span></span><br><span class="line">    <span class="attr">Categories:</span></span><br><span class="line">    <span class="attr">About:</span>  <span class="comment"># &lt;--- 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize</span></span><br><span class="line">    <span class="attr">customize:</span></span><br><span class="line">        <span class="attr">logo:</span></span><br><span class="line">            <span class="attr">width:</span> <span class="number">165</span></span><br><span class="line">            <span class="attr">height:</span> <span class="number">60</span></span><br><span class="line">            <span class="attr">url:</span>  <span class="comment"># &lt;--- url부분만 삭제</span></span><br><span class="line">            <span class="string">...</span></span><br><span class="line">            <span class="attr">github:</span> <span class="string">https://github.com/innks/innks.github.io</span> <span class="comment"># &lt;---  나의 Git주소 나머진 삭제</span></span><br><span class="line"><span class="comment"># Widgets</span></span><br><span class="line">    <span class="attr">widgets:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">recent_posts</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">category</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">links</span> <span class="comment"># &lt;--- 필요 없으면 이것도 삭제 (나머진 삭제)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">    <span class="attr">miscellaneous:</span></span><br><span class="line">        <span class="attr">links:</span></span><br><span class="line">            <span class="attr">Hexo:</span> <span class="string">http://hexo.io</span>   <span class="comment"># &lt;--- 위의 링크 때문에 있음</span></span><br></pre></td></tr></table></figure>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="5-logo-이미지-없이-사용하기"><a href="#5-logo-이미지-없이-사용하기" class="headerlink" title="5. logo 이미지 없이 사용하기"></a>5. logo 이미지 없이 사용하기</h2><h4 id="hrader-ejs-수정"><a href="#hrader-ejs-수정" class="headerlink" title="hrader.ejs 수정"></a>hrader.ejs 수정</h4><p><code>/themes/hueman/common/hrader.ejs</code>파일을 열어 밑에처럼 수정합니다.</p>
+<figure class="highlight html"><figcaption><span>hrader.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header-title"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"logo-wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for() %&gt;"</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.subtitle</span>) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"subtitle-wrap"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"subtitle"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.subtitle</span> %&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>을</p>
+<figure class="highlight html"><figcaption><span>hrader.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header-title"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for() %&gt;"</span> <span class="attr">style</span>=<span class="string">"font-size:100px;color:#fff; text-decoration: none;"</span>&gt;</span>innks<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<img src="/images/PYR429A.png" class=inks_img>
+
+<h4 id="footerejs-수정"><a href="#footerejs-수정" class="headerlink" title="footerejs 수정"></a>footerejs 수정</h4><p>로 변경 후, <code>/themes/hueman/common/footerejs</code>파일을 열어 밑에처럼 수정합니다.</p>
+<figure class="highlight html"><figcaption><span>footer.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"credit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"logo-wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for() %&gt;"</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>를</p>
+<figure class="highlight html"><figcaption><span>footer.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"credit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for() %&gt;"</span> <span class="attr">style</span>=<span class="string">"font-size:40px;color:#fff; text-decoration: none;"</span>&gt;</span>innks<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>로 변경하시면 로고가 생깁니다.<br><img src="/images/sfmbsKg.png" class=inks_img></p>
+<h2 id="6-포스트-쓰기"><a href="#6-포스트-쓰기" class="headerlink" title="6. 포스트 쓰기"></a>6. 포스트 쓰기</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><figcaption><span>_post/title.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span>  <span class="comment"># 제목</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="string">/5/13</span> <span class="number">20</span><span class="string">:46:25</span> <span class="comment"># 날짜</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">이부분에</span> <span class="string">쓰면</span> <span class="string">됩</span> <span class="string">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-테스트-배포"><a href="#7-테스트-배포" class="headerlink" title="7. 테스트 배포"></a>7. 테스트 배포</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>로컬 서버로 테스트  <a href="http://127.0.0.1:4000" target="_blank" rel="noopener">http://127.0.0.1:4000</a> 해보고 이상 없으면,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<p>배포 합니다.</p>
+<p><img src="/images/j90h8Q4.png" alt=""></p>
+<h2 id="8-추가부분"><a href="#8-추가부분" class="headerlink" title="8. 추가부분"></a>8. 추가부분</h2><h3 id="ㄱ-대표-URL-설정하기"><a href="#ㄱ-대표-URL-설정하기" class="headerlink" title="ㄱ. 대표 URL 설정하기"></a>ㄱ. 대표 URL 설정하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-auto-canonical</span><br></pre></td></tr></table></figure>
+<p>플로그임 추가하고 테마 폴더의 <code>head.ejs</code>파일에 &lt;%- meta(page) %&gt; 라고 있는데 그 바로 아래 붙여넣으시면 됩니다.</p>
+<figure class="highlight bash"><figcaption><span>theme/hueman/layout/common/post/head.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- autoCanonical(config, page) %&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="ㄴ-사이트맵-만들기-XML-RSS"><a href="#ㄴ-사이트맵-만들기-XML-RSS" class="headerlink" title="ㄴ. 사이트맵 만들기 (XML, RSS)"></a>ㄴ. 사이트맵 만들기 (XML, RSS)</h3><p>일단 사이트맵을 등록하려면 사이트맵 파일을 만들어야 합니다. ML 과 RSS 방식 모두 사용하는 것이 좋다고 합니다.</p>
+<h4 id="a-사이트맵-자동-생성-플러그인"><a href="#a-사이트맵-자동-생성-플러그인" class="headerlink" title="a. 사이트맵 자동 생성 플러그인"></a>a. 사이트맵 자동 생성 플러그인</h4><p>XML 은 전체 페이지에 대한 내용을 가지고 있습니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure>
+<p><code>_config.yml</code>파일에 다음과 같이 추가합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sitemap auto generator</span></span><br><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>
+
+<h4 id="b-RSS-feed-자동-생성-플러그인"><a href="#b-RSS-feed-자동-생성-플러그인" class="headerlink" title="b. RSS feed 자동 생성 플러그인"></a>b. RSS feed 자동 생성 플러그인</h4><p> RSS 는 최근 포스트에 대한 정보를 가지고 있습니다.<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure><br><code>_config.yml</code>파일에 다음과 같이 추가합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  <span class="built_in">type</span>: atom</span><br><span class="line">  path: feed.xml</span><br><span class="line">  <span class="built_in">limit</span>: 20</span><br><span class="line">  hub:</span><br></pre></td></tr></table></figure>
+
+<p>이제 생성해서 배포해봅시다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<p>그러면 root 에 sitemap.xml 과 feed.xml 이 생긴 것을 확인하실 수 있습니다.</p>
+<h2 id="9-Google-Search-Console에서-사이트맵-제출"><a href="#9-Google-Search-Console에서-사이트맵-제출" class="headerlink" title="9. Google Search Console에서 사이트맵 제출"></a>9. Google Search Console에서 사이트맵 제출</h2><p><a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">Google Serach Console</a> 의 <strong>크롤링 &gt; Sitemaps</strong> 에 들어가시면 <strong>SITEMAP 추가/ 테스트</strong> 가 있습니다. 만들었던 파일을 <strong>제출</strong> 하면 됩니다.</p>
+<p><img src="/images/YMzuBDO.png" alt=""></p>
+<h2 id="첨언-Fetch-As-Google-와-robot-txt"><a href="#첨언-Fetch-As-Google-와-robot-txt" class="headerlink" title="첨언 Fetch As Google 와 robot.txt"></a>첨언 Fetch As Google 와 robot.txt</h2><p>Fetch As Google 은 구글의 크롤링 담당하는 Googlebot 이라는 놈으로 주소를 넣고 <strong>가져오기 및 렌더링</strong> 을 눌러봅시다. 그러면 잠깐의 시간이 흐르고 완료되었다고 나오면, URL 색인을 제출합니다. <a href="https://support.google.com/webmasters/answer/6066468#resource_errors" target="_blank" rel="noopener">자세히 알아보기</a></p>
+<p> robot.txt 라는 파일이 있는데 이 파일은 Googlebot 의 접근을 조절하는 파일입니다.  한마디로 검색에 노출이 필요하지 않은 부분으 robots.txt로 제어합니다. <a href="https://support.google.com/webmasters/answer/6062608?hl=ko&ref_topic=6061961" target="_blank" rel="noopener">자세히 알아보기</a></p>
+<hr>
+<h3 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="# 관련 문서 바로가기"></a># 관련 문서 바로가기</h3><ul>
+<li><a href="/2017/05/09/hexo/get-quick-hexo/">초간단 HEXO와 hueman 테마 설치하기</a></li>
+<li><a href="/2017/05/09/hexo/get-started-hexo/">Hexo로 정적 블로그 시작하기</a></li>
+<li><a href="/2017/05/09/hexo/make-git-pages/">GitHub Pages 만들기(Hexo용)</a></li>
+<li><a href="/2017/05/09/hexo/hexo-config/">Hexo 기본설정</a></li>
+<li><a href="/2017/05/09/hexo/hexo-newpost/">Hexo 포스팅하기</a></li>
+<li><a href="/2017/05/09/hexo/hexo-deploy/">hexo 로컬 서버 테스트와 배포(GitHub)</a></li>
+<li><a href="/2017/05/09/hexo/Apply-hueman-hexo-theme/">Hexo 테마 Hueman 적용하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-change-menu/">Hueman테마에 메뉴 변경하기</a></li>
+<li><a href="/2017/05/09/hexo/Hueman-theme-subtitle/">Hueman 테마에 부제목 추가하기</a></li>
+<li><a href="/2018/02/27/hexo/hexo-setrup/">hexo을 포멧/다른 컴퓨터에 환경을 구축하기</a></li>
+</ul>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexojs/" rel="tag"># hexojs</a>
+              <a href="/tags/hueman/" rel="tag"># hueman</a>
+              <a href="/tags/GitHub-Pages/" rel="tag"># GitHub Pages</a>
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/09/hexo/Hueman-theme-change-menu/" rel="prev" title="Hueman테마에 메뉴 변경하기">
+      <i class="fa fa-chevron-left"></i> Hueman테마에 메뉴 변경하기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/05/09/hexo/Hueman-theme-subtitle/" rel="next" title="Hueman 테마에 부제목 추가하기">
+      Hueman 테마에 부제목 추가하기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#준비에서-실행까지-단-몇-분-만에-끝"><span class="nav-text"># 준비에서 실행까지 단 몇 분 만에 끝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Git-Node-js를-설치-한다"><span class="nav-text">0. Git, Node.js를 설치 한다.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-폴더-만들고-Hexo-설치하기"><span class="nav-text">1. 폴더 만들고 Hexo 설치하기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-GitHub-Pages-만들기"><span class="nav-text">2. GitHub Pages 만들기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-테마-적용하기"><span class="nav-text">3. 테마 적용하기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-커스터마이징-customizing"><span class="nav-text">4. 커스터마이징 customizing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-logo-이미지-없이-사용하기"><span class="nav-text">5. logo 이미지 없이 사용하기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hrader-ejs-수정"><span class="nav-text">hrader.ejs 수정</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#footerejs-수정"><span class="nav-text">footerejs 수정</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-포스트-쓰기"><span class="nav-text">6. 포스트 쓰기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-테스트-배포"><span class="nav-text">7. 테스트 배포</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-추가부분"><span class="nav-text">8. 추가부분</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄱ-대표-URL-설정하기"><span class="nav-text">ㄱ. 대표 URL 설정하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ㄴ-사이트맵-만들기-XML-RSS"><span class="nav-text">ㄴ. 사이트맵 만들기 (XML, RSS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-사이트맵-자동-생성-플러그인"><span class="nav-text">a. 사이트맵 자동 생성 플러그인</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-RSS-feed-자동-생성-플러그인"><span class="nav-text">b. RSS feed 자동 생성 플러그인</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Google-Search-Console에서-사이트맵-제출"><span class="nav-text">9. Google Search Console에서 사이트맵 제출</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#첨언-Fetch-As-Google-와-robot-txt"><span class="nav-text">첨언 Fetch As Google 와 robot.txt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text"># 관련 문서 바로가기</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/05/09/hexo/get-quick-hexo/",
+            identifier: "2017/05/09/hexo/get-quick-hexo/",
+            title: "초간단 HEXO와 hueman 테마 설치하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

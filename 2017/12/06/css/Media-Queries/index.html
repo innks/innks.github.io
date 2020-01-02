@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="미디어 쿼리 (Media Queries) 란?미디어 쿼리란 반응형 웹을 구현하기 위해 필요한 기술 중에 하나로, 컴퓨터나 기기에게 ‘너는 어떤 종류의 미디어니?’ 또는 ‘미디어의  화면 크기는 어느 정도나 되니?’ 라고 미디어에게 질문하고 감지하여 웹사이트를 변경하는 기술이다. 기기의 종류 뿐만이 아니라 해상도, 비트 수, 가로&#x2F;세로 여부 등 세밀한 부분까">
+<meta property="og:type" content="article">
+<meta property="og:title" content="미디어 쿼리 (Media Queries)">
+<meta property="og:url" content="https://innks.github.io/2017/12/06/css/Media-Queries/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="미디어 쿼리 (Media Queries) 란?미디어 쿼리란 반응형 웹을 구현하기 위해 필요한 기술 중에 하나로, 컴퓨터나 기기에게 ‘너는 어떤 종류의 미디어니?’ 또는 ‘미디어의  화면 크기는 어느 정도나 되니?’ 라고 미디어에게 질문하고 감지하여 웹사이트를 변경하는 기술이다. 기기의 종류 뿐만이 아니라 해상도, 비트 수, 가로&#x2F;세로 여부 등 세밀한 부분까">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://innks.github.io/images/zH21VEt.png">
+<meta property="og:image" content="https://innks.github.io/images/RJ0WCvb.png">
+<meta property="article:published_time" content="2017-12-05T16:13:30.000Z">
+<meta property="article:modified_time" content="2019-05-01T22:49:36.111Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Css">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="media">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://innks.github.io/images/zH21VEt.png">
+
+<link rel="canonical" href="https://innks.github.io/2017/12/06/css/Media-Queries/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>미디어 쿼리 (Media Queries) | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/12/06/css/Media-Queries/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          미디어 쿼리 (Media Queries)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-12-06 01:13:30" itemprop="dateCreated datePublished" datetime="2017-12-06T01:13:30+09:00">2017-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 07:49:36" itemprop="dateModified" datetime="2019-05-02T07:49:36+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/12/06/css/Media-Queries/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/06/css/Media-Queries/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="미디어-쿼리-Media-Queries-란"><a href="#미디어-쿼리-Media-Queries-란" class="headerlink" title="미디어 쿼리 (Media Queries) 란?"></a>미디어 쿼리 (Media Queries) 란?</h1><p>미디어 쿼리란 반응형 웹을 구현하기 위해 필요한 기술 중에 하나로, 컴퓨터나 기기에게 ‘너는 어떤 종류의 미디어니?’ 또는 ‘미디어의  화면 크기는 어느 정도나 되니?’ 라고 미디어에게 질문하고 감지하여 웹사이트를 변경하는 기술이다.</p>
+<p>기기의 종류 뿐만이 아니라 해상도, 비트 수, 가로/세로 여부 등 세밀한 부분까지 감지가 가능하여 유용하다.</p>
+<h1 id="미디어-쿼리-작성"><a href="#미디어-쿼리-작성" class="headerlink" title="미디어 쿼리 작성"></a>미디어 쿼리 작성</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> 조건문 &#123;실행문&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/zH21VEt.png" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">CSS</span> <span class="selector-tag">media</span> <span class="selector-tag">query</span> 링크로 연결할때 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;link rel="stylesheet" media="(max-width: 800px)" href="example.css" /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">CSS</span> 내부 삽입하기 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width:</span> <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.facet_sidebar</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 가로 너비가 320px 이상이면서 768px 이하일 때 */</span></span><br><span class="line">@media (min-width:320px) and (max-width:768px) &#123; ... &#125;  // 320px &lt;= screen &lt;= 768px</span><br></pre></td></tr></table></figure>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="모바일-우선"><a href="#모바일-우선" class="headerlink" title="모바일 우선"></a>모바일 우선</h2><figure class="highlight css"><figcaption><span>css파일</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> “utf-<span class="number">8</span>”;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* All 버전 */</span></span><br><span class="line">모든 해상도를 위한 공통 코드를 작성한다. 모든 해상도에서 이 코드가 실행됨.</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Phone 버전 */</span></span><br><span class="line">768<span class="selector-tag">px</span> 미만 해상도의 모바일 기기를 위한 코드를 작성한다. 모든 해상도에서 이 코드가 실행됨. 미디어 쿼리를 지원하지 않는 모바일 기기를 위해 미디어 쿼리 구문을 사용하지 않는다.</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet &amp; Desktop 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">768px</span>) &#123;</span><br><span class="line">사용자 해상도가 768<span class="selector-tag">px</span> 이상일 때 이 코드가 실행됨. 테블릿과 데스크톱의 공통 코드를 작성한다.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">768px</span>) <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">1199px</span>) &#123;</span><br><span class="line">사용자 해상도가 768<span class="selector-tag">px</span> 이상이고 1024<span class="selector-tag">px</span> 이하일 때 이 코드가 실행됨. 아이패드 또는 비교적 작은 해상도의 랩탑이나 데스크톱에 대응하는 코드를 작성한다.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Desktop 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">1200px</span>) &#123;</span><br><span class="line">사용자 해상도가 1025<span class="selector-tag">px</span> 이상일 때 이 코드가 실행됨. 1025<span class="selector-tag">px</span> 이상의 랩탑 또는 데스크톱에 대응하는 코드를 작성한다.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>각각의 해상도 사이즈 알기 : <a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/" target="_blank" rel="noopener">https://css-tricks.com/snippets/css/media-queries-for-standard-devices/</a><br>기기별 쉽게 보기 : <a href="http://nmsdvid.com/snippets/" target="_blank" rel="noopener">http://nmsdvid.com/snippets/</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (orientation:portrait) &#123; … &#125; // 세로 모드. 뷰포트의 높이가 너비에 비해 상대적으로 크면 실행</span><br><span class="line"></span><br><span class="line">@media only screen and (orientation:landscape) &#123; … &#125; // 가로 모드. 뷰포트의 너비가 높이에 비해 상대적으로 크면 실행</span><br></pre></td></tr></table></figure>
+
+<h2 id="orientation"><a href="#orientation" class="headerlink" title="orientation"></a>orientation</h2><p>뷰포트의 너비와 높이 비율을 이용하여 세로 모드인지 가로 모드인지를 판단한다.</p>
+<p>orientation: auto;<br>orientation: portrait; // 세로<br>orientation: landscape;  // 가로</p>
+<table>
+<thead>
+<tr>
+<th align="left">매개변수</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">min-width</td>
+<td align="left">쿼리에 정의된 값보다 큰 브라우저 너비에 적용되는 규칙.</td>
+</tr>
+<tr>
+<td align="left">max-width</td>
+<td align="left">쿼리에 정의된 값보다 작은 브라우저 너비에 적용되는 규칙.</td>
+</tr>
+<tr>
+<td align="left">min-height</td>
+<td align="left">쿼리에 정의된 값보다 큰 브라우저 높이에 적용되는 규칙.</td>
+</tr>
+<tr>
+<td align="left">max-height</td>
+<td align="left">쿼리에 정의된 값보다 작은 브라우저 높이에 적용되는 규칙.</td>
+</tr>
+<tr>
+<td align="left">orientation=portrait</td>
+<td align="left">높이가 너비보다 크거나 같은 브라우저에 적용되는 규칙.</td>
+</tr>
+<tr>
+<td align="left">orientation=landscape</td>
+<td align="left">너비가 높이보다 큰 브라우저에 적용되는 규칙.</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><figcaption><span>html파일 Ex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 700px)"</span> <span class="attr">href</span>=<span class="string">"max-700px.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 700px)"</span> <span class="attr">href</span>=<span class="string">"min-700px.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(orientation: portrait)"</span> <span class="attr">href</span>=<span class="string">"portrait.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(orientation: landscape)"</span> <span class="attr">href</span>=<span class="string">"landscape.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><figcaption><span>css파일 Ex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media (min-width: 700px) and (orientation: landscape) &#123; ... &#125; // 가로에 700px 같거나 크다</span><br><span class="line"></span><br><span class="line">@media tv and (min-width: 700px) and (orientation: landscape) &#123; ... &#125; // tv 가로에 700px 같거나 크다</span><br></pre></td></tr></table></figure>
+
+<p>700px보다 넓거나, 디스플레이가 가로 방향인 경우에만 실행</p>
+<table>
+<thead>
+<tr>
+<th align="left">기기명</th>
+<th align="left">설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">all</td>
+<td align="left">모든 장치</td>
+</tr>
+<tr>
+<td align="left">print</td>
+<td align="left">인쇄 장치</td>
+</tr>
+<tr>
+<td align="left">screen</td>
+<td align="left">컴퓨터 화면 장치 또는 스마트 기기의 화면</td>
+</tr>
+<tr>
+<td align="left">tv</td>
+<td align="left">영상과 음성이 동시에 출력되는 장치</td>
+</tr>
+<tr>
+<td align="left">projection</td>
+<td align="left">프로젝터 장치</td>
+</tr>
+<tr>
+<td align="left">handheld</td>
+<td align="left">손에 들고 다니는 소형 장치</td>
+</tr>
+<tr>
+<td align="left">speech</td>
+<td align="left">음성 출력 장치</td>
+</tr>
+<tr>
+<td align="left">aural</td>
+<td align="left">음성 합성 장치 (화면을 읽어 소리로 출력해 주는 장치)</td>
+</tr>
+<tr>
+<td align="left">embossed</td>
+<td align="left">점자 인쇄 장치 (화면을 읽어 종이에 점자를 찍어내는 장치)</td>
+</tr>
+<tr>
+<td align="left">tty</td>
+<td align="left">디스플레이 기능이 제한된 장치</td>
+</tr>
+<tr>
+<td align="left">braille</td>
+<td align="left">점자 표시 장치</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Print 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> print &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Phone 가로 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">320px</span>) <span class="keyword">and</span> (orientation : landscape) &#123; ... &#125;</span><br><span class="line"><span class="comment">/* Phone 세로 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">320px</span>) <span class="keyword">and</span> (orientation : portrait) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet 가로 버전 == Desktop */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) <span class="keyword">and</span> (orientation : landscape) &#123; ... &#125;</span><br><span class="line"><span class="comment">/* Tablet 세로 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) <span class="keyword">and</span> (orientation : portrait) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Desktop */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">1200px</span>) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="최종"><a href="#최종" class="headerlink" title="최종"></a>최종</h2><ul>
+<li>모바일 스타일 (미디어 쿼리가 아님) - 모바일 우선</li>
+<li>태블릿 스타일 (최소 너비 : 768px)</li>
+<li>데스크톱 스타일 (최소 너비 : 1200px)</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> “utf-<span class="number">8</span>”;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 모든 */</span></span><br><span class="line">모든 해상도를 위한 공통 코드를 작성한다. 모든 해상도에서 이 코드가 실행됨.</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> print &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Mobile 버전 */</span></span><br><span class="line">768<span class="selector-tag">px</span> 미만 해상도의 모바일 기기를 위한 코드를 작성한다. 모든 해상도에서 이 코드가 실행됨. 미디어 쿼리를 지원하지 않는 모바일 기기를 위해 미디어 쿼리 구문을 사용하지 않는다.</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Mobile 가로 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">320px</span>) <span class="keyword">and</span> (orientation : landscape) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet &amp; Desktop Device */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">768px</span>) &#123;</span><br><span class="line">사용자 해상도가 768<span class="selector-tag">px</span> 이상일 때 이 코드가 실행됨. 테블릿과 데스크톱의 공통 코드를 작성한다.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">768px</span>) <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">1199px</span>) &#123;</span><br><span class="line">사용자 해상도가 768<span class="selector-tag">px</span> 이상이고 1024<span class="selector-tag">px</span> 이하일 때 이 코드가 실행됨. 아이패드 또는 비교적 작은 해상도의 랩탑이나 데스크톱에 대응하는 코드를 작성한다.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tablet 세로 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) <span class="keyword">and</span> (orientation : portrait) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Desktop 버전 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">1200px</span>) &#123;</span><br><span class="line">사용자 해상도가 1025<span class="selector-tag">px</span> 이상일 때 이 코드가 실행됨. 1025<span class="selector-tag">px</span> 이상의 랩탑 또는 데스크탑에 대응하는 코드를 작성한다.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="미디어-쿼리-지원"><a href="#미디어-쿼리-지원" class="headerlink" title="미디어 쿼리 지원"></a>미디어 쿼리 지원</h3><p><img src="/images/RJ0WCvb.png" alt=""><br><span class=cap2>Image source: <a href="https://caniuse.com/#feat=css-mediaqueries" target="_blank" rel="noopener">Can I Use</a></span></p>
+<p>Respond.js 소개<br>IE 6~8 버전에서 미디어쿼리를 해석할 수 있도록 만들어주는 자바스크립트 라이브러리이다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>급하게 정리한다고 막 적은것 같습니다. 미흡하고 부족한 것 투성이 입니다. 위의 내용은 제가 필요한 부분만 정리 한 것입니다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Css/" rel="tag"># Css</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+              <a href="/tags/media/" rel="tag"># media</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/12/03/Holidays-in-South-Korea-in-2018/" rel="prev" title="2018년 달력과 공휴일 정리">
+      <i class="fa fa-chevron-left"></i> 2018년 달력과 공휴일 정리
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/12/08/hexo/hexo-Counter/" rel="next" title="Hexo에 카운터 달기">
+      Hexo에 카운터 달기 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#미디어-쿼리-Media-Queries-란"><span class="nav-text">미디어 쿼리 (Media Queries) 란?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#미디어-쿼리-작성"><span class="nav-text">미디어 쿼리 작성</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#모바일-우선"><span class="nav-text">모바일 우선</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orientation"><span class="nav-text">orientation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#최종"><span class="nav-text">최종</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#미디어-쿼리-지원"><span class="nav-text">미디어 쿼리 지원</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#마무리"><span class="nav-text">마무리</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/12/06/css/Media-Queries/",
+            identifier: "2017/12/06/css/Media-Queries/",
+            title: "미디어 쿼리 (Media Queries)"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

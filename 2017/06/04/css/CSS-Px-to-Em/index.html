@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://innks.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"게시물 검색","hits_empty":"검색 결과가 없습니다 : ${query}","hits_stats":"${hits} 개의 결과가 ${time}에 발견되었습니다."}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+<link rel="stylesheet" href="/css/v8_etc.css?v="/>
+<link rel="stylesheet" href="/css/inks_bootstrap.css?v="/>
+<script src="/js/innks_data_next.js"></script>
+
+  <meta name="description" content="글꼴 크기CSS에서는 폰트 크기 정하는 방법이 몇가지 있습니다. Px는 화면 해상도의 점 크기를 가지고 em은 각각 문서의 기본 글골 크기를 상대적으로 가집니다. rem은 html문서의 글꼴 크기를 가집니다. 폰트 단위 REM (Root EM) : html에 정의된 기본글꼴의 크기에 대하여 값을 가짐. PX(Pixel) : 고정된 크기 단위 (1px는 컴퓨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="글꼴 크기 비교 지정하기">
+<meta property="og:url" content="https://innks.github.io/2017/06/04/css/CSS-Px-to-Em/index.html">
+<meta property="og:site_name" content="姜仁規">
+<meta property="og:description" content="글꼴 크기CSS에서는 폰트 크기 정하는 방법이 몇가지 있습니다. Px는 화면 해상도의 점 크기를 가지고 em은 각각 문서의 기본 글골 크기를 상대적으로 가집니다. rem은 html문서의 글꼴 크기를 가집니다. 폰트 단위 REM (Root EM) : html에 정의된 기본글꼴의 크기에 대하여 값을 가짐. PX(Pixel) : 고정된 크기 단위 (1px는 컴퓨">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2017-06-03T16:13:30.000Z">
+<meta property="article:modified_time" content="2019-05-01T22:46:22.475Z">
+<meta property="article:author" content="theK">
+<meta property="article:tag" content="Css">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://innks.github.io/2017/06/04/css/CSS-Px-to-Em/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>글꼴 크기 비교 지정하기 | 姜仁規</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60578141-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60578141-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">姜仁規</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">강인규 블로그</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://innks.github.io/2017/06/04/css/CSS-Px-to-Em/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="theK">
+      <meta itemprop="description" content="theK의 8번째 도전 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="姜仁規">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          글꼴 크기 비교 지정하기
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2017-06-04 01:13:30" itemprop="dateCreated datePublished" datetime="2017-06-04T01:13:30+09:00">2017-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-05-02 07:46:22" itemprop="dateModified" datetime="2019-05-02T07:46:22+09:00">2019-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">IT 컴퓨터</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/06/04/css/CSS-Px-to-Em/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/04/css/CSS-Px-to-Em/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="글꼴-크기"><a href="#글꼴-크기" class="headerlink" title="글꼴 크기"></a>글꼴 크기</h1><p>CSS에서는 폰트 크기 정하는 방법이 몇가지 있습니다. Px는 화면 해상도의 점 크기를 가지고 em은 각각 문서의 기본 글골 크기를 상대적으로 가집니다. rem은 html문서의 글꼴 크기를 가집니다.</p>
+<h2 id="폰트-단위"><a href="#폰트-단위" class="headerlink" title="폰트 단위"></a>폰트 단위</h2><ul>
+<li>REM (Root EM) : html에 정의된 기본글꼴의 크기에 대하여 값을 가짐.</li>
+<li>PX(Pixel) : 고정된 크기 단위 (1px는 컴퓨터 화면에서 점 1개와 같음)</li>
+<li>EM : 웹 문서에서 사용되는 단위. (해당폰트의 대문자 M의 너비를 기준으로 함.)- 가변 단위</li>
+<li>EX : x-height, 해당폰트의 소문자 x의 높이를 기준으로 함.</li>
+<li>PT(Point) : 고겅되 크기 단위 (주로 인쇄물에 사용됨)</li>
+<li>Percent(%) : 기본글꼴의 크기에 대하여 상대적인 값을 가짐</li>
+</ul>
+<h2 id="화면-단위"><a href="#화면-단위" class="headerlink" title="화면 단위"></a>화면 단위</h2><ul>
+<li>vw : 뷰포트 너비의 1%</li>
+<li>vh : 뷰포트 높이의 1%</li>
+<li>vmin : 뷰포트의 중 작은 크기의 1%</li>
+<li>vmax : 뷰포트의 중 큰 크기의 1%</li>
+</ul>
+<h2 id="더-많은-단위"><a href="#더-많은-단위" class="headerlink" title="더 많은 단위"></a>더 많은 단위</h2><p><a href="https://www.w3.org/TR/css3-values/#lengths" target="_blank" rel="noopener">w3c의 css3 스펙 중 distance unit</a></p>
+<h1 id="PX-to-EM-변환기"><a href="#PX-to-EM-변환기" class="headerlink" title="PX to EM 변환기"></a>PX to EM 변환기</h1><form role="form"><div class=well><div class="row"><div class="col-md-11"><div class="form-group"><label for="base">기본 픽셀 크기 입력(부모 픽셀)</label> <input type="text" onkeyup="convert(this)"  class="form-control" name="base"  id="base" placeholder="Enter base pixel value here" value="16"></div></div></div><!--row-->
+<div class="row"><div class="col-md-6"><div class="form-group"><label for="px">픽셀(Pixel)</label> <input type="text" onkeyup="convert2em(this)"  class="form-control" name="px"  id="px" placeholder="px"></div></div><div class="col-md-6"><div class="form-group"><label for="em">EM</label> <input type="text" onkeyup="convert2px(this)"  class="form-control" name="em"  id="em" placeholder="em" data-base-unit="1"></div></div></div><!--row--><div class=text-right><span class=ver>출처 : [em to px Converter](https://everythingfonts.com/font/tools/units/em-to-px) (중에 일부)</span></div></div></form>
+
+<h2 id="px와-em에-관해"><a href="#px와-em에-관해" class="headerlink" title="px와 em에 관해."></a>px와 em에 관해.</h2><p>사람들은 주로 다음 두 가지 방법을 사용합니다. 아직은 … px, em<br>이 블로그 역시 em과 px를 이용하여 작성되었습니다. 저 역시도 아직도 px가 익숙하고 많이 사용하는 편이고 이글 적으면서도 px를 이용합니다. 이 글을 적으면서 공부하고는 “아 그렇구나~” 싶을 정도로 몰랐던 부분이기도 합니다. 그러면 저와 같이 밑의 차이점과 장단점을 배워 보겠습니다.</p>
+<h2 id="em과-rem은-왜-쓰는가"><a href="#em과-rem은-왜-쓰는가" class="headerlink" title="em과 rem은 왜 쓰는가?"></a>em과 rem은 왜 쓰는가?</h2><p>상대적 길이 단위를 쓰는 이유는 물론 가변적 디자인을 하기 위해서이다. 유연한 디자인과 유지보수의 편리함. 또 어느 디바이스 어떤 상황에서도 사용자에게 같은 콘텐츠를 제공할 수 있다. 반응형 웹이나 웹 표준, 웹 접근성 모두 같은 맥락이라고 볼 수 있다. 자세한 내용은 인터넷의 많은 글에서 찾아볼 수 있다.</p>
+<h2 id="em과-rem의-차이점"><a href="#em과-rem의-차이점" class="headerlink" title="em과 rem의 차이점."></a>em과 rem의 차이점.</h2><p>위의 설명처럼 em은 “웹 문서에서 사용되는 단위.”라고 하는데 가변적 단위입니다. 부모 요소가 어떤 사이즈냐에 따라 달라지기도 해서 자칫 잘못 사용하면 이상하게 보일 수도 있습니다. 예를 들어)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  font-size: 1.2em; // calculated at 14px * 1.2, or 16.8px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        Test <span class="comment">&lt;!-- 14 * 1.2 = 16.8px --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            Test <span class="comment">&lt;!-- 16.8 * 1.2 = 20.16px --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">                Test <span class="comment">&lt;!-- 20.16 * 1.2 = 24.192px --&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>어떤 결과가 나오냐 하면</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="rwaaMz" data-default-tab="result" data-user="innks" data-embed-version="2" data-pen-title="rwaaMz" class="codepen">See the Pen <a href="https://codepen.io/innks/pen/rwaaMz/" target="_blank" rel="noopener">rwaaMz</a> by innks (<a href="https://codepen.io/innks" target="_blank" rel="noopener">@innks</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>이렇게 디자인 된것이면 괜찮지만 대부분 이상하게 보일것입니다. 이런경우는 rem을 사용해서 디자인하는 것이 좋습니다.rem의 최상위 태그(요소)는  보통 html태그입니다. 예를 들어)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.2rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이렇게 디자인을 하면 일괄성 있게 사이즈가 통일 됩니다.</p>
+<style>
+.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
+.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.w3-table-all tr:nth-child(odd){background-color:#fff}.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:16px}
+table.notranslate tr:hover td{background-color:#555;color:white;}
+</style>
+
+<hr><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2415402928090831" data-ad-slot="3548385122"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><hr>
+
+<h2 id="본문-글자-크기"><a href="#본문-글자-크기" class="headerlink" title="본문 글자 크기"></a>본문 글자 크기</h2><p>아래 표에서 픽셀 (px)로 본문 글꼴 크기(부모 픽셀)를 선택하면 em과 % 부분이 변화되어 표시됩니다. 참고하세요.<br>도움말 : 기본 글꼴 크기는 대개 16px입니다.</p>
+<div id="demo"></div>
+<div class=cap1>출처 : [w3schools (중 px 크기 표)](https://www.w3schools.com/tags/ref_pxtoemconversion.asp)</div>
+
+<script>
+function fillTable(x) {
+var t = "";
+t = t + "<table style='cursor:pointer;' class='w3-table-all notranslate'>"
+t = t + "<tr>"
+t = t + "<th style='cursor:auto;width:33%;font-weight:bold;'>px</th>"
+t = t + "<th style='cursor:auto;width:33%;font-weight:bold;'>em</th>"
+t = t + "<th style='cursor:auto;width:33%;font-weight:bold;'>percent</th>"
+t = t + "</tr>"
+for (i = 5; i < 26; i++) {
+ t = t + "<tr onclick='fillTable(" + i + ")')'"
+ if (i == x) {
+ t = t + " style='background-color:#555;color:white;' "
+ }
+ t = t + "><td>" + i + "px</td>"
+ t = t + "<td>" + (i/x).toFixed(4) + "em</td>"
+ t = t + "<td>" + ((i/x) * 100).toFixed(2) + "%</td>"
+ t = t + "</tr>"
+}
+t = t + "</table>";
+document.getElementById("demo").innerHTML = t;
+}
+fillTable(16);
+function wrong() {
+ document.getElementById("myInput2").disabled = true;
+ document.getElementById("myInput2").value = "";
+}
+function wrong2() {
+ document.getElementById("myInput").disabled = true;
+ document.getElementById("myInput").value = "";
+}
+function works() {
+ document.getElementById("myInput2").disabled = false;
+ document.getElementById("myInput2").value = "";
+}
+function works2() {
+ document.getElementById("myInput").disabled = false;
+ document.getElementById("myInput").value = "";
+}
+function myFunction() {
+    var x = document.getElementById("myInput").value;
+    var z = document.getElementById("myInput2").value;
+    var y = document.getElementById("pix1").value;
+    var res = document.getElementById("result1");
+    if (x) {
+        res.innerHTML = x/y + "em";
+    } else {
+        res.innerHTML = z*y + "px";
+    }
+    if (isNaN (x) || isNaN (z) || isNaN (y)) {
+        res.innerHTML = "Wrong input! Use numbers";
+        res.style.color = "red";
+    } else {
+        res.style.color = "black";
+    }
+}   
+
+function convert(ut){  
+     var base = $('#base').val();
+     base = base.replace("px","");
+     var em = $('#em').val();
+     em = em.replace("em","");
+     var px = $('#px').val();
+     px = px.replace("px","");
+
+     if( px ) {
+       convert2em();
+     } else if ( em) {       
+       convert2px();
+     }
+ }
+
+ function convert2px(){  
+     var base = $('#base').val();
+     base = base.replace("px","");
+     var em = $('#em').val();
+     em = em.replace("em","");
+
+     var px = parseFloat( em * base);
+
+     $('#px').val(px);
+ }  // function
+
+ function convert2em(){  
+     var base = $('#base').val();
+     base = base.replace("px","");
+     var px = $('#px').val();
+     px = px.replace("px","");
+
+     var em = parseFloat(px / base);
+
+     $('#em').val(em);
+ }  // function
+
+ $(document).ready(function() {
+   convert();
+ });
+</script>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번에 적으면서 알게 된 것은 사이트 디자인을 하면서 두서없이 px나 em을 썼다는 것입니다. 보는 데로 수정해야겠다는 생각이 듭니다. 그리고 조금 더 많은 Size 조정 단위가 존재한다는 것에 놀랐습니다.</p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a href="https://www.w3schools.com/tags/ref_pxtoemconversion.asp" target="_blank" rel="noopener">PX to EM Conversion - W3Schools</a></li>
+<li><a href="http://pxtoem.com/" target="_blank" rel="noopener">PXtoEM.com: PX to EM conversion made simple.</a></li>
+<li><a href="https://everythingfonts.com/font/tools/units/em-to-px" target="_blank" rel="noopener">em to px converter - Everything Fonts</a></li>
+<li><a href="http://pixplicity.com/dp-px-converter/" target="_blank" rel="noopener">ANDROID DP/PX CONVERTER</a></li>
+<li><a href="https://mytory.net/archives/8906" target="_blank" rel="noopener">rem으로 글자 크기 지정하기</a></li>
+<li><a href="https://webdesign.tutsplus.com/ko/articles/7-css-units-you-might-not-know-about--cms-22573" target="_blank" rel="noopener">당신은 모를 수도 있는 CSS의 7가지 단위</a></li>
+</ul>
+<nav id="article-nav-post"><a href="/2017/05/30/css/Reset-CSS/" id="article-nav-newer-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post"><i class="fa fa-arrow-left" aria-hidden="true"></i> 이전편</strong><div class="article-nav-title-post">Reset CSS 사용하기</div><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a><a href="/2017/06/05/css/css-Selector-note/" id="article-nav-older-post" class="article-nav-link-wrap-post"><strong class="article-nav-caption-post">다음편 <i class="fa fa-arrow-right" aria-hidden="true"></i></strong><div class="article-nav-title-post">CSS 기억해야할 선택자 형식</div><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i></a></nav>
+
+<h1 id="관련-문서-바로가기"><a href="#관련-문서-바로가기" class="headerlink" title="관련 문서 바로가기"></a>관련 문서 바로가기</h1><ul>
+<li><a href="/2017/05/27/css/starting-CSS/">CSS 시작하기</a></li>
+<li><a href="/2017/05/28/css/CSS-Selector-ranking/">선택자(Selector) 우선순위</a></li>
+<li><a href="/2017/05/30/css/Reset-CSS/">Reset CSS 사용하기</a></li>
+<li><a href="/2017/06/04/css/CSS-Px-to-Em/">글꼴 크기 비교 지정하기</a></li>
+<li><a href="/2017/06/05/css/css-Selector-note/">CSS 기억해야할 선택자 형식</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Css/" rel="tag"># Css</a>
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/30/css/Reset-CSS/" rel="prev" title="Reset CSS 사용하기">
+      <i class="fa fa-chevron-left"></i> Reset CSS 사용하기
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/06/05/css/css-Selector-note/" rel="next" title="CSS 기억해야할 선택자 형식">
+      CSS 기억해야할 선택자 형식 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#글꼴-크기"><span class="nav-text">글꼴 크기</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#폰트-단위"><span class="nav-text">폰트 단위</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#화면-단위"><span class="nav-text">화면 단위</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#더-많은-단위"><span class="nav-text">더 많은 단위</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PX-to-EM-변환기"><span class="nav-text">PX to EM 변환기</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#px와-em에-관해"><span class="nav-text">px와 em에 관해.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#em과-rem은-왜-쓰는가"><span class="nav-text">em과 rem은 왜 쓰는가?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#em과-rem의-차이점"><span class="nav-text">em과 rem의 차이점.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#본문-글자-크기"><span class="nav-text">본문 글자 크기</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#마치며"><span class="nav-text">마치며</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#참고"><span class="nav-text">참고</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#관련-문서-바로가기"><span class="nav-text">관련 문서 바로가기</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">theK</p>
+  <div class="site-description" itemprop="description">theK의 8번째 도전 블로그</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/innks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;innks" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:algiddl11@gmail.com" title="E-Mail → mailto:algiddl11@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/100008456914604" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;100008456914604" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="/categories/IT-%EC%BB%B4%ED%93%A8%ED%84%B0/" title="&#x2F;categories&#x2F;IT-컴퓨터&#x2F;">IT 컴퓨터</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/Library/" title="&#x2F;categories&#x2F;Library&#x2F;">Library</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%97%AC%ED%96%89/" title="&#x2F;categories&#x2F;여행&#x2F;">여행+</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="/categories/%EC%9D%BC%EC%83%81-%EC%83%9D%ED%99%9C/" title="&#x2F;categories&#x2F;일상-생활&#x2F;">일상 생활</a>
+        </li>
+    </ul>
+  </div>
+<!-- 애드센스 -->
+<div class="ads_side">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- innks side_bar -->
+<ins class="adsbygoogle"
+   style="display:inline-block;width:234px;height:60px"
+   data-ad-client="ca-pub-2415402928090831"
+   data-ad-slot="7916591618"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- 애드센스 -->
+
+<div class="widget-wrap-counter">
+<a href="https://info.flagcounter.com/CmUL" target="_blank" rel="noopener"><img src="https://s09.flagcounter.com/count2/CmUL/bg_ffffff/txt_555555/border_ffffff/columns_3/maxflags_3/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+<div class="ads-right">
+    <script id="_wau2bi">var _wau = _wau || []; _wau.push(["small", "rfw5n8j3qpuq", "2bi"]);
+    (function() {var s=document.createElement("script"); s.async=true;
+    s.src="//widgets.amung.us/small.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+    })();</script>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">theK</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='50,50,50' opacity='0.5' zIndex='-1' count='49' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://innks.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://innks.github.io/2017/06/04/css/CSS-Px-to-Em/",
+            identifier: "2017/06/04/css/CSS-Px-to-Em/",
+            title: "글꼴 크기 비교 지정하기"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://innks.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
